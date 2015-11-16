@@ -124,8 +124,8 @@
 				F18CADB31BF989FA003C8F02 /* AppDelegate.swift */,
 				F18CADE11BF98A83003C8F02 /* Model */,
 				F18CADE21BF98A89003C8F02 /* View */,
-				F18CADE41BF98A98003C8F02 /* Supporting Files */,
 				F18CADE31BF98A8F003C8F02 /* Controller */,
+				F18CADE41BF98A98003C8F02 /* Supporting Files */,
 			);
 			path = Beto;
 			sourceTree = "<group>";
