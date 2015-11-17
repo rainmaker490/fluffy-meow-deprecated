@@ -7,69 +7,79 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		F18CADB41BF989FA003C8F02 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F18CADB31BF989FA003C8F02 /* AppDelegate.swift */; };
-		F18CADB61BF989FA003C8F02 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F18CADB51BF989FA003C8F02 /* ViewController.swift */; };
-		F18CADB91BF989FA003C8F02 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F18CADB71BF989FA003C8F02 /* Main.storyboard */; };
-		F18CADBB1BF989FA003C8F02 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F18CADBA1BF989FA003C8F02 /* Assets.xcassets */; };
-		F18CADBE1BF989FA003C8F02 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F18CADBC1BF989FA003C8F02 /* LaunchScreen.storyboard */; };
-		F18CADC91BF989FA003C8F02 /* BetoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F18CADC81BF989FA003C8F02 /* BetoTests.swift */; };
-		F18CADD41BF989FA003C8F02 /* BetoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F18CADD31BF989FA003C8F02 /* BetoUITests.swift */; };
-		F2C7E40CEE06721A1E079960 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 04A0367B7CD2D4CDED4C837D /* Pods.framework */; };
+		3B4F8318BB5E2DDF6F93FDD6 /* Pods_Beto.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0F87A5B6449CB57803CE0B21 /* Pods_Beto.framework */; };
+		F16571CD1BFAF382007459AE /* twitter.png in Resources */ = {isa = PBXBuildFile; fileRef = F16571CC1BFAF382007459AE /* twitter.png */; };
+		F16571D31BFAF970007459AE /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = F16571D21BFAF970007459AE /* Constants.swift */; };
+		F16571DB1BFAFFFE007459AE /* facebook.png in Resources */ = {isa = PBXBuildFile; fileRef = F16571DA1BFAFFFE007459AE /* facebook.png */; };
+		F16571DF1BFB0A33007459AE /* password.png in Resources */ = {isa = PBXBuildFile; fileRef = F16571DE1BFB0A33007459AE /* password.png */; };
+		F16571E11BFB0A68007459AE /* signUp.png in Resources */ = {isa = PBXBuildFile; fileRef = F16571E01BFB0A68007459AE /* signUp.png */; };
+		F1D501EF1BFAF0A800032D50 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1D501EE1BFAF0A800032D50 /* AppDelegate.swift */; };
+		F1D501F61BFAF0A800032D50 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F1D501F51BFAF0A800032D50 /* Assets.xcassets */; };
+		F1D501F91BFAF0A800032D50 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F1D501F71BFAF0A800032D50 /* LaunchScreen.storyboard */; };
+		F1D502041BFAF0A800032D50 /* BetoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1D502031BFAF0A800032D50 /* BetoTests.swift */; };
+		F1D5020F1BFAF0A800032D50 /* BetoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1D5020E1BFAF0A800032D50 /* BetoUITests.swift */; };
+		F1D5021D1BFAF0BC00032D50 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F1D5021C1BFAF0BC00032D50 /* Main.storyboard */; };
+		F1D502281BFAF1E900032D50 /* LogInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1D502271BFAF1E900032D50 /* LogInViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		F18CADC51BF989FA003C8F02 /* PBXContainerItemProxy */ = {
+		F1D502001BFAF0A800032D50 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = F18CADA81BF989FA003C8F02 /* Project object */;
+			containerPortal = F1D501E31BFAF0A800032D50 /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = F18CADAF1BF989FA003C8F02;
+			remoteGlobalIDString = F1D501EA1BFAF0A800032D50;
 			remoteInfo = Beto;
 		};
-		F18CADD01BF989FA003C8F02 /* PBXContainerItemProxy */ = {
+		F1D5020B1BFAF0A800032D50 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = F18CADA81BF989FA003C8F02 /* Project object */;
+			containerPortal = F1D501E31BFAF0A800032D50 /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = F18CADAF1BF989FA003C8F02;
+			remoteGlobalIDString = F1D501EA1BFAF0A800032D50;
 			remoteInfo = Beto;
 		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		04A0367B7CD2D4CDED4C837D /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		0803790A2895914EC04B6CD7 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
-		917857B91BE9163DF54006B9 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
-		F18CADB01BF989FA003C8F02 /* Beto.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Beto.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		F18CADB31BF989FA003C8F02 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		F18CADB51BF989FA003C8F02 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		F18CADB81BF989FA003C8F02 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		F18CADBA1BF989FA003C8F02 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		F18CADBD1BF989FA003C8F02 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		F18CADBF1BF989FA003C8F02 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		F18CADC41BF989FA003C8F02 /* BetoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BetoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		F18CADC81BF989FA003C8F02 /* BetoTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BetoTests.swift; sourceTree = "<group>"; };
-		F18CADCA1BF989FA003C8F02 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		F18CADCF1BF989FA003C8F02 /* BetoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BetoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		F18CADD31BF989FA003C8F02 /* BetoUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BetoUITests.swift; sourceTree = "<group>"; };
-		F18CADD51BF989FA003C8F02 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0CDF39CCCB544187E3E17B04 /* Pods-Beto.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Beto.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Beto/Pods-Beto.debug.xcconfig"; sourceTree = "<group>"; };
+		0F87A5B6449CB57803CE0B21 /* Pods_Beto.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Beto.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		BDED344D1068B37E2F9E10F0 /* Pods-Beto.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Beto.release.xcconfig"; path = "Pods/Target Support Files/Pods-Beto/Pods-Beto.release.xcconfig"; sourceTree = "<group>"; };
+		F16571CC1BFAF382007459AE /* twitter.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = twitter.png; sourceTree = "<group>"; };
+		F16571D21BFAF970007459AE /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		F16571DA1BFAFFFE007459AE /* facebook.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = facebook.png; sourceTree = "<group>"; };
+		F16571DE1BFB0A33007459AE /* password.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = password.png; sourceTree = "<group>"; };
+		F16571E01BFB0A68007459AE /* signUp.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = signUp.png; sourceTree = "<group>"; };
+		F1D501EB1BFAF0A800032D50 /* Beto.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Beto.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		F1D501EE1BFAF0A800032D50 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		F1D501F51BFAF0A800032D50 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		F1D501F81BFAF0A800032D50 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		F1D501FA1BFAF0A800032D50 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F1D501FF1BFAF0A800032D50 /* BetoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BetoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		F1D502031BFAF0A800032D50 /* BetoTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BetoTests.swift; sourceTree = "<group>"; };
+		F1D502051BFAF0A800032D50 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F1D5020A1BFAF0A800032D50 /* BetoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BetoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		F1D5020E1BFAF0A800032D50 /* BetoUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BetoUITests.swift; sourceTree = "<group>"; };
+		F1D502101BFAF0A800032D50 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F1D5021C1BFAF0BC00032D50 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		F1D502271BFAF1E900032D50 /* LogInViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogInViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		F18CADAD1BF989FA003C8F02 /* Frameworks */ = {
+		F1D501E81BFAF0A800032D50 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F2C7E40CEE06721A1E079960 /* Pods.framework in Frameworks */,
+				3B4F8318BB5E2DDF6F93FDD6 /* Pods_Beto.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		F18CADC11BF989FA003C8F02 /* Frameworks */ = {
+		F1D501FC1BFAF0A800032D50 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		F18CADCC1BF989FA003C8F02 /* Frameworks */ = {
+		F1D502071BFAF0A800032D50 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -79,121 +89,134 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		3208C180173D3DAFDECDA798 /* Frameworks */ = {
+		4D4D53139DA3D8BE86BCC64F /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				04A0367B7CD2D4CDED4C837D /* Pods.framework */,
+				0F87A5B6449CB57803CE0B21 /* Pods_Beto.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		C7BB51850F3EE1DE31B7D670 /* Pods */ = {
+		50C9B3E2A76452B13777E95E /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				0803790A2895914EC04B6CD7 /* Pods.debug.xcconfig */,
-				917857B91BE9163DF54006B9 /* Pods.release.xcconfig */,
+				0CDF39CCCB544187E3E17B04 /* Pods-Beto.debug.xcconfig */,
+				BDED344D1068B37E2F9E10F0 /* Pods-Beto.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
 		};
-		F18CADA71BF989FA003C8F02 = {
+		F1D501E21BFAF0A800032D50 = {
 			isa = PBXGroup;
 			children = (
-				F18CADB21BF989FA003C8F02 /* Beto */,
-				F18CADC71BF989FA003C8F02 /* BetoTests */,
-				F18CADD21BF989FA003C8F02 /* BetoUITests */,
-				F18CADB11BF989FA003C8F02 /* Products */,
-				C7BB51850F3EE1DE31B7D670 /* Pods */,
-				3208C180173D3DAFDECDA798 /* Frameworks */,
+				F1D501ED1BFAF0A800032D50 /* Beto */,
+				F1D502021BFAF0A800032D50 /* BetoTests */,
+				F1D5020D1BFAF0A800032D50 /* BetoUITests */,
+				F1D501EC1BFAF0A800032D50 /* Products */,
+				50C9B3E2A76452B13777E95E /* Pods */,
+				4D4D53139DA3D8BE86BCC64F /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
-		F18CADB11BF989FA003C8F02 /* Products */ = {
+		F1D501EC1BFAF0A800032D50 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				F18CADB01BF989FA003C8F02 /* Beto.app */,
-				F18CADC41BF989FA003C8F02 /* BetoTests.xctest */,
-				F18CADCF1BF989FA003C8F02 /* BetoUITests.xctest */,
+				F1D501EB1BFAF0A800032D50 /* Beto.app */,
+				F1D501FF1BFAF0A800032D50 /* BetoTests.xctest */,
+				F1D5020A1BFAF0A800032D50 /* BetoUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		F18CADB21BF989FA003C8F02 /* Beto */ = {
+		F1D501ED1BFAF0A800032D50 /* Beto */ = {
 			isa = PBXGroup;
 			children = (
-				F18CADB31BF989FA003C8F02 /* AppDelegate.swift */,
-				F18CADE11BF98A83003C8F02 /* Model */,
-				F18CADE21BF98A89003C8F02 /* View */,
-				F18CADE31BF98A8F003C8F02 /* Controller */,
-				F18CADE41BF98A98003C8F02 /* Supporting Files */,
+				F1D501EE1BFAF0A800032D50 /* AppDelegate.swift */,
+				F1D5021E1BFAF0CB00032D50 /* Model */,
+				F1D5021F1BFAF0D900032D50 /* View */,
+				F1D502201BFAF0DE00032D50 /* Controller */,
+				F1D502211BFAF0E400032D50 /* Supporting Files */,
 			);
 			path = Beto;
 			sourceTree = "<group>";
 		};
-		F18CADC71BF989FA003C8F02 /* BetoTests */ = {
+		F1D502021BFAF0A800032D50 /* BetoTests */ = {
 			isa = PBXGroup;
 			children = (
-				F18CADC81BF989FA003C8F02 /* BetoTests.swift */,
-				F18CADCA1BF989FA003C8F02 /* Info.plist */,
+				F1D502031BFAF0A800032D50 /* BetoTests.swift */,
+				F1D502051BFAF0A800032D50 /* Info.plist */,
 			);
 			path = BetoTests;
 			sourceTree = "<group>";
 		};
-		F18CADD21BF989FA003C8F02 /* BetoUITests */ = {
+		F1D5020D1BFAF0A800032D50 /* BetoUITests */ = {
 			isa = PBXGroup;
 			children = (
-				F18CADD31BF989FA003C8F02 /* BetoUITests.swift */,
-				F18CADD51BF989FA003C8F02 /* Info.plist */,
+				F1D5020E1BFAF0A800032D50 /* BetoUITests.swift */,
+				F1D502101BFAF0A800032D50 /* Info.plist */,
 			);
 			path = BetoUITests;
 			sourceTree = "<group>";
 		};
-		F18CADE11BF98A83003C8F02 /* Model */ = {
+		F1D5021E1BFAF0CB00032D50 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				F16571D21BFAF970007459AE /* Constants.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
 		};
-		F18CADE21BF98A89003C8F02 /* View */ = {
+		F1D5021F1BFAF0D900032D50 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				F18CADB71BF989FA003C8F02 /* Main.storyboard */,
+				F1D5021C1BFAF0BC00032D50 /* Main.storyboard */,
 			);
 			name = View;
 			sourceTree = "<group>";
 		};
-		F18CADE31BF98A8F003C8F02 /* Controller */ = {
+		F1D502201BFAF0DE00032D50 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				F18CADB51BF989FA003C8F02 /* ViewController.swift */,
+				F1D502271BFAF1E900032D50 /* LogInViewController.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
 		};
-		F18CADE41BF98A98003C8F02 /* Supporting Files */ = {
+		F1D502211BFAF0E400032D50 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				F18CADBC1BF989FA003C8F02 /* LaunchScreen.storyboard */,
-				F18CADBA1BF989FA003C8F02 /* Assets.xcassets */,
-				F18CADBF1BF989FA003C8F02 /* Info.plist */,
+				F1D502231BFAF12800032D50 /* LogInData */,
+				F1D501F71BFAF0A800032D50 /* LaunchScreen.storyboard */,
+				F1D501F51BFAF0A800032D50 /* Assets.xcassets */,
+				F1D501FA1BFAF0A800032D50 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		F1D502231BFAF12800032D50 /* LogInData */ = {
+			isa = PBXGroup;
+			children = (
+				F16571DA1BFAFFFE007459AE /* facebook.png */,
+				F16571CC1BFAF382007459AE /* twitter.png */,
+				F16571DE1BFB0A33007459AE /* password.png */,
+				F16571E01BFB0A68007459AE /* signUp.png */,
+			);
+			name = LogInData;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		F18CADAF1BF989FA003C8F02 /* Beto */ = {
+		F1D501EA1BFAF0A800032D50 /* Beto */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = F18CADD81BF989FA003C8F02 /* Build configuration list for PBXNativeTarget "Beto" */;
+			buildConfigurationList = F1D502131BFAF0A800032D50 /* Build configuration list for PBXNativeTarget "Beto" */;
 			buildPhases = (
-				1354B31DF77BAB97A9DE7FA7 /* Check Pods Manifest.lock */,
-				F18CADAC1BF989FA003C8F02 /* Sources */,
-				F18CADAD1BF989FA003C8F02 /* Frameworks */,
-				F18CADAE1BF989FA003C8F02 /* Resources */,
-				3940F4BEFD62CF18E566F4DA /* Embed Pods Frameworks */,
-				B9C198846AF750E8886C5780 /* Copy Pods Resources */,
+				189AAABD075BE7B5929052D4 /* Check Pods Manifest.lock */,
+				F1D501E71BFAF0A800032D50 /* Sources */,
+				F1D501E81BFAF0A800032D50 /* Frameworks */,
+				F1D501E91BFAF0A800032D50 /* Resources */,
+				98A629A01496A259E10D7ED6 /* Embed Pods Frameworks */,
+				55EE4B95B305711BF6491928 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -201,69 +224,69 @@
 			);
 			name = Beto;
 			productName = Beto;
-			productReference = F18CADB01BF989FA003C8F02 /* Beto.app */;
+			productReference = F1D501EB1BFAF0A800032D50 /* Beto.app */;
 			productType = "com.apple.product-type.application";
 		};
-		F18CADC31BF989FA003C8F02 /* BetoTests */ = {
+		F1D501FE1BFAF0A800032D50 /* BetoTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = F18CADDB1BF989FA003C8F02 /* Build configuration list for PBXNativeTarget "BetoTests" */;
+			buildConfigurationList = F1D502161BFAF0A800032D50 /* Build configuration list for PBXNativeTarget "BetoTests" */;
 			buildPhases = (
-				F18CADC01BF989FA003C8F02 /* Sources */,
-				F18CADC11BF989FA003C8F02 /* Frameworks */,
-				F18CADC21BF989FA003C8F02 /* Resources */,
+				F1D501FB1BFAF0A800032D50 /* Sources */,
+				F1D501FC1BFAF0A800032D50 /* Frameworks */,
+				F1D501FD1BFAF0A800032D50 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				F18CADC61BF989FA003C8F02 /* PBXTargetDependency */,
+				F1D502011BFAF0A800032D50 /* PBXTargetDependency */,
 			);
 			name = BetoTests;
 			productName = BetoTests;
-			productReference = F18CADC41BF989FA003C8F02 /* BetoTests.xctest */;
+			productReference = F1D501FF1BFAF0A800032D50 /* BetoTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		F18CADCE1BF989FA003C8F02 /* BetoUITests */ = {
+		F1D502091BFAF0A800032D50 /* BetoUITests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = F18CADDE1BF989FA003C8F02 /* Build configuration list for PBXNativeTarget "BetoUITests" */;
+			buildConfigurationList = F1D502191BFAF0A800032D50 /* Build configuration list for PBXNativeTarget "BetoUITests" */;
 			buildPhases = (
-				F18CADCB1BF989FA003C8F02 /* Sources */,
-				F18CADCC1BF989FA003C8F02 /* Frameworks */,
-				F18CADCD1BF989FA003C8F02 /* Resources */,
+				F1D502061BFAF0A800032D50 /* Sources */,
+				F1D502071BFAF0A800032D50 /* Frameworks */,
+				F1D502081BFAF0A800032D50 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				F18CADD11BF989FA003C8F02 /* PBXTargetDependency */,
+				F1D5020C1BFAF0A800032D50 /* PBXTargetDependency */,
 			);
 			name = BetoUITests;
 			productName = BetoUITests;
-			productReference = F18CADCF1BF989FA003C8F02 /* BetoUITests.xctest */;
+			productReference = F1D5020A1BFAF0A800032D50 /* BetoUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		F18CADA81BF989FA003C8F02 /* Project object */ = {
+		F1D501E31BFAF0A800032D50 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0710;
 				LastUpgradeCheck = 0710;
 				ORGANIZATIONNAME = "Varun D Patel";
 				TargetAttributes = {
-					F18CADAF1BF989FA003C8F02 = {
+					F1D501EA1BFAF0A800032D50 = {
 						CreatedOnToolsVersion = 7.1.1;
 					};
-					F18CADC31BF989FA003C8F02 = {
+					F1D501FE1BFAF0A800032D50 = {
 						CreatedOnToolsVersion = 7.1.1;
-						TestTargetID = F18CADAF1BF989FA003C8F02;
+						TestTargetID = F1D501EA1BFAF0A800032D50;
 					};
-					F18CADCE1BF989FA003C8F02 = {
+					F1D502091BFAF0A800032D50 = {
 						CreatedOnToolsVersion = 7.1.1;
-						TestTargetID = F18CADAF1BF989FA003C8F02;
+						TestTargetID = F1D501EA1BFAF0A800032D50;
 					};
 				};
 			};
-			buildConfigurationList = F18CADAB1BF989FA003C8F02 /* Build configuration list for PBXProject "Beto" */;
+			buildConfigurationList = F1D501E61BFAF0A800032D50 /* Build configuration list for PBXProject "Beto" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -271,37 +294,41 @@
 				en,
 				Base,
 			);
-			mainGroup = F18CADA71BF989FA003C8F02;
-			productRefGroup = F18CADB11BF989FA003C8F02 /* Products */;
+			mainGroup = F1D501E21BFAF0A800032D50;
+			productRefGroup = F1D501EC1BFAF0A800032D50 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				F18CADAF1BF989FA003C8F02 /* Beto */,
-				F18CADC31BF989FA003C8F02 /* BetoTests */,
-				F18CADCE1BF989FA003C8F02 /* BetoUITests */,
+				F1D501EA1BFAF0A800032D50 /* Beto */,
+				F1D501FE1BFAF0A800032D50 /* BetoTests */,
+				F1D502091BFAF0A800032D50 /* BetoUITests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		F18CADAE1BF989FA003C8F02 /* Resources */ = {
+		F1D501E91BFAF0A800032D50 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F18CADBE1BF989FA003C8F02 /* LaunchScreen.storyboard in Resources */,
-				F18CADBB1BF989FA003C8F02 /* Assets.xcassets in Resources */,
-				F18CADB91BF989FA003C8F02 /* Main.storyboard in Resources */,
+				F1D5021D1BFAF0BC00032D50 /* Main.storyboard in Resources */,
+				F16571DB1BFAFFFE007459AE /* facebook.png in Resources */,
+				F16571DF1BFB0A33007459AE /* password.png in Resources */,
+				F16571CD1BFAF382007459AE /* twitter.png in Resources */,
+				F16571E11BFB0A68007459AE /* signUp.png in Resources */,
+				F1D501F91BFAF0A800032D50 /* LaunchScreen.storyboard in Resources */,
+				F1D501F61BFAF0A800032D50 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		F18CADC21BF989FA003C8F02 /* Resources */ = {
+		F1D501FD1BFAF0A800032D50 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		F18CADCD1BF989FA003C8F02 /* Resources */ = {
+		F1D502081BFAF0A800032D50 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -311,7 +338,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		1354B31DF77BAB97A9DE7FA7 /* Check Pods Manifest.lock */ = {
+		189AAABD075BE7B5929052D4 /* Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -326,22 +353,7 @@
 			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
-		3940F4BEFD62CF18E566F4DA /* Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		B9C198846AF750E8886C5780 /* Copy Pods Resources */ = {
+		55EE4B95B305711BF6491928 /* Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -353,65 +365,73 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Beto/Pods-Beto-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		98A629A01496A259E10D7ED6 /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Beto/Pods-Beto-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		F18CADAC1BF989FA003C8F02 /* Sources */ = {
+		F1D501E71BFAF0A800032D50 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F18CADB61BF989FA003C8F02 /* ViewController.swift in Sources */,
-				F18CADB41BF989FA003C8F02 /* AppDelegate.swift in Sources */,
+				F1D502281BFAF1E900032D50 /* LogInViewController.swift in Sources */,
+				F1D501EF1BFAF0A800032D50 /* AppDelegate.swift in Sources */,
+				F16571D31BFAF970007459AE /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		F18CADC01BF989FA003C8F02 /* Sources */ = {
+		F1D501FB1BFAF0A800032D50 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F18CADC91BF989FA003C8F02 /* BetoTests.swift in Sources */,
+				F1D502041BFAF0A800032D50 /* BetoTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		F18CADCB1BF989FA003C8F02 /* Sources */ = {
+		F1D502061BFAF0A800032D50 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F18CADD41BF989FA003C8F02 /* BetoUITests.swift in Sources */,
+				F1D5020F1BFAF0A800032D50 /* BetoUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		F18CADC61BF989FA003C8F02 /* PBXTargetDependency */ = {
+		F1D502011BFAF0A800032D50 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = F18CADAF1BF989FA003C8F02 /* Beto */;
-			targetProxy = F18CADC51BF989FA003C8F02 /* PBXContainerItemProxy */;
+			target = F1D501EA1BFAF0A800032D50 /* Beto */;
+			targetProxy = F1D502001BFAF0A800032D50 /* PBXContainerItemProxy */;
 		};
-		F18CADD11BF989FA003C8F02 /* PBXTargetDependency */ = {
+		F1D5020C1BFAF0A800032D50 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = F18CADAF1BF989FA003C8F02 /* Beto */;
-			targetProxy = F18CADD01BF989FA003C8F02 /* PBXContainerItemProxy */;
+			target = F1D501EA1BFAF0A800032D50 /* Beto */;
+			targetProxy = F1D5020B1BFAF0A800032D50 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		F18CADB71BF989FA003C8F02 /* Main.storyboard */ = {
+		F1D501F71BFAF0A800032D50 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				F18CADB81BF989FA003C8F02 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		F18CADBC1BF989FA003C8F02 /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				F18CADBD1BF989FA003C8F02 /* Base */,
+				F1D501F81BFAF0A800032D50 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
@@ -419,7 +439,7 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
-		F18CADD61BF989FA003C8F02 /* Debug */ = {
+		F1D502111BFAF0A800032D50 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -464,7 +484,7 @@
 			};
 			name = Debug;
 		};
-		F18CADD71BF989FA003C8F02 /* Release */ = {
+		F1D502121BFAF0A800032D50 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -502,9 +522,9 @@
 			};
 			name = Release;
 		};
-		F18CADD91BF989FA003C8F02 /* Debug */ = {
+		F1D502141BFAF0A800032D50 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 0803790A2895914EC04B6CD7 /* Pods.debug.xcconfig */;
+			baseConfigurationReference = 0CDF39CCCB544187E3E17B04 /* Pods-Beto.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = Beto/Info.plist;
@@ -514,9 +534,9 @@
 			};
 			name = Debug;
 		};
-		F18CADDA1BF989FA003C8F02 /* Release */ = {
+		F1D502151BFAF0A800032D50 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 917857B91BE9163DF54006B9 /* Pods.release.xcconfig */;
+			baseConfigurationReference = BDED344D1068B37E2F9E10F0 /* Pods-Beto.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = Beto/Info.plist;
@@ -526,7 +546,7 @@
 			};
 			name = Release;
 		};
-		F18CADDC1BF989FA003C8F02 /* Debug */ = {
+		F1D502171BFAF0A800032D50 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -538,7 +558,7 @@
 			};
 			name = Debug;
 		};
-		F18CADDD1BF989FA003C8F02 /* Release */ = {
+		F1D502181BFAF0A800032D50 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -550,7 +570,7 @@
 			};
 			name = Release;
 		};
-		F18CADDF1BF989FA003C8F02 /* Debug */ = {
+		F1D5021A1BFAF0A800032D50 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				INFOPLIST_FILE = BetoUITests/Info.plist;
@@ -562,7 +582,7 @@
 			};
 			name = Debug;
 		};
-		F18CADE01BF989FA003C8F02 /* Release */ = {
+		F1D5021B1BFAF0A800032D50 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				INFOPLIST_FILE = BetoUITests/Info.plist;
@@ -577,43 +597,43 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		F18CADAB1BF989FA003C8F02 /* Build configuration list for PBXProject "Beto" */ = {
+		F1D501E61BFAF0A800032D50 /* Build configuration list for PBXProject "Beto" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				F18CADD61BF989FA003C8F02 /* Debug */,
-				F18CADD71BF989FA003C8F02 /* Release */,
+				F1D502111BFAF0A800032D50 /* Debug */,
+				F1D502121BFAF0A800032D50 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		F18CADD81BF989FA003C8F02 /* Build configuration list for PBXNativeTarget "Beto" */ = {
+		F1D502131BFAF0A800032D50 /* Build configuration list for PBXNativeTarget "Beto" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				F18CADD91BF989FA003C8F02 /* Debug */,
-				F18CADDA1BF989FA003C8F02 /* Release */,
+				F1D502141BFAF0A800032D50 /* Debug */,
+				F1D502151BFAF0A800032D50 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		F18CADDB1BF989FA003C8F02 /* Build configuration list for PBXNativeTarget "BetoTests" */ = {
+		F1D502161BFAF0A800032D50 /* Build configuration list for PBXNativeTarget "BetoTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				F18CADDC1BF989FA003C8F02 /* Debug */,
-				F18CADDD1BF989FA003C8F02 /* Release */,
+				F1D502171BFAF0A800032D50 /* Debug */,
+				F1D502181BFAF0A800032D50 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		F18CADDE1BF989FA003C8F02 /* Build configuration list for PBXNativeTarget "BetoUITests" */ = {
+		F1D502191BFAF0A800032D50 /* Build configuration list for PBXNativeTarget "BetoUITests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				F18CADDF1BF989FA003C8F02 /* Debug */,
-				F18CADE01BF989FA003C8F02 /* Release */,
+				F1D5021A1BFAF0A800032D50 /* Debug */,
+				F1D5021B1BFAF0A800032D50 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = F18CADA81BF989FA003C8F02 /* Project object */;
+	rootObject = F1D501E31BFAF0A800032D50 /* Project object */;
 }

@@ -1,6 +1,0 @@
-framework module Pods_BetoUITests {
-  umbrella header "Pods-BetoUITests-umbrella.h"
-
-  export *
-  module * { export * }
-}

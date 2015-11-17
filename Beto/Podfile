@@ -2,12 +2,9 @@
 # platform :ios, '8.0'
 # Uncomment this line if you're using Swift
 use_frameworks!
-pod 'Parse'
-pod 'Charts'
-pod 'Mapbox-iOS-SDK'
 
 target 'Beto' do
-
+	pod 'Parse'
 end
 
 target 'BetoTests' do
@@ -17,3 +14,4 @@ end
 target 'BetoUITests' do
 
 end
+
