@@ -8,42 +8,53 @@
 
 import Foundation
 import UIKit
+import FBSDKLoginKit
+import ParseFacebookUtilsV4
 
-class LogInViewController: UIViewController {
+class LogInViewController: UIViewController, FBSDKLoginButtonDelegate {
     
-    @IBOutlet weak var facebookButton: UIButton!
+    @IBOutlet weak var facebookButton: FBSDKLoginButton!
     @IBOutlet weak var twitterButton: UIButton!
     @IBOutlet weak var passwordButton: UIButton!
     @IBOutlet weak var signUpButton: UIButton!
-    
-    
+    var logInPageButtons : [UIButton]?
     
     override func viewDidLoad() {
+        logInPageButtons = [facebookButton, twitterButton, passwordButton, signUpButton]
         
-        facebookButton.layer.borderWidth = 1.0
-        twitterButton.layer.borderWidth = 1.0
-        passwordButton.layer.borderWidth = 1.0
-        signUpButton.layer.borderWidth = 1.0
-        
-        facebookButton.layer.borderColor = ColorConstants.PulseBlueCGColor
-        twitterButton.layer.borderColor = ColorConstants.PulseBlueCGColor
-        passwordButton.layer.borderColor = ColorConstants.PulseBlueCGColor
-        signUpButton.layer.borderColor = ColorConstants.PulseBlueCGColor
-        
-        facebookButton.layer.cornerRadius = 0.3 * facebookButton.bounds.size.width
-        facebookButton.setImage(UIImage( named: "facebook.png"), forState: .Normal)
-        facebookButton.clipsToBounds = true
-        
-        twitterButton.layer.cornerRadius = 0.3 * facebookButton.bounds.size.width
-        twitterButton.setImage(UIImage( named: "twitter.png"), forState: .Normal)
-        twitterButton.clipsToBounds = true
-        
-        passwordButton.layer.cornerRadius = 0.3 * facebookButton.bounds.size.width
-        passwordButton.setImage(UIImage( named: "password.png"), forState: .Normal)
-        passwordButton.clipsToBounds = true
-        
-        signUpButton.layer.cornerRadius = 0.3 * signUpButton.bounds.size.width
-        signUpButton.setImage(UIImage( named: "signUp.png"), forState: .Normal)
-        signUpButton.clipsToBounds = true
+        LogInViewControllerHelper.setAllLogInPageButtonsBorderWidth(logInPageButtons!, borderWidth: 1.0)
+        LogInViewControllerHelper.setAllLogInPageButtonsBorderColor(logInPageButtons!, borderColor: UIColor.whiteColor().CGColor)
+        LogInViewControllerHelper.setAllLogInPageButtonsCornerRadius(logInPageButtons!, cornerRadius: 0.2 * facebookButton.bounds.size.width)
+
+        self.facebookButton.delegate = self
+        if (FBSDKAccessToken.currentAccessToken() != nil) {
+            print("yay here")
+            // performSegueWithIdentifier("unwindToViewOtherController", sender: self)
+        } else {
+            facebookButton.readPermissions = FacebookConstants.ReadPermissions
+        }
+    }
+    
+    func loginButton(loginButton: FBSDKLoginButton!, didCompleteWithResult result: FBSDKLoginManagerLoginResult!, error: NSError!) {
+        PFFacebookUtils.logInInBackgroundWithReadPermissions(FacebookConstants.ReadPermissions) {
+            (user: PFUser?, error: NSError?) -> Void in
+            if let user = user {
+                // if new user {user signed up && logged in through fb} else { user logged in through facebook }
+                user.isNew ? print("User signed up and logged in through Facebook!") : print("User logged in through Facebook!")
+            } else {
+                print("Uh oh. The user cancelled the Facebook login.")
+            }
+        }
+        /*if ((error) != nil) {
+            // Process error
+        } else if result.isCancelled {
+            // Handle cancellations
+        } else {
+            // Navigate to other view
+        }*/
+    }
+    
+    func loginButtonDidLogOut(loginButton: FBSDKLoginButton!) {
+        print("User Logged Out")
     }
 }

@@ -7,12 +7,17 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		3B4F8318BB5E2DDF6F93FDD6 /* Pods_Beto.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0F87A5B6449CB57803CE0B21 /* Pods_Beto.framework */; };
+		BBEFA9CE9BD1397F37598BCD /* Pods_Beto.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C539D7481A482CD786E1F8AF /* Pods_Beto.framework */; };
+		F10B56301BFD4CA000137CC3 /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F10B562F1BFD4CA000137CC3 /* SignInViewController.swift */; };
+		F10B56321BFD519700137CC3 /* SignInViewControllerHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = F10B56311BFD519700137CC3 /* SignInViewControllerHelper.swift */; };
+		F10B56351BFD569000137CC3 /* SubmitUnFilled.png in Resources */ = {isa = PBXBuildFile; fileRef = F10B56341BFD569000137CC3 /* SubmitUnFilled.png */; };
+		F10B56371BFD569800137CC3 /* SubmitFilled.png in Resources */ = {isa = PBXBuildFile; fileRef = F10B56361BFD569800137CC3 /* SubmitFilled.png */; };
 		F16571CD1BFAF382007459AE /* twitter.png in Resources */ = {isa = PBXBuildFile; fileRef = F16571CC1BFAF382007459AE /* twitter.png */; };
 		F16571D31BFAF970007459AE /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = F16571D21BFAF970007459AE /* Constants.swift */; };
 		F16571DB1BFAFFFE007459AE /* facebook.png in Resources */ = {isa = PBXBuildFile; fileRef = F16571DA1BFAFFFE007459AE /* facebook.png */; };
 		F16571DF1BFB0A33007459AE /* password.png in Resources */ = {isa = PBXBuildFile; fileRef = F16571DE1BFB0A33007459AE /* password.png */; };
 		F16571E11BFB0A68007459AE /* signUp.png in Resources */ = {isa = PBXBuildFile; fileRef = F16571E01BFB0A68007459AE /* signUp.png */; };
+		F17805151BFBA3DB000BC19B /* LogInViewControllerHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = F17805141BFBA3DB000BC19B /* LogInViewControllerHelper.swift */; };
 		F1D501EF1BFAF0A800032D50 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1D501EE1BFAF0A800032D50 /* AppDelegate.swift */; };
 		F1D501F61BFAF0A800032D50 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F1D501F51BFAF0A800032D50 /* Assets.xcassets */; };
 		F1D501F91BFAF0A800032D50 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F1D501F71BFAF0A800032D50 /* LaunchScreen.storyboard */; };
@@ -20,6 +25,7 @@
 		F1D5020F1BFAF0A800032D50 /* BetoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1D5020E1BFAF0A800032D50 /* BetoUITests.swift */; };
 		F1D5021D1BFAF0BC00032D50 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F1D5021C1BFAF0BC00032D50 /* Main.storyboard */; };
 		F1D502281BFAF1E900032D50 /* LogInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1D502271BFAF1E900032D50 /* LogInViewController.swift */; };
+		F1E780721BFD59900076CCC8 /* Close.png in Resources */ = {isa = PBXBuildFile; fileRef = F1E780711BFD59900076CCC8 /* Close.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -41,13 +47,18 @@
 
 /* Begin PBXFileReference section */
 		0CDF39CCCB544187E3E17B04 /* Pods-Beto.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Beto.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Beto/Pods-Beto.debug.xcconfig"; sourceTree = "<group>"; };
-		0F87A5B6449CB57803CE0B21 /* Pods_Beto.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Beto.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BDED344D1068B37E2F9E10F0 /* Pods-Beto.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Beto.release.xcconfig"; path = "Pods/Target Support Files/Pods-Beto/Pods-Beto.release.xcconfig"; sourceTree = "<group>"; };
+		C539D7481A482CD786E1F8AF /* Pods_Beto.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Beto.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F10B562F1BFD4CA000137CC3 /* SignInViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
+		F10B56311BFD519700137CC3 /* SignInViewControllerHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignInViewControllerHelper.swift; sourceTree = "<group>"; };
+		F10B56341BFD569000137CC3 /* SubmitUnFilled.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = SubmitUnFilled.png; sourceTree = "<group>"; };
+		F10B56361BFD569800137CC3 /* SubmitFilled.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = SubmitFilled.png; sourceTree = "<group>"; };
 		F16571CC1BFAF382007459AE /* twitter.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = twitter.png; sourceTree = "<group>"; };
 		F16571D21BFAF970007459AE /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		F16571DA1BFAFFFE007459AE /* facebook.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = facebook.png; sourceTree = "<group>"; };
 		F16571DE1BFB0A33007459AE /* password.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = password.png; sourceTree = "<group>"; };
 		F16571E01BFB0A68007459AE /* signUp.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = signUp.png; sourceTree = "<group>"; };
+		F17805141BFBA3DB000BC19B /* LogInViewControllerHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogInViewControllerHelper.swift; sourceTree = "<group>"; };
 		F1D501EB1BFAF0A800032D50 /* Beto.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Beto.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F1D501EE1BFAF0A800032D50 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F1D501F51BFAF0A800032D50 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -61,6 +72,7 @@
 		F1D502101BFAF0A800032D50 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F1D5021C1BFAF0BC00032D50 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		F1D502271BFAF1E900032D50 /* LogInViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogInViewController.swift; sourceTree = "<group>"; };
+		F1E780711BFD59900076CCC8 /* Close.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Close.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,7 +80,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3B4F8318BB5E2DDF6F93FDD6 /* Pods_Beto.framework in Frameworks */,
+				BBEFA9CE9BD1397F37598BCD /* Pods_Beto.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -92,7 +104,7 @@
 		4D4D53139DA3D8BE86BCC64F /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				0F87A5B6449CB57803CE0B21 /* Pods_Beto.framework */,
+				C539D7481A482CD786E1F8AF /* Pods_Beto.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -104,6 +116,34 @@
 				BDED344D1068B37E2F9E10F0 /* Pods-Beto.release.xcconfig */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		F10B56331BFD565000137CC3 /* SignInData */ = {
+			isa = PBXGroup;
+			children = (
+				F10B56341BFD569000137CC3 /* SubmitUnFilled.png */,
+				F10B56361BFD569800137CC3 /* SubmitFilled.png */,
+				F1E780711BFD59900076CCC8 /* Close.png */,
+			);
+			name = SignInData;
+			sourceTree = "<group>";
+		};
+		F17805121BFB9F23000BC19B /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				F1D502231BFAF12800032D50 /* LogInData */,
+				F10B56331BFD565000137CC3 /* SignInData */,
+			);
+			name = Assets;
+			sourceTree = "<group>";
+		};
+		F17805131BFBA3BE000BC19B /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				F17805141BFBA3DB000BC19B /* LogInViewControllerHelper.swift */,
+				F10B56311BFD519700137CC3 /* SignInViewControllerHelper.swift */,
+			);
+			name = Helper;
 			sourceTree = "<group>";
 		};
 		F1D501E21BFAF0A800032D50 = {
@@ -136,6 +176,7 @@
 				F1D5021F1BFAF0D900032D50 /* View */,
 				F1D502201BFAF0DE00032D50 /* Controller */,
 				F1D502211BFAF0E400032D50 /* Supporting Files */,
+				F17805121BFB9F23000BC19B /* Assets */,
 			);
 			path = Beto;
 			sourceTree = "<group>";
@@ -177,7 +218,9 @@
 		F1D502201BFAF0DE00032D50 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				F17805131BFBA3BE000BC19B /* Helper */,
 				F1D502271BFAF1E900032D50 /* LogInViewController.swift */,
+				F10B562F1BFD4CA000137CC3 /* SignInViewController.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -185,7 +228,6 @@
 		F1D502211BFAF0E400032D50 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				F1D502231BFAF12800032D50 /* LogInData */,
 				F1D501F71BFAF0A800032D50 /* LaunchScreen.storyboard */,
 				F1D501F51BFAF0A800032D50 /* Assets.xcassets */,
 				F1D501FA1BFAF0A800032D50 /* Info.plist */,
@@ -312,12 +354,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				F1D5021D1BFAF0BC00032D50 /* Main.storyboard in Resources */,
+				F10B56371BFD569800137CC3 /* SubmitFilled.png in Resources */,
+				F1E780721BFD59900076CCC8 /* Close.png in Resources */,
 				F16571DB1BFAFFFE007459AE /* facebook.png in Resources */,
 				F16571DF1BFB0A33007459AE /* password.png in Resources */,
 				F16571CD1BFAF382007459AE /* twitter.png in Resources */,
 				F16571E11BFB0A68007459AE /* signUp.png in Resources */,
 				F1D501F91BFAF0A800032D50 /* LaunchScreen.storyboard in Resources */,
 				F1D501F61BFAF0A800032D50 /* Assets.xcassets in Resources */,
+				F10B56351BFD569000137CC3 /* SubmitUnFilled.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -392,6 +437,9 @@
 			files = (
 				F1D502281BFAF1E900032D50 /* LogInViewController.swift in Sources */,
 				F1D501EF1BFAF0A800032D50 /* AppDelegate.swift in Sources */,
+				F10B56321BFD519700137CC3 /* SignInViewControllerHelper.swift in Sources */,
+				F17805151BFBA3DB000BC19B /* LogInViewControllerHelper.swift in Sources */,
+				F10B56301BFD4CA000137CC3 /* SignInViewController.swift in Sources */,
 				F16571D31BFAF970007459AE /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -527,10 +575,16 @@
 			baseConfigurationReference = 0CDF39CCCB544187E3E17B04 /* Pods-Beto.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/build/Debug-iphoneos",
+				);
 				INFOPLIST_FILE = Beto/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = edu.psu.cse.vdp5013.Beto;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "";
 			};
 			name = Debug;
 		};
@@ -539,15 +593,22 @@
 			baseConfigurationReference = BDED344D1068B37E2F9E10F0 /* Pods-Beto.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/build/Debug-iphoneos",
+				);
 				INFOPLIST_FILE = Beto/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = edu.psu.cse.vdp5013.Beto;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "";
 			};
 			name = Release;
 		};
 		F1D502171BFAF0A800032D50 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0CDF39CCCB544187E3E17B04 /* Pods-Beto.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				INFOPLIST_FILE = BetoTests/Info.plist;
@@ -560,6 +621,7 @@
 		};
 		F1D502181BFAF0A800032D50 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = BDED344D1068B37E2F9E10F0 /* Pods-Beto.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				INFOPLIST_FILE = BetoTests/Info.plist;
@@ -572,6 +634,7 @@
 		};
 		F1D5021A1BFAF0A800032D50 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0CDF39CCCB544187E3E17B04 /* Pods-Beto.debug.xcconfig */;
 			buildSettings = {
 				INFOPLIST_FILE = BetoUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -584,6 +647,7 @@
 		};
 		F1D5021B1BFAF0A800032D50 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = BDED344D1068B37E2F9E10F0 /* Pods-Beto.release.xcconfig */;
 			buildSettings = {
 				INFOPLIST_FILE = BetoUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";

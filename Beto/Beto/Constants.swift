@@ -11,5 +11,9 @@ import UIKit
 
 struct ColorConstants {
     static let PulseBlue = UIColor(red: 169/255, green: 201/255, blue: 212/255, alpha: 1.0)
-    static let PulseBlueCGColor = UIColor.whiteColor().CGColor
+    static let PulseBlueCGColor = PulseBlue.CGColor
+}
+
+struct FacebookConstants {
+    static let ReadPermissions = ["public_profile", "email", "user_friends"]
 }
