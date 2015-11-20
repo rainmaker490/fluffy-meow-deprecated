@@ -17,3 +17,8 @@ struct ColorConstants {
 struct FacebookConstants {
     static let ReadPermissions = ["public_profile", "email", "user_friends"]
 }
+
+struct SignInPageImage {
+    static let SignInButtonFilled = "SubmitFilled.png"
+    static let SignInButtonUnFilled = "SubmitUnFilled.png"
+}

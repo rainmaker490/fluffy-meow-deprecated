@@ -28,11 +28,12 @@ class LogInViewController: UIViewController {
     }
     
     @IBAction func logInButtonPressed(sender: UIButton) {
-        PFFacebookUtils.logInInBackgroundWithReadPermissions(nil) {
+        PFFacebookUtils.logInInBackgroundWithReadPermissions(FacebookConstants.ReadPermissions) {
             (user: PFUser?, error: NSError?) -> Void in
             if let user = user {
                 // if new user {user signed up && logged in through fb} else { user logged in through facebook }
                 user.isNew ? print("User signed up and logged in through Facebook!") : print("User logged in through Facebook!")
+                
             } else {
                 print("Uh oh. The user cancelled the Facebook login.")
             }

@@ -25,13 +25,12 @@ class SignInViewController: UIViewController {
         SignInViewControllerHelper.setAllSignInPageTextFieldBorderWidth(signInPageTextFields!, borderWidth: 1.0)
     }
 
-
-
     @IBAction func logInButtonPressed(sender: UIButton) {
         PFUser.logInWithUsernameInBackground(username.text!, password: password.text!) {
             (user: PFUser?, error: NSError?) -> Void in
             if user != nil {
                 self.invalidLogIn.hidden = true
+                self.logInButton.setImage(UIImage(named: SignInPageImage.SignInButtonFilled), forState: .Normal)
                 // Do stuff after successful login.
             } else {
                 self.invalidLogIn.hidden = false

@@ -27,6 +27,7 @@
 		F1D502041BFAF0A800032D50 /* BetoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1D502031BFAF0A800032D50 /* BetoTests.swift */; };
 		F1D5020F1BFAF0A800032D50 /* BetoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1D5020E1BFAF0A800032D50 /* BetoUITests.swift */; };
 		F1D502281BFAF1E900032D50 /* LogInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1D502271BFAF1E900032D50 /* LogInViewController.swift */; };
+		F1D63E341BFFBE0200327C0C /* BetoLaunchScreenLogo.jpg in Resources */ = {isa = PBXBuildFile; fileRef = F1D63E331BFFBE0200327C0C /* BetoLaunchScreenLogo.jpg */; };
 		F1E780721BFD59900076CCC8 /* Close.png in Resources */ = {isa = PBXBuildFile; fileRef = F1E780711BFD59900076CCC8 /* Close.png */; };
 /* End PBXBuildFile section */
 
@@ -76,6 +77,7 @@
 		F1D5020E1BFAF0A800032D50 /* BetoUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BetoUITests.swift; sourceTree = "<group>"; };
 		F1D502101BFAF0A800032D50 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F1D502271BFAF1E900032D50 /* LogInViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogInViewController.swift; sourceTree = "<group>"; };
+		F1D63E331BFFBE0200327C0C /* BetoLaunchScreenLogo.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = BetoLaunchScreenLogo.jpg; sourceTree = "<group>"; };
 		F1E780711BFD59900076CCC8 /* Close.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Close.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -136,6 +138,7 @@
 			isa = PBXGroup;
 			children = (
 				F11302741BFEE9FD00AE2B13 /* BetoLogo.jpg */,
+				F1D63E321BFFBDC500327C0C /* LaunchScreenData */,
 				F1D502231BFAF12800032D50 /* LogInData */,
 				F10B56331BFD565000137CC3 /* SignInData */,
 			);
@@ -252,6 +255,14 @@
 			name = LogInData;
 			sourceTree = "<group>";
 		};
+		F1D63E321BFFBDC500327C0C /* LaunchScreenData */ = {
+			isa = PBXGroup;
+			children = (
+				F1D63E331BFFBE0200327C0C /* BetoLaunchScreenLogo.jpg */,
+			);
+			name = LaunchScreenData;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -365,6 +376,7 @@
 				F16571DF1BFB0A33007459AE /* password.png in Resources */,
 				F16571CD1BFAF382007459AE /* twitter.png in Resources */,
 				F113026F1BFE609300AE2B13 /* Main.storyboard in Resources */,
+				F1D63E341BFFBE0200327C0C /* BetoLaunchScreenLogo.jpg in Resources */,
 				F16571E11BFB0A68007459AE /* signUp.png in Resources */,
 				F1D501F91BFAF0A800032D50 /* LaunchScreen.storyboard in Resources */,
 				F113026D1BFE53C400AE2B13 /* facebook.png in Resources */,
