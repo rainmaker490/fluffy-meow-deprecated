@@ -10,6 +10,7 @@ target 'Beto' do
 	pod 'FBSDKCoreKit'
 	pod 'FBSDKLoginKit'
 	pod 'FBSDKShareKit'
+	pod 'Mapbox-iOS-SDK'
 end
 
 target 'BetoTests' do
@@ -23,5 +24,13 @@ end
 post_install do |installer|
   installer.pods_project.build_configuration_list.build_configurations.each do |configuration|
     configuration.build_settings['CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES'] = 'YES'
+  end
+end
+
+post_install do |installer|
+  installer.pods_project.targets.each do |target|
+    target.build_configurations.each do |config|
+      config.build_settings['ENABLE_BITCODE'] = 'NO'
+    end
   end
 end

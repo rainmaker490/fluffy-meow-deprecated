@@ -12,9 +12,12 @@
 		F10B56321BFD519700137CC3 /* SignInViewControllerHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = F10B56311BFD519700137CC3 /* SignInViewControllerHelper.swift */; };
 		F10B56351BFD569000137CC3 /* SubmitUnFilled.png in Resources */ = {isa = PBXBuildFile; fileRef = F10B56341BFD569000137CC3 /* SubmitUnFilled.png */; };
 		F10B56371BFD569800137CC3 /* SubmitFilled.png in Resources */ = {isa = PBXBuildFile; fileRef = F10B56361BFD569800137CC3 /* SubmitFilled.png */; };
+		F113026D1BFE53C400AE2B13 /* facebook.png in Resources */ = {isa = PBXBuildFile; fileRef = F113026C1BFE53C400AE2B13 /* facebook.png */; };
+		F113026F1BFE609300AE2B13 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F113026E1BFE609300AE2B13 /* Main.storyboard */; };
+		F11302751BFEE9FD00AE2B13 /* BetoLogo.jpg in Resources */ = {isa = PBXBuildFile; fileRef = F11302741BFEE9FD00AE2B13 /* BetoLogo.jpg */; };
+		F11302771BFEEF7F00AE2B13 /* background.jpg in Resources */ = {isa = PBXBuildFile; fileRef = F11302761BFEEF7F00AE2B13 /* background.jpg */; };
 		F16571CD1BFAF382007459AE /* twitter.png in Resources */ = {isa = PBXBuildFile; fileRef = F16571CC1BFAF382007459AE /* twitter.png */; };
 		F16571D31BFAF970007459AE /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = F16571D21BFAF970007459AE /* Constants.swift */; };
-		F16571DB1BFAFFFE007459AE /* facebook.png in Resources */ = {isa = PBXBuildFile; fileRef = F16571DA1BFAFFFE007459AE /* facebook.png */; };
 		F16571DF1BFB0A33007459AE /* password.png in Resources */ = {isa = PBXBuildFile; fileRef = F16571DE1BFB0A33007459AE /* password.png */; };
 		F16571E11BFB0A68007459AE /* signUp.png in Resources */ = {isa = PBXBuildFile; fileRef = F16571E01BFB0A68007459AE /* signUp.png */; };
 		F17805151BFBA3DB000BC19B /* LogInViewControllerHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = F17805141BFBA3DB000BC19B /* LogInViewControllerHelper.swift */; };
@@ -23,7 +26,6 @@
 		F1D501F91BFAF0A800032D50 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F1D501F71BFAF0A800032D50 /* LaunchScreen.storyboard */; };
 		F1D502041BFAF0A800032D50 /* BetoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1D502031BFAF0A800032D50 /* BetoTests.swift */; };
 		F1D5020F1BFAF0A800032D50 /* BetoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1D5020E1BFAF0A800032D50 /* BetoUITests.swift */; };
-		F1D5021D1BFAF0BC00032D50 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F1D5021C1BFAF0BC00032D50 /* Main.storyboard */; };
 		F1D502281BFAF1E900032D50 /* LogInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1D502271BFAF1E900032D50 /* LogInViewController.swift */; };
 		F1E780721BFD59900076CCC8 /* Close.png in Resources */ = {isa = PBXBuildFile; fileRef = F1E780711BFD59900076CCC8 /* Close.png */; };
 /* End PBXBuildFile section */
@@ -53,9 +55,12 @@
 		F10B56311BFD519700137CC3 /* SignInViewControllerHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignInViewControllerHelper.swift; sourceTree = "<group>"; };
 		F10B56341BFD569000137CC3 /* SubmitUnFilled.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = SubmitUnFilled.png; sourceTree = "<group>"; };
 		F10B56361BFD569800137CC3 /* SubmitFilled.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = SubmitFilled.png; sourceTree = "<group>"; };
+		F113026C1BFE53C400AE2B13 /* facebook.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = facebook.png; sourceTree = "<group>"; };
+		F113026E1BFE609300AE2B13 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		F11302741BFEE9FD00AE2B13 /* BetoLogo.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = BetoLogo.jpg; sourceTree = "<group>"; };
+		F11302761BFEEF7F00AE2B13 /* background.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = background.jpg; sourceTree = "<group>"; };
 		F16571CC1BFAF382007459AE /* twitter.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = twitter.png; sourceTree = "<group>"; };
 		F16571D21BFAF970007459AE /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
-		F16571DA1BFAFFFE007459AE /* facebook.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = facebook.png; sourceTree = "<group>"; };
 		F16571DE1BFB0A33007459AE /* password.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = password.png; sourceTree = "<group>"; };
 		F16571E01BFB0A68007459AE /* signUp.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = signUp.png; sourceTree = "<group>"; };
 		F17805141BFBA3DB000BC19B /* LogInViewControllerHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogInViewControllerHelper.swift; sourceTree = "<group>"; };
@@ -70,7 +75,6 @@
 		F1D5020A1BFAF0A800032D50 /* BetoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BetoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F1D5020E1BFAF0A800032D50 /* BetoUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BetoUITests.swift; sourceTree = "<group>"; };
 		F1D502101BFAF0A800032D50 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		F1D5021C1BFAF0BC00032D50 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		F1D502271BFAF1E900032D50 /* LogInViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogInViewController.swift; sourceTree = "<group>"; };
 		F1E780711BFD59900076CCC8 /* Close.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Close.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -131,6 +135,7 @@
 		F17805121BFB9F23000BC19B /* Assets */ = {
 			isa = PBXGroup;
 			children = (
+				F11302741BFEE9FD00AE2B13 /* BetoLogo.jpg */,
 				F1D502231BFAF12800032D50 /* LogInData */,
 				F10B56331BFD565000137CC3 /* SignInData */,
 			);
@@ -210,7 +215,7 @@
 		F1D5021F1BFAF0D900032D50 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				F1D5021C1BFAF0BC00032D50 /* Main.storyboard */,
+				F113026E1BFE609300AE2B13 /* Main.storyboard */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -238,7 +243,8 @@
 		F1D502231BFAF12800032D50 /* LogInData */ = {
 			isa = PBXGroup;
 			children = (
-				F16571DA1BFAFFFE007459AE /* facebook.png */,
+				F11302761BFEEF7F00AE2B13 /* background.jpg */,
+				F113026C1BFE53C400AE2B13 /* facebook.png */,
 				F16571CC1BFAF382007459AE /* twitter.png */,
 				F16571DE1BFB0A33007459AE /* password.png */,
 				F16571E01BFB0A68007459AE /* signUp.png */,
@@ -353,14 +359,16 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F1D5021D1BFAF0BC00032D50 /* Main.storyboard in Resources */,
 				F10B56371BFD569800137CC3 /* SubmitFilled.png in Resources */,
+				F11302771BFEEF7F00AE2B13 /* background.jpg in Resources */,
 				F1E780721BFD59900076CCC8 /* Close.png in Resources */,
-				F16571DB1BFAFFFE007459AE /* facebook.png in Resources */,
 				F16571DF1BFB0A33007459AE /* password.png in Resources */,
 				F16571CD1BFAF382007459AE /* twitter.png in Resources */,
+				F113026F1BFE609300AE2B13 /* Main.storyboard in Resources */,
 				F16571E11BFB0A68007459AE /* signUp.png in Resources */,
 				F1D501F91BFAF0A800032D50 /* LaunchScreen.storyboard in Resources */,
+				F113026D1BFE53C400AE2B13 /* facebook.png in Resources */,
+				F11302751BFEE9FD00AE2B13 /* BetoLogo.jpg in Resources */,
 				F1D501F61BFAF0A800032D50 /* Assets.xcassets in Resources */,
 				F10B56351BFD569000137CC3 /* SubmitUnFilled.png in Resources */,
 			);
@@ -576,10 +584,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES = NO;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/build/Debug-iphoneos",
-				);
+				ENABLE_BITCODE = NO;
+				FRAMEWORK_SEARCH_PATHS = "";
 				INFOPLIST_FILE = Beto/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = edu.psu.cse.vdp5013.Beto;
@@ -594,10 +600,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES = NO;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/build/Debug-iphoneos",
-				);
+				ENABLE_BITCODE = NO;
+				FRAMEWORK_SEARCH_PATHS = "";
 				INFOPLIST_FILE = Beto/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = edu.psu.cse.vdp5013.Beto;

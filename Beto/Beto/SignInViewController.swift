@@ -17,6 +17,7 @@ class SignInViewController: UIViewController {
     var signInPageTextFields : [UITextField]?
     var signInPageButtons : [UIButton]?
     
+    @IBOutlet weak var invalidLogIn: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
         signInPageTextFields = [username, password]
@@ -30,9 +31,10 @@ class SignInViewController: UIViewController {
         PFUser.logInWithUsernameInBackground(username.text!, password: password.text!) {
             (user: PFUser?, error: NSError?) -> Void in
             if user != nil {
+                self.invalidLogIn.hidden = true
                 // Do stuff after successful login.
             } else {
-                print(error?.localizedDescription)
+                self.invalidLogIn.hidden = false
             }
         }
     }

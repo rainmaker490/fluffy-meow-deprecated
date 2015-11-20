@@ -11,9 +11,9 @@ import UIKit
 import FBSDKLoginKit
 import ParseFacebookUtilsV4
 
-class LogInViewController: UIViewController, FBSDKLoginButtonDelegate {
+class LogInViewController: UIViewController {
     
-    @IBOutlet weak var facebookButton: FBSDKLoginButton!
+    @IBOutlet weak var facebookButton: UIButton!
     @IBOutlet weak var twitterButton: UIButton!
     @IBOutlet weak var passwordButton: UIButton!
     @IBOutlet weak var signUpButton: UIButton!
@@ -23,20 +23,12 @@ class LogInViewController: UIViewController, FBSDKLoginButtonDelegate {
         logInPageButtons = [facebookButton, twitterButton, passwordButton, signUpButton]
         
         LogInViewControllerHelper.setAllLogInPageButtonsBorderWidth(logInPageButtons!, borderWidth: 1.0)
-        LogInViewControllerHelper.setAllLogInPageButtonsBorderColor(logInPageButtons!, borderColor: UIColor.whiteColor().CGColor)
-        LogInViewControllerHelper.setAllLogInPageButtonsCornerRadius(logInPageButtons!, cornerRadius: 0.2 * facebookButton.bounds.size.width)
-
-        self.facebookButton.delegate = self
-        if (FBSDKAccessToken.currentAccessToken() != nil) {
-            print("yay here")
-            // performSegueWithIdentifier("unwindToViewOtherController", sender: self)
-        } else {
-            facebookButton.readPermissions = FacebookConstants.ReadPermissions
-        }
+        LogInViewControllerHelper.setAllLogInPageButtonsBorderColor(logInPageButtons!, borderColor: UIColor.blackColor().CGColor)
+        LogInViewControllerHelper.setAllLogInPageButtonsCornerRadius(logInPageButtons!, cornerRadius: 0.2 * twitterButton.bounds.size.width)
     }
     
-    func loginButton(loginButton: FBSDKLoginButton!, didCompleteWithResult result: FBSDKLoginManagerLoginResult!, error: NSError!) {
-        PFFacebookUtils.logInInBackgroundWithReadPermissions(FacebookConstants.ReadPermissions) {
+    @IBAction func logInButtonPressed(sender: UIButton) {
+        PFFacebookUtils.logInInBackgroundWithReadPermissions(nil) {
             (user: PFUser?, error: NSError?) -> Void in
             if let user = user {
                 // if new user {user signed up && logged in through fb} else { user logged in through facebook }
@@ -45,16 +37,5 @@ class LogInViewController: UIViewController, FBSDKLoginButtonDelegate {
                 print("Uh oh. The user cancelled the Facebook login.")
             }
         }
-        /*if ((error) != nil) {
-            // Process error
-        } else if result.isCancelled {
-            // Handle cancellations
-        } else {
-            // Navigate to other view
-        }*/
-    }
-    
-    func loginButtonDidLogOut(loginButton: FBSDKLoginButton!) {
-        print("User Logged Out")
     }
 }
