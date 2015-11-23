@@ -19,6 +19,7 @@ class SignInViewController: UIViewController {
     
     var signInPageTextFields : [UITextField]?
     var signInPageButtons : [UIButton]?
+    var originalSignInViewFrameCenter : CGPoint?
 
     
     override func viewDidLoad() {
@@ -26,11 +27,16 @@ class SignInViewController: UIViewController {
         signInPageTextFields = [username, password]
         signInPageButtons = [logInButton]
         SignInViewControllerHelper.setAllSignInPageTextFieldBorderWidth(signInPageTextFields!, borderWidth: 1.0)
+        originalSignInViewFrameCenter = signInView.center
+        
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: Selector("keyboardWillShow:"), name: UIKeyboardWillShowNotification, object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: Selector("keyboardWillHide:"), name: UIKeyboardWillHideNotification, object: nil)
+
     }
     
-    override func viewWillAppear(animated: Bool) {
-        super.viewWillAppear(true)
-
+    override func viewWillDisappear(animated: Bool) {
+        NSNotificationCenter.defaultCenter().removeObserver(self, name: UIKeyboardWillShowNotification, object: self.view.window)
+        NSNotificationCenter.defaultCenter().removeObserver(self, name: UIKeyboardWillHideNotification, object: self.view.window)
     }
     
     @IBAction func logInButtonPressed(sender: UIButton) {
@@ -46,8 +52,26 @@ class SignInViewController: UIViewController {
         }
     }
     
-    
     @IBAction func closeButtonPressed(sender: UIButton) {
         dismissViewControllerAnimated(true, completion: nil)
+    }
+    
+    func keyboardWillShow(notification: NSNotification) {
+        if let keyboardSize = (notification.userInfo?[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.CGRectValue() {
+            UIView.animateWithDuration(0.25, delay: 0.25, options: UIViewAnimationOptions.CurveEaseInOut, animations: {
+                let x = self.logInButton.convertPoint(self.logInButton.center, fromView: self.view)
+                self.signInView.center.y -= keyboardSize.height
+                for views in self.signInView.subviews {
+                    views.center.y -= 40.0
+                }
+                }, completion: nil)
+            
+        }
+    }
+    
+    func keyboardWillHide(notification: NSNotification) {
+        if let _ = (notification.userInfo?[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.CGRectValue() {
+            // self.signInView.frame = originalSignInViewFrame!
+        }
     }
 }
