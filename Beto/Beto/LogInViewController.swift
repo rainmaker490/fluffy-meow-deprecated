@@ -24,7 +24,7 @@ class LogInViewController: UIViewController {
         
         LogInViewControllerHelper.setAllLogInPageButtonsBorderWidth(logInPageButtons!, borderWidth: 1.0)
         LogInViewControllerHelper.setAllLogInPageButtonsBorderColor(logInPageButtons!, borderColor: UIColor.blackColor().CGColor)
-        LogInViewControllerHelper.setAllLogInPageButtonsCornerRadius(logInPageButtons!, cornerRadius: 0.2 * twitterButton.bounds.size.width)
+        LogInViewControllerHelper.setAllLogInPageButtonsCornerRadius(logInPageButtons!, cornerRadius: 0.1 * twitterButton.bounds.size.width)
     }
     
     @IBAction func logInButtonPressed(sender: UIButton) {
