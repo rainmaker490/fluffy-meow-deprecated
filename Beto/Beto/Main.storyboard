@@ -227,15 +227,6 @@
                                         <fontDescription key="fontDescription" type="system" weight="thin" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="zYx-vR-EoC">
-                                        <rect key="frame" x="8" y="46" width="224" height="30"/>
-                                        <animations/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" secondItem="zYx-vR-EoC" secondAttribute="height" multiplier="112:15" id="2rL-I1-m9G"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" type="system" weight="thin" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
-                                    </textField>
                                     <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Invalid Log in" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zMn-Ka-c42">
                                         <rect key="frame" x="8" y="90" width="186" height="12"/>
                                         <animations/>
@@ -257,6 +248,15 @@
                                             <action selector="logInButtonPressed:" destination="GGG-TR-Jfk" eventType="touchUpInside" id="tgI-VT-bkA"/>
                                         </connections>
                                     </button>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="zYx-vR-EoC">
+                                        <rect key="frame" x="8" y="46" width="224" height="30"/>
+                                        <animations/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="zYx-vR-EoC" secondAttribute="height" multiplier="112:15" id="2rL-I1-m9G"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" weight="thin" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                                    </textField>
                                 </subviews>
                                 <animations/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -293,6 +293,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="centerHorizontally" destination="SEO-ZP-PTb" id="jHm-VO-C8o"/>
                         <outlet property="invalidLogIn" destination="zMn-Ka-c42" id="CXw-UW-paa"/>
                         <outlet property="logInButton" destination="LkK-xQ-81i" id="Alc-x3-jBC"/>
                         <outlet property="password" destination="zYx-vR-EoC" id="A7p-Iq-T7z"/>
