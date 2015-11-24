@@ -139,7 +139,7 @@
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Map" image="Map.png" id="DKh-j8-yM7"/>
+                    <tabBarItem key="tabBarItem" title="Map" image="Map.png" selectedImage="Map.png" id="DKh-j8-yM7"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JBw-K2-Yff" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -165,10 +165,10 @@
             </objects>
             <point key="canvasLocation" x="997" y="31"/>
         </scene>
-        <!--Beto Tab View Controller-->
+        <!--BetoTabViewController-->
         <scene sceneID="mER-T7-C3f">
             <objects>
-                <tabBarController id="dKe-ay-mzQ" customClass="BetoTabViewController" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="BetoTabViewController" title="BetoTabViewController" id="dKe-ay-mzQ" customClass="BetoTabViewController" customModule="Beto" sceneMemberID="viewController">
                     <tabBar key="tabBar" contentMode="scaleToFill" id="qd8-6a-Vvh">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>

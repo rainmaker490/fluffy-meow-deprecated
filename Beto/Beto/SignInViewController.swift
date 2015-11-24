@@ -44,9 +44,11 @@ class SignInViewController: UIViewController {
             if user != nil {
                 self.invalidLogIn.hidden = true
                 self.logInButton.setImage(UIImage(named: SignInPageImage.SignInButtonFilled), forState: .Normal)
-                // Do stuff after successful login.
+                let betoTabViewController = self.storyboard?.instantiateViewControllerWithIdentifier("BetoTabViewController") as! BetoTabViewController
+                self.presentViewController(betoTabViewController, animated: true, completion: nil)
             } else {
                 self.invalidLogIn.hidden = false
+                
             }
         }
     }

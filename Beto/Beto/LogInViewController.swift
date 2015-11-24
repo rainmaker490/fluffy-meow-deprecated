@@ -34,6 +34,10 @@ class LogInViewController: UIViewController {
                 // if new user {user signed up && logged in through fb} else { user logged in through facebook }
                 user.isNew ? print("User signed up and logged in through Facebook!") : print("User logged in through Facebook!")
                 
+                // MARK : Clean below
+                let betoTabViewController = self.storyboard?.instantiateViewControllerWithIdentifier("BetoTabViewController") as! BetoTabViewController
+                self.presentViewController(betoTabViewController, animated: true, completion: nil)
+                
             } else {
                 print("Uh oh. The user cancelled the Facebook login.")
             }
