@@ -18,9 +18,9 @@ PODS:
     - FBSDKCoreKit
   - FBSDKShareKit (4.8.0):
     - FBSDKCoreKit
-  - Mapbox-iOS-SDK (2.1.2)
-  - Parse (1.9.1):
-    - Bolts/Tasks (>= 1.4.0)
+  - Mapbox-iOS-SDK (3.0.0)
+  - Parse (1.10.0):
+    - Bolts/Tasks (~> 1.5)
   - ParseFacebookUtilsV4 (1.9.1):
     - Bolts/Tasks (>= 1.5)
     - FBSDKCoreKit (~> 4.8)
@@ -41,8 +41,8 @@ SPEC CHECKSUMS:
   FBSDKCoreKit: 66a935d17b6e00b6b64e604f2eb9b72c9ab7deb8
   FBSDKLoginKit: d893fcbb98d854496925e9ff73c67b896982d3c4
   FBSDKShareKit: e7577ee3adf80fc04fb656dd133fbb522250672b
-  Mapbox-iOS-SDK: f8a8fd3ccf918196d27a52ab1694414be20f2210
-  Parse: 54a965c8c19a6dde90284ab654dbcc77ef8c001b
+  Mapbox-iOS-SDK: 5e7bafc554a15ebfc615d8b0fa0a0b5d31faac70
+  Parse: 90b2544822200f84b18bfacc4e8b0a3a6c3584a2
   ParseFacebookUtilsV4: eab9b4ade12f0800b4d30f6b808bca55ce17a0e9
 
 COCOAPODS: 0.39.0

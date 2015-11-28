@@ -22,6 +22,7 @@
 		F16571E11BFB0A68007459AE /* signUp.png in Resources */ = {isa = PBXBuildFile; fileRef = F16571E01BFB0A68007459AE /* signUp.png */; };
 		F17805151BFBA3DB000BC19B /* LogInViewControllerHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = F17805141BFBA3DB000BC19B /* LogInViewControllerHelper.swift */; };
 		F1BA0A1B1C02EE9B0029F77A /* README.pdf in Resources */ = {isa = PBXBuildFile; fileRef = F1BA0A1A1C02EE9B0029F77A /* README.pdf */; };
+		F1C7CB721C092B2300E20D8E /* Settings.png in Resources */ = {isa = PBXBuildFile; fileRef = F1C7CB711C092B2300E20D8E /* Settings.png */; };
 		F1D501EF1BFAF0A800032D50 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1D501EE1BFAF0A800032D50 /* AppDelegate.swift */; };
 		F1D501F61BFAF0A800032D50 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F1D501F51BFAF0A800032D50 /* Assets.xcassets */; };
 		F1D501F91BFAF0A800032D50 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F1D501F71BFAF0A800032D50 /* LaunchScreen.storyboard */; };
@@ -70,6 +71,7 @@
 		F16571E01BFB0A68007459AE /* signUp.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = signUp.png; sourceTree = "<group>"; };
 		F17805141BFBA3DB000BC19B /* LogInViewControllerHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogInViewControllerHelper.swift; sourceTree = "<group>"; };
 		F1BA0A1A1C02EE9B0029F77A /* README.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = README.pdf; sourceTree = "<group>"; };
+		F1C7CB711C092B2300E20D8E /* Settings.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Settings.png; sourceTree = "<group>"; };
 		F1D501EB1BFAF0A800032D50 /* Beto.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Beto.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F1D501EE1BFAF0A800032D50 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F1D501F51BFAF0A800032D50 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -277,6 +279,7 @@
 		F1E1EB711C0196CB009E301E /* BetoTabViewData */ = {
 			isa = PBXGroup;
 			children = (
+				F1C7CB711C092B2300E20D8E /* Settings.png */,
 				F1E1EB761C019772009E301E /* Trending.png */,
 				F1E1EB781C0197B2009E301E /* Map.png */,
 			);
@@ -401,6 +404,7 @@
 				F113026F1BFE609300AE2B13 /* Main.storyboard in Resources */,
 				F1D63E341BFFBE0200327C0C /* BetoLaunchScreenLogo.jpg in Resources */,
 				F16571E11BFB0A68007459AE /* signUp.png in Resources */,
+				F1C7CB721C092B2300E20D8E /* Settings.png in Resources */,
 				F1D501F91BFAF0A800032D50 /* LaunchScreen.storyboard in Resources */,
 				F113026D1BFE53C400AE2B13 /* facebook.png in Resources */,
 				F11302751BFEE9FD00AE2B13 /* BetoLogo.jpg in Resources */,

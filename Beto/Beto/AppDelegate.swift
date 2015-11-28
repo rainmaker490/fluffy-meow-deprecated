@@ -32,6 +32,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         FBSDKApplicationDelegate.sharedInstance().application(application, didFinishLaunchingWithOptions: launchOptions)
         
         PFFacebookUtils.initializeFacebookWithApplicationLaunchOptions(launchOptions)
+        
+        // Auto-LogIn
+        if PFUser.currentUser() != nil {
+            self.window = UIWindow(frame: UIScreen.mainScreen().bounds)
+            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+            let initialViewController = storyboard.instantiateViewControllerWithIdentifier("BetoTabViewController") as? BetoTabViewController
+            self.window?.rootViewController = initialViewController
+            self.window?.makeKeyAndVisible()
+        
+        }
         return true
     }
     
