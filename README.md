@@ -13,5 +13,5 @@
   - Ability to view number of check-ins at an event
   - E-ticket to event (QR-code)
   - Auto-check into event
-  • **Features that don’t fit the definition or exceed the project scope**:
+* **Features that don’t fit the definition or exceed the project scope**:
   - Support payment of ticket to event (Implement if time permits)
