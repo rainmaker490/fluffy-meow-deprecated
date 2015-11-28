@@ -16,7 +16,7 @@ class SignInViewController: UIViewController {
     @IBOutlet weak var password: UITextField!
     @IBOutlet weak var logInButton: UIButton!
     @IBOutlet weak var invalidLogIn: UILabel!
-    @IBOutlet weak var centerHorizontally: NSLayoutConstraint!
+    @IBOutlet weak var centerVertically: NSLayoutConstraint!
     
     var signInPageTextFields : [UITextField]?
     var signInPageButtons : [UIButton]?
@@ -48,7 +48,6 @@ class SignInViewController: UIViewController {
                 self.presentViewController(betoTabViewController, animated: true, completion: nil)
             } else {
                 self.invalidLogIn.hidden = false
-                
             }
         }
     }
@@ -64,7 +63,7 @@ class SignInViewController: UIViewController {
                 if ((signInView.center.y + self.signInView.frame.height / 2) >  (self.view.frame.height - keyboardSize.height)) {
                     let centerOfRootView = self.signInView.center
                     UIView.animateWithDuration(0.25, delay: 0.25, options: UIViewAnimationOptions.CurveEaseInOut, animations: {
-                        self.centerHorizontally.constant -= ((centerOfRootView.y + self.signInView.frame.height / 2) - (self.view.frame.height - keyboardSize.height))
+                        self.centerVertically.constant -= ((centerOfRootView.y + self.signInView.frame.height / 2) - (self.view.frame.height - keyboardSize.height))
                         }, completion: nil)
                 }
             }
@@ -77,7 +76,7 @@ class SignInViewController: UIViewController {
                 if ((signInView.center.y + self.signInView.frame.height / 2) >  (self.view.frame.height - keyboardSize.height)) {
                     let centerOfRootView = self.signInView.center
                     UIView.animateWithDuration(0.25, delay: 0.25, options: UIViewAnimationOptions.CurveEaseInOut, animations: {
-                        self.centerHorizontally.constant += ((centerOfRootView.y + self.signInView.frame.height / 2) - (self.view.frame.height - keyboardSize.height))
+                        self.centerVertically.constant += ((centerOfRootView.y + self.signInView.frame.height / 2) - (self.view.frame.height - keyboardSize.height))
                         }, completion: nil)
                 }
             }
