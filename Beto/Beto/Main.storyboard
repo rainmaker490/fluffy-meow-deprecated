@@ -156,10 +156,35 @@
                     <view key="view" contentMode="scaleToFill" id="Zza-E4-P7T">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="84W-ww-MtQ">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <animations/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="7WO-Bc-ax0">
+                                        <rect key="frame" x="0.0" y="92" width="320" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="7WO-Bc-ax0" id="h3u-uv-4ex">
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <animations/>
+                                        </tableViewCellContentView>
+                                        <animations/>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="84W-ww-MtQ" firstAttribute="width" secondItem="Zza-E4-P7T" secondAttribute="width" id="HgB-iZ-BTE"/>
+                            <constraint firstItem="84W-ww-MtQ" firstAttribute="height" secondItem="Zza-E4-P7T" secondAttribute="height" id="Ojk-N2-re2"/>
+                            <constraint firstItem="84W-ww-MtQ" firstAttribute="centerX" secondItem="Zza-E4-P7T" secondAttribute="centerX" id="ame-am-wWR"/>
+                            <constraint firstItem="84W-ww-MtQ" firstAttribute="centerY" secondItem="Zza-E4-P7T" secondAttribute="centerY" id="eUd-4I-TBs"/>
+                        </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="🌐 Settings 🌎" id="njf-ag-obo"/>
+                    <navigationItem key="navigationItem" title="🌐 More 🌎" id="njf-ag-obo"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rf8-3e-oWo" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -346,11 +371,11 @@
             </objects>
             <point key="canvasLocation" x="1217" y="1537"/>
         </scene>
-        <!--Settings-->
+        <!--Navigation Controller-->
         <scene sceneID="CH9-wo-QEy">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="32t-Q2-VPl" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Settings" image="Settings.png" id="2Xa-aW-pub"/>
+                    <tabBarItem key="tabBarItem" systemItem="more" id="2Xa-aW-pub"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="7n4-Xh-VRe">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -431,7 +456,6 @@
         <image name="BetoLogo.jpg" width="134" height="172"/>
         <image name="Close.png" width="100" height="100"/>
         <image name="Map.png" width="32" height="32"/>
-        <image name="Settings.png" width="32" height="32"/>
         <image name="SubmitUnFilled.png" width="100" height="100"/>
         <image name="Trending.png" width="32" height="32"/>
         <image name="background.jpg" width="650" height="1172"/>
