@@ -165,6 +165,14 @@
 			name = Helper;
 			sourceTree = "<group>";
 		};
+		F1976E8C1C0D682E002EA28B /* BetoTabViewController */ = {
+			isa = PBXGroup;
+			children = (
+				F1E1EB7A1C0199BE009E301E /* BetoTabViewController.swift */,
+			);
+			name = BetoTabViewController;
+			sourceTree = "<group>";
+		};
 		F1D501E21BFAF0A800032D50 = {
 			isa = PBXGroup;
 			children = (
@@ -241,7 +249,7 @@
 				F17805131BFBA3BE000BC19B /* Helper */,
 				F1D502271BFAF1E900032D50 /* LogInViewController.swift */,
 				F10B562F1BFD4CA000137CC3 /* SignInViewController.swift */,
-				F1E1EB7A1C0199BE009E301E /* BetoTabViewController.swift */,
+				F1976E8C1C0D682E002EA28B /* BetoTabViewController */,
 			);
 			name = Controller;
 			sourceTree = "<group>";

@@ -148,7 +148,7 @@
         <!--Settings-->
         <scene sceneID="IHF-Qc-W7p">
             <objects>
-                <viewController title="Settings" id="gPg-He-Co6" sceneMemberID="viewController">
+                <viewController title="Settings" id="gPg-He-Co6" customClass="MoreViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="r7r-QR-cxd"/>
                         <viewControllerLayoutGuide type="bottom" id="0d6-5C-uO2"/>
