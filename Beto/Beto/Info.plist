@@ -55,6 +55,8 @@
 	<true/>
 	<key>MGLMapboxAccessToken</key>
 	<string>pk.eyJ1IjoicmFpbm1ha2VyNDkwIiwiYSI6IjcwNGUwNWYyZDc3ODk2OWMwZWM3OTI5NTlkZmVmYWE1In0.0hL7OgB-dA0jAaMJX3Hygg</string>
+	<key>MGLMapboxMetricsEnabledSettingShownInApp</key>
+	<true/>
 	<key>NSAppTransportSecurity</key>
 	<dict>
 		<key>NSExceptionDomains</key>
@@ -83,7 +85,7 @@
 		</dict>
 	</dict>
 	<key>NSLocationAlwaysUsageDescription</key>
-	<string>Check current location to grab "things to do near by" to user</string>
+	<string>Check current location to grab &quot;things to do near by&quot; to user</string>
 	<key>UIBackgroundModes</key>
 	<array>
 		<string>location</string>
