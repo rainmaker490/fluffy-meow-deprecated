@@ -22,6 +22,7 @@
 		F16571E11BFB0A68007459AE /* signUp.png in Resources */ = {isa = PBXBuildFile; fileRef = F16571E01BFB0A68007459AE /* signUp.png */; };
 		F17805151BFBA3DB000BC19B /* LogInViewControllerHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = F17805141BFBA3DB000BC19B /* LogInViewControllerHelper.swift */; };
 		F1A3F9871C0E43AA00C1341C /* MoreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1A3F9861C0E43AA00C1341C /* MoreViewController.swift */; };
+		F1AD997B1C0FA0D7003FA145 /* TrendingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1AD997A1C0FA0D7003FA145 /* TrendingTableViewCell.swift */; };
 		F1BA0A1B1C02EE9B0029F77A /* README.pdf in Resources */ = {isa = PBXBuildFile; fileRef = F1BA0A1A1C02EE9B0029F77A /* README.pdf */; };
 		F1C7CB721C092B2300E20D8E /* Settings.png in Resources */ = {isa = PBXBuildFile; fileRef = F1C7CB711C092B2300E20D8E /* Settings.png */; };
 		F1D501EF1BFAF0A800032D50 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1D501EE1BFAF0A800032D50 /* AppDelegate.swift */; };
@@ -72,6 +73,7 @@
 		F16571E01BFB0A68007459AE /* signUp.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = signUp.png; sourceTree = "<group>"; };
 		F17805141BFBA3DB000BC19B /* LogInViewControllerHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogInViewControllerHelper.swift; sourceTree = "<group>"; };
 		F1A3F9861C0E43AA00C1341C /* MoreViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MoreViewController.swift; sourceTree = "<group>"; };
+		F1AD997A1C0FA0D7003FA145 /* TrendingTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TrendingTableViewCell.swift; sourceTree = "<group>"; };
 		F1BA0A1A1C02EE9B0029F77A /* README.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = README.pdf; sourceTree = "<group>"; };
 		F1C7CB711C092B2300E20D8E /* Settings.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Settings.png; sourceTree = "<group>"; };
 		F1D501EB1BFAF0A800032D50 /* Beto.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Beto.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -179,8 +181,17 @@
 		F1A3F9881C0E5D9C00C1341C /* BetoTabViewController */ = {
 			isa = PBXGroup;
 			children = (
+				F1AD99791C0FA0BA003FA145 /* Trending */,
 			);
 			name = BetoTabViewController;
+			sourceTree = "<group>";
+		};
+		F1AD99791C0FA0BA003FA145 /* Trending */ = {
+			isa = PBXGroup;
+			children = (
+				F1AD997A1C0FA0D7003FA145 /* TrendingTableViewCell.swift */,
+			);
+			name = Trending;
 			sourceTree = "<group>";
 		};
 		F1D501E21BFAF0A800032D50 = {
@@ -512,6 +523,7 @@
 				F10B56321BFD519700137CC3 /* SignInViewControllerHelper.swift in Sources */,
 				F1E1EB7B1C0199BE009E301E /* BetoTabViewController.swift in Sources */,
 				F17805151BFBA3DB000BC19B /* LogInViewControllerHelper.swift in Sources */,
+				F1AD997B1C0FA0D7003FA145 /* TrendingTableViewCell.swift in Sources */,
 				F1A3F9871C0E43AA00C1341C /* MoreViewController.swift in Sources */,
 				F10B56301BFD4CA000137CC3 /* SignInViewController.swift in Sources */,
 				F16571D31BFAF970007459AE /* Constants.swift in Sources */,
