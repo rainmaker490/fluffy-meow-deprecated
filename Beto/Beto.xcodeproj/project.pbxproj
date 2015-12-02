@@ -23,6 +23,11 @@
 		F17805151BFBA3DB000BC19B /* LogInViewControllerHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = F17805141BFBA3DB000BC19B /* LogInViewControllerHelper.swift */; };
 		F1A3F9871C0E43AA00C1341C /* MoreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1A3F9861C0E43AA00C1341C /* MoreViewController.swift */; };
 		F1AD997B1C0FA0D7003FA145 /* TrendingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1AD997A1C0FA0D7003FA145 /* TrendingTableViewCell.swift */; };
+		F1AD99831C0FA8C5003FA145 /* All.png in Resources */ = {isa = PBXBuildFile; fileRef = F1AD99821C0FA8C5003FA145 /* All.png */; };
+		F1AD99851C0FA9D0003FA145 /* Concerts.png in Resources */ = {isa = PBXBuildFile; fileRef = F1AD99841C0FA9D0003FA145 /* Concerts.png */; };
+		F1AD99871C0FA9D6003FA145 /* NightLife.png in Resources */ = {isa = PBXBuildFile; fileRef = F1AD99861C0FA9D6003FA145 /* NightLife.png */; };
+		F1AD99891C0FA9DB003FA145 /* Sports.png in Resources */ = {isa = PBXBuildFile; fileRef = F1AD99881C0FA9DB003FA145 /* Sports.png */; };
+		F1AD998B1C0FA9E3003FA145 /* Meetings.png in Resources */ = {isa = PBXBuildFile; fileRef = F1AD998A1C0FA9E3003FA145 /* Meetings.png */; };
 		F1BA0A1B1C02EE9B0029F77A /* README.pdf in Resources */ = {isa = PBXBuildFile; fileRef = F1BA0A1A1C02EE9B0029F77A /* README.pdf */; };
 		F1C7CB721C092B2300E20D8E /* Settings.png in Resources */ = {isa = PBXBuildFile; fileRef = F1C7CB711C092B2300E20D8E /* Settings.png */; };
 		F1D501EF1BFAF0A800032D50 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1D501EE1BFAF0A800032D50 /* AppDelegate.swift */; };
@@ -74,6 +79,11 @@
 		F17805141BFBA3DB000BC19B /* LogInViewControllerHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogInViewControllerHelper.swift; sourceTree = "<group>"; };
 		F1A3F9861C0E43AA00C1341C /* MoreViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MoreViewController.swift; sourceTree = "<group>"; };
 		F1AD997A1C0FA0D7003FA145 /* TrendingTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TrendingTableViewCell.swift; sourceTree = "<group>"; };
+		F1AD99821C0FA8C5003FA145 /* All.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = All.png; sourceTree = "<group>"; };
+		F1AD99841C0FA9D0003FA145 /* Concerts.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Concerts.png; sourceTree = "<group>"; };
+		F1AD99861C0FA9D6003FA145 /* NightLife.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = NightLife.png; sourceTree = "<group>"; };
+		F1AD99881C0FA9DB003FA145 /* Sports.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Sports.png; sourceTree = "<group>"; };
+		F1AD998A1C0FA9E3003FA145 /* Meetings.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Meetings.png; sourceTree = "<group>"; };
 		F1BA0A1A1C02EE9B0029F77A /* README.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = README.pdf; sourceTree = "<group>"; };
 		F1C7CB711C092B2300E20D8E /* Settings.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Settings.png; sourceTree = "<group>"; };
 		F1D501EB1BFAF0A800032D50 /* Beto.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Beto.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -190,6 +200,18 @@
 			isa = PBXGroup;
 			children = (
 				F1AD997A1C0FA0D7003FA145 /* TrendingTableViewCell.swift */,
+			);
+			name = Trending;
+			sourceTree = "<group>";
+		};
+		F1AD998C1C0FA9F3003FA145 /* Trending */ = {
+			isa = PBXGroup;
+			children = (
+				F1AD99821C0FA8C5003FA145 /* All.png */,
+				F1AD99881C0FA9DB003FA145 /* Sports.png */,
+				F1AD998A1C0FA9E3003FA145 /* Meetings.png */,
+				F1AD99861C0FA9D6003FA145 /* NightLife.png */,
+				F1AD99841C0FA9D0003FA145 /* Concerts.png */,
 			);
 			name = Trending;
 			sourceTree = "<group>";
@@ -312,6 +334,7 @@
 				F1C7CB711C092B2300E20D8E /* Settings.png */,
 				F1E1EB761C019772009E301E /* Trending.png */,
 				F1E1EB781C0197B2009E301E /* Map.png */,
+				F1AD998C1C0FA9F3003FA145 /* Trending */,
 			);
 			name = BetoTabViewData;
 			sourceTree = "<group>";
@@ -430,17 +453,22 @@
 			buildActionMask = 2147483647;
 			files = (
 				F1BA0A1B1C02EE9B0029F77A /* README.pdf in Resources */,
+				F1AD99831C0FA8C5003FA145 /* All.png in Resources */,
 				F10B56371BFD569800137CC3 /* SubmitFilled.png in Resources */,
+				F1AD99891C0FA9DB003FA145 /* Sports.png in Resources */,
 				F11302771BFEEF7F00AE2B13 /* background.jpg in Resources */,
 				F1E780721BFD59900076CCC8 /* Close.png in Resources */,
 				F16571DF1BFB0A33007459AE /* password.png in Resources */,
+				F1AD99871C0FA9D6003FA145 /* NightLife.png in Resources */,
 				F1E1EB791C0197B2009E301E /* Map.png in Resources */,
 				F16571CD1BFAF382007459AE /* twitter.png in Resources */,
 				F1E1EB771C019772009E301E /* Trending.png in Resources */,
 				F113026F1BFE609300AE2B13 /* Main.storyboard in Resources */,
 				F1D63E341BFFBE0200327C0C /* BetoLaunchScreenLogo.jpg in Resources */,
 				F16571E11BFB0A68007459AE /* signUp.png in Resources */,
+				F1AD998B1C0FA9E3003FA145 /* Meetings.png in Resources */,
 				F1C7CB721C092B2300E20D8E /* Settings.png in Resources */,
+				F1AD99851C0FA9D0003FA145 /* Concerts.png in Resources */,
 				F1D501F91BFAF0A800032D50 /* LaunchScreen.storyboard in Resources */,
 				F113026D1BFE53C400AE2B13 /* facebook.png in Resources */,
 				F11302751BFEE9FD00AE2B13 /* BetoLogo.jpg in Resources */,

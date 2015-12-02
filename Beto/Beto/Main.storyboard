@@ -202,21 +202,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <segmentedControl opaque="NO" contentMode="center" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="htM-Sa-Kwr">
-                                <rect key="frame" x="20" y="72" width="280" height="29"/>
-                                <animations/>
-                                <constraints>
-                                    <constraint firstAttribute="width" secondItem="htM-Sa-Kwr" secondAttribute="height" multiplier="10:1" id="o1X-Kz-dxQ"/>
-                                </constraints>
-                                <segments>
-                                    <segment title="All"/>
-                                    <segment title=""/>
-                                    <segment title=""/>
-                                    <segment title=""/>
-                                    <segment title=""/>
-                                </segments>
-                                <color key="tintColor" red="0.66274509800000003" green="0.78823529410000004" blue="0.83137254900000002" alpha="1" colorSpace="calibratedRGB"/>
-                            </segmentedControl>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" scrollEnabled="NO" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="SXh-BO-SnS">
                                 <rect key="frame" x="0.0" y="108" width="320" height="460"/>
                                 <animations/>
@@ -238,6 +223,21 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="htM-Sa-Kwr">
+                                <rect key="frame" x="20" y="72" width="280" height="29"/>
+                                <animations/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="htM-Sa-Kwr" secondAttribute="height" multiplier="10:1" id="o1X-Kz-dxQ"/>
+                                </constraints>
+                                <segments>
+                                    <segment title="" image="All.png"/>
+                                    <segment title="" image="Sports.png"/>
+                                    <segment title="" image="Meetings.png"/>
+                                    <segment title="" image="NightLife.png"/>
+                                    <segment title="" image="Concerts.png"/>
+                                </segments>
+                                <color key="tintColor" red="0.66274509800000003" green="0.78823529410000004" blue="0.83137254900000002" alpha="1" colorSpace="calibratedRGB"/>
+                            </segmentedControl>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -499,9 +499,14 @@
         </scene>
     </scenes>
     <resources>
+        <image name="All.png" width="32" height="32"/>
         <image name="BetoLogo.jpg" width="134" height="172"/>
         <image name="Close.png" width="100" height="100"/>
+        <image name="Concerts.png" width="32" height="32"/>
         <image name="Map.png" width="32" height="32"/>
+        <image name="Meetings.png" width="32" height="32"/>
+        <image name="NightLife.png" width="32" height="32"/>
+        <image name="Sports.png" width="32" height="32"/>
         <image name="SubmitUnFilled.png" width="100" height="100"/>
         <image name="Trending.png" width="32" height="32"/>
         <image name="background.jpg" width="650" height="1172"/>
