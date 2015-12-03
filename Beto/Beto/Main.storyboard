@@ -218,11 +218,11 @@
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NeK-5P-B88">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NeK-5P-B88">
                                                     <rect key="frame" x="6" y="8" width="308" height="27.5"/>
                                                     <animations/>
                                                     <fontDescription key="fontDescription" type="system" weight="thin" pointSize="23"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <color key="textColor" red="0.0" green="0.25098040700000002" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
@@ -278,7 +278,9 @@
                             <constraint firstItem="htM-Sa-Kwr" firstAttribute="width" secondItem="sQ0-o4-w3J" secondAttribute="height" multiplier="35:71" id="qrd-Il-XBh"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="📈 Trending 📉" id="eMI-mD-Y42"/>
+                    <navigationItem key="navigationItem" title="📈 Trending 📉" id="eMI-mD-Y42">
+                        <barButtonItem key="rightBarButtonItem" image="Refresh.png" id="t2k-eQ-Fo3"/>
+                    </navigationItem>
                     <connections>
                         <outlet property="spinner" destination="VDI-Sz-DqM" id="hwH-Me-HvF"/>
                         <outlet property="tableView" destination="SXh-BO-SnS" id="Lnf-lN-6yv"/>
@@ -539,6 +541,7 @@
         <image name="Map.png" width="32" height="32"/>
         <image name="Meetings.png" width="32" height="32"/>
         <image name="NightLife.png" width="32" height="32"/>
+        <image name="Refresh.png" width="50" height="50"/>
         <image name="Sports.png" width="32" height="32"/>
         <image name="Study.png" width="32" height="32"/>
         <image name="SubmitUnFilled.png" width="100" height="100"/>
