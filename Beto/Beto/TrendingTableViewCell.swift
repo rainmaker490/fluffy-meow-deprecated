@@ -10,6 +10,8 @@ import UIKit
 
 class TrendingTableViewCell: UITableViewCell {
     
+    @IBOutlet weak var trendingEventTitle: UIView!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
     }

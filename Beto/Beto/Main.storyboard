@@ -193,7 +193,7 @@
         <!--📈 Trending 📉-->
         <scene sceneID="zwk-go-h7k">
             <objects>
-                <viewController id="toR-JW-R22" sceneMemberID="viewController">
+                <viewController id="toR-JW-R22" customClass="TrendViewController" customModule="Beto" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="9Ql-wN-Wfx"/>
                         <viewControllerLayoutGuide type="bottom" id="rPN-HN-kTO"/>
@@ -212,17 +212,42 @@
                                 <color key="separatorColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="MoreViewController" id="ulQ-vy-9Rc" customClass="TrendingTableViewCell" customModule="Beto" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="320" height="44"/>
+                                        <rect key="frame" x="0.0" y="92" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ulQ-vy-9Rc" id="g3D-CF-ouo">
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NeK-5P-B88">
+                                                    <rect key="frame" x="6" y="8" width="308" height="27.5"/>
+                                                    <animations/>
+                                                    <fontDescription key="fontDescription" type="system" weight="thin" pointSize="23"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
                                             <animations/>
+                                            <constraints>
+                                                <constraint firstItem="NeK-5P-B88" firstAttribute="width" secondItem="g3D-CF-ouo" secondAttribute="height" multiplier="304:43" id="OyH-pl-lN7"/>
+                                                <constraint firstItem="NeK-5P-B88" firstAttribute="centerX" secondItem="g3D-CF-ouo" secondAttribute="centerX" id="TC1-Ac-JOs"/>
+                                                <constraint firstItem="NeK-5P-B88" firstAttribute="centerY" secondItem="g3D-CF-ouo" secondAttribute="centerY" id="xab-Kg-Ied"/>
+                                            </constraints>
                                         </tableViewCellContentView>
                                         <animations/>
+                                        <connections>
+                                            <outlet property="trendingEventTitle" destination="g3D-CF-ouo" id="KO1-hr-A61"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="VDI-Sz-DqM">
+                                <rect key="frame" x="150" y="274" width="20" height="20"/>
+                                <animations/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="VDI-Sz-DqM" secondAttribute="height" multiplier="1:1" id="wh1-IQ-MmU"/>
+                                </constraints>
+                                <color key="color" red="0.66274509800000003" green="0.78823529410000004" blue="0.83137254900000002" alpha="1" colorSpace="calibratedRGB"/>
+                            </activityIndicatorView>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="htM-Sa-Kwr">
                                 <rect key="frame" x="20" y="72" width="280" height="29"/>
                                 <animations/>
@@ -233,6 +258,7 @@
                                     <segment title="" image="All.png"/>
                                     <segment title="" image="Sports.png"/>
                                     <segment title="" image="Meetings.png"/>
+                                    <segment title="" image="Study.png"/>
                                     <segment title="" image="NightLife.png"/>
                                     <segment title="" image="Concerts.png"/>
                                 </segments>
@@ -246,11 +272,18 @@
                             <constraint firstItem="SXh-BO-SnS" firstAttribute="centerX" secondItem="sQ0-o4-w3J" secondAttribute="centerX" id="BUG-59-ROf"/>
                             <constraint firstItem="htM-Sa-Kwr" firstAttribute="top" secondItem="9Ql-wN-Wfx" secondAttribute="bottom" constant="8" id="Jc6-Yg-Bwo"/>
                             <constraint firstItem="htM-Sa-Kwr" firstAttribute="centerX" secondItem="sQ0-o4-w3J" secondAttribute="centerX" id="YCR-wj-hFM"/>
+                            <constraint firstItem="VDI-Sz-DqM" firstAttribute="centerX" secondItem="sQ0-o4-w3J" secondAttribute="centerX" id="YuN-SR-d07"/>
+                            <constraint firstItem="VDI-Sz-DqM" firstAttribute="centerY" secondItem="sQ0-o4-w3J" secondAttribute="centerY" id="gqR-G6-Cft"/>
                             <constraint firstItem="SXh-BO-SnS" firstAttribute="top" secondItem="htM-Sa-Kwr" secondAttribute="bottom" constant="8" id="jza-Lr-TaX"/>
                             <constraint firstItem="htM-Sa-Kwr" firstAttribute="width" secondItem="sQ0-o4-w3J" secondAttribute="height" multiplier="35:71" id="qrd-Il-XBh"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="📈 Trending 📉" id="eMI-mD-Y42"/>
+                    <connections>
+                        <outlet property="spinner" destination="VDI-Sz-DqM" id="hwH-Me-HvF"/>
+                        <outlet property="tableView" destination="SXh-BO-SnS" id="Lnf-lN-6yv"/>
+                        <outlet property="trendingSegementedControl" destination="htM-Sa-Kwr" id="NRy-4l-cZT"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bxn-dy-UQd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -507,6 +540,7 @@
         <image name="Meetings.png" width="32" height="32"/>
         <image name="NightLife.png" width="32" height="32"/>
         <image name="Sports.png" width="32" height="32"/>
+        <image name="Study.png" width="32" height="32"/>
         <image name="SubmitUnFilled.png" width="100" height="100"/>
         <image name="Trending.png" width="32" height="32"/>
         <image name="background.jpg" width="650" height="1172"/>

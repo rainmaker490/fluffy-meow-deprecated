@@ -28,6 +28,8 @@
 		F1AD99871C0FA9D6003FA145 /* NightLife.png in Resources */ = {isa = PBXBuildFile; fileRef = F1AD99861C0FA9D6003FA145 /* NightLife.png */; };
 		F1AD99891C0FA9DB003FA145 /* Sports.png in Resources */ = {isa = PBXBuildFile; fileRef = F1AD99881C0FA9DB003FA145 /* Sports.png */; };
 		F1AD998B1C0FA9E3003FA145 /* Meetings.png in Resources */ = {isa = PBXBuildFile; fileRef = F1AD998A1C0FA9E3003FA145 /* Meetings.png */; };
+		F1AD998E1C0FD351003FA145 /* Study.png in Resources */ = {isa = PBXBuildFile; fileRef = F1AD998D1C0FD351003FA145 /* Study.png */; };
+		F1AD99901C0FEEF2003FA145 /* TrendViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1AD998F1C0FEEF2003FA145 /* TrendViewController.swift */; };
 		F1BA0A1B1C02EE9B0029F77A /* README.pdf in Resources */ = {isa = PBXBuildFile; fileRef = F1BA0A1A1C02EE9B0029F77A /* README.pdf */; };
 		F1C7CB721C092B2300E20D8E /* Settings.png in Resources */ = {isa = PBXBuildFile; fileRef = F1C7CB711C092B2300E20D8E /* Settings.png */; };
 		F1D501EF1BFAF0A800032D50 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1D501EE1BFAF0A800032D50 /* AppDelegate.swift */; };
@@ -84,6 +86,8 @@
 		F1AD99861C0FA9D6003FA145 /* NightLife.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = NightLife.png; sourceTree = "<group>"; };
 		F1AD99881C0FA9DB003FA145 /* Sports.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Sports.png; sourceTree = "<group>"; };
 		F1AD998A1C0FA9E3003FA145 /* Meetings.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Meetings.png; sourceTree = "<group>"; };
+		F1AD998D1C0FD351003FA145 /* Study.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Study.png; sourceTree = "<group>"; };
+		F1AD998F1C0FEEF2003FA145 /* TrendViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TrendViewController.swift; sourceTree = "<group>"; };
 		F1BA0A1A1C02EE9B0029F77A /* README.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = README.pdf; sourceTree = "<group>"; };
 		F1C7CB711C092B2300E20D8E /* Settings.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Settings.png; sourceTree = "<group>"; };
 		F1D501EB1BFAF0A800032D50 /* Beto.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Beto.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -184,6 +188,7 @@
 			children = (
 				F1E1EB7A1C0199BE009E301E /* BetoTabViewController.swift */,
 				F1A3F9861C0E43AA00C1341C /* MoreViewController.swift */,
+				F1AD998F1C0FEEF2003FA145 /* TrendViewController.swift */,
 			);
 			name = BetoTabViewController;
 			sourceTree = "<group>";
@@ -210,6 +215,7 @@
 				F1AD99821C0FA8C5003FA145 /* All.png */,
 				F1AD99881C0FA9DB003FA145 /* Sports.png */,
 				F1AD998A1C0FA9E3003FA145 /* Meetings.png */,
+				F1AD998D1C0FD351003FA145 /* Study.png */,
 				F1AD99861C0FA9D6003FA145 /* NightLife.png */,
 				F1AD99841C0FA9D0003FA145 /* Concerts.png */,
 			);
@@ -452,6 +458,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F1AD998E1C0FD351003FA145 /* Study.png in Resources */,
 				F1BA0A1B1C02EE9B0029F77A /* README.pdf in Resources */,
 				F1AD99831C0FA8C5003FA145 /* All.png in Resources */,
 				F10B56371BFD569800137CC3 /* SubmitFilled.png in Resources */,
@@ -548,6 +555,7 @@
 			files = (
 				F1D502281BFAF1E900032D50 /* LogInViewController.swift in Sources */,
 				F1D501EF1BFAF0A800032D50 /* AppDelegate.swift in Sources */,
+				F1AD99901C0FEEF2003FA145 /* TrendViewController.swift in Sources */,
 				F10B56321BFD519700137CC3 /* SignInViewControllerHelper.swift in Sources */,
 				F1E1EB7B1C0199BE009E301E /* BetoTabViewController.swift in Sources */,
 				F17805151BFBA3DB000BC19B /* LogInViewControllerHelper.swift in Sources */,
