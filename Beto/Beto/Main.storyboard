@@ -278,9 +278,7 @@
                             <constraint firstItem="htM-Sa-Kwr" firstAttribute="width" secondItem="sQ0-o4-w3J" secondAttribute="height" multiplier="35:71" id="qrd-Il-XBh"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="📈 Trending 📉" id="eMI-mD-Y42">
-                        <barButtonItem key="rightBarButtonItem" image="Refresh.png" id="t2k-eQ-Fo3"/>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" title="📈 Trending 📉" id="eMI-mD-Y42"/>
                     <connections>
                         <outlet property="spinner" destination="VDI-Sz-DqM" id="hwH-Me-HvF"/>
                         <outlet property="tableView" destination="SXh-BO-SnS" id="Lnf-lN-6yv"/>
@@ -541,7 +539,6 @@
         <image name="Map.png" width="32" height="32"/>
         <image name="Meetings.png" width="32" height="32"/>
         <image name="NightLife.png" width="32" height="32"/>
-        <image name="Refresh.png" width="50" height="50"/>
         <image name="Sports.png" width="32" height="32"/>
         <image name="Study.png" width="32" height="32"/>
         <image name="SubmitUnFilled.png" width="100" height="100"/>
