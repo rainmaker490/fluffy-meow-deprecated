@@ -193,6 +193,7 @@
         <!--📈 Trending 📉-->
         <scene sceneID="zwk-go-h7k">
             <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bxn-dy-UQd" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController id="toR-JW-R22" customClass="TrendViewController" customModule="Beto" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="9Ql-wN-Wfx"/>
@@ -202,12 +203,36 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" scrollEnabled="NO" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="SXh-BO-SnS">
-                                <rect key="frame" x="0.0" y="108" width="320" height="460"/>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="VDI-Sz-DqM">
+                                <rect key="frame" x="150" y="274" width="20" height="20"/>
+                                <animations/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="VDI-Sz-DqM" secondAttribute="height" multiplier="1:1" id="wh1-IQ-MmU"/>
+                                </constraints>
+                                <color key="color" red="0.66274509800000003" green="0.78823529410000004" blue="0.83137254900000002" alpha="1" colorSpace="calibratedRGB"/>
+                            </activityIndicatorView>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="htM-Sa-Kwr">
+                                <rect key="frame" x="20" y="72" width="280" height="29"/>
+                                <animations/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="htM-Sa-Kwr" secondAttribute="height" multiplier="10:1" id="o1X-Kz-dxQ"/>
+                                </constraints>
+                                <segments>
+                                    <segment title="" image="All.png"/>
+                                    <segment title="" image="Sports.png"/>
+                                    <segment title="" image="Meetings.png"/>
+                                    <segment title="" image="Study.png"/>
+                                    <segment title="" image="NightLife.png"/>
+                                    <segment title="" image="Concerts.png"/>
+                                </segments>
+                                <color key="tintColor" red="0.66274509800000003" green="0.78823529410000004" blue="0.83137254900000002" alpha="1" colorSpace="calibratedRGB"/>
+                            </segmentedControl>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="SXh-BO-SnS">
+                                <rect key="frame" x="0.0" y="124" width="320" height="395"/>
                                 <animations/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" secondItem="SXh-BO-SnS" secondAttribute="height" multiplier="16:23" id="qus-E8-UeA"/>
+                                    <constraint firstAttribute="width" secondItem="SXh-BO-SnS" secondAttribute="height" multiplier="16:23" constant="45.217391304347814" id="qus-E8-UeA"/>
                                 </constraints>
                                 <color key="separatorColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <prototypes>
@@ -240,30 +265,6 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
-                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="VDI-Sz-DqM">
-                                <rect key="frame" x="150" y="274" width="20" height="20"/>
-                                <animations/>
-                                <constraints>
-                                    <constraint firstAttribute="width" secondItem="VDI-Sz-DqM" secondAttribute="height" multiplier="1:1" id="wh1-IQ-MmU"/>
-                                </constraints>
-                                <color key="color" red="0.66274509800000003" green="0.78823529410000004" blue="0.83137254900000002" alpha="1" colorSpace="calibratedRGB"/>
-                            </activityIndicatorView>
-                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="htM-Sa-Kwr">
-                                <rect key="frame" x="20" y="72" width="280" height="29"/>
-                                <animations/>
-                                <constraints>
-                                    <constraint firstAttribute="width" secondItem="htM-Sa-Kwr" secondAttribute="height" multiplier="10:1" id="o1X-Kz-dxQ"/>
-                                </constraints>
-                                <segments>
-                                    <segment title="" image="All.png"/>
-                                    <segment title="" image="Sports.png"/>
-                                    <segment title="" image="Meetings.png"/>
-                                    <segment title="" image="Study.png"/>
-                                    <segment title="" image="NightLife.png"/>
-                                    <segment title="" image="Concerts.png"/>
-                                </segments>
-                                <color key="tintColor" red="0.66274509800000003" green="0.78823529410000004" blue="0.83137254900000002" alpha="1" colorSpace="calibratedRGB"/>
-                            </segmentedControl>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -274,7 +275,7 @@
                             <constraint firstItem="htM-Sa-Kwr" firstAttribute="centerX" secondItem="sQ0-o4-w3J" secondAttribute="centerX" id="YCR-wj-hFM"/>
                             <constraint firstItem="VDI-Sz-DqM" firstAttribute="centerX" secondItem="sQ0-o4-w3J" secondAttribute="centerX" id="YuN-SR-d07"/>
                             <constraint firstItem="VDI-Sz-DqM" firstAttribute="centerY" secondItem="sQ0-o4-w3J" secondAttribute="centerY" id="gqR-G6-Cft"/>
-                            <constraint firstItem="SXh-BO-SnS" firstAttribute="top" secondItem="htM-Sa-Kwr" secondAttribute="bottom" constant="8" id="jza-Lr-TaX"/>
+                            <constraint firstItem="SXh-BO-SnS" firstAttribute="top" secondItem="htM-Sa-Kwr" secondAttribute="bottom" constant="24" id="jza-Lr-TaX"/>
                             <constraint firstItem="htM-Sa-Kwr" firstAttribute="width" secondItem="sQ0-o4-w3J" secondAttribute="height" multiplier="35:71" id="qrd-Il-XBh"/>
                         </constraints>
                     </view>
@@ -285,7 +286,6 @@
                         <outlet property="trendingSegementedControl" destination="htM-Sa-Kwr" id="NRy-4l-cZT"/>
                     </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="bxn-dy-UQd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1529" y="31"/>
         </scene>

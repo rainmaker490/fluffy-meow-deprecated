@@ -14,8 +14,13 @@ class TrendViewController: UIViewController, UITableViewDelegate, UITableViewDat
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var trendingSegementedControl: UISegmentedControl!
     
+    var refreshControl: UIRefreshControl!
+    
+    
     override func viewDidLoad() {
-        
+        tableView.dataSource = self
+        refreshControl = UIRefreshControl()
+        tableView.addSubview(refreshControl)
     }
     
     override func viewDidAppear(animated: Bool) {
@@ -27,7 +32,7 @@ class TrendViewController: UIViewController, UITableViewDelegate, UITableViewDat
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 2
+        return 10
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
