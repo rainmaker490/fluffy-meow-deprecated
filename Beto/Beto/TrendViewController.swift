@@ -10,7 +10,6 @@ import UIKit
 
 class TrendViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
-    @IBOutlet weak var spinner: UIActivityIndicatorView!
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var trendingSegementedControl: UISegmentedControl!
     
@@ -20,11 +19,20 @@ class TrendViewController: UIViewController, UITableViewDelegate, UITableViewDat
     override func viewDidLoad() {
         tableView.dataSource = self
         refreshControl = UIRefreshControl()
+        
         tableView.addSubview(refreshControl)
+        
+        tableView.estimatedRowHeight = tableView.rowHeight
+        tableView.rowHeight = UITableViewAutomaticDimension
+        refreshControl.addTarget(self, action: "refresh:", forControlEvents: .ValueChanged)
     }
     
     override func viewDidAppear(animated: Bool) {
         tableView.reloadData()
+    }
+    
+    func refresh(refreshControl: UIRefreshControl) {
+        refreshControl.endRefreshing()
     }
     
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {

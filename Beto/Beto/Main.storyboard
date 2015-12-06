@@ -158,7 +158,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="84W-ww-MtQ">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="519"/>
                                 <animations/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
@@ -179,9 +179,9 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="84W-ww-MtQ" firstAttribute="width" secondItem="Zza-E4-P7T" secondAttribute="width" id="HgB-iZ-BTE"/>
-                            <constraint firstItem="84W-ww-MtQ" firstAttribute="height" secondItem="Zza-E4-P7T" secondAttribute="height" id="Ojk-N2-re2"/>
+                            <constraint firstItem="84W-ww-MtQ" firstAttribute="height" secondItem="Zza-E4-P7T" secondAttribute="height" constant="-49" id="Ojk-N2-re2"/>
                             <constraint firstItem="84W-ww-MtQ" firstAttribute="centerX" secondItem="Zza-E4-P7T" secondAttribute="centerX" id="ame-am-wWR"/>
-                            <constraint firstItem="84W-ww-MtQ" firstAttribute="centerY" secondItem="Zza-E4-P7T" secondAttribute="centerY" id="eUd-4I-TBs"/>
+                            <constraint firstItem="84W-ww-MtQ" firstAttribute="centerY" secondItem="Zza-E4-P7T" secondAttribute="centerY" constant="-24.5" id="eUd-4I-TBs"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="🌐 More 🌎" id="njf-ag-obo"/>
@@ -193,7 +193,6 @@
         <!--📈 Trending 📉-->
         <scene sceneID="zwk-go-h7k">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="bxn-dy-UQd" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController id="toR-JW-R22" customClass="TrendViewController" customModule="Beto" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="9Ql-wN-Wfx"/>
@@ -203,14 +202,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="VDI-Sz-DqM">
-                                <rect key="frame" x="150" y="274" width="20" height="20"/>
-                                <animations/>
-                                <constraints>
-                                    <constraint firstAttribute="width" secondItem="VDI-Sz-DqM" secondAttribute="height" multiplier="1:1" id="wh1-IQ-MmU"/>
-                                </constraints>
-                                <color key="color" red="0.66274509800000003" green="0.78823529410000004" blue="0.83137254900000002" alpha="1" colorSpace="calibratedRGB"/>
-                            </activityIndicatorView>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="htM-Sa-Kwr">
                                 <rect key="frame" x="20" y="72" width="280" height="29"/>
                                 <animations/>
@@ -237,7 +228,7 @@
                                 <color key="separatorColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="MoreViewController" id="ulQ-vy-9Rc" customClass="TrendingTableViewCell" customModule="Beto" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="92" width="320" height="44"/>
+                                        <rect key="frame" x="0.0" y="28" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ulQ-vy-9Rc" id="g3D-CF-ouo">
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
@@ -273,19 +264,17 @@
                             <constraint firstItem="SXh-BO-SnS" firstAttribute="centerX" secondItem="sQ0-o4-w3J" secondAttribute="centerX" id="BUG-59-ROf"/>
                             <constraint firstItem="htM-Sa-Kwr" firstAttribute="top" secondItem="9Ql-wN-Wfx" secondAttribute="bottom" constant="8" id="Jc6-Yg-Bwo"/>
                             <constraint firstItem="htM-Sa-Kwr" firstAttribute="centerX" secondItem="sQ0-o4-w3J" secondAttribute="centerX" id="YCR-wj-hFM"/>
-                            <constraint firstItem="VDI-Sz-DqM" firstAttribute="centerX" secondItem="sQ0-o4-w3J" secondAttribute="centerX" id="YuN-SR-d07"/>
-                            <constraint firstItem="VDI-Sz-DqM" firstAttribute="centerY" secondItem="sQ0-o4-w3J" secondAttribute="centerY" id="gqR-G6-Cft"/>
                             <constraint firstItem="SXh-BO-SnS" firstAttribute="top" secondItem="htM-Sa-Kwr" secondAttribute="bottom" constant="24" id="jza-Lr-TaX"/>
                             <constraint firstItem="htM-Sa-Kwr" firstAttribute="width" secondItem="sQ0-o4-w3J" secondAttribute="height" multiplier="35:71" id="qrd-Il-XBh"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="📈 Trending 📉" id="eMI-mD-Y42"/>
                     <connections>
-                        <outlet property="spinner" destination="VDI-Sz-DqM" id="hwH-Me-HvF"/>
                         <outlet property="tableView" destination="SXh-BO-SnS" id="Lnf-lN-6yv"/>
                         <outlet property="trendingSegementedControl" destination="htM-Sa-Kwr" id="NRy-4l-cZT"/>
                     </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bxn-dy-UQd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1529" y="31"/>
         </scene>
