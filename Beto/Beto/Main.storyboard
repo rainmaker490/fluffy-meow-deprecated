@@ -182,7 +182,7 @@
                                                     <constraints>
                                                         <constraint firstAttribute="width" secondItem="j5M-IQ-Km1" secondAttribute="height" multiplier="37:3" id="3a4-p6-6un"/>
                                                     </constraints>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <fontDescription key="fontDescription" type="system" weight="thin" pointSize="17"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
@@ -201,6 +201,41 @@
                                             <outlet property="imageIcon" destination="j5M-IQ-Km1" id="YjH-z1-1ZC"/>
                                             <outlet property="imageLabel" destination="cRD-fi-db1" id="cOA-If-gWn"/>
                                         </connections>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="94" id="fN4-Py-jwk">
+                                        <rect key="frame" x="0.0" y="136" width="320" height="94"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="fN4-Py-jwk" id="E5Y-bm-cmr">
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="93.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Set Distance" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pcJ-BJ-aAt">
+                                                    <rect key="frame" x="11.5" y="8" width="297" height="20.5"/>
+                                                    <animations/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" secondItem="pcJ-BJ-aAt" secondAttribute="height" multiplier="304:21" id="eYb-yF-yKe"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" weight="thin" pointSize="17"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="nXJ-oU-os3">
+                                                    <rect key="frame" x="6" y="33" width="308" height="31"/>
+                                                    <animations/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" secondItem="nXJ-oU-os3" secondAttribute="height" multiplier="152:15" id="phE-5M-I66"/>
+                                                    </constraints>
+                                                </slider>
+                                            </subviews>
+                                            <animations/>
+                                            <constraints>
+                                                <constraint firstItem="pcJ-BJ-aAt" firstAttribute="top" secondItem="E5Y-bm-cmr" secondAttribute="topMargin" id="0Sr-Uj-ygo"/>
+                                                <constraint firstItem="pcJ-BJ-aAt" firstAttribute="centerX" secondItem="E5Y-bm-cmr" secondAttribute="centerX" id="ASH-gE-8PF"/>
+                                                <constraint firstItem="nXJ-oU-os3" firstAttribute="top" secondItem="pcJ-BJ-aAt" secondAttribute="bottom" constant="4.5" id="eS1-z7-UEk"/>
+                                                <constraint firstItem="nXJ-oU-os3" firstAttribute="centerX" secondItem="E5Y-bm-cmr" secondAttribute="centerX" id="gzC-xd-HMq"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <animations/>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
@@ -322,7 +357,8 @@
                         <segue destination="glV-mi-l7E" kind="relationship" relationship="viewControllers" id="Po3-6S-NKx"/>
                         <segue destination="0yZ-jR-0or" kind="relationship" relationship="viewControllers" id="w1v-4N-lZf"/>
                         <segue destination="Zed-yo-wbx" kind="relationship" relationship="viewControllers" id="XzY-jM-TjU"/>
-                        <segue destination="32t-Q2-VPl" kind="relationship" relationship="viewControllers" id="8AK-TC-47P"/>
+                        <segue destination="AD7-po-zhZ" kind="relationship" relationship="viewControllers" id="tsi-1t-6QL"/>
+                        <segue destination="32t-Q2-VPl" kind="relationship" relationship="viewControllers" id="bMf-W7-XuE"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EVU-tb-o2O" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -488,6 +524,26 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Qh1-s4-3oU" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="107" y="1537"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="NWl-Rc-OMp">
+            <objects>
+                <viewController id="AD7-po-zhZ" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="tvT-7S-k2k"/>
+                        <viewControllerLayoutGuide type="bottom" id="mxr-iq-hKu"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="5Q6-YV-VW3">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <animations/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" systemItem="favorites" id="PZG-c4-Jmj"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="3nS-GW-BLZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="997" y="-884"/>
         </scene>
         <!--Trending-->
         <scene sceneID="d8J-Kq-pK0">
