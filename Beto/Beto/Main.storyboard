@@ -162,15 +162,45 @@
                                 <animations/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="ShowQR" id="7WO-Bc-ax0">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="ShowQR" id="7WO-Bc-ax0" customClass="MoreTableViewCell" customModule="Beto" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="92" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="7WO-Bc-ax0" id="h3u-uv-4ex">
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="j4w-2z-i6L">
+                                                    <rect key="frame" x="8" y="3" width="37" height="37"/>
+                                                    <animations/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" secondItem="j4w-2z-i6L" secondAttribute="height" multiplier="1:1" id="awX-xA-gQX"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="j5M-IQ-Km1">
+                                                    <rect key="frame" x="53" y="11.5" width="253" height="20.5"/>
+                                                    <animations/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" secondItem="j5M-IQ-Km1" secondAttribute="height" multiplier="37:3" id="3a4-p6-6un"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
                                             <animations/>
+                                            <constraints>
+                                                <constraint firstItem="j4w-2z-i6L" firstAttribute="width" secondItem="h3u-uv-4ex" secondAttribute="height" multiplier="37:43" id="MDa-kf-8VN"/>
+                                                <constraint firstItem="j5M-IQ-Km1" firstAttribute="leading" secondItem="j4w-2z-i6L" secondAttribute="trailing" constant="8" id="ZXc-Jb-5Ot"/>
+                                                <constraint firstItem="j5M-IQ-Km1" firstAttribute="centerY" secondItem="h3u-uv-4ex" secondAttribute="centerY" id="cRD-fi-db1"/>
+                                                <constraint firstItem="j4w-2z-i6L" firstAttribute="centerY" secondItem="h3u-uv-4ex" secondAttribute="centerY" id="rO1-qx-ZIw"/>
+                                                <constraint firstItem="j4w-2z-i6L" firstAttribute="leading" secondItem="h3u-uv-4ex" secondAttribute="leadingMargin" id="vMX-1v-4hm"/>
+                                            </constraints>
                                         </tableViewCellContentView>
                                         <animations/>
+                                        <connections>
+                                            <outlet property="imageIcon" destination="j5M-IQ-Km1" id="YjH-z1-1ZC"/>
+                                            <outlet property="imageLabel" destination="cRD-fi-db1" id="cOA-If-gWn"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
@@ -251,7 +281,7 @@
                                         </tableViewCellContentView>
                                         <animations/>
                                         <connections>
-                                            <outlet property="trendingEventTitle" destination="g3D-CF-ouo" id="KO1-hr-A61"/>
+                                            <outlet property="trendingEventTitle" destination="NeK-5P-B88" id="H93-oJ-ZDW"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
