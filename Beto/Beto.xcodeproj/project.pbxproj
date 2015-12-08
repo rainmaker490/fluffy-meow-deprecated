@@ -22,6 +22,8 @@
 		F16571E11BFB0A68007459AE /* signUp.png in Resources */ = {isa = PBXBuildFile; fileRef = F16571E01BFB0A68007459AE /* signUp.png */; };
 		F17805151BFBA3DB000BC19B /* LogInViewControllerHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = F17805141BFBA3DB000BC19B /* LogInViewControllerHelper.swift */; };
 		F186FB871C1581CC003FD919 /* MoreTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F186FB861C1581CC003FD919 /* MoreTableViewCell.swift */; };
+		F186FB891C16476D003FD919 /* ParseBetoTabViewControllerHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = F186FB881C16476D003FD919 /* ParseBetoTabViewControllerHelper.swift */; };
+		F186FB8D1C165667003FD919 /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = F186FB8C1C165667003FD919 /* Event.swift */; };
 		F18C6B591C15273F00821195 /* Trending.swift in Sources */ = {isa = PBXBuildFile; fileRef = F18C6B581C15273F00821195 /* Trending.swift */; };
 		F1A3F9871C0E43AA00C1341C /* MoreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1A3F9861C0E43AA00C1341C /* MoreViewController.swift */; };
 		F1AD997B1C0FA0D7003FA145 /* TrendingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1AD997A1C0FA0D7003FA145 /* TrendingTableViewCell.swift */; };
@@ -83,6 +85,8 @@
 		F16571E01BFB0A68007459AE /* signUp.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = signUp.png; sourceTree = "<group>"; };
 		F17805141BFBA3DB000BC19B /* LogInViewControllerHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogInViewControllerHelper.swift; sourceTree = "<group>"; };
 		F186FB861C1581CC003FD919 /* MoreTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MoreTableViewCell.swift; sourceTree = "<group>"; };
+		F186FB881C16476D003FD919 /* ParseBetoTabViewControllerHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParseBetoTabViewControllerHelper.swift; sourceTree = "<group>"; };
+		F186FB8C1C165667003FD919 /* Event.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
 		F18C6B581C15273F00821195 /* Trending.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Trending.swift; sourceTree = "<group>"; };
 		F1A3F9861C0E43AA00C1341C /* MoreViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MoreViewController.swift; sourceTree = "<group>"; };
 		F1AD997A1C0FA0D7003FA145 /* TrendingTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TrendingTableViewCell.swift; sourceTree = "<group>"; };
@@ -189,9 +193,26 @@
 			name = Helper;
 			sourceTree = "<group>";
 		};
+		F186FB8A1C164772003FD919 /* Parse Helper */ = {
+			isa = PBXGroup;
+			children = (
+				F186FB881C16476D003FD919 /* ParseBetoTabViewControllerHelper.swift */,
+			);
+			name = "Parse Helper";
+			sourceTree = "<group>";
+		};
+		F186FB8B1C165616003FD919 /* Parse */ = {
+			isa = PBXGroup;
+			children = (
+				F186FB8C1C165667003FD919 /* Event.swift */,
+			);
+			name = Parse;
+			sourceTree = "<group>";
+		};
 		F1976E8C1C0D682E002EA28B /* BetoTabViewController */ = {
 			isa = PBXGroup;
 			children = (
+				F186FB8A1C164772003FD919 /* Parse Helper */,
 				F1E1EB7A1C0199BE009E301E /* BetoTabViewController.swift */,
 				F1A3F9861C0E43AA00C1341C /* MoreViewController.swift */,
 				F1AD998F1C0FEEF2003FA145 /* TrendViewController.swift */,
@@ -287,6 +308,7 @@
 		F1D5021E1BFAF0CB00032D50 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				F186FB8B1C165616003FD919 /* Parse */,
 				F16571D21BFAF970007459AE /* Constants.swift */,
 				F18C6B581C15273F00821195 /* Trending.swift */,
 			);
@@ -571,10 +593,12 @@
 				F10B56321BFD519700137CC3 /* SignInViewControllerHelper.swift in Sources */,
 				F1E1EB7B1C0199BE009E301E /* BetoTabViewController.swift in Sources */,
 				F17805151BFBA3DB000BC19B /* LogInViewControllerHelper.swift in Sources */,
+				F186FB8D1C165667003FD919 /* Event.swift in Sources */,
 				F1AD997B1C0FA0D7003FA145 /* TrendingTableViewCell.swift in Sources */,
 				F1A3F9871C0E43AA00C1341C /* MoreViewController.swift in Sources */,
 				F10B56301BFD4CA000137CC3 /* SignInViewController.swift in Sources */,
 				F16571D31BFAF970007459AE /* Constants.swift in Sources */,
+				F186FB891C16476D003FD919 /* ParseBetoTabViewControllerHelper.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

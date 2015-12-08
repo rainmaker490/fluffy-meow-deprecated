@@ -22,3 +22,8 @@ struct SignInPageImage {
     static let SignInButtonFilled = "SubmitFilled.png"
     static let SignInButtonUnFilled = "SubmitUnFilled.png"
 }
+
+struct Notifications {
+    static let TopTenReady = "TopTenReady"
+    static let CurrentLocationRecieved = "CurrentLocationRecieved"
+}

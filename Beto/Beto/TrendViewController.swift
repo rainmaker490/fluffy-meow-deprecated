@@ -12,6 +12,8 @@ import MapKit
 
 class TrendViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
+    @IBOutlet weak var spinner: UIActivityIndicatorView!
+    
     let trending = Trending.sharedInstance
 
     @IBOutlet weak var tableView: UITableView!
@@ -19,28 +21,19 @@ class TrendViewController: UIViewController, UITableViewDelegate, UITableViewDat
     
     var refreshControl: UIRefreshControl!
     
-    var topTenTrending = [String]()
-    
     override func viewDidLoad() {
         tableView.dataSource = self
+        
         refreshControl = UIRefreshControl()
-        
         tableView.addSubview(refreshControl)
-        
-        //tableView.estimatedRowHeight = tableView.rowHeight
-        // tableView.rowHeight = UITableViewAutomaticDimension
         refreshControl.addTarget(self, action: "refresh:", forControlEvents: .ValueChanged)
         
-        PFGeoPoint.geoPointForCurrentLocationInBackground {
-            (geoPoint: PFGeoPoint?, error: NSError?) -> Void in
-            if error == nil {
-                self.trending.currentLocation = geoPoint
-                self.tableView.reloadData()
-            }
-        }
+        trending.getCurrentLocation()
         
-        
-        
+        let notifications = NSNotificationCenter.defaultCenter()
+        notifications.addObserver(self, selector: "receivedCurrentLocationData", name: Notifications.CurrentLocationRecieved, object: nil)
+        notifications.addObserver(self, selector: "receivedTopTenTrending", name: Notifications.TopTenReady, object: nil)
+        spinner.startAnimating()
         /*let region = CLCircularRegion(
             center: CLLocationCoordinate2D(latitude: 39.05, longitude: -95.78),
             radius: (25*1000*0.62137),
@@ -56,11 +49,22 @@ class TrendViewController: UIViewController, UITableViewDelegate, UITableViewDat
         
     }
     
+    func receivedCurrentLocationData(){
+        trending.getTopTen("Sport", userGeoPoint: self.trending.currentLocation!, miles: 10)
+    }
+    
+    func receivedTopTenTrending() {
+        spinner.stopAnimating()
+        tableView.reloadData()
+    }
+    
     override func viewDidAppear(animated: Bool) {
         tableView.reloadData()
     }
     
     func refresh(refreshControl: UIRefreshControl) {
+        spinner.startAnimating()
+        trending.getTopTen("jjj", userGeoPoint: self.trending.currentLocation!, miles: 10)
         refreshControl.endRefreshing()
     }
     
@@ -69,12 +73,12 @@ class TrendViewController: UIViewController, UITableViewDelegate, UITableViewDat
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 10
+        return trending.topTenTrendingEventsNearYou.count
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("MoreViewController") as! TrendingTableViewCell
-        cell.trendingEventTitle.text = String(trending.currentLocation?.latitude)
+        cell.trendingEventTitle.text = String(trending.topTenTrendingEventsNearYou[indexPath.row].title)
         return cell
     }
 }

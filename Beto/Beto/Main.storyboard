@@ -284,11 +284,11 @@
                                 <color key="tintColor" red="0.66274509800000003" green="0.78823529410000004" blue="0.83137254900000002" alpha="1" colorSpace="calibratedRGB"/>
                             </segmentedControl>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="SXh-BO-SnS">
-                                <rect key="frame" x="0.0" y="124" width="320" height="395"/>
+                                <rect key="frame" x="0.0" y="116" width="320" height="395"/>
                                 <animations/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" secondItem="SXh-BO-SnS" secondAttribute="height" multiplier="16:23" constant="45.217391304347814" id="qus-E8-UeA"/>
+                                    <constraint firstAttribute="width" secondItem="SXh-BO-SnS" secondAttribute="height" multiplier="64:79" id="vtY-lX-EvR"/>
                                 </constraints>
                                 <color key="separatorColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <prototypes>
@@ -321,20 +321,28 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="cF3-Yq-Q61">
+                                <rect key="frame" x="0.0" y="274" width="320" height="20"/>
+                                <animations/>
+                            </activityIndicatorView>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="SXh-BO-SnS" firstAttribute="width" secondItem="sQ0-o4-w3J" secondAttribute="width" id="059-kH-RkO"/>
+                            <constraint firstItem="cF3-Yq-Q61" firstAttribute="centerX" secondItem="sQ0-o4-w3J" secondAttribute="centerX" id="6PR-bA-8ts"/>
                             <constraint firstItem="SXh-BO-SnS" firstAttribute="centerX" secondItem="sQ0-o4-w3J" secondAttribute="centerX" id="BUG-59-ROf"/>
                             <constraint firstItem="htM-Sa-Kwr" firstAttribute="top" secondItem="9Ql-wN-Wfx" secondAttribute="bottom" constant="8" id="Jc6-Yg-Bwo"/>
+                            <constraint firstItem="SXh-BO-SnS" firstAttribute="centerY" secondItem="sQ0-o4-w3J" secondAttribute="centerY" constant="29.5" id="U9v-VJ-MUM"/>
+                            <constraint firstItem="cF3-Yq-Q61" firstAttribute="width" secondItem="sQ0-o4-w3J" secondAttribute="height" multiplier="40:71" id="WDP-t2-uiz"/>
                             <constraint firstItem="htM-Sa-Kwr" firstAttribute="centerX" secondItem="sQ0-o4-w3J" secondAttribute="centerX" id="YCR-wj-hFM"/>
-                            <constraint firstItem="SXh-BO-SnS" firstAttribute="top" secondItem="htM-Sa-Kwr" secondAttribute="bottom" constant="24" id="jza-Lr-TaX"/>
+                            <constraint firstItem="cF3-Yq-Q61" firstAttribute="centerY" secondItem="sQ0-o4-w3J" secondAttribute="centerY" id="bKb-me-v15"/>
                             <constraint firstItem="htM-Sa-Kwr" firstAttribute="width" secondItem="sQ0-o4-w3J" secondAttribute="height" multiplier="35:71" id="qrd-Il-XBh"/>
+                            <constraint firstItem="SXh-BO-SnS" firstAttribute="width" secondItem="sQ0-o4-w3J" secondAttribute="height" multiplier="40:71" id="yrG-3G-S9L"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="📈 Trending 📉" id="eMI-mD-Y42"/>
                     <connections>
+                        <outlet property="spinner" destination="cF3-Yq-Q61" id="l0r-kh-1a1"/>
                         <outlet property="tableView" destination="SXh-BO-SnS" id="Lnf-lN-6yv"/>
                         <outlet property="trendingSegementedControl" destination="htM-Sa-Kwr" id="NRy-4l-cZT"/>
                     </connections>
