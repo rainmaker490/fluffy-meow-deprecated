@@ -282,6 +282,9 @@
                                     <segment title="" image="Concerts.png"/>
                                 </segments>
                                 <color key="tintColor" red="0.66274509800000003" green="0.78823529410000004" blue="0.83137254900000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <connections>
+                                    <action selector="segmentedControlSelected:" destination="toR-JW-R22" eventType="valueChanged" id="jTJ-ou-meO"/>
+                                </connections>
                             </segmentedControl>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="SXh-BO-SnS">
                                 <rect key="frame" x="0.0" y="116" width="320" height="395"/>
@@ -344,7 +347,6 @@
                     <connections>
                         <outlet property="spinner" destination="cF3-Yq-Q61" id="l0r-kh-1a1"/>
                         <outlet property="tableView" destination="SXh-BO-SnS" id="Lnf-lN-6yv"/>
-                        <outlet property="trendingSegementedControl" destination="htM-Sa-Kwr" id="NRy-4l-cZT"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bxn-dy-UQd" userLabel="First Responder" sceneMemberID="firstResponder"/>

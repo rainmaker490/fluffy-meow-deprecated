@@ -13,21 +13,31 @@ class Trending {
     static let sharedInstance = Trending()
     var currentLocation: PFGeoPoint?
     var category : String?
-    var topTenTrendingEventsNearYou = [Event]()
+    private var trendingFactory = [Event]()
+    var topTenTrendingEventsNearYou = [String:[Event]]()
     
     func getTopTen(category : String, userGeoPoint: PFGeoPoint, miles: Double){
-        topTenTrendingEventsNearYou.removeAll()
         let query = PFQuery(className: "Event")
-        query.whereKey("location", nearGeoPoint: userGeoPoint, withinMiles: miles).whereKey("category", containsString: category)
+        
+        if(category == "All") {
+            query.whereKey("location", nearGeoPoint: userGeoPoint, withinMiles: miles)
+        } else {
+            query.whereKey("location", nearGeoPoint: userGeoPoint, withinMiles: miles).whereKey("category", containsString: category)
+        }
+        
         query.findObjectsInBackgroundWithBlock({ (objects, error) -> Void in
             if error == nil {
+                var trendingFactory = [Event]()
+                var allEventsList = [Event]()
                 if let event = objects as? [Event] {
-                    self.topTenTrendingEventsNearYou = event
+                    allEventsList = event
+                    allEventsList.sortInPlace({ $0.checkIns > $1.checkIns })
+                    for var i = 0; i<10 && i < allEventsList.count ; i++ {
+                        trendingFactory.append(allEventsList[i])
+                    }
                 }
-                self.topTenTrendingEventsNearYou.sortInPlace({ $0.checkIns > $1.checkIns })
-                for var i = 0 ; i < self.topTenTrendingEventsNearYou.count && self.topTenTrendingEventsNearYou.count > 10; i++ {
-                    self.topTenTrendingEventsNearYou.removeLast()
-                }
+                self.topTenTrendingEventsNearYou[category] = trendingFactory
+                
                 let notification = NSNotificationCenter.defaultCenter()
                 notification.postNotificationName(Notifications.TopTenReady, object: self)
             }
