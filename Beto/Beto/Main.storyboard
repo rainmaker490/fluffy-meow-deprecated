@@ -128,7 +128,7 @@
         <!--🗺 Explore 🗺-->
         <scene sceneID="edH-Sf-DxG">
             <objects>
-                <viewController id="0tY-bb-Ofh" sceneMemberID="viewController">
+                <viewController id="0tY-bb-Ofh" customClass="ExploreViewController" customModule="Beto" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="PHL-HT-MKb"/>
                         <viewControllerLayoutGuide type="bottom" id="DCG-5a-Evr"/>
@@ -136,10 +136,36 @@
                     <view key="view" contentMode="scaleToFill" id="i44-sJ-0Km">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleAspectFit" translatesAutoresizingMaskIntoConstraints="NO" id="IFL-8A-BrY" customClass="MGLMapView">
+                                <rect key="frame" x="0.0" y="64" width="320" height="394"/>
+                                <animations/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="IFL-8A-BrY" secondAttribute="height" multiplier="64:91" constant="42.901098901098862" id="pSi-FA-jih"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="zoomLevel">
+                                        <real key="value" value="0.0"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="allowsRotating" value="YES"/>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="allowsScrolling" value="NO"/>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="allowsZooming" value="NO"/>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                        </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="IFL-8A-BrY" firstAttribute="centerX" secondItem="i44-sJ-0Km" secondAttribute="centerX" id="ITd-fv-tub"/>
+                            <constraint firstItem="IFL-8A-BrY" firstAttribute="top" secondItem="PHL-HT-MKb" secondAttribute="bottom" id="LCD-cV-g9x"/>
+                            <constraint firstItem="IFL-8A-BrY" firstAttribute="width" secondItem="i44-sJ-0Km" secondAttribute="width" id="jTe-yf-Cwf"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="🗺 Explore 🗺" id="WFY-Cz-atk"/>
+                    <connections>
+                        <outlet property="mapView" destination="IFL-8A-BrY" id="Ze7-p7-wbS"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JBw-K2-Yff" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

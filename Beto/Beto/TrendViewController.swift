@@ -31,7 +31,6 @@ class TrendViewController: UIViewController, UITableViewDelegate, UITableViewDat
         let notifications = NSNotificationCenter.defaultCenter()
         notifications.addObserver(self, selector: "receivedCurrentLocationData", name: Notifications.CurrentLocationRecieved, object: nil)
         notifications.addObserver(self, selector: "receivedTopTenTrending", name: Notifications.TopTenReady, object: nil)
-        spinner.startAnimating()
         
         /*let region = CLCircularRegion(
             center: CLLocationCoordinate2D(latitude: 39.05, longitude: -95.78),
@@ -48,6 +47,7 @@ class TrendViewController: UIViewController, UITableViewDelegate, UITableViewDat
     }
     
     @IBAction func segmentedControlSelected(sender: UISegmentedControl) {
+        spinner.startAnimating()
         switch sender.selectedSegmentIndex {
         case 0:
             trending.category = "All"
@@ -62,7 +62,7 @@ class TrendViewController: UIViewController, UITableViewDelegate, UITableViewDat
             trending.category = "Study Groups"
            break
         case 4:
-            trending.category = "Bars"
+            trending.category = "Night Life"
            break
         case 5:
             trending.category = "Concerts"
@@ -71,21 +71,21 @@ class TrendViewController: UIViewController, UITableViewDelegate, UITableViewDat
             break
         }
         
-        guard let _ = trending.topTenTrendingEventsNearYou[trending.category!] else {
-            receivedCurrentLocationData()
-            return
+        if let _ = trending.topTenTrendingEventsNearYou[trending.category!] {
+            receivedTopTenTrending()
+        } else {
+            trending.getTopTen(trending.category!, userGeoPoint: trending.currentLocation!, miles: 10)
         }
-        tableView.reloadData()
     }
     
     func receivedCurrentLocationData(){
+        spinner.startAnimating()
         trending.getTopTen(trending.category!, userGeoPoint: trending.currentLocation! , miles: 10)
     }
     
     func receivedTopTenTrending() {
-        spinner.stopAnimating()
-        
         tableView.reloadData()
+        spinner.stopAnimating()
     }
     
     override func viewDidAppear(animated: Bool) {

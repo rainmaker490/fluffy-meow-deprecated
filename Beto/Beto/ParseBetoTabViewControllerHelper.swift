@@ -11,5 +11,7 @@ import Parse
 
 class ParseBetoTabViewControllerHelper {
     
-
+    static func saveEventDetails() {
+        
+    }
 }
