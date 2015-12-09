@@ -49,6 +49,7 @@
 		F15C6A0E1C1806E700851E1C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F15C69C71C18015500851E1C /* LaunchScreen.storyboard */; };
 		F15C6A0F1C1806F100851E1C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F15C69AA1C17FFAB00851E1C /* Main.storyboard */; };
 		F15C6A101C18070100851E1C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F15C69731C17FE9B00851E1C /* Assets.xcassets */; };
+		F1F9D6B41C181E2400B6C84A /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F1F9D6B31C181E2400B6C84A /* MapKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -118,6 +119,7 @@
 		F15C69EF1C18029600851E1C /* NightLife.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = NightLife.png; sourceTree = "<group>"; };
 		F15C69F01C18029600851E1C /* Concerts.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Concerts.png; sourceTree = "<group>"; };
 		F15C69F81C18031A00851E1C /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F1F9D6B31C181E2400B6C84A /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -125,6 +127,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F1F9D6B41C181E2400B6C84A /* MapKit.framework in Frameworks */,
 				E18AC570440C39678AA7D222 /* Pods_Beto.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -158,6 +161,7 @@
 		D43830DD1573C78B2E7AEB50 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				F1F9D6B31C181E2400B6C84A /* MapKit.framework */,
 				71082586F94F3D355BB8226E /* Pods_Beto.framework */,
 			);
 			name = Frameworks;

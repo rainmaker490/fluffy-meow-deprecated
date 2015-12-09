@@ -7,34 +7,18 @@
 //
 
 import UIKit
-import Mapbox
+import MapKit
 
-class ExploreViewController: UIViewController, MGLMapViewDelegate {
+class ExploreViewController: UIViewController {
     
     let mapViewEvents = SharedInstances.mapInstance
     let trending = SharedInstances.sharedInstance
     
-    
-    @IBOutlet weak var mapView: MGLMapView!
+    @IBOutlet weak var mapView: MKMapView!
     
     override func viewDidLoad() {
         mapViewEvents.getCurrentLocation()
-        mapView.styleURL = MGLStyle.emeraldStyleURL()
-        // mapView.setCenterCoordinate(CLLocationCoordinate2D(latitude: trending.currentLocation!.latitude, longitude: trending.currentLocation!.longitude), zoomLevel: 15, animated: false)
-        mapViewEvents.category = "All"
         
-        let point = MGLPointAnnotation()
-        point.coordinate = CLLocationCoordinate2D(latitude: trending.currentLocation!.latitude, longitude: trending.currentLocation!.longitude)
-        point.title = "Hello world!"
-        point.subtitle = "Welcome to My Current Location."
-        
-        
-        let notifications = NSNotificationCenter.defaultCenter()
-        notifications.addObserver(self, selector: "receivedTopTenTrending", name: Notifications.TopTenReady, object: nil)
-        mapViewEvents.getEvents(mapViewEvents.category!, userGeoPoint: trending.currentLocation!, miles: 10, numberOfEvents: -1 )
-        
-        mapView.addAnnotation(point)
-        mapView.delegate = self
     }
     
     @IBAction func segmentedControl(sender: UISegmentedControl) {
@@ -62,21 +46,8 @@ class ExploreViewController: UIViewController, MGLMapViewDelegate {
         }
     }
     
-    func mapView(mapView: MGLMapView, annotationCanShowCallout annotation: MGLAnnotation) -> Bool {
-        return true
-    }
-    
     func receivedTopTenTrending() {
-        var points = [MGLPointAnnotation]()
-        for event in mapViewEvents.eventsFactory[mapViewEvents.category!]! {
-            let eventCoordinate = event.location
-            let point = MGLPointAnnotation()
-            point.coordinate = CLLocationCoordinate2D(latitude: eventCoordinate.latitude, longitude: eventCoordinate.longitude)
-            point.title = event.title
-            points.append(point)
-        }
-        mapView.addAnnotations(points)
-        mapView.reloadInputViews()
+        
     }
     
 }

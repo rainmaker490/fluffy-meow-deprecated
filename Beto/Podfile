@@ -10,7 +10,7 @@ target 'Beto' do
 	pod 'FBSDKCoreKit'
 	pod 'FBSDKLoginKit'
 	pod 'FBSDKShareKit'
-	pod 'Mapbox-iOS-SDK'
+	#pod 'Mapbox-iOS-SDK'
 end
 
 target 'BetoTests' do
