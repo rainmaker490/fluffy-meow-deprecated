@@ -1,4 +1,13 @@
 //
+//  Event.swift
+//  Beto
+//
+//  Created by Varun D Patel on 12/9/15.
+//  Copyright © 2015 Varun D Patel. All rights reserved.
+//
+
+import Foundation
+//
 //  TopTrending.swift
 //  Beto
 //
@@ -26,7 +35,7 @@ class Event: PFObject, PFSubclassing {
     @NSManaged var category : String
     @NSManaged var checkIns : Int
     @NSManaged var eventDate : NSDate
-    @NSManaged var location : CLLocationManager
+    @NSManaged var location : PFGeoPoint
     @NSManaged var expirationDate : NSDate
     @NSManaged var title : String
 }

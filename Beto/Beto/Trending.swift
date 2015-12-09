@@ -9,15 +9,20 @@
 import Foundation
 import Parse
 
-class Trending {
+class SharedInstances {
     static let sharedInstance = Trending()
+    static let mapInstance = Trending()
+}
+
+class Trending {
+    
     var currentLocation: PFGeoPoint?
     
     var category : String?
     private var trendingFactory = [Event]()
-    var topTenTrendingEventsNearYou = [String:[Event]]()
+    var eventsFactory = [String:[Event]]()
     
-    func getTopTen(category : String, userGeoPoint: PFGeoPoint, miles: Double){
+    func getEvents(category : String, userGeoPoint: PFGeoPoint, miles: Double, numberOfEvents: Int){
         let query = PFQuery(className: "Event")
         
         if(category == "All") {
@@ -33,11 +38,15 @@ class Trending {
                 if let event = objects as? [Event] {
                     allEventsList = event
                     allEventsList.sortInPlace({ $0.checkIns > $1.checkIns })
-                    for var i = 0; i<10 && i < allEventsList.count ; i++ {
-                        trendingFactory.append(allEventsList[i])
+                    if numberOfEvents < 0 {
+                        trendingFactory = allEventsList
+                    } else {
+                        for var i = 0; i<numberOfEvents && i < allEventsList.count ; i++ {
+                            trendingFactory.append(allEventsList[i])
+                        }
                     }
                 }
-                self.topTenTrendingEventsNearYou[category] = trendingFactory
+                self.eventsFactory[category] = trendingFactory
                 
                 let notification = NSNotificationCenter.defaultCenter()
                 notification.postNotificationName(Notifications.TopTenReady, object: self)

@@ -85,7 +85,7 @@
 		</dict>
 	</dict>
 	<key>NSLocationAlwaysUsageDescription</key>
-	<string>Check current location to grab &quot;things to do near by&quot; to user</string>
+	<string>Check current location to grab "things to do near by" to user</string>
 	<key>UIBackgroundModes</key>
 	<array>
 		<string>location</string>

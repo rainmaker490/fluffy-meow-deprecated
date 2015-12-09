@@ -349,8 +349,8 @@
                                             <rect key="frame" x="0.0" y="0.0" width="287" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="center" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NeK-5P-B88">
-                                                    <rect key="frame" x="6" y="8" width="308" height="27.5"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NeK-5P-B88">
+                                                    <rect key="frame" x="8" y="8" width="289.5" height="27.5"/>
                                                     <animations/>
                                                     <fontDescription key="fontDescription" type="system" weight="thin" pointSize="23"/>
                                                     <color key="textColor" red="0.0" green="0.25098040700000002" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
@@ -359,8 +359,8 @@
                                             </subviews>
                                             <animations/>
                                             <constraints>
-                                                <constraint firstItem="NeK-5P-B88" firstAttribute="width" secondItem="g3D-CF-ouo" secondAttribute="height" multiplier="304:43" id="OyH-pl-lN7"/>
-                                                <constraint firstItem="NeK-5P-B88" firstAttribute="centerX" secondItem="g3D-CF-ouo" secondAttribute="centerX" id="TC1-Ac-JOs"/>
+                                                <constraint firstItem="NeK-5P-B88" firstAttribute="width" secondItem="g3D-CF-ouo" secondAttribute="height" multiplier="304:43" constant="-18.034883720930225" id="OyH-pl-lN7"/>
+                                                <constraint firstItem="NeK-5P-B88" firstAttribute="centerX" secondItem="g3D-CF-ouo" secondAttribute="centerX" constant="9.25" id="TC1-Ac-JOs"/>
                                                 <constraint firstItem="NeK-5P-B88" firstAttribute="centerY" secondItem="g3D-CF-ouo" secondAttribute="centerY" id="xab-Kg-Ied"/>
                                             </constraints>
                                         </tableViewCellContentView>
