@@ -39,8 +39,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             let storyboard = UIStoryboard(name: "Main", bundle: nil)
             let initialViewController = storyboard.instantiateViewControllerWithIdentifier("BetoTabViewController") as? BetoTabViewController
             self.window?.rootViewController = initialViewController
-            self.window?.makeKeyAndVisible()
-        
+            self.window?.makeKeyAndVisible()        
         }
         return true
     }

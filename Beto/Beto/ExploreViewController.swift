@@ -32,6 +32,7 @@ class ExploreViewController: UIViewController, MGLMapViewDelegate {
         
         mapView.delegate = self
     }
+
     
     func mapView(mapView: MGLMapView, annotationCanShowCallout annotation: MGLAnnotation) -> Bool {
         return true

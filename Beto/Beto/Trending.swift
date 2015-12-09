@@ -12,6 +12,7 @@ import Parse
 class Trending {
     static let sharedInstance = Trending()
     var currentLocation: PFGeoPoint?
+    
     var category : String?
     private var trendingFactory = [Event]()
     var topTenTrendingEventsNearYou = [String:[Event]]()

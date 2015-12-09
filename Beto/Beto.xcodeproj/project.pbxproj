@@ -25,6 +25,7 @@
 		F186FB891C16476D003FD919 /* ParseBetoTabViewControllerHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = F186FB881C16476D003FD919 /* ParseBetoTabViewControllerHelper.swift */; };
 		F186FB8D1C165667003FD919 /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = F186FB8C1C165667003FD919 /* Event.swift */; };
 		F186FB931C16C322003FD919 /* ExploreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F186FB921C16C322003FD919 /* ExploreViewController.swift */; };
+		F186FB951C16D90D003FD919 /* InfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F186FB941C16D90D003FD919 /* InfoViewController.swift */; };
 		F18C6B591C15273F00821195 /* Trending.swift in Sources */ = {isa = PBXBuildFile; fileRef = F18C6B581C15273F00821195 /* Trending.swift */; };
 		F1A3F9871C0E43AA00C1341C /* MoreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1A3F9861C0E43AA00C1341C /* MoreViewController.swift */; };
 		F1AD997B1C0FA0D7003FA145 /* TrendingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1AD997A1C0FA0D7003FA145 /* TrendingTableViewCell.swift */; };
@@ -89,6 +90,7 @@
 		F186FB881C16476D003FD919 /* ParseBetoTabViewControllerHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParseBetoTabViewControllerHelper.swift; sourceTree = "<group>"; };
 		F186FB8C1C165667003FD919 /* Event.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
 		F186FB921C16C322003FD919 /* ExploreViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExploreViewController.swift; sourceTree = "<group>"; };
+		F186FB941C16D90D003FD919 /* InfoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InfoViewController.swift; sourceTree = "<group>"; };
 		F18C6B581C15273F00821195 /* Trending.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Trending.swift; sourceTree = "<group>"; };
 		F1A3F9861C0E43AA00C1341C /* MoreViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MoreViewController.swift; sourceTree = "<group>"; };
 		F1AD997A1C0FA0D7003FA145 /* TrendingTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TrendingTableViewCell.swift; sourceTree = "<group>"; };
@@ -219,6 +221,7 @@
 				F1A3F9861C0E43AA00C1341C /* MoreViewController.swift */,
 				F1AD998F1C0FEEF2003FA145 /* TrendViewController.swift */,
 				F186FB921C16C322003FD919 /* ExploreViewController.swift */,
+				F186FB941C16D90D003FD919 /* InfoViewController.swift */,
 			);
 			name = BetoTabViewController;
 			sourceTree = "<group>";
@@ -602,6 +605,7 @@
 				F1A3F9871C0E43AA00C1341C /* MoreViewController.swift in Sources */,
 				F10B56301BFD4CA000137CC3 /* SignInViewController.swift in Sources */,
 				F16571D31BFAF970007459AE /* Constants.swift in Sources */,
+				F186FB951C16D90D003FD919 /* InfoViewController.swift in Sources */,
 				F186FB891C16476D003FD919 /* ParseBetoTabViewControllerHelper.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

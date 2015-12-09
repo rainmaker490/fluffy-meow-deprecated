@@ -10,7 +10,7 @@ import UIKit
 import Parse
 import MapKit
 
-class TrendViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class TrendViewController: UIViewController, UITableViewDelegate, UITableViewDataSource , EventDetails{
     
     let trending = Trending.sharedInstance
 
@@ -20,18 +20,11 @@ class TrendViewController: UIViewController, UITableViewDelegate, UITableViewDat
     var refreshControl: UIRefreshControl!
     
     override func viewDidLoad() {
-        tableView.dataSource = self
-        
-        refreshControl = UIRefreshControl()
-        tableView.addSubview(refreshControl)
-        refreshControl.addTarget(self, action: "refresh:", forControlEvents: .ValueChanged)
-        trending.category = "All"
-        trending.getCurrentLocation()
         
         let notifications = NSNotificationCenter.defaultCenter()
         notifications.addObserver(self, selector: "receivedCurrentLocationData", name: Notifications.CurrentLocationRecieved, object: nil)
         notifications.addObserver(self, selector: "receivedTopTenTrending", name: Notifications.TopTenReady, object: nil)
-        
+        trending.getCurrentLocation()
         /*let region = CLCircularRegion(
             center: CLLocationCoordinate2D(latitude: 39.05, longitude: -95.78),
             radius: (25*1000*0.62137),
@@ -44,6 +37,12 @@ class TrendViewController: UIViewController, UITableViewDelegate, UITableViewDat
         geocoder.geocodeAddressString(address, completionHandler: {(placemarks: [CLPlacemark]?, error: NSError?) -> Void in
             
         })*/
+        tableView.dataSource = self
+        tableView.delegate = self
+        refreshControl = UIRefreshControl()
+        tableView.addSubview(refreshControl)
+        refreshControl.addTarget(self, action: "refresh:", forControlEvents: .ValueChanged)
+        trending.category = "All"
     }
     
     @IBAction func segmentedControlSelected(sender: UISegmentedControl) {
@@ -93,8 +92,7 @@ class TrendViewController: UIViewController, UITableViewDelegate, UITableViewDat
     }
     
     func refresh(refreshControl: UIRefreshControl) {
-        spinner.startAnimating()
-        trending.getTopTen(trending.category!, userGeoPoint: self.trending.currentLocation!, miles: 10)
+        trending.getTopTen(trending.category!, userGeoPoint: trending.currentLocation!, miles: 10)
         refreshControl.endRefreshing()
     }
     
@@ -114,5 +112,27 @@ class TrendViewController: UIViewController, UITableViewDelegate, UITableViewDat
         let cell = tableView.dequeueReusableCellWithIdentifier("MoreViewController") as! TrendingTableViewCell
         cell.trendingEventTitle.text = String(trending.topTenTrendingEventsNearYou[trending.category!]![indexPath.row].title)
         return cell
+    }
+    
+    var currentEvent : Event {
+        get {
+            return trending.topTenTrendingEventsNearYou[trending.category!]![tableView.indexPathForSelectedRow!.row]
+        }
+    }
+    
+    /*func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        performSegueWithIdentifier("didSelectRowAtIndexPath", sender: indexPath)
+    }*/
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        switch segue.identifier! {
+        case "InfoSegue":
+            let infoViewController = segue.destinationViewController as! InfoViewController
+            infoViewController.dataSource = self
+            infoViewController.completionBlock = { () in self.dismissViewControllerAnimated(true, completion: nil)}
+            break
+        default:
+            assert(false, "Unhandled Segue")
+        }
     }
 }
