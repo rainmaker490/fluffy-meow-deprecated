@@ -22,7 +22,6 @@
 		F15C69B71C18004800851E1C /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F15C69B61C18004800851E1C /* SignInViewController.swift */; };
 		F15C69BB1C1800A700851E1C /* ParseBetoTabViewControllerHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = F15C69BA1C1800A700851E1C /* ParseBetoTabViewControllerHelper.swift */; };
 		F15C69BD1C1800BE00851E1C /* BetoTabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F15C69BC1C1800BE00851E1C /* BetoTabViewController.swift */; };
-		F15C69C01C1800DD00851E1C /* MoreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F15C69BF1C1800DD00851E1C /* MoreViewController.swift */; };
 		F15C69C21C1800F500851E1C /* TrendViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F15C69C11C1800F500851E1C /* TrendViewController.swift */; };
 		F15C69C41C18010E00851E1C /* ExploreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F15C69C31C18010D00851E1C /* ExploreViewController.swift */; };
 		F15C69C61C18012100851E1C /* InfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F15C69C51C18012100851E1C /* InfoViewController.swift */; };
@@ -49,6 +48,9 @@
 		F15C6A0E1C1806E700851E1C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F15C69C71C18015500851E1C /* LaunchScreen.storyboard */; };
 		F15C6A0F1C1806F100851E1C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F15C69AA1C17FFAB00851E1C /* Main.storyboard */; };
 		F15C6A101C18070100851E1C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F15C69731C17FE9B00851E1C /* Assets.xcassets */; };
+		F18A8DF21C18C347000B016A /* EventAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = F18A8DF11C18C347000B016A /* EventAnnotation.swift */; };
+		F1DB342F1C18C8B70029F6ED /* EventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1DB342E1C18C8B70029F6ED /* EventViewController.swift */; };
+		F1DB34311C18C9890029F6ED /* CreateEventsForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1DB34301C18C9890029F6ED /* CreateEventsForm.swift */; };
 		F1F9D6B41C181E2400B6C84A /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F1F9D6B31C181E2400B6C84A /* MapKit.framework */; };
 /* End PBXBuildFile section */
 
@@ -93,7 +95,6 @@
 		F15C69B61C18004800851E1C /* SignInViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
 		F15C69BA1C1800A700851E1C /* ParseBetoTabViewControllerHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParseBetoTabViewControllerHelper.swift; sourceTree = "<group>"; };
 		F15C69BC1C1800BE00851E1C /* BetoTabViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BetoTabViewController.swift; sourceTree = "<group>"; };
-		F15C69BF1C1800DD00851E1C /* MoreViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MoreViewController.swift; sourceTree = "<group>"; };
 		F15C69C11C1800F500851E1C /* TrendViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TrendViewController.swift; sourceTree = "<group>"; };
 		F15C69C31C18010D00851E1C /* ExploreViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExploreViewController.swift; sourceTree = "<group>"; };
 		F15C69C51C18012100851E1C /* InfoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InfoViewController.swift; sourceTree = "<group>"; };
@@ -119,6 +120,9 @@
 		F15C69EF1C18029600851E1C /* NightLife.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = NightLife.png; sourceTree = "<group>"; };
 		F15C69F01C18029600851E1C /* Concerts.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Concerts.png; sourceTree = "<group>"; };
 		F15C69F81C18031A00851E1C /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F18A8DF11C18C347000B016A /* EventAnnotation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventAnnotation.swift; sourceTree = "<group>"; };
+		F1DB342E1C18C8B70029F6ED /* EventViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventViewController.swift; sourceTree = "<group>"; };
+		F1DB34301C18C9890029F6ED /* CreateEventsForm.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateEventsForm.swift; sourceTree = "<group>"; };
 		F1F9D6B31C181E2400B6C84A /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
@@ -225,6 +229,8 @@
 				F15C699D1C17FEDB00851E1C /* Parse */,
 				F15C69A01C17FF0A00851E1C /* Constants.swift */,
 				F15C69A41C17FF3500851E1C /* Trending.swift */,
+				F18A8DF11C18C347000B016A /* EventAnnotation.swift */,
+				F1DB34301C18C9890029F6ED /* CreateEventsForm.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -288,10 +294,10 @@
 			children = (
 				F15C69B91C18008D00851E1C /* Parse Helper */,
 				F15C69BC1C1800BE00851E1C /* BetoTabViewController.swift */,
-				F15C69BF1C1800DD00851E1C /* MoreViewController.swift */,
 				F15C69C11C1800F500851E1C /* TrendViewController.swift */,
 				F15C69C31C18010D00851E1C /* ExploreViewController.swift */,
 				F15C69C51C18012100851E1C /* InfoViewController.swift */,
+				F1DB342E1C18C8B70029F6ED /* EventViewController.swift */,
 			);
 			name = BetoTabViewController;
 			sourceTree = "<group>";
@@ -583,8 +589,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F1DB34311C18C9890029F6ED /* CreateEventsForm.swift in Sources */,
 				F15C69A91C17FF9100851E1C /* TrendingTableViewCell.swift in Sources */,
-				F15C69C01C1800DD00851E1C /* MoreViewController.swift in Sources */,
 				F15C69C41C18010E00851E1C /* ExploreViewController.swift in Sources */,
 				F15C69A51C17FF3500851E1C /* Trending.swift in Sources */,
 				F15C69BD1C1800BE00851E1C /* BetoTabViewController.swift in Sources */,
@@ -593,12 +599,14 @@
 				F15C69B51C18003100851E1C /* LogInViewController.swift in Sources */,
 				F15C699F1C17FEE700851E1C /* Event.swift in Sources */,
 				F15C696D1C17FE9B00851E1C /* AppDelegate.swift in Sources */,
+				F18A8DF21C18C347000B016A /* EventAnnotation.swift in Sources */,
 				F15C69B31C18001400851E1C /* SignInViewControllerHelper.swift in Sources */,
 				F15C69AD1C17FFC500851E1C /* MoreTableViewCell.swift in Sources */,
 				F15C69B01C17FFF500851E1C /* LogInViewControllerHelper.swift in Sources */,
 				F15C69B71C18004800851E1C /* SignInViewController.swift in Sources */,
 				F15C69C61C18012100851E1C /* InfoViewController.swift in Sources */,
 				F15C69A11C17FF0A00851E1C /* Constants.swift in Sources */,
+				F1DB342F1C18C8B70029F6ED /* EventViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
