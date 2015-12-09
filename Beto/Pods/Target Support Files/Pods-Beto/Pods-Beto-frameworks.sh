@@ -85,6 +85,7 @@ strip_invalid_archs() {
 
 if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_framework "Pods-Beto/Bolts.framework"
+  install_framework "Pods-Beto/Eureka.framework"
   install_framework "Pods-Beto/FBSDKCoreKit.framework"
   install_framework "Pods-Beto/FBSDKLoginKit.framework"
   install_framework "Pods-Beto/FBSDKShareKit.framework"
@@ -93,6 +94,7 @@ if [[ "$CONFIGURATION" == "Debug" ]]; then
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
   install_framework "Pods-Beto/Bolts.framework"
+  install_framework "Pods-Beto/Eureka.framework"
   install_framework "Pods-Beto/FBSDKCoreKit.framework"
   install_framework "Pods-Beto/FBSDKLoginKit.framework"
   install_framework "Pods-Beto/FBSDKShareKit.framework"

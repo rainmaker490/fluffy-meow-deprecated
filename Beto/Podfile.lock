@@ -5,6 +5,7 @@ PODS:
   - Bolts/AppLinks (1.5.0):
     - Bolts/Tasks
   - Bolts/Tasks (1.5.0)
+  - Eureka (1.2.0)
   - FBSDKCoreKit (4.8.0):
     - Bolts (~> 1.1)
     - FBSDKCoreKit/arc (= 4.8.0)
@@ -28,6 +29,7 @@ PODS:
 
 DEPENDENCIES:
   - Bolts
+  - Eureka
   - FBSDKCoreKit
   - FBSDKLoginKit
   - FBSDKShareKit
@@ -36,6 +38,7 @@ DEPENDENCIES:
 
 SPEC CHECKSUMS:
   Bolts: 722ab9a4f8b50fc4ed1b9998a5a7a2b3f16d80b4
+  Eureka: aa7059d2a30e1b206a581f0aabfcf903ece6beae
   FBSDKCoreKit: 66a935d17b6e00b6b64e604f2eb9b72c9ab7deb8
   FBSDKLoginKit: d893fcbb98d854496925e9ff73c67b896982d3c4
   FBSDKShareKit: e7577ee3adf80fc04fb656dd133fbb522250672b

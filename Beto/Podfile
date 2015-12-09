@@ -11,6 +11,7 @@ target 'Beto' do
 	pod 'FBSDKLoginKit'
 	pod 'FBSDKShareKit'
 	#pod 'Mapbox-iOS-SDK'
+	pod 'Eureka'
 end
 
 target 'BetoTests' do

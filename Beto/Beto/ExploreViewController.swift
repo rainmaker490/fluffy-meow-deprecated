@@ -9,16 +9,28 @@
 import UIKit
 import MapKit
 
-class ExploreViewController: UIViewController {
+class ExploreViewController: UIViewController , MKMapViewDelegate, CLLocationManagerDelegate{
     
     let mapViewEvents = SharedInstances.mapInstance
     let trending = SharedInstances.sharedInstance
+    let locationManager = CLLocationManager()
     
     @IBOutlet weak var mapView: MKMapView!
     
     override func viewDidLoad() {
+        let notifications = NSNotificationCenter.defaultCenter()
+        notifications.addObserver(self, selector: "receivedTopTenTrending", name: Notifications.TopTenReady, object: nil)
         mapViewEvents.getCurrentLocation()
-        
+        mapView.delegate = self
+        locationManager.delegate = self
+        locationManager.desiredAccuracy = kCLLocationAccuracyBest
+
+    }
+    
+    func centerMapOnLocation(location: CLLocation) {
+        let coordinateRegion = MKCoordinateRegion(center: location.coordinate, span: MKCoordinateSpanMake(0.01, 0.01))
+        mapView.setRegion(coordinateRegion, animated: true)
+        mapView.regionThatFits(coordinateRegion)
     }
     
     @IBAction func segmentedControl(sender: UISegmentedControl) {
@@ -47,7 +59,8 @@ class ExploreViewController: UIViewController {
     }
     
     func receivedTopTenTrending() {
-        
+        let currentLocation = CLLocation(latitude: (mapViewEvents.currentLocation?.latitude)!, longitude: (mapViewEvents.currentLocation?.longitude)!)
+        centerMapOnLocation(currentLocation)
     }
     
 }
