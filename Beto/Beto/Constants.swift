@@ -36,3 +36,12 @@ struct Notifications {
     static let TopTenReady = "TopTenReady"
     static let CurrentLocationRecieved = "CurrentLocationRecieved"
 }
+
+struct Categories {
+    static let CategoryOfEvents = ["Sport", "Clubs", "Study Groups", "Night Life", "Concerts"]
+    static let Sport = "Sport"
+    static let Clubs = "Clubs"
+    static let StudyGroups = "Study Groups"
+    static let NightLife = "Night Life"
+    static let Concerts = "Concers"
+}

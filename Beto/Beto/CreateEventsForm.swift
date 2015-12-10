@@ -8,9 +8,8 @@
 
 import Foundation
 
-class CreateEventsForm {
+struct CreateEventsForm {
     var eventTitle: String?
     var eventStartDate: NSDate?
     var eventEndDate: NSDate?
-    
 }

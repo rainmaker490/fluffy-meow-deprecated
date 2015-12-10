@@ -13,7 +13,7 @@ class NativeEventNavigationController: UINavigationController, RowControllerType
     var completionCallback : ((UIViewController) -> ())?
 }
 
-class EventViewController: FormViewController {
+class AddEventFormViewController: FormViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,8 +22,10 @@ class EventViewController: FormViewController {
         
         self.navigationItem.leftBarButtonItem?.target = self
         self.navigationItem.leftBarButtonItem?.action = "cancelTapped:"
+        self.navigationItem.rightBarButtonItem?.target = self
+        self.navigationItem.rightBarButtonItem?.action = "saveTapped:"
     }
-
+    
     private func initializeForm() {
         form =
             TextRow("Event Title *").cellSetup { cell, row in
@@ -34,7 +36,7 @@ class EventViewController: FormViewController {
                 $0.cell.textField.placeholder = $0.row.tag
             }
             
-            +++
+        +++
             
             DateTimeInlineRow("Starts *") {
                 $0.title = $0.tag
@@ -77,7 +79,21 @@ class EventViewController: FormViewController {
                         cell.detailTextLabel?.textColor = color
                     }
                     cell.detailTextLabel?.textColor = cell.tintColor
-        }
+            }
+            
+        +++ Section("Event Type")
+            
+            <<< PickerInlineRow<String>("Event Categoty") { (row : PickerInlineRow<String>) -> Void in
+                row.title = row.tag
+                row.options = Categories.CategoryOfEvents
+                row.value = row.options[0]
+                row.displayValueFor = {
+                    guard let category = $0 else{
+                        return nil
+                    }
+                    return "\(category)"
+                }
+            }
         
         form +++=
             
@@ -92,6 +108,11 @@ class EventViewController: FormViewController {
     }
     
     func cancelTapped(barButtonItem: UIBarButtonItem) {
-        (navigationController as? NativeEventNavigationController)?.completionCallback?(self)
+        dismissViewControllerAnimated(true, completion: nil)
+    }
+    
+    func saveTapped(sender: UIBarButtonItem){
+        
+        
     }
 }

@@ -49,8 +49,18 @@
 		F15C6A0F1C1806F100851E1C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F15C69AA1C17FFAB00851E1C /* Main.storyboard */; };
 		F15C6A101C18070100851E1C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F15C69731C17FE9B00851E1C /* Assets.xcassets */; };
 		F18A8DF21C18C347000B016A /* EventAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = F18A8DF11C18C347000B016A /* EventAnnotation.swift */; };
-		F1DB342F1C18C8B70029F6ED /* EventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1DB342E1C18C8B70029F6ED /* EventViewController.swift */; };
+		F1DB342F1C18C8B70029F6ED /* AddEventFormViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1DB342E1C18C8B70029F6ED /* AddEventFormViewController.swift */; };
 		F1DB34311C18C9890029F6ED /* CreateEventsForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1DB34301C18C9890029F6ED /* CreateEventsForm.swift */; };
+		F1DB343B1C18E96B0029F6ED /* DarkBlue.png in Resources */ = {isa = PBXBuildFile; fileRef = F1DB343A1C18E96B0029F6ED /* DarkBlue.png */; };
+		F1DB343D1C18E9AD0029F6ED /* Yellow.png in Resources */ = {isa = PBXBuildFile; fileRef = F1DB343C1C18E9AD0029F6ED /* Yellow.png */; };
+		F1DB343F1C18E9BD0029F6ED /* Green.png in Resources */ = {isa = PBXBuildFile; fileRef = F1DB343E1C18E9BD0029F6ED /* Green.png */; };
+		F1DB34411C18E9C80029F6ED /* LightBlue.png in Resources */ = {isa = PBXBuildFile; fileRef = F1DB34401C18E9C80029F6ED /* LightBlue.png */; };
+		F1DB34431C18E9D40029F6ED /* Purple.png in Resources */ = {isa = PBXBuildFile; fileRef = F1DB34421C18E9D40029F6ED /* Purple.png */; };
+		F1DB34451C18E9F20029F6ED /* GrayBlue.png in Resources */ = {isa = PBXBuildFile; fileRef = F1DB34441C18E9F20029F6ED /* GrayBlue.png */; };
+		F1DB34471C18EA050029F6ED /* Black.png in Resources */ = {isa = PBXBuildFile; fileRef = F1DB34461C18EA050029F6ED /* Black.png */; };
+		F1DB34491C18EA100029F6ED /* RedPin.png in Resources */ = {isa = PBXBuildFile; fileRef = F1DB34481C18EA100029F6ED /* RedPin.png */; };
+		F1DB344B1C18EA170029F6ED /* OrangePin.png in Resources */ = {isa = PBXBuildFile; fileRef = F1DB344A1C18EA170029F6ED /* OrangePin.png */; };
+		F1DB34501C18ED510029F6ED /* MoreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1DB344F1C18ED510029F6ED /* MoreViewController.swift */; };
 		F1F9D6B41C181E2400B6C84A /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F1F9D6B31C181E2400B6C84A /* MapKit.framework */; };
 /* End PBXBuildFile section */
 
@@ -121,8 +131,18 @@
 		F15C69F01C18029600851E1C /* Concerts.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Concerts.png; sourceTree = "<group>"; };
 		F15C69F81C18031A00851E1C /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F18A8DF11C18C347000B016A /* EventAnnotation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventAnnotation.swift; sourceTree = "<group>"; };
-		F1DB342E1C18C8B70029F6ED /* EventViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventViewController.swift; sourceTree = "<group>"; };
+		F1DB342E1C18C8B70029F6ED /* AddEventFormViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddEventFormViewController.swift; sourceTree = "<group>"; };
 		F1DB34301C18C9890029F6ED /* CreateEventsForm.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateEventsForm.swift; sourceTree = "<group>"; };
+		F1DB343A1C18E96B0029F6ED /* DarkBlue.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = DarkBlue.png; sourceTree = "<group>"; };
+		F1DB343C1C18E9AD0029F6ED /* Yellow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Yellow.png; sourceTree = "<group>"; };
+		F1DB343E1C18E9BD0029F6ED /* Green.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Green.png; sourceTree = "<group>"; };
+		F1DB34401C18E9C80029F6ED /* LightBlue.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = LightBlue.png; sourceTree = "<group>"; };
+		F1DB34421C18E9D40029F6ED /* Purple.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Purple.png; sourceTree = "<group>"; };
+		F1DB34441C18E9F20029F6ED /* GrayBlue.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = GrayBlue.png; sourceTree = "<group>"; };
+		F1DB34461C18EA050029F6ED /* Black.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Black.png; sourceTree = "<group>"; };
+		F1DB34481C18EA100029F6ED /* RedPin.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = RedPin.png; sourceTree = "<group>"; };
+		F1DB344A1C18EA170029F6ED /* OrangePin.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = OrangePin.png; sourceTree = "<group>"; };
+		F1DB344F1C18ED510029F6ED /* MoreViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MoreViewController.swift; sourceTree = "<group>"; };
 		F1F9D6B31C181E2400B6C84A /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
@@ -297,7 +317,7 @@
 				F15C69C11C1800F500851E1C /* TrendViewController.swift */,
 				F15C69C31C18010D00851E1C /* ExploreViewController.swift */,
 				F15C69C51C18012100851E1C /* InfoViewController.swift */,
-				F1DB342E1C18C8B70029F6ED /* EventViewController.swift */,
+				F1DB34531C18F1D30029F6ED /* More */,
 			);
 			name = BetoTabViewController;
 			sourceTree = "<group>";
@@ -369,6 +389,7 @@
 				F15C69E41C18027400851E1C /* Trending.png */,
 				F15C69E51C18027400851E1C /* Map.png */,
 				F15C69E91C18028600851E1C /* Trending */,
+				F1DB34341C18E9390029F6ED /* Explore */,
 			);
 			name = BetoTabViewData;
 			sourceTree = "<group>";
@@ -385,6 +406,39 @@
 				F15C69F01C18029600851E1C /* Concerts.png */,
 			);
 			name = Trending;
+			sourceTree = "<group>";
+		};
+		F1DB34341C18E9390029F6ED /* Explore */ = {
+			isa = PBXGroup;
+			children = (
+				F1DB34351C18E9430029F6ED /* Pins */,
+			);
+			name = Explore;
+			sourceTree = "<group>";
+		};
+		F1DB34351C18E9430029F6ED /* Pins */ = {
+			isa = PBXGroup;
+			children = (
+				F1DB343A1C18E96B0029F6ED /* DarkBlue.png */,
+				F1DB34401C18E9C80029F6ED /* LightBlue.png */,
+				F1DB343C1C18E9AD0029F6ED /* Yellow.png */,
+				F1DB343E1C18E9BD0029F6ED /* Green.png */,
+				F1DB34421C18E9D40029F6ED /* Purple.png */,
+				F1DB34441C18E9F20029F6ED /* GrayBlue.png */,
+				F1DB34461C18EA050029F6ED /* Black.png */,
+				F1DB34481C18EA100029F6ED /* RedPin.png */,
+				F1DB344A1C18EA170029F6ED /* OrangePin.png */,
+			);
+			name = Pins;
+			sourceTree = "<group>";
+		};
+		F1DB34531C18F1D30029F6ED /* More */ = {
+			isa = PBXGroup;
+			children = (
+				F1DB344F1C18ED510029F6ED /* MoreViewController.swift */,
+				F1DB342E1C18C8B70029F6ED /* AddEventFormViewController.swift */,
+			);
+			name = More;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -494,22 +548,31 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F1DB343F1C18E9BD0029F6ED /* Green.png in Resources */,
 				F15C6A101C18070100851E1C /* Assets.xcassets in Resources */,
 				F15C6A0F1C1806F100851E1C /* Main.storyboard in Resources */,
+				F1DB344B1C18EA170029F6ED /* OrangePin.png in Resources */,
 				F15C6A0E1C1806E700851E1C /* LaunchScreen.storyboard in Resources */,
 				F15C69FA1C1806E100851E1C /* BetoLogo.jpg in Resources */,
 				F15C69FB1C1806E100851E1C /* BetoLaunchScreenLogo.jpg in Resources */,
 				F15C69FC1C1806E100851E1C /* background.jpg in Resources */,
+				F1DB343D1C18E9AD0029F6ED /* Yellow.png in Resources */,
 				F15C69FD1C1806E100851E1C /* facebook.png in Resources */,
 				F15C69FE1C1806E100851E1C /* twitter.png in Resources */,
+				F1DB34431C18E9D40029F6ED /* Purple.png in Resources */,
+				F1DB343B1C18E96B0029F6ED /* DarkBlue.png in Resources */,
 				F15C69FF1C1806E100851E1C /* password.png in Resources */,
 				F15C6A001C1806E100851E1C /* signUp.png in Resources */,
+				F1DB34411C18E9C80029F6ED /* LightBlue.png in Resources */,
 				F15C6A011C1806E100851E1C /* SubmitUnFilled.png in Resources */,
+				F1DB34471C18EA050029F6ED /* Black.png in Resources */,
 				F15C6A021C1806E100851E1C /* SubmitFilled.png in Resources */,
 				F15C6A031C1806E100851E1C /* Close.png in Resources */,
+				F1DB34451C18E9F20029F6ED /* GrayBlue.png in Resources */,
 				F15C6A041C1806E100851E1C /* Settings.png in Resources */,
 				F15C6A051C1806E100851E1C /* Trending.png in Resources */,
 				F15C6A061C1806E100851E1C /* Map.png in Resources */,
+				F1DB34491C18EA100029F6ED /* RedPin.png in Resources */,
 				F15C6A071C1806E100851E1C /* Refresh.png in Resources */,
 				F15C6A081C1806E100851E1C /* All.png in Resources */,
 				F15C6A091C1806E100851E1C /* Sports.png in Resources */,
@@ -594,6 +657,7 @@
 				F15C69C41C18010E00851E1C /* ExploreViewController.swift in Sources */,
 				F15C69A51C17FF3500851E1C /* Trending.swift in Sources */,
 				F15C69BD1C1800BE00851E1C /* BetoTabViewController.swift in Sources */,
+				F1DB34501C18ED510029F6ED /* MoreViewController.swift in Sources */,
 				F15C69C21C1800F500851E1C /* TrendViewController.swift in Sources */,
 				F15C69BB1C1800A700851E1C /* ParseBetoTabViewControllerHelper.swift in Sources */,
 				F15C69B51C18003100851E1C /* LogInViewController.swift in Sources */,
@@ -606,7 +670,7 @@
 				F15C69B71C18004800851E1C /* SignInViewController.swift in Sources */,
 				F15C69C61C18012100851E1C /* InfoViewController.swift in Sources */,
 				F15C69A11C17FF0A00851E1C /* Constants.swift in Sources */,
-				F1DB342F1C18C8B70029F6ED /* EventViewController.swift in Sources */,
+				F1DB342F1C18C8B70029F6ED /* AddEventFormViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

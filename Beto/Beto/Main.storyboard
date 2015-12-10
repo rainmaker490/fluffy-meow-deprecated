@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="RHm-Q5-JFd">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="Lc7-e7-Ac6">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
@@ -183,52 +183,23 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="90" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="84W-ww-MtQ">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="519"/>
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="90" id="fN4-Py-jwk">
-                                        <rect key="frame" x="0.0" y="92" width="320" height="90"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="fN4-Py-jwk" id="E5Y-bm-cmr">
-                                            <rect key="frame" x="0.0" y="0.0" width="320" height="89.5"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Set Distance" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pcJ-BJ-aAt">
-                                                    <rect key="frame" x="11.5" y="8" width="297" height="20.5"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="width" secondItem="pcJ-BJ-aAt" secondAttribute="height" multiplier="304:21" id="eYb-yF-yKe"/>
-                                                    </constraints>
-                                                    <fontDescription key="fontDescription" type="system" weight="thin" pointSize="17"/>
-                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="nXJ-oU-os3">
-                                                    <rect key="frame" x="6" y="33" width="308" height="31"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="width" secondItem="nXJ-oU-os3" secondAttribute="height" multiplier="152:15" id="phE-5M-I66"/>
-                                                    </constraints>
-                                                </slider>
-                                            </subviews>
-                                            <constraints>
-                                                <constraint firstItem="pcJ-BJ-aAt" firstAttribute="top" secondItem="E5Y-bm-cmr" secondAttribute="topMargin" id="0Sr-Uj-ygo"/>
-                                                <constraint firstItem="pcJ-BJ-aAt" firstAttribute="centerX" secondItem="E5Y-bm-cmr" secondAttribute="centerX" id="ASH-gE-8PF"/>
-                                                <constraint firstItem="nXJ-oU-os3" firstAttribute="top" secondItem="pcJ-BJ-aAt" secondAttribute="bottom" constant="4.5" id="eS1-z7-UEk"/>
-                                                <constraint firstItem="nXJ-oU-os3" firstAttribute="centerX" secondItem="E5Y-bm-cmr" secondAttribute="centerX" id="gzC-xd-HMq"/>
-                                            </constraints>
-                                        </tableViewCellContentView>
-                                    </tableViewCell>
-                                </prototypes>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="84W-ww-MtQ" firstAttribute="width" secondItem="Zza-E4-P7T" secondAttribute="width" id="HgB-iZ-BTE"/>
-                            <constraint firstItem="84W-ww-MtQ" firstAttribute="height" secondItem="Zza-E4-P7T" secondAttribute="height" constant="-49" id="Ojk-N2-re2"/>
-                            <constraint firstItem="84W-ww-MtQ" firstAttribute="centerX" secondItem="Zza-E4-P7T" secondAttribute="centerX" id="ame-am-wWR"/>
-                            <constraint firstItem="84W-ww-MtQ" firstAttribute="centerY" secondItem="Zza-E4-P7T" secondAttribute="centerY" constant="-24.5" id="eUd-4I-TBs"/>
+                            <constraint firstItem="84W-ww-MtQ" firstAttribute="top" secondItem="r7r-QR-cxd" secondAttribute="bottom" constant="-64" id="7LB-0w-fkl"/>
+                            <constraint firstItem="84W-ww-MtQ" firstAttribute="width" secondItem="Zza-E4-P7T" secondAttribute="width" id="CGC-0d-vVy"/>
+                            <constraint firstItem="84W-ww-MtQ" firstAttribute="centerX" secondItem="Zza-E4-P7T" secondAttribute="centerX" id="dtM-cO-zwa"/>
+                            <constraint firstItem="84W-ww-MtQ" firstAttribute="bottom" secondItem="Zza-E4-P7T" secondAttribute="bottomMargin" id="ess-CH-cO8"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="🌐 More 🌎" id="njf-ag-obo"/>
+                    <connections>
+                        <outlet property="tableView" destination="84W-ww-MtQ" id="dxM-1e-Rzk"/>
+                        <segue destination="M56-8a-tXa" kind="modal" identifier="AddEvent" id="xke-HR-xzV"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rf8-3e-oWo" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -237,7 +208,7 @@
         <!--Add Event-->
         <scene sceneID="JxR-GV-c6L">
             <objects>
-                <viewController id="BhD-VE-UAc" customClass="EventViewController" customModule="Beto" sceneMemberID="viewController">
+                <viewController id="BhD-VE-UAc" customClass="AddEventFormViewController" customModule="Beto" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="AeI-3z-St3"/>
                         <viewControllerLayoutGuide type="bottom" id="xmo-lm-FfJ"/>
@@ -268,7 +239,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Kzo-gg-2sa" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="222" y="3058"/>
+            <point key="canvasLocation" x="523" y="3058"/>
         </scene>
         <!--📈 Trending 📉-->
         <scene sceneID="zwk-go-h7k">
@@ -689,22 +660,23 @@
             <point key="canvasLocation" x="811" y="1537"/>
         </scene>
         <!--Native Event Navigation Controller-->
-        <scene sceneID="u2Z-dP-c7D">
+        <scene sceneID="vBr-p5-JTM">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="RHm-Q5-JFd" customClass="NativeEventNavigationController" customModule="Beto" customModuleProvider="target" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="M56-8a-tXa" customClass="NativeEventNavigationController" customModule="Beto" customModuleProvider="target" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="us7-Ir-PMe">
+                    <navigationItem key="navigationItem" id="tGT-sf-xtU"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="0Af-YE-7hd">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="BhD-VE-UAc" kind="relationship" relationship="rootViewController" id="2Ly-Iu-FbA"/>
+                        <segue destination="BhD-VE-UAc" kind="relationship" relationship="rootViewController" id="Lpc-BZ-wqC"/>
                     </connections>
                 </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="ub8-3f-oNp" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ySd-Id-d29" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-310" y="3058"/>
+            <point key="canvasLocation" x="107" y="3058"/>
         </scene>
     </scenes>
     <resources>
