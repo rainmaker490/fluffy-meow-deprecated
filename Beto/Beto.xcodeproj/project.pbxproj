@@ -60,6 +60,9 @@
 		F1DB34491C18EA100029F6ED /* RedPin.png in Resources */ = {isa = PBXBuildFile; fileRef = F1DB34481C18EA100029F6ED /* RedPin.png */; };
 		F1DB344B1C18EA170029F6ED /* OrangePin.png in Resources */ = {isa = PBXBuildFile; fileRef = F1DB344A1C18EA170029F6ED /* OrangePin.png */; };
 		F1DB34501C18ED510029F6ED /* MoreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1DB344F1C18ED510029F6ED /* MoreViewController.swift */; };
+		F1DB345B1C1924DD0029F6ED /* Profile.png in Resources */ = {isa = PBXBuildFile; fileRef = F1DB345A1C1924DD0029F6ED /* Profile.png */; };
+		F1DB345D1C19287A0029F6ED /* Plus.png in Resources */ = {isa = PBXBuildFile; fileRef = F1DB345C1C19287A0029F6ED /* Plus.png */; };
+		F1DB345F1C19370C0029F6ED /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1DB345E1C19370C0029F6ED /* ProfileViewController.swift */; };
 		F1F9D6B41C181E2400B6C84A /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F1F9D6B31C181E2400B6C84A /* MapKit.framework */; };
 /* End PBXBuildFile section */
 
@@ -141,6 +144,9 @@
 		F1DB34481C18EA100029F6ED /* RedPin.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = RedPin.png; sourceTree = "<group>"; };
 		F1DB344A1C18EA170029F6ED /* OrangePin.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = OrangePin.png; sourceTree = "<group>"; };
 		F1DB344F1C18ED510029F6ED /* MoreViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MoreViewController.swift; sourceTree = "<group>"; };
+		F1DB345A1C1924DD0029F6ED /* Profile.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Profile.png; sourceTree = "<group>"; };
+		F1DB345C1C19287A0029F6ED /* Plus.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Plus.png; sourceTree = "<group>"; };
+		F1DB345E1C19370C0029F6ED /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		F1F9D6B31C181E2400B6C84A /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
@@ -387,6 +393,7 @@
 				F15C69E51C18027400851E1C /* Map.png */,
 				F15C69E91C18028600851E1C /* Trending */,
 				F1DB34341C18E9390029F6ED /* Explore */,
+				F1DB34541C1922D60029F6ED /* More */,
 			);
 			name = BetoTabViewData;
 			sourceTree = "<group>";
@@ -434,6 +441,16 @@
 			children = (
 				F1DB344F1C18ED510029F6ED /* MoreViewController.swift */,
 				F1DB342E1C18C8B70029F6ED /* AddEventFormViewController.swift */,
+				F1DB345E1C19370C0029F6ED /* ProfileViewController.swift */,
+			);
+			name = More;
+			sourceTree = "<group>";
+		};
+		F1DB34541C1922D60029F6ED /* More */ = {
+			isa = PBXGroup;
+			children = (
+				F1DB345A1C1924DD0029F6ED /* Profile.png */,
+				F1DB345C1C19287A0029F6ED /* Plus.png */,
 			);
 			name = More;
 			sourceTree = "<group>";
@@ -557,11 +574,13 @@
 				F15C69FD1C1806E100851E1C /* facebook.png in Resources */,
 				F15C69FE1C1806E100851E1C /* twitter.png in Resources */,
 				F1DB34431C18E9D40029F6ED /* Purple.png in Resources */,
+				F1DB345B1C1924DD0029F6ED /* Profile.png in Resources */,
 				F1DB343B1C18E96B0029F6ED /* DarkBlue.png in Resources */,
 				F15C69FF1C1806E100851E1C /* password.png in Resources */,
 				F15C6A001C1806E100851E1C /* signUp.png in Resources */,
 				F1DB34411C18E9C80029F6ED /* LightBlue.png in Resources */,
 				F15C6A011C1806E100851E1C /* SubmitUnFilled.png in Resources */,
+				F1DB345D1C19287A0029F6ED /* Plus.png in Resources */,
 				F1DB34471C18EA050029F6ED /* Black.png in Resources */,
 				F15C6A021C1806E100851E1C /* SubmitFilled.png in Resources */,
 				F15C6A031C1806E100851E1C /* Close.png in Resources */,
@@ -658,6 +677,7 @@
 				F15C69C21C1800F500851E1C /* TrendViewController.swift in Sources */,
 				F15C69BB1C1800A700851E1C /* ParseBetoTabViewControllerHelper.swift in Sources */,
 				F15C69B51C18003100851E1C /* LogInViewController.swift in Sources */,
+				F1DB345F1C19370C0029F6ED /* ProfileViewController.swift in Sources */,
 				F15C699F1C17FEE700851E1C /* Event.swift in Sources */,
 				F15C696D1C17FE9B00851E1C /* AppDelegate.swift in Sources */,
 				F18A8DF21C18C347000B016A /* EventAnnotation.swift in Sources */,

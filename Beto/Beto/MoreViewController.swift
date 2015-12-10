@@ -19,36 +19,36 @@ class MoreViewController: FormViewController {
     private func initializeForm() {
         form  +++= Section("User And Events Info")
             <<< ButtonRow("My Profile") { row in
-                row.title = row.tag
-                row.presentationMode = .SegueName(segueName: "MyProfileSegue", completionCallback:{  vc in vc.dismissViewControllerAnimated(true, completion: nil) })
-            }
-            
-            <<< ButtonRow("Add an, Event") {
-                $0.title = $0.tag
-                $0.presentationMode = .SegueName(segueName: "AddEventSegue", completionCallback: nil)
-            }
+                    row.title = row.tag
+                    row.presentationMode = .SegueName(segueName: "MyProfileSegue", completionCallback: {  vc in vc.dismissViewControllerAnimated(true, completion: nil) })
+                }.cellSetup { cell, row in
+                    cell.imageView?.image = UIImage(named: "Profile.png")
+                }
             
             <<< ButtonRow("Add an Event") {
-                $0.title = $0.tag
-                $0.presentationMode = .SegueName(segueName: "AddEventSegue", completionCallback: nil)
-        }
+                    $0.title = $0.tag
+                    $0.presentationMode = .SegueName(segueName: "AddEventSegue", completionCallback: nil)
+                }.cellSetup { cell, row in
+                    cell.imageView?.image = UIImage(named: "Plus.png")
+                }
         
         form +++= Section("Properties")
             <<< SegmentedRow<Int>(){
-                $0.title = "Events Distance (Miles)"
-                $0.options = [10, 25, 50]
-                $0.value = 25
-        }
+                    $0.title = "Events Distance (Miles)"
+                    $0.options = [10, 25, 50]
+                    $0.value = 25
+                    $0.cell.tintColor = .blueColor()
+                }
         form +++= Section("User Options")
-            <<< ButtonRow("Log Out Of Account") { (row: ButtonRow) in
-                row.title = row.tag
-                logOut()
-        }
+            <<< ButtonRow("Log Out") { (row: ButtonRow) in
+                    row.title = row.tag
+                    logOut()
+                    row.cell.tintColor = .redColor()
+                }
         
         // Space so footer does not cover up Logout button
         form +++= Section()
         form +++= Section()
-        
     }
     
     private func logOut(){
@@ -60,7 +60,6 @@ class MoreViewController: FormViewController {
     }
     
     func saveTapped(sender: UIBarButtonItem){
-        
         
     }
     
