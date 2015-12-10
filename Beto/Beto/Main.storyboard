@@ -364,7 +364,7 @@
                                 </constraints>
                                 <color key="separatorColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="MoreViewController" id="ulQ-vy-9Rc" customClass="TrendingTableViewCell" customModule="Beto" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="EventTitles" id="ulQ-vy-9Rc" customClass="TrendingTableViewCell" customModule="Beto" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ulQ-vy-9Rc" id="g3D-CF-ouo">
@@ -645,6 +645,35 @@
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="hXb-f4-j60" secondAttribute="height" multiplier="64:91" id="ljR-0i-zHY"/>
                                 </constraints>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="EventTitles" id="4kg-lN-Pi5" customClass="TrendingTableViewCell" customModule="Beto" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="92" width="320" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="4kg-lN-Pi5" id="38R-z0-Nyo">
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ONR-mP-Mt6">
+                                                    <rect key="frame" x="6" y="11" width="308" height="21"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" secondItem="ONR-mP-Mt6" secondAttribute="height" multiplier="304:21" id="g1y-kW-Yhe"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="ONR-mP-Mt6" firstAttribute="centerY" secondItem="38R-z0-Nyo" secondAttribute="centerY" id="BA3-kc-MhF"/>
+                                                <constraint firstItem="ONR-mP-Mt6" firstAttribute="centerX" secondItem="38R-z0-Nyo" secondAttribute="centerX" id="ClD-dj-Rwd"/>
+                                                <constraint firstItem="ONR-mP-Mt6" firstAttribute="width" secondItem="38R-z0-Nyo" secondAttribute="height" multiplier="304:43" id="eba-ly-jdN"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="trendingEventTitle" destination="ONR-mP-Mt6" id="v1T-1f-MxQ"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>

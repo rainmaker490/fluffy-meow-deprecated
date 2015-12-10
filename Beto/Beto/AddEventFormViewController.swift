@@ -32,18 +32,17 @@ class AddEventFormViewController: FormViewController {
     }
     
     private func initializeForm() {
-        form =
-                TextRow("Event Title *").cellSetup { cell, row in
-                    cell.textField.placeholder = row.tag
-                }.onChange{ (row) -> () in
-                    self.event.title = row.value
-                }
+        form +++= Section("Title and Location")
+                <<< TextRow("Event Title *").cellSetup { cell, row in
+                        cell.textField.placeholder = row.tag
+                    }.onChange{ (row) -> () in
+                        self.event.title = row.value
+                    }
             
                 <<< TextRow("Location *").cellSetup {
                         $0.cell.textField.placeholder = $0.row.tag
-                    }.onCellHighlight{ (cell, row) -> () in
-                    
-                    }.onCellUnHighlight{ (cell, row) -> () in
+                    }.onChange{ (row) -> () in
+                        self.event.locationString = row.value
                         if let location = row.value {
                             CLGeocoder().geocodeAddressString(location) { (placemarks, error) -> Void in
                                 if((error) != nil){
@@ -54,32 +53,30 @@ class AddEventFormViewController: FormViewController {
                                 }
                             }
                         }
-                    }.onChange{ (row) -> () in
-                        self.event.locationString = row.value
                     }
             
-            +++
-                DateTimeInlineRow("Starts *") {
-                    $0.title = $0.tag
-                    $0.value = NSDate().dateByAddingTimeInterval(60*60*24)
-                    self.event.startDate = $0.value
-                }.onChange { [weak self] row in
-                    let endRow: DateTimeInlineRow! = self?.form.rowByTag("Ends *")
-                    if row.value?.compare(endRow.value!) == .OrderedDescending {
-                        endRow.value = NSDate(timeInterval: 60*60*24, sinceDate: row.value!)
-                        endRow.updateCell()
+        form +++= Section("Dates")
+                <<< DateTimeInlineRow("Starts *") {
+                        $0.title = $0.tag
+                        $0.value = NSDate().dateByAddingTimeInterval(60*60*24)
+                        self.event.startDate = $0.value
+                    }.onChange { [weak self] row in
+                        let endRow: DateTimeInlineRow! = self?.form.rowByTag("Ends *")
+                        if row.value?.compare(endRow.value!) == .OrderedDescending {
+                            endRow.value = NSDate(timeInterval: 60*60*24, sinceDate: row.value!)
+                            endRow.updateCell()
+                        }
+                        self?.event.startDate = row.value
+                    }.onExpandInlineRow { cell, row, inlineRow in
+                        inlineRow.cellUpdate { cell, dateRow in
+                            cell.datePicker.datePickerMode = .DateAndTime
+                        }
+                        let color = cell.detailTextLabel?.textColor
+                        row.onCollapseInlineRow { cell, _, _ in
+                            cell.detailTextLabel?.textColor = color
+                        }
+                        cell.detailTextLabel?.textColor = cell.tintColor
                     }
-                    self?.event.startDate = row.value
-                }.onExpandInlineRow { cell, row, inlineRow in
-                    inlineRow.cellUpdate { cell, dateRow in
-                        cell.datePicker.datePickerMode = .DateAndTime
-                    }
-                    let color = cell.detailTextLabel?.textColor
-                    row.onCollapseInlineRow { cell, _, _ in
-                        cell.detailTextLabel?.textColor = color
-                    }
-                    cell.detailTextLabel?.textColor = cell.tintColor
-                }
                 <<< DateTimeInlineRow("Ends *"){
                         $0.title = $0.tag
                         $0.value = NSDate().dateByAddingTimeInterval(60*60*25)
@@ -100,25 +97,23 @@ class AddEventFormViewController: FormViewController {
                         cell.detailTextLabel?.textColor = cell.tintColor
                     }
             
-            +++ Section("Event Type")
+        form +++= Section("Event Type")
                 <<< AlertRow<String>() {
                         $0.title = "Event Category"
                         $0.selectorTitle = "Event Category"
                         $0.options = Categories.CategoryOfEvents
-                        $0.value = $0.options[0]
-                        self.event.type = $0.value
                     }.onChange { row in
                         print(row.value)
                         self.event.type = row.value
                     }.onPresent{ _, to in
                         to.view.tintColor = .grayColor()
                     }
-        form +++=
-                URLRow("URL") {
-                    $0.placeholder = "URL"
-                }.onChange{ (row) -> () in
-                    self.event.url = String(row.value)
-                }
+        form +++= Section("Other")
+                <<< URLRow("URL") {
+                        $0.placeholder = "URL"
+                    }.onChange{ (row) -> () in
+                        self.event.url = String(row.value)
+                    }
                 <<< TextAreaRow("Description") {
                         $0.placeholder = "Description"
                     }.onChange{ (row) -> () in

@@ -12,6 +12,7 @@ import Parse
 class SharedInstances {
     static let sharedInstance = Trending()
     static let mapInstance = Trending()
+    static let searchInstance = Trending()
 }
 
 class Trending {
