@@ -13,63 +13,59 @@ class MoreViewController: FormViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        ImageRow.defaultCellUpdate = { cell, row in
-            cell.accessoryView?.layer.cornerRadius = 17
-            cell.accessoryView?.frame = CGRectMake(0, 0, 34, 34)
-        }
-        
-        form  +++=
-            
-            Section()
-            
-            <<< ButtonRow("View My Profile") {
-                $0.title = $0.tag
-                $0.presentationMode = .SegueName(segueName: "AddEvent", completionCallback: nil)
-            }
-            
-            <<< ButtonRow("Native iOS Event Form") { row in
-                row.title = row.tag
-                row.presentationMode = .SegueName(segueName: "NativeEventsFormNavigationControllerSegue", completionCallback:{  vc in vc.dismissViewControllerAnimated(true, completion: nil) })
-            }
-            
-            <<< ButtonRow("Accesory View Navigation") { (row: ButtonRow) in
-                row.title = row.tag
-                row.presentationMode = .SegueName(segueName: "AccesoryViewControllerSegue", completionCallback: nil)
-            }
-            
-            <<< ButtonRow("Custom Cells") { (row: ButtonRow) -> () in
-                row.title = row.tag
-                row.presentationMode = .SegueName(segueName: "CustomCellsControllerSegue", completionCallback: nil)
-            }
-            
-            <<< ButtonRow("Customization of rows with text input") { (row: ButtonRow) -> Void in
-                row.title = row.tag
-                row.presentationMode = .SegueName(segueName: "FieldCustomizationControllerSegue", completionCallback: nil)
-            }
-            
-            <<< ButtonRow("Hidden rows") { (row: ButtonRow) -> Void in
-                row.title = row.tag
-                row.presentationMode = .SegueName(segueName: "HiddenRowsControllerSegue", completionCallback: nil)
-            }
-            
-            <<< ButtonRow("Disabled rows") { (row: ButtonRow) -> Void in
-                row.title = row.tag
-                row.presentationMode = .SegueName(segueName: "DisabledRowsControllerSegue", completionCallback: nil)
-            }
-            
-            <<< ButtonRow("Formatters") { (row: ButtonRow) -> Void in
-                row.title = row.tag
-                row.presentationMode = .SegueName(segueName: "FormattersControllerSegue", completionCallback: nil)
-            }
-            
-            <<< ButtonRow("Inline rows") { (row: ButtonRow) -> Void in
-                row.title = row.tag
-                row.presentationMode = .SegueName(segueName: "InlineRowsControllerSegue", completionCallback: nil)
-        }
+        initializeForm()
     }
     
-    /*override func viewDidLoad() {
+    private func initializeForm() {
+        form  +++= Section("User And Events Info")
+            <<< ButtonRow("My Profile") { row in
+                row.title = row.tag
+                row.presentationMode = .SegueName(segueName: "MyProfileSegue", completionCallback:{  vc in vc.dismissViewControllerAnimated(true, completion: nil) })
+            }
+            
+            <<< ButtonRow("Add an, Event") {
+                $0.title = $0.tag
+                $0.presentationMode = .SegueName(segueName: "AddEventSegue", completionCallback: nil)
+            }
+            
+            <<< ButtonRow("Add an Event") {
+                $0.title = $0.tag
+                $0.presentationMode = .SegueName(segueName: "AddEventSegue", completionCallback: nil)
+        }
+        
+        form +++= Section("Properties")
+            <<< SegmentedRow<Int>(){
+                $0.title = "Events Distance (Miles)"
+                $0.options = [10, 25, 50]
+                $0.value = 25
+        }
+        form +++= Section("User Options")
+            <<< ButtonRow("Log Out Of Account") { (row: ButtonRow) in
+                row.title = row.tag
+                logOut()
+        }
+        
+        // Space so footer does not cover up Logout button
+        form +++= Section()
+        form +++= Section()
+        
+    }
+    
+    private func logOut(){
+        
+    }
+    
+    func cancelTapped(barButtonItem: UIBarButtonItem) {
+        dismissViewControllerAnimated(true, completion: nil)
+    }
+    
+    func saveTapped(sender: UIBarButtonItem){
+        
+        
+    }
+    
+    /*
+    override func viewDidLoad() {
         tableView.dataSource = self
         tableView.delegate = self
         super.viewDidLoad()
@@ -95,7 +91,7 @@ class MoreViewController: FormViewController {
             return cell
         }
     }
-
+    
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         switch segue.identifier! {
         case "AddEvent":
@@ -106,5 +102,7 @@ class MoreViewController: FormViewController {
         default:
             assert(false, "Unhandled Segue")
         }
-    }*/
+    }
+    */
 }
+

@@ -15,7 +15,6 @@
 		F15C69A11C17FF0A00851E1C /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = F15C69A01C17FF0A00851E1C /* Constants.swift */; };
 		F15C69A51C17FF3500851E1C /* Trending.swift in Sources */ = {isa = PBXBuildFile; fileRef = F15C69A41C17FF3500851E1C /* Trending.swift */; };
 		F15C69A91C17FF9100851E1C /* TrendingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F15C69A81C17FF9100851E1C /* TrendingTableViewCell.swift */; };
-		F15C69AD1C17FFC500851E1C /* MoreTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F15C69AC1C17FFC500851E1C /* MoreTableViewCell.swift */; };
 		F15C69B01C17FFF500851E1C /* LogInViewControllerHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = F15C69AF1C17FFF500851E1C /* LogInViewControllerHelper.swift */; };
 		F15C69B31C18001400851E1C /* SignInViewControllerHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = F15C69B21C18001400851E1C /* SignInViewControllerHelper.swift */; };
 		F15C69B51C18003100851E1C /* LogInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F15C69B41C18003100851E1C /* LogInViewController.swift */; };
@@ -98,7 +97,6 @@
 		F15C69A41C17FF3500851E1C /* Trending.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Trending.swift; sourceTree = "<group>"; };
 		F15C69A81C17FF9100851E1C /* TrendingTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TrendingTableViewCell.swift; sourceTree = "<group>"; };
 		F15C69AA1C17FFAB00851E1C /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
-		F15C69AC1C17FFC500851E1C /* MoreTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MoreTableViewCell.swift; sourceTree = "<group>"; };
 		F15C69AF1C17FFF500851E1C /* LogInViewControllerHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogInViewControllerHelper.swift; sourceTree = "<group>"; };
 		F15C69B21C18001400851E1C /* SignInViewControllerHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignInViewControllerHelper.swift; sourceTree = "<group>"; };
 		F15C69B41C18003100851E1C /* LogInViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogInViewController.swift; sourceTree = "<group>"; };
@@ -295,7 +293,6 @@
 			isa = PBXGroup;
 			children = (
 				F15C69A81C17FF9100851E1C /* TrendingTableViewCell.swift */,
-				F15C69AC1C17FFC500851E1C /* MoreTableViewCell.swift */,
 			);
 			name = Trending;
 			sourceTree = "<group>";
@@ -665,7 +662,6 @@
 				F15C696D1C17FE9B00851E1C /* AppDelegate.swift in Sources */,
 				F18A8DF21C18C347000B016A /* EventAnnotation.swift in Sources */,
 				F15C69B31C18001400851E1C /* SignInViewControllerHelper.swift in Sources */,
-				F15C69AD1C17FFC500851E1C /* MoreTableViewCell.swift in Sources */,
 				F15C69B01C17FFF500851E1C /* LogInViewControllerHelper.swift in Sources */,
 				F15C69B71C18004800851E1C /* SignInViewController.swift in Sources */,
 				F15C69C61C18012100851E1C /* InfoViewController.swift in Sources */,

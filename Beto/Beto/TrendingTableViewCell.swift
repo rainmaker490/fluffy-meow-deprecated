@@ -1,5 +1,5 @@
 //
-//  OffsetTrendingTableViewCell.swift
+//  TrendingTableViewCell.swift
 //  Beto
 //
 //  Created by Varun D Patel on 12/2/15.

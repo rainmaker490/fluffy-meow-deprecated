@@ -182,9 +182,12 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="90" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="84W-ww-MtQ">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="90" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="84W-ww-MtQ">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="84W-ww-MtQ" secondAttribute="height" multiplier="40:71" id="vRK-Xb-cZO"/>
+                                </constraints>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -192,13 +195,12 @@
                             <constraint firstItem="84W-ww-MtQ" firstAttribute="top" secondItem="r7r-QR-cxd" secondAttribute="bottom" constant="-64" id="7LB-0w-fkl"/>
                             <constraint firstItem="84W-ww-MtQ" firstAttribute="width" secondItem="Zza-E4-P7T" secondAttribute="width" id="CGC-0d-vVy"/>
                             <constraint firstItem="84W-ww-MtQ" firstAttribute="centerX" secondItem="Zza-E4-P7T" secondAttribute="centerX" id="dtM-cO-zwa"/>
-                            <constraint firstItem="84W-ww-MtQ" firstAttribute="bottom" secondItem="Zza-E4-P7T" secondAttribute="bottomMargin" id="ess-CH-cO8"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="🌐 More 🌎" id="njf-ag-obo"/>
                     <connections>
                         <outlet property="tableView" destination="84W-ww-MtQ" id="dxM-1e-Rzk"/>
-                        <segue destination="M56-8a-tXa" kind="modal" identifier="AddEvent" id="xke-HR-xzV"/>
+                        <segue destination="M56-8a-tXa" kind="modal" identifier="AddEventSegue" id="xke-HR-xzV"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rf8-3e-oWo" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -220,14 +222,16 @@
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="TZZ-FW-oWL">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="TZZ-FW-oWL" secondAttribute="height" multiplier="40:63" constant="-40.634920634920604" id="xDX-HW-gGQ"/>
+                                </constraints>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="TZZ-FW-oWL" firstAttribute="centerX" secondItem="w5c-xY-aiY" secondAttribute="centerX" id="0i8-uE-STa"/>
-                            <constraint firstItem="TZZ-FW-oWL" firstAttribute="top" secondItem="AeI-3z-St3" secondAttribute="bottom" constant="-64" id="AQx-Sb-pCP"/>
-                            <constraint firstItem="xmo-lm-FfJ" firstAttribute="top" secondItem="TZZ-FW-oWL" secondAttribute="bottom" id="eNE-lM-3DM"/>
-                            <constraint firstItem="TZZ-FW-oWL" firstAttribute="width" secondItem="w5c-xY-aiY" secondAttribute="width" id="zkw-QC-o3S"/>
+                            <constraint firstItem="TZZ-FW-oWL" firstAttribute="centerX" secondItem="w5c-xY-aiY" secondAttribute="centerX" id="O0B-jC-3Nt"/>
+                            <constraint firstItem="TZZ-FW-oWL" firstAttribute="top" secondItem="AeI-3z-St3" secondAttribute="bottom" constant="-64" id="OBg-Jt-HLJ"/>
+                            <constraint firstItem="TZZ-FW-oWL" firstAttribute="width" secondItem="w5c-xY-aiY" secondAttribute="width" id="p15-cc-KN8"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Add Event" id="NKn-Ch-9Ba">

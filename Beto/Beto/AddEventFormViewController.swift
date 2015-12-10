@@ -83,7 +83,7 @@ class AddEventFormViewController: FormViewController {
             
         +++ Section("Event Type")
             
-            <<< PickerInlineRow<String>("Event Categoty") { (row : PickerInlineRow<String>) -> Void in
+            <<< PickerInlineRow<String>("Event Category") { (row : PickerInlineRow<String>) -> Void in
                 row.title = row.tag
                 row.options = Categories.CategoryOfEvents
                 row.value = row.options[0]
