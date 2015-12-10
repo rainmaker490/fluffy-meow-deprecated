@@ -7,9 +7,14 @@
 //
 
 import Foundation
+import MapKit
 
-struct CreateEventsForm {
-    var eventTitle: String?
-    var eventStartDate: NSDate?
-    var eventEndDate: NSDate?
+struct EventsForm {
+    var title: String?
+    var startDate: NSDate?
+    var endDate: NSDate?
+    var location: CLLocationCoordinate2D?
+    var type: String?
+    var url: String?
+    var description: String?
 }

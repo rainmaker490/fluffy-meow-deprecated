@@ -7,13 +7,17 @@
 //
 
 import UIKit
+import MapKit
 import Eureka
+import Parse
 
 class NativeEventNavigationController: UINavigationController, RowControllerType {
     var completionCallback : ((UIViewController) -> ())?
 }
 
 class AddEventFormViewController: FormViewController {
+    
+    var event = EventsForm()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,17 +33,33 @@ class AddEventFormViewController: FormViewController {
     private func initializeForm() {
         form =
             TextRow("Event Title *").cellSetup { cell, row in
-                    cell.textField.placeholder = row.tag
-                }
+                cell.textField.placeholder = row.tag
+                }.onChange{ (row) -> () in
+                    self.event.title = row.value
+            }
             
             <<< TextRow("Location *").cellSetup {
-                    $0.cell.textField.placeholder = $0.row.tag
+                $0.cell.textField.placeholder = $0.row.tag
+                }.onCellHighlight({ (cell, row) -> () in
+                    
+                })
+                .onCellUnHighlight{ (cell, row) -> () in
+                    if let location = row.value {
+                        CLGeocoder().geocodeAddressString(location) { (placemarks, error) -> Void in
+                            if((error) != nil){
+                                print("Error", error)
+                            }
+                            if let placemark = placemarks?.first {
+                                self.event.location = placemark.location!.coordinate
+                            }
+                        }
+
+                    }
                 }
             
-        +++
+            +++
             DateTimeInlineRow("Starts *") {
-                    $0.title = $0.tag
-                    $0.value = NSDate().dateByAddingTimeInterval(60*60*24)
+                $0.title = $0.tag
                 }.onChange { [weak self] row in
                     let endRow: DateTimeInlineRow! = self?.form.rowByTag("Ends *")
                     if row.value?.compare(endRow.value!) == .OrderedDescending {
@@ -47,6 +67,7 @@ class AddEventFormViewController: FormViewController {
                         endRow.cell!.backgroundColor = .whiteColor()
                         endRow.updateCell()
                     }
+                    self?.event.startDate = row.value
                 }.onExpandInlineRow { cell, row, inlineRow in
                     inlineRow.cellUpdate { cell, dateRow in
                         cell.datePicker.datePickerMode = .DateAndTime
@@ -58,12 +79,12 @@ class AddEventFormViewController: FormViewController {
                     cell.detailTextLabel?.textColor = cell.tintColor
                 }
             <<< DateTimeInlineRow("Ends *"){
-                    $0.title = $0.tag
-                    $0.value = NSDate().dateByAddingTimeInterval(60*60*25)
+                $0.title = $0.tag
                 }.onChange { [weak self] row in
                     let startRow: DateTimeInlineRow? = self?.form.rowByTag("Starts *")
                     row.cell!.backgroundColor =  row.value?.compare(startRow!.value!) == .OrderedAscending ? .redColor() : .whiteColor()
                     row.updateCell()
+                    self?.event.endDate = row.value
                 }.onExpandInlineRow { cell, row, inlineRow in
                     inlineRow.cellUpdate { cell, dateRow in
                         cell.datePicker.datePickerMode = .DateAndTime
@@ -73,9 +94,9 @@ class AddEventFormViewController: FormViewController {
                         cell.detailTextLabel?.textColor = color
                     }
                     cell.detailTextLabel?.textColor = cell.tintColor
-                }
+            }
             
-        +++ Section("Event Type")
+            +++ Section("Event Type")
             <<< PickerInlineRow<String>("Event Category") {
                 (row : PickerInlineRow<String>) -> Void in
                 row.title = row.tag
@@ -87,15 +108,21 @@ class AddEventFormViewController: FormViewController {
                     }
                     return "\(category)"
                 }
-            }
+                }.onChange{ (row) -> () in
+                    self.event.type = row.value
+        }
         
         form +++=
             URLRow("URL") {
                 $0.placeholder = "URL"
+                }.onChange{ (row) -> () in
+                    self.event.url = String(row.value)
             }
             <<< TextAreaRow("Description") {
                 $0.placeholder = "Description"
-            }
+                }.onChange{ (row) -> () in
+                    self.event.description = row.value
+        }
     }
     
     func cancelTapped(barButtonItem: UIBarButtonItem) {
@@ -103,7 +130,6 @@ class AddEventFormViewController: FormViewController {
     }
     
     func saveTapped(sender: UIBarButtonItem){
-        
-        
+        // Save to Parse
     }
 }

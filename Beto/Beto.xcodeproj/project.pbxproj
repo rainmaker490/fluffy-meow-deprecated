@@ -63,6 +63,8 @@
 		F1DB37041C1965DB0029F6ED /* Black.png in Resources */ = {isa = PBXBuildFile; fileRef = F1DB36FB1C1965DB0029F6ED /* Black.png */; };
 		F1DB37051C1965DB0029F6ED /* RedPin.png in Resources */ = {isa = PBXBuildFile; fileRef = F1DB36FC1C1965DB0029F6ED /* RedPin.png */; };
 		F1DB37061C1965DB0029F6ED /* OrangePin.png in Resources */ = {isa = PBXBuildFile; fileRef = F1DB36FD1C1965DB0029F6ED /* OrangePin.png */; };
+		F1DB371C1C196D8A0029F6ED /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F1DB371B1C196D8A0029F6ED /* MapKit.framework */; };
+		F1DB371E1C1989670029F6ED /* Camera Filled-100.png in Resources */ = {isa = PBXBuildFile; fileRef = F1DB371D1C1989670029F6ED /* Camera Filled-100.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -147,6 +149,8 @@
 		F1DB36FB1C1965DB0029F6ED /* Black.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Black.png; sourceTree = "<group>"; };
 		F1DB36FC1C1965DB0029F6ED /* RedPin.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = RedPin.png; sourceTree = "<group>"; };
 		F1DB36FD1C1965DB0029F6ED /* OrangePin.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = OrangePin.png; sourceTree = "<group>"; };
+		F1DB371B1C196D8A0029F6ED /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		F1DB371D1C1989670029F6ED /* Camera Filled-100.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Camera Filled-100.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -154,6 +158,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F1DB371C1C196D8A0029F6ED /* MapKit.framework in Frameworks */,
 				DB6A0A85B986559E59BCC545 /* Pods_Beto.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -187,6 +192,7 @@
 		661611F28DA9104D7E813C65 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				F1DB371B1C196D8A0029F6ED /* MapKit.framework */,
 				B3CE67479A223604908EC3B1 /* Pods_Beto.framework */,
 			);
 			name = Frameworks;
@@ -344,6 +350,7 @@
 		F1DB37111C1967680029F6ED /* Assets */ = {
 			isa = PBXGroup;
 			children = (
+				F1DB371D1C1989670029F6ED /* Camera Filled-100.png */,
 				F1DB36BC1C1965740029F6ED /* BetoLogo.jpg */,
 				F1DB37131C1967A50029F6ED /* LaunchScreenData */,
 				F1DB371A1C1968990029F6ED /* LogInData */,
@@ -575,6 +582,7 @@
 				F1DB36F21C1965D10029F6ED /* Study.png in Resources */,
 				F1DB36FE1C1965DB0029F6ED /* DarkBlue.png in Resources */,
 				F1DB36EF1C1965D10029F6ED /* All.png in Resources */,
+				F1DB371E1C1989670029F6ED /* Camera Filled-100.png in Resources */,
 				F1DB36F11C1965D10029F6ED /* Meetings.png in Resources */,
 				F1DB36EE1C1965D10029F6ED /* Refresh.png in Resources */,
 				F1DB36A21C19652A0029F6ED /* LaunchScreen.storyboard in Resources */,
