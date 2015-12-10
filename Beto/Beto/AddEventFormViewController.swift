@@ -32,34 +32,32 @@ class AddEventFormViewController: FormViewController {
     
     private func initializeForm() {
         form =
-            TextRow("Event Title *").cellSetup { cell, row in
-                cell.textField.placeholder = row.tag
+                TextRow("Event Title *").cellSetup { cell, row in
+                    cell.textField.placeholder = row.tag
                 }.onChange{ (row) -> () in
                     self.event.title = row.value
-            }
-            
-            <<< TextRow("Location *").cellSetup {
-                $0.cell.textField.placeholder = $0.row.tag
-                }.onCellHighlight({ (cell, row) -> () in
-                    
-                })
-                .onCellUnHighlight{ (cell, row) -> () in
-                    if let location = row.value {
-                        CLGeocoder().geocodeAddressString(location) { (placemarks, error) -> Void in
-                            if((error) != nil){
-                                print("Error", error)
-                            }
-                            if let placemark = placemarks?.first {
-                                self.event.location = placemark.location!.coordinate
-                            }
-                        }
-
-                    }
                 }
             
+                <<< TextRow("Location *").cellSetup {
+                        $0.cell.textField.placeholder = $0.row.tag
+                    }.onCellHighlight{ (cell, row) -> () in
+                    
+                    }.onCellUnHighlight{ (cell, row) -> () in
+                        if let location = row.value {
+                            CLGeocoder().geocodeAddressString(location) { (placemarks, error) -> Void in
+                                if((error) != nil){
+                                    print("Error", error)
+                                }
+                                if let placemark = placemarks?.first {
+                                    self.event.location = placemark.location!.coordinate
+                                }
+                            }
+                        }
+                    }
+            
             +++
-            DateTimeInlineRow("Starts *") {
-                $0.title = $0.tag
+                DateTimeInlineRow("Starts *") {
+                    $0.title = $0.tag
                 }.onChange { [weak self] row in
                     let endRow: DateTimeInlineRow! = self?.form.rowByTag("Ends *")
                     if row.value?.compare(endRow.value!) == .OrderedDescending {
@@ -78,51 +76,47 @@ class AddEventFormViewController: FormViewController {
                     }
                     cell.detailTextLabel?.textColor = cell.tintColor
                 }
-            <<< DateTimeInlineRow("Ends *"){
-                $0.title = $0.tag
-                }.onChange { [weak self] row in
-                    let startRow: DateTimeInlineRow? = self?.form.rowByTag("Starts *")
-                    row.cell!.backgroundColor =  row.value?.compare(startRow!.value!) == .OrderedAscending ? .redColor() : .whiteColor()
-                    row.updateCell()
-                    self?.event.endDate = row.value
-                }.onExpandInlineRow { cell, row, inlineRow in
-                    inlineRow.cellUpdate { cell, dateRow in
-                        cell.datePicker.datePickerMode = .DateAndTime
+                <<< DateTimeInlineRow("Ends *"){
+                        $0.title = $0.tag
+                    }.onChange { [weak self] row in
+                        let startRow: DateTimeInlineRow? = self?.form.rowByTag("Starts *")
+                        row.cell!.backgroundColor =  row.value?.compare(startRow!.value!) == .OrderedAscending ? .redColor() : .whiteColor()
+                        row.updateCell()
+                        self?.event.endDate = row.value
+                    }.onExpandInlineRow { cell, row, inlineRow in
+                        inlineRow.cellUpdate { cell, dateRow in
+                            cell.datePicker.datePickerMode = .DateAndTime
+                        }
+                        let color = cell.detailTextLabel?.textColor
+                        row.onCollapseInlineRow { cell, _, _ in
+                            cell.detailTextLabel?.textColor = color
+                        }
+                        cell.detailTextLabel?.textColor = cell.tintColor
                     }
-                    let color = cell.detailTextLabel?.textColor
-                    row.onCollapseInlineRow { cell, _, _ in
-                        cell.detailTextLabel?.textColor = color
-                    }
-                    cell.detailTextLabel?.textColor = cell.tintColor
-            }
             
             +++ Section("Event Type")
-            <<< PickerInlineRow<String>("Event Category") {
-                (row : PickerInlineRow<String>) -> Void in
-                row.title = row.tag
-                row.options = Categories.CategoryOfEvents
-                row.value = row.options[0]
-                row.displayValueFor = {
-                    guard let category = $0 else{
-                        return nil
+                <<< AlertRow<String>() {
+                        $0.title = "Event Category"
+                        $0.selectorTitle = "Event Category"
+                        $0.options = Categories.CategoryOfEvents
+                        $0.value = $0.options[0]
+                    }.onChange { row in
+                        print(row.value)
+                        self.event.type = row.value
+                    }.onPresent{ _, to in
+                        to.view.tintColor = .grayColor()
                     }
-                    return "\(category)"
-                }
-                }.onChange{ (row) -> () in
-                    self.event.type = row.value
-        }
-        
         form +++=
-            URLRow("URL") {
-                $0.placeholder = "URL"
+                URLRow("URL") {
+                    $0.placeholder = "URL"
                 }.onChange{ (row) -> () in
                     self.event.url = String(row.value)
-            }
-            <<< TextAreaRow("Description") {
-                $0.placeholder = "Description"
-                }.onChange{ (row) -> () in
-                    self.event.description = row.value
-        }
+                }
+                <<< TextAreaRow("Description") {
+                        $0.placeholder = "Description"
+                    }.onChange{ (row) -> () in
+                        self.event.description = row.value
+                    }
     }
     
     func cancelTapped(barButtonItem: UIBarButtonItem) {

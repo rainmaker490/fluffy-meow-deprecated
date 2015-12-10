@@ -182,7 +182,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Camera Filled-100.png" translatesAutoresizingMaskIntoConstraints="NO" id="n65-ST-XrC">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Camera.png" translatesAutoresizingMaskIntoConstraints="NO" id="n65-ST-XrC">
                                 <rect key="frame" x="16" y="60" width="135" height="135"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="n65-ST-XrC" secondAttribute="height" multiplier="1:1" id="lLa-su-hxK"/>
@@ -761,7 +761,7 @@
     <resources>
         <image name="All.png" width="32" height="32"/>
         <image name="BetoLogo.jpg" width="134" height="172"/>
-        <image name="Camera Filled-100.png" width="100" height="100"/>
+        <image name="Camera.png" width="100" height="100"/>
         <image name="Close.png" width="100" height="100"/>
         <image name="Concerts.png" width="32" height="32"/>
         <image name="Map.png" width="32" height="32"/>
