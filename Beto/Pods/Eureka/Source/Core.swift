@@ -46,6 +46,12 @@ public protocol FormDelegate : class {
     func rowValueHasBeenChanged(row: BaseRow, oldValue: Any?, newValue: Any?)
 }
 
+public protocol SectionDelegate: class {
+    func rowsHaveBeenAdded(rows: [BaseRow], atIndexes:NSIndexSet)
+    func rowsHaveBeenRemoved(rows: [BaseRow], atIndexes:NSIndexSet)
+    func rowsHaveBeenReplaced(oldRows oldRows:[BaseRow], newRows: [BaseRow], atIndexes: NSIndexSet)
+}
+
 //MARK: Header Footer Protocols
 
 public protocol HeaderFooterViewRepresentable {
@@ -92,7 +98,11 @@ public protocol BaseInlineRowType {
 public protocol InlineRowType: TypedRowType, BaseInlineRowType {
     typealias InlineRow: RowType
     
-    var onPresentInlineRow : (InlineRow -> Void)? { get set }   
+    func setupInlineRow(inlineRow: InlineRow)
+}
+
+public protocol SelectableRowType : RowType {
+    var selectableValue : Value? { get set }
 }
 
 extension InlineRowType where Self: BaseRow, Self.InlineRow : BaseRow, Self.Cell : TypedCellType, Self.Cell.Value == Self.Value, Self.InlineRow.Cell.Value == Self.InlineRow.Value, Self.InlineRow.Value == Self.Value {
@@ -108,7 +118,7 @@ extension InlineRowType where Self: BaseRow, Self.InlineRow : BaseRow, Self.Cell
                 self?.value = $0.value
                 self?.updateCell()
             }
-            onPresentInlineRow?(inline)
+            setupInlineRow(inline)
             if (form.inlineRowHideOptions ?? Form.defaultInlineRowHideOptions).contains(.AnotherInlineRowIsShown) {
                 for row in form.allRows {
                     if let inlineRow = row as? BaseInlineRowType {
@@ -171,6 +181,10 @@ public protocol PresenterRowType: TypedRowType {
     var onPresentCallback: ((FormViewController, ProviderType)->())? { get set }
 }
 
+public protocol KeyboardReturnHandler : BaseRowType {
+    var keyboardReturnType : KeyboardReturnTypeConfiguration? { get set }
+}
+
 //MARK: Cell Protocols
 
 public protocol BaseCellType : class {
@@ -202,6 +216,8 @@ public final class Form {
     public static var defaultNavigationOptions = RowNavigationOptions.Enabled.union(.SkipCanNotBecomeFirstResponderRow)
     public static var defaultInlineRowHideOptions = InlineRowHideOptions.FirstResponderChanges.union(.AnotherInlineRowIsShown)
     public var inlineRowHideOptions : InlineRowHideOptions?
+    public var keyboardReturnType : KeyboardReturnTypeConfiguration?
+    public static var defaultKeyboardReturnType = KeyboardReturnTypeConfiguration()
     
     public weak var delegate: FormDelegate?
 
@@ -449,7 +465,7 @@ public func ==(lhs: Section, rhs: Section) -> Bool{
     return lhs === rhs
 }
 
-extension Section : Hidable {}
+extension Section : Hidable, SectionDelegate {}
 
 public class Section {
 
@@ -469,37 +485,30 @@ public class Section {
     
     public required init(){}
     
-    public init(@noescape _ initializer: Section -> ()){
+    public required init(@noescape _ initializer: Section -> ()){
         initializer(self)
     }
 
-    public init(_ header: HeaderFooterView<UIView>, @noescape _ initializer: Section -> () = { _ in }){
-        self.header = header
+    public init(_ header: String, @noescape _ initializer: Section -> () = { _ in }){
+        self.header = HeaderFooterView(stringLiteral: header)
         initializer(self)
     }
     
-    public init(header: HeaderFooterView<UIView>, footer: HeaderFooterView<UIView>, @noescape _ initializer: Section -> () = { _ in }){
-        self.header = header
-        self.footer = footer
+    public init(header: String, footer: String, @noescape _ initializer: Section -> () = { _ in }){
+        self.header = HeaderFooterView(stringLiteral: header)
+        self.footer = HeaderFooterView(stringLiteral: footer)
         initializer(self)
     }
     
-    public init(footer: HeaderFooterView<UIView>, @noescape _ initializer: Section -> () = { _ in }){
-        self.footer = footer
+    public init(footer: String, @noescape _ initializer: Section -> () = { _ in }){
+        self.footer = HeaderFooterView(stringLiteral: footer)
         initializer(self)
     }
     
-    public convenience init(_ header: String, @noescape _ initializer: Section -> () = { _ in }){
-        self.init(HeaderFooterView(stringLiteral: header), initializer)
-    }
-    
-    public convenience init(header: String, footer: String, @noescape _ initializer: Section -> () = { _ in }){
-        self.init(header: HeaderFooterView(stringLiteral: header), footer: HeaderFooterView(stringLiteral: footer), initializer)
-    }
-    
-    public convenience init(footer: String, @noescape _ initializer: Section -> () = { _ in }){
-        self.init(footer: HeaderFooterView(stringLiteral: footer), initializer)
-    }
+    //MARK: SectionDelegate
+    public func rowsHaveBeenAdded(rows: [BaseRow], atIndexes:NSIndexSet) {}
+    public func rowsHaveBeenRemoved(rows: [BaseRow], atIndexes:NSIndexSet) {}
+    public func rowsHaveBeenReplaced(oldRows oldRows:[BaseRow], newRows: [BaseRow], atIndexes: NSIndexSet) {}
     
     //MARK: Private
     private lazy var kvoWrapper: KVOWrapper = { [unowned self] in return KVOWrapper(section: self) }()
@@ -639,7 +648,7 @@ public struct HeaderFooterView<ViewType: UIView> : StringLiteralConvertible, Hea
         return v
     }
     
-    init?(title: String?){
+    public init?(title: String?){
         guard let t = title else { return nil }
         self.init(stringLiteral: t)
     }
@@ -689,25 +698,30 @@ extension Section {
         override func observeValueForKeyPath(keyPath: String?, ofObject object: AnyObject?, change: [String : AnyObject]?, context: UnsafeMutablePointer<Void>) {
             let newRows = change![NSKeyValueChangeNewKey] as? [BaseRow] ?? []
             let oldRows = change![NSKeyValueChangeOldKey] as? [BaseRow] ?? []
-            guard let delegateValue = section?.form?.delegate, let keyPathValue = keyPath, let changeType = change?[NSKeyValueChangeKindKey] else{ return }
+            guard let keyPathValue = keyPath, let changeType = change?[NSKeyValueChangeKindKey] else{ return }
+            let delegateValue = section?.form?.delegate
             guard keyPathValue == "_rows" else { return }
             switch changeType.unsignedLongValue {
                 case NSKeyValueChange.Setting.rawValue:
-                    delegateValue.rowsHaveBeenAdded(newRows, atIndexPaths:[NSIndexPath(index: 0)])
+                    section?.rowsHaveBeenAdded(newRows, atIndexes:NSIndexSet(index: 0))
+                    delegateValue?.rowsHaveBeenAdded(newRows, atIndexPaths:[NSIndexPath(index: 0)])
                 case NSKeyValueChange.Insertion.rawValue:
                     let indexSet = change![NSKeyValueChangeIndexesKey] as! NSIndexSet
                     if let _index = section?.index {
-                      delegateValue.rowsHaveBeenAdded(newRows, atIndexPaths: indexSet.map { NSIndexPath(forRow: $0, inSection: _index ) } )
+                        section?.rowsHaveBeenAdded(newRows, atIndexes: indexSet)
+                        delegateValue?.rowsHaveBeenAdded(newRows, atIndexPaths: indexSet.map { NSIndexPath(forRow: $0, inSection: _index ) } )
                     }
                 case NSKeyValueChange.Removal.rawValue:
                     let indexSet = change![NSKeyValueChangeIndexesKey] as! NSIndexSet
                     if let _index = section?.index {
-                      delegateValue.rowsHaveBeenRemoved(oldRows, atIndexPaths: indexSet.map { NSIndexPath(forRow: $0, inSection: _index ) } )
+                      section?.rowsHaveBeenRemoved(oldRows, atIndexes: indexSet)
+                      delegateValue?.rowsHaveBeenRemoved(oldRows, atIndexPaths: indexSet.map { NSIndexPath(forRow: $0, inSection: _index ) } )
                     }
                 case NSKeyValueChange.Replacement.rawValue:
                     let indexSet = change![NSKeyValueChangeIndexesKey] as! NSIndexSet
                     if let _index = section?.index {
-                      delegateValue.rowsHaveBeenReplaced(oldRows: oldRows, newRows: newRows, atIndexPaths: indexSet.map { NSIndexPath(forRow: $0, inSection: _index)})
+                      section?.rowsHaveBeenReplaced(oldRows: oldRows, newRows: newRows, atIndexes: indexSet)
+                      delegateValue?.rowsHaveBeenReplaced(oldRows: oldRows, newRows: newRows, atIndexPaths: indexSet.map { NSIndexPath(forRow: $0, inSection: _index)})
                     }
                 default:
                     assertionFailure()
@@ -838,7 +852,6 @@ internal class RowDefaults {
     private static var rawOnCellHighlight = Dictionary<String, Any>()
     private static var rawOnCellUnHighlight = Dictionary<String, Any>()
     private static var rawRowInitialization = Dictionary<String, Any>()
-    
 }
 
 extension RowType where Self : BaseRow, Cell : TypedCellType, Cell.Value == Value {
@@ -847,7 +860,7 @@ extension RowType where Self : BaseRow, Cell : TypedCellType, Cell.Value == Valu
         set {
             if let newValue = newValue {
                 let wrapper : (BaseCell, BaseRow) -> Void = { (baseCell: BaseCell, baseRow: BaseRow) in
-                newValue(baseCell as! Cell, baseRow as! Self)
+                    newValue(baseCell as! Cell, baseRow as! Self)
                 }
                 RowDefaults.cellUpdate["\(self)"] = wrapper
                 RowDefaults.rawCellUpdate["\(self)"] = newValue
@@ -864,12 +877,12 @@ extension RowType where Self : BaseRow, Cell : TypedCellType, Cell.Value == Valu
         set {
             if let newValue = newValue {
                 let wrapper : (BaseCell, BaseRow) -> Void = { (baseCell: BaseCell, baseRow: BaseRow) in
-                newValue(baseCell as! Cell, baseRow as! Self)
+                    newValue(baseCell as! Cell, baseRow as! Self)
                 }
                 RowDefaults.cellSetup["\(self)"] = wrapper
                 RowDefaults.rawCellSetup["\(self)"] = newValue
-        }
-        else {
+            }
+            else {
                 RowDefaults.cellSetup["\(self)"] = nil
                 RowDefaults.rawCellSetup["\(self)"] = nil
             }
@@ -1237,7 +1250,8 @@ public class Row<T: Equatable, Cell: CellType where Cell: BaseCell, Cell.Value =
     
 }
 
-public class SelectorRow<T: Equatable, VCType: TypedRowControllerType where VCType: UIViewController,  VCType.RowValue == T>: OptionsRow<T, PushSelectorCell<T>> {
+
+public class SelectorRow<T: Equatable, VCType: TypedRowControllerType where VCType: UIViewController,  VCType.RowValue == T>: OptionsRow<T, PushSelectorCell<T>>, PresenterRowType {
     
     public var presentationMode: PresentationMode<VCType>?
     public var onPresentCallback : ((FormViewController, VCType)->())?
@@ -1287,7 +1301,7 @@ public class SelectorRow<T: Equatable, VCType: TypedRowControllerType where VCTy
     }
 }
 
-public class GenericMultipleSelectorRow<T: Hashable, VCType: TypedRowControllerType where VCType: UIViewController,  VCType.RowValue == Set<T>>: Row<Set<T>, PushSelectorCell<Set<T>>> {
+public class GenericMultipleSelectorRow<T: Hashable, VCType: TypedRowControllerType where VCType: UIViewController,  VCType.RowValue == Set<T>>: Row<Set<T>, PushSelectorCell<Set<T>>>, PresenterRowType {
     
     public var presentationMode: PresentationMode<VCType>?
     public var onPresentCallback : ((FormViewController, VCType)->())?
@@ -1463,7 +1477,7 @@ public class Cell<T: Equatable> : BaseCell, TypedCellType {
     
     public typealias Value = T
     
-    public var row : RowOf<T>!
+    public weak var row : RowOf<T>!
     
     override public var inputAccessoryView: UIView? {
         if let v = formViewController()?.inputAccessoryViewForRow(row){
@@ -1696,6 +1710,11 @@ public struct RowNavigationOptions : OptionSetType {
     public static let SkipCanNotBecomeFirstResponderRow = RowNavigationOptions(.SkipCanNotBecomeFirstResponderRow)
 }
 
+public struct KeyboardReturnTypeConfiguration {
+    public var nextKeyboardType = UIReturnKeyType.Next
+    public var defaultKeyboardType = UIReturnKeyType.Default
+}
+
 public struct InlineRowHideOptions : OptionSetType {
     
     private enum _InlineRowHideOptions : Int {
@@ -1715,7 +1734,7 @@ public class FormViewController : UIViewController, FormViewControllerProtocol {
     
     @IBOutlet public var tableView: UITableView?
     
-    private lazy var _form : Form = { [unowned self] in
+    private lazy var _form : Form = { [weak self] in
         let form = Form()
         form.delegate = self
         return form
@@ -1747,6 +1766,12 @@ public class FormViewController : UIViewController, FormViewControllerProtocol {
         }()
     
     public var navigationOptions : RowNavigationOptions?
+    private var tableViewStyle: UITableViewStyle = .Grouped
+    
+    public convenience init(style: UITableViewStyle) {
+        self.init(nibName: nil, bundle: nil)
+        tableViewStyle = style
+    }
     
     public override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: NSBundle?) {
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
@@ -1759,7 +1784,7 @@ public class FormViewController : UIViewController, FormViewControllerProtocol {
     public override func viewDidLoad() {
         super.viewDidLoad()
         if tableView == nil {
-            tableView = UITableView(frame: view.bounds, style: .Grouped)
+            tableView = UITableView(frame: view.bounds, style: tableViewStyle)
             tableView?.autoresizingMask = UIViewAutoresizing.FlexibleWidth.union(.FlexibleHeight)
         }
         if tableView?.superview == nil {
@@ -1842,6 +1867,51 @@ public class FormViewController : UIViewController, FormViewControllerProtocol {
     
     public func reloadAnimationOldSections(oldSections: [Section], newSections: [Section]) -> UITableViewRowAnimation {
         return .Automatic
+    }
+    
+    //MARK: TextField and TextView Delegate
+    
+    public func textInputShouldBeginEditing<T>(textInput: UITextInput, cell: Cell<T>) -> Bool {
+        return true
+    }
+    
+    public func textInputDidBeginEditing<T>(textInput: UITextInput, cell: Cell<T>) {
+        if let row = cell.row as? KeyboardReturnHandler {
+            let nextRow = nextRowForRow(cell.row, withDirection: .Down)
+            if let textField = textInput as? UITextField {
+                textField.returnKeyType = nextRow != nil ? (row.keyboardReturnType?.nextKeyboardType ?? (form.keyboardReturnType?.nextKeyboardType ?? Form.defaultKeyboardReturnType.nextKeyboardType )) : (row.keyboardReturnType?.defaultKeyboardType ?? (form.keyboardReturnType?.defaultKeyboardType ?? Form.defaultKeyboardReturnType.defaultKeyboardType))
+            }
+            else if let textView = textInput as? UITextView {
+                textView.returnKeyType = nextRow != nil ? (row.keyboardReturnType?.nextKeyboardType ?? (form.keyboardReturnType?.nextKeyboardType ?? Form.defaultKeyboardReturnType.nextKeyboardType )) : (row.keyboardReturnType?.defaultKeyboardType ?? (form.keyboardReturnType?.defaultKeyboardType ?? Form.defaultKeyboardReturnType.defaultKeyboardType))
+            }
+        }
+    }
+    
+    public func textInputShouldEndEditing<T>(textInput: UITextInput, cell: Cell<T>) -> Bool {
+        return true
+    }
+    
+    public func textInputDidEndEditing<T>(textInput: UITextInput, cell: Cell<T>) {
+        
+    }
+    
+    public func textInput<T>(textInput: UITextInput, shouldChangeCharactersInRange range: NSRange, replacementString string: String, cell: Cell<T>) -> Bool {
+        return true
+    }
+    
+    public func textInputShouldClear<T>(textInput: UITextInput, cell: Cell<T>) -> Bool {
+        return true
+    }
+
+    public func textInputShouldReturn<T>(textInput: UITextInput, cell: Cell<T>) -> Bool {
+        if let nextRow = nextRowForRow(cell.row, withDirection: .Down){
+            if nextRow.baseCell.cellCanBecomeFirstResponder(){
+                nextRow.baseCell.cellBecomeFirstResponder()
+                return true
+            }
+        }
+        tableView?.endEditing(true)
+        return true
     }
     
     //MARK: Private
@@ -2111,3 +2181,75 @@ public class NavigationAccessoryView : UIToolbar {
     public override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {}
 }
 
+// MARK: SelectableSection
+public enum SelectionType {
+    case MultipleSelection
+    case SingleSelection(enableDeselection: Bool)
+}
+
+public protocol SelectableSectionType: CollectionType {
+    typealias SelectableRow: BaseRow, SelectableRowType
+    
+    var selectionType : SelectionType { get set }
+    var onSelectSelectableRow: ((SelectableRow.Cell, SelectableRow) -> Void)? { get set }
+    
+    func selectedRow() -> SelectableRow?
+    func selectedRows() -> [SelectableRow]
+}
+
+extension SelectableSectionType where Self: Section, SelectableRow.Value == SelectableRow.Cell.Value {
+    
+    public func selectedRow() -> SelectableRow? {
+        return selectedRows().first
+    }
+    
+    public func selectedRows() -> [SelectableRow] {
+        return filter({ (row: BaseRow) -> Bool in
+            row is SelectableRow && row.baseValue != nil
+        }).map({ $0 as! SelectableRow})
+    }
+    
+    func prepareSelectableRows(rows: [BaseRow]){
+        for row in rows {
+            if let row = row as? SelectableRow {
+                row.onCellSelection { [weak self] cell, row in
+                    guard let s = self else { return }
+                    switch s.selectionType {
+                    case .MultipleSelection:
+                        row.value = row.value == nil ? row.selectableValue : nil
+                        row.updateCell()
+                    case .SingleSelection(let enableDeselection):
+                        s.filter { $0.baseValue != nil && $0 != row }.forEach {
+                            $0.baseValue = nil
+                            $0.updateCell()
+                        }
+                        row.value = !enableDeselection || row.value == nil ? row.selectableValue : nil
+                        row.updateCell()
+                    }
+                    s.onSelectSelectableRow?(cell, row)
+                }
+            }
+        }
+    }
+    
+}
+
+public class SelectableSection<Row, T where Row: BaseRow, Row: SelectableRowType, Row.Value == T, T == Row.Cell.Value> : Section, SelectableSectionType  {
+    
+    public typealias SelectableRow = Row
+    public var selectionType = SelectionType.SingleSelection(enableDeselection: true)
+    public var onSelectSelectableRow: ((Row.Cell, Row) -> Void)?
+    
+    public required init(@noescape _ initializer: Section -> ()) {
+        super.init(initializer)
+    }
+    
+    public init(_ header: String, selectionType: SelectionType, @noescape _ initializer: Section -> () = { _ in }) {
+        self.selectionType = selectionType
+        super.init(header, initializer)
+    }
+    
+    public override func rowsHaveBeenAdded(rows: [BaseRow], atIndexes: NSIndexSet) {
+        prepareSelectableRows(rows)
+    }
+}

@@ -40,8 +40,9 @@ public protocol FormatterConformance: class {
     var useFormatterDuringInput: Bool { get set }
 }
 
-public class FieldRow<T: Any, Cell: CellType where Cell: BaseCell, Cell: TextFieldCell, Cell.Value == T>: Row<T, Cell>, FieldRowConformance {
+public class FieldRow<T: Any, Cell: CellType where Cell: BaseCell, Cell: TextFieldCell, Cell.Value == T>: Row<T, Cell>, FieldRowConformance, KeyboardReturnHandler {
     
+    public var keyboardReturnType : KeyboardReturnTypeConfiguration?
     public var textFieldPercentage : CGFloat?
     public var placeholder : String?
     public var placeholderColor : UIColor?
@@ -114,7 +115,6 @@ public class _DateInlineFieldRow: Row<NSDate, DateInlineCell>, _DatePickerRowPro
 public class _DateInlineRow: _DateInlineFieldRow {
     
     public typealias InlineRow = DatePickerRow
-    public var onPresentInlineRow : (DatePickerRow -> Void)?
     
     public required init(tag: String?) {
         super.init(tag: tag)
@@ -123,12 +123,17 @@ public class _DateInlineRow: _DateInlineFieldRow {
         dateFormatter?.dateStyle = .MediumStyle
         dateFormatter?.locale = .currentLocale()
     }
+    
+    public func setupInlineRow(inlineRow: DatePickerRow) {
+        inlineRow.minimumDate = minimumDate
+        inlineRow.maximumDate = maximumDate
+        inlineRow.minuteInterval = minuteInterval
+    }
 }
 
 public class _DateTimeInlineRow: _DateInlineFieldRow {
 
     public typealias InlineRow = DateTimePickerRow
-    public var onPresentInlineRow : (DateTimePickerRow -> Void)?
     
     public required init(tag: String?) {
         super.init(tag: tag)
@@ -137,12 +142,17 @@ public class _DateTimeInlineRow: _DateInlineFieldRow {
         dateFormatter?.dateStyle = .ShortStyle
         dateFormatter?.locale = .currentLocale()
     }
+    
+    public func setupInlineRow(inlineRow: DateTimePickerRow) {
+        inlineRow.minimumDate = minimumDate
+        inlineRow.maximumDate = maximumDate
+        inlineRow.minuteInterval = minuteInterval
+    }
 }
 
 public class _TimeInlineRow: _DateInlineFieldRow {
     
     public typealias InlineRow = TimePickerRow
-    public var onPresentInlineRow : (TimePickerRow -> Void)?
     
     public required init(tag: String?) {
         super.init(tag: tag)
@@ -151,12 +161,17 @@ public class _TimeInlineRow: _DateInlineFieldRow {
         dateFormatter?.dateStyle = .NoStyle
         dateFormatter?.locale = .currentLocale()
     }
+    
+    public func setupInlineRow(inlineRow: TimePickerRow) {
+        inlineRow.minimumDate = minimumDate
+        inlineRow.maximumDate = maximumDate
+        inlineRow.minuteInterval = minuteInterval
+    }
 }
 
 public class _CountDownInlineRow: _DateInlineFieldRow {
     
     public typealias InlineRow = CountDownPickerRow
-    public var onPresentInlineRow : (CountDownPickerRow -> Void)?
     
     public required init(tag: String?) {
         super.init(tag: tag)
@@ -171,6 +186,12 @@ public class _CountDownInlineRow: _DateInlineFieldRow {
             }
             return "\(hour) hours \(min) min"
         }
+    }
+    
+    public func setupInlineRow(inlineRow: CountDownPickerRow) {
+        inlineRow.minimumDate = minimumDate
+        inlineRow.maximumDate = maximumDate
+        inlineRow.minuteInterval = minuteInterval
     }
 }
 
@@ -324,7 +345,6 @@ public class _PickerRow<T where T: Equatable> : Row<T, PickerCell<T>>{
 public class _PickerInlineRow<T where T: Equatable> : Row<T, LabelCellOf<T>>{
     
     public typealias InlineRow = PickerRow<T>
-    public var onPresentInlineRow : (PickerRow<T> -> Void)?
     public var options = [T]()
 
     required public init(tag: String?) {
@@ -336,10 +356,6 @@ public final class PickerInlineRow<T where T: Equatable> : _PickerInlineRow<T>, 
     
     required public init(tag: String?) {
         super.init(tag: tag)
-        onPresentInlineRow = { [unowned self] inlineRow in
-            inlineRow.options = self.options
-            inlineRow.displayValueFor = self.displayValueFor
-        }
         onExpandInlineRow { cell, row, _ in
             let color = cell.detailTextLabel?.textColor
             row.onCollapseInlineRow { cell, _, _ in
@@ -356,6 +372,10 @@ public final class PickerInlineRow<T where T: Equatable> : _PickerInlineRow<T>, 
         }
     }
     
+    public func setupInlineRow(inlineRow: InlineRow) {
+        inlineRow.options = self.options
+        inlineRow.displayValueFor = self.displayValueFor
+    }
 }
 
 public final class PickerRow<T where T: Equatable>: _PickerRow<T>, RowType {
@@ -385,6 +405,14 @@ public class _CheckRow: Row<Bool, CheckCell> {
     }
 }
 
+public final class ListCheckRow<T: Equatable>: Row<T, ListCheckCell<T>>, SelectableRowType, RowType {
+    public var selectableValue: T?
+    required public init(tag: String?) {
+        super.init(tag: tag)
+        displayValueFor = nil
+    }
+}
+
 public class _SwitchRow: Row<Bool, SwitchCell> {
     required public init(tag: String?) {
         super.init(tag: tag)
@@ -392,7 +420,7 @@ public class _SwitchRow: Row<Bool, SwitchCell> {
     }
 }
 
-public class _PushRow<T: Equatable> : SelectorRow<T, SelectorViewController<T>>, PresenterRowType {
+public class _PushRow<T: Equatable> : SelectorRow<T, SelectorViewController<T>> {
     
     public required init(tag: String?) {
         super.init(tag: tag)
@@ -429,7 +457,6 @@ public class AreaRow<T: Equatable, Cell: CellType where Cell: BaseCell, Cell: Ar
             }
         }
     }
-
 }
 
 public class OptionsRow<T: Equatable, Cell: CellType where Cell: BaseCell, Cell.Value == T> : Row<T, Cell> {
@@ -515,7 +542,7 @@ public class _AlertRow<T: Equatable>: OptionsRow<T, AlertSelectorCell<T>>, Prese
     }
 }
 
-public class _ImageRow : SelectorRow<UIImage, ImagePickerController>, PresenterRowType {
+public class _ImageRow : SelectorRow<UIImage, ImagePickerController> {
     public required init(tag: String?) {
         super.init(tag: tag)
         presentationMode = .PresentModally(controllerProvider: ControllerProvider.Callback { return ImagePickerController() }, completionCallback: { vc in vc.dismissViewControllerAnimated(true, completion: nil) })
@@ -538,7 +565,7 @@ public class _ImageRow : SelectorRow<UIImage, ImagePickerController>, PresenterR
     }
 }
 
-public class _MultipleSelectorRow<T: Hashable> : GenericMultipleSelectorRow<T, MultipleSelectorViewController<T>>, PresenterRowType {
+public class _MultipleSelectorRow<T: Hashable> : GenericMultipleSelectorRow<T, MultipleSelectorViewController<T>> {
     public required init(tag: String?) {
         super.init(tag: tag)
         self.displayValueFor = {

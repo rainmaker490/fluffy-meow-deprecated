@@ -7,167 +7,165 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		E18AC570440C39678AA7D222 /* Pods_Beto.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 71082586F94F3D355BB8226E /* Pods_Beto.framework */; };
-		F15C696D1C17FE9B00851E1C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F15C696C1C17FE9B00851E1C /* AppDelegate.swift */; };
-		F15C69821C17FE9B00851E1C /* BetoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F15C69811C17FE9B00851E1C /* BetoTests.swift */; };
-		F15C698D1C17FE9B00851E1C /* BetoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F15C698C1C17FE9B00851E1C /* BetoUITests.swift */; };
-		F15C699F1C17FEE700851E1C /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = F15C699E1C17FEE700851E1C /* Event.swift */; };
-		F15C69A11C17FF0A00851E1C /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = F15C69A01C17FF0A00851E1C /* Constants.swift */; };
-		F15C69A51C17FF3500851E1C /* Trending.swift in Sources */ = {isa = PBXBuildFile; fileRef = F15C69A41C17FF3500851E1C /* Trending.swift */; };
-		F15C69A91C17FF9100851E1C /* TrendingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F15C69A81C17FF9100851E1C /* TrendingTableViewCell.swift */; };
-		F15C69B01C17FFF500851E1C /* LogInViewControllerHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = F15C69AF1C17FFF500851E1C /* LogInViewControllerHelper.swift */; };
-		F15C69B31C18001400851E1C /* SignInViewControllerHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = F15C69B21C18001400851E1C /* SignInViewControllerHelper.swift */; };
-		F15C69B51C18003100851E1C /* LogInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F15C69B41C18003100851E1C /* LogInViewController.swift */; };
-		F15C69B71C18004800851E1C /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F15C69B61C18004800851E1C /* SignInViewController.swift */; };
-		F15C69BB1C1800A700851E1C /* ParseBetoTabViewControllerHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = F15C69BA1C1800A700851E1C /* ParseBetoTabViewControllerHelper.swift */; };
-		F15C69BD1C1800BE00851E1C /* BetoTabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F15C69BC1C1800BE00851E1C /* BetoTabViewController.swift */; };
-		F15C69C21C1800F500851E1C /* TrendViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F15C69C11C1800F500851E1C /* TrendViewController.swift */; };
-		F15C69C41C18010E00851E1C /* ExploreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F15C69C31C18010D00851E1C /* ExploreViewController.swift */; };
-		F15C69C61C18012100851E1C /* InfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F15C69C51C18012100851E1C /* InfoViewController.swift */; };
-		F15C69FA1C1806E100851E1C /* BetoLogo.jpg in Resources */ = {isa = PBXBuildFile; fileRef = F15C69CB1C18020400851E1C /* BetoLogo.jpg */; };
-		F15C69FB1C1806E100851E1C /* BetoLaunchScreenLogo.jpg in Resources */ = {isa = PBXBuildFile; fileRef = F15C69CE1C18021A00851E1C /* BetoLaunchScreenLogo.jpg */; };
-		F15C69FC1C1806E100851E1C /* background.jpg in Resources */ = {isa = PBXBuildFile; fileRef = F15C69D11C18023300851E1C /* background.jpg */; };
-		F15C69FD1C1806E100851E1C /* facebook.png in Resources */ = {isa = PBXBuildFile; fileRef = F15C69D21C18023300851E1C /* facebook.png */; };
-		F15C69FE1C1806E100851E1C /* twitter.png in Resources */ = {isa = PBXBuildFile; fileRef = F15C69D31C18023300851E1C /* twitter.png */; };
-		F15C69FF1C1806E100851E1C /* password.png in Resources */ = {isa = PBXBuildFile; fileRef = F15C69D41C18023300851E1C /* password.png */; };
-		F15C6A001C1806E100851E1C /* signUp.png in Resources */ = {isa = PBXBuildFile; fileRef = F15C69D51C18023300851E1C /* signUp.png */; };
-		F15C6A011C1806E100851E1C /* SubmitUnFilled.png in Resources */ = {isa = PBXBuildFile; fileRef = F15C69DC1C18024F00851E1C /* SubmitUnFilled.png */; };
-		F15C6A021C1806E100851E1C /* SubmitFilled.png in Resources */ = {isa = PBXBuildFile; fileRef = F15C69DD1C18024F00851E1C /* SubmitFilled.png */; };
-		F15C6A031C1806E100851E1C /* Close.png in Resources */ = {isa = PBXBuildFile; fileRef = F15C69DE1C18024F00851E1C /* Close.png */; };
-		F15C6A041C1806E100851E1C /* Settings.png in Resources */ = {isa = PBXBuildFile; fileRef = F15C69E31C18027400851E1C /* Settings.png */; };
-		F15C6A051C1806E100851E1C /* Trending.png in Resources */ = {isa = PBXBuildFile; fileRef = F15C69E41C18027400851E1C /* Trending.png */; };
-		F15C6A061C1806E100851E1C /* Map.png in Resources */ = {isa = PBXBuildFile; fileRef = F15C69E51C18027400851E1C /* Map.png */; };
-		F15C6A071C1806E100851E1C /* Refresh.png in Resources */ = {isa = PBXBuildFile; fileRef = F15C69EA1C18029600851E1C /* Refresh.png */; };
-		F15C6A081C1806E100851E1C /* All.png in Resources */ = {isa = PBXBuildFile; fileRef = F15C69EB1C18029600851E1C /* All.png */; };
-		F15C6A091C1806E100851E1C /* Sports.png in Resources */ = {isa = PBXBuildFile; fileRef = F15C69EC1C18029600851E1C /* Sports.png */; };
-		F15C6A0A1C1806E100851E1C /* Meetings.png in Resources */ = {isa = PBXBuildFile; fileRef = F15C69ED1C18029600851E1C /* Meetings.png */; };
-		F15C6A0B1C1806E100851E1C /* Study.png in Resources */ = {isa = PBXBuildFile; fileRef = F15C69EE1C18029600851E1C /* Study.png */; };
-		F15C6A0C1C1806E100851E1C /* NightLife.png in Resources */ = {isa = PBXBuildFile; fileRef = F15C69EF1C18029600851E1C /* NightLife.png */; };
-		F15C6A0D1C1806E100851E1C /* Concerts.png in Resources */ = {isa = PBXBuildFile; fileRef = F15C69F01C18029600851E1C /* Concerts.png */; };
-		F15C6A0E1C1806E700851E1C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F15C69C71C18015500851E1C /* LaunchScreen.storyboard */; };
-		F15C6A0F1C1806F100851E1C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F15C69AA1C17FFAB00851E1C /* Main.storyboard */; };
-		F15C6A101C18070100851E1C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F15C69731C17FE9B00851E1C /* Assets.xcassets */; };
-		F18A8DF21C18C347000B016A /* EventAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = F18A8DF11C18C347000B016A /* EventAnnotation.swift */; };
-		F1DB342F1C18C8B70029F6ED /* AddEventFormViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1DB342E1C18C8B70029F6ED /* AddEventFormViewController.swift */; };
-		F1DB34311C18C9890029F6ED /* CreateEventsForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1DB34301C18C9890029F6ED /* CreateEventsForm.swift */; };
-		F1DB343B1C18E96B0029F6ED /* DarkBlue.png in Resources */ = {isa = PBXBuildFile; fileRef = F1DB343A1C18E96B0029F6ED /* DarkBlue.png */; };
-		F1DB343D1C18E9AD0029F6ED /* Yellow.png in Resources */ = {isa = PBXBuildFile; fileRef = F1DB343C1C18E9AD0029F6ED /* Yellow.png */; };
-		F1DB343F1C18E9BD0029F6ED /* Green.png in Resources */ = {isa = PBXBuildFile; fileRef = F1DB343E1C18E9BD0029F6ED /* Green.png */; };
-		F1DB34411C18E9C80029F6ED /* LightBlue.png in Resources */ = {isa = PBXBuildFile; fileRef = F1DB34401C18E9C80029F6ED /* LightBlue.png */; };
-		F1DB34431C18E9D40029F6ED /* Purple.png in Resources */ = {isa = PBXBuildFile; fileRef = F1DB34421C18E9D40029F6ED /* Purple.png */; };
-		F1DB34451C18E9F20029F6ED /* GrayBlue.png in Resources */ = {isa = PBXBuildFile; fileRef = F1DB34441C18E9F20029F6ED /* GrayBlue.png */; };
-		F1DB34471C18EA050029F6ED /* Black.png in Resources */ = {isa = PBXBuildFile; fileRef = F1DB34461C18EA050029F6ED /* Black.png */; };
-		F1DB34491C18EA100029F6ED /* RedPin.png in Resources */ = {isa = PBXBuildFile; fileRef = F1DB34481C18EA100029F6ED /* RedPin.png */; };
-		F1DB344B1C18EA170029F6ED /* OrangePin.png in Resources */ = {isa = PBXBuildFile; fileRef = F1DB344A1C18EA170029F6ED /* OrangePin.png */; };
-		F1DB34501C18ED510029F6ED /* MoreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1DB344F1C18ED510029F6ED /* MoreViewController.swift */; };
-		F1DB345B1C1924DD0029F6ED /* Profile.png in Resources */ = {isa = PBXBuildFile; fileRef = F1DB345A1C1924DD0029F6ED /* Profile.png */; };
-		F1DB345D1C19287A0029F6ED /* Plus.png in Resources */ = {isa = PBXBuildFile; fileRef = F1DB345C1C19287A0029F6ED /* Plus.png */; };
-		F1DB345F1C19370C0029F6ED /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1DB345E1C19370C0029F6ED /* ProfileViewController.swift */; };
-		F1F9D6B41C181E2400B6C84A /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F1F9D6B31C181E2400B6C84A /* MapKit.framework */; };
+		DB6A0A85B986559E59BCC545 /* Pods_Beto.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B3CE67479A223604908EC3B1 /* Pods_Beto.framework */; };
+		F1DB36791C19636E0029F6ED /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F1DB36781C19636E0029F6ED /* Assets.xcassets */; };
+		F1DB36871C19636E0029F6ED /* BetoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1DB36861C19636E0029F6ED /* BetoTests.swift */; };
+		F1DB36921C19636E0029F6ED /* BetoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1DB36911C19636E0029F6ED /* BetoUITests.swift */; };
+		F1DB36A01C1965200029F6ED /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F1DB369F1C1965200029F6ED /* Main.storyboard */; };
+		F1DB36A21C19652A0029F6ED /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F1DB36A11C19652A0029F6ED /* LaunchScreen.storyboard */; };
+		F1DB36A91C1965540029F6ED /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1DB36A31C1965540029F6ED /* AppDelegate.swift */; };
+		F1DB36AA1C1965540029F6ED /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1DB36A41C1965540029F6ED /* Event.swift */; };
+		F1DB36AB1C1965540029F6ED /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1DB36A51C1965540029F6ED /* Constants.swift */; };
+		F1DB36AC1C1965540029F6ED /* Trending.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1DB36A61C1965540029F6ED /* Trending.swift */; };
+		F1DB36AD1C1965540029F6ED /* EventAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1DB36A71C1965540029F6ED /* EventAnnotation.swift */; };
+		F1DB36AE1C1965540029F6ED /* CreateEventsForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1DB36A81C1965540029F6ED /* CreateEventsForm.swift */; };
+		F1DB36C21C1965740029F6ED /* TrendingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1DB36AF1C1965740029F6ED /* TrendingTableViewCell.swift */; };
+		F1DB36C31C1965740029F6ED /* LogInViewControllerHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1DB36B01C1965740029F6ED /* LogInViewControllerHelper.swift */; };
+		F1DB36C41C1965740029F6ED /* SignInViewControllerHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1DB36B11C1965740029F6ED /* SignInViewControllerHelper.swift */; };
+		F1DB36C51C1965740029F6ED /* LogInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1DB36B21C1965740029F6ED /* LogInViewController.swift */; };
+		F1DB36C61C1965740029F6ED /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1DB36B31C1965740029F6ED /* SignInViewController.swift */; };
+		F1DB36C71C1965740029F6ED /* ParseBetoTabViewControllerHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1DB36B41C1965740029F6ED /* ParseBetoTabViewControllerHelper.swift */; };
+		F1DB36C81C1965740029F6ED /* BetoTabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1DB36B51C1965740029F6ED /* BetoTabViewController.swift */; };
+		F1DB36C91C1965740029F6ED /* TrendViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1DB36B61C1965740029F6ED /* TrendViewController.swift */; };
+		F1DB36CA1C1965740029F6ED /* ExploreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1DB36B71C1965740029F6ED /* ExploreViewController.swift */; };
+		F1DB36CB1C1965740029F6ED /* InfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1DB36B81C1965740029F6ED /* InfoViewController.swift */; };
+		F1DB36CC1C1965740029F6ED /* MoreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1DB36B91C1965740029F6ED /* MoreViewController.swift */; };
+		F1DB36CD1C1965740029F6ED /* AddEventFormViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1DB36BA1C1965740029F6ED /* AddEventFormViewController.swift */; };
+		F1DB36CE1C1965740029F6ED /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1DB36BB1C1965740029F6ED /* ProfileViewController.swift */; };
+		F1DB36CF1C1965740029F6ED /* BetoLogo.jpg in Resources */ = {isa = PBXBuildFile; fileRef = F1DB36BC1C1965740029F6ED /* BetoLogo.jpg */; };
+		F1DB36D01C1965740029F6ED /* Settings.png in Resources */ = {isa = PBXBuildFile; fileRef = F1DB36BD1C1965740029F6ED /* Settings.png */; };
+		F1DB36D11C1965740029F6ED /* Trending.png in Resources */ = {isa = PBXBuildFile; fileRef = F1DB36BE1C1965740029F6ED /* Trending.png */; };
+		F1DB36D21C1965740029F6ED /* Map.png in Resources */ = {isa = PBXBuildFile; fileRef = F1DB36BF1C1965740029F6ED /* Map.png */; };
+		F1DB36D31C1965740029F6ED /* Profile.png in Resources */ = {isa = PBXBuildFile; fileRef = F1DB36C01C1965740029F6ED /* Profile.png */; };
+		F1DB36D41C1965740029F6ED /* Plus.png in Resources */ = {isa = PBXBuildFile; fileRef = F1DB36C11C1965740029F6ED /* Plus.png */; };
+		F1DB36DB1C1965B50029F6ED /* BetoLaunchScreenLogo.jpg in Resources */ = {isa = PBXBuildFile; fileRef = F1DB36D51C1965B50029F6ED /* BetoLaunchScreenLogo.jpg */; };
+		F1DB36DC1C1965B50029F6ED /* background.jpg in Resources */ = {isa = PBXBuildFile; fileRef = F1DB36D61C1965B50029F6ED /* background.jpg */; };
+		F1DB36DD1C1965B50029F6ED /* facebook.png in Resources */ = {isa = PBXBuildFile; fileRef = F1DB36D71C1965B50029F6ED /* facebook.png */; };
+		F1DB36DE1C1965B50029F6ED /* twitter.png in Resources */ = {isa = PBXBuildFile; fileRef = F1DB36D81C1965B50029F6ED /* twitter.png */; };
+		F1DB36DF1C1965B50029F6ED /* password.png in Resources */ = {isa = PBXBuildFile; fileRef = F1DB36D91C1965B50029F6ED /* password.png */; };
+		F1DB36E01C1965B50029F6ED /* signUp.png in Resources */ = {isa = PBXBuildFile; fileRef = F1DB36DA1C1965B50029F6ED /* signUp.png */; };
+		F1DB36E41C1965C80029F6ED /* SubmitUnFilled.png in Resources */ = {isa = PBXBuildFile; fileRef = F1DB36E11C1965C80029F6ED /* SubmitUnFilled.png */; };
+		F1DB36E51C1965C80029F6ED /* SubmitFilled.png in Resources */ = {isa = PBXBuildFile; fileRef = F1DB36E21C1965C80029F6ED /* SubmitFilled.png */; };
+		F1DB36E61C1965C80029F6ED /* Close.png in Resources */ = {isa = PBXBuildFile; fileRef = F1DB36E31C1965C80029F6ED /* Close.png */; };
+		F1DB36EE1C1965D10029F6ED /* Refresh.png in Resources */ = {isa = PBXBuildFile; fileRef = F1DB36E71C1965D10029F6ED /* Refresh.png */; };
+		F1DB36EF1C1965D10029F6ED /* All.png in Resources */ = {isa = PBXBuildFile; fileRef = F1DB36E81C1965D10029F6ED /* All.png */; };
+		F1DB36F01C1965D10029F6ED /* Sports.png in Resources */ = {isa = PBXBuildFile; fileRef = F1DB36E91C1965D10029F6ED /* Sports.png */; };
+		F1DB36F11C1965D10029F6ED /* Meetings.png in Resources */ = {isa = PBXBuildFile; fileRef = F1DB36EA1C1965D10029F6ED /* Meetings.png */; };
+		F1DB36F21C1965D10029F6ED /* Study.png in Resources */ = {isa = PBXBuildFile; fileRef = F1DB36EB1C1965D10029F6ED /* Study.png */; };
+		F1DB36F31C1965D10029F6ED /* NightLife.png in Resources */ = {isa = PBXBuildFile; fileRef = F1DB36EC1C1965D10029F6ED /* NightLife.png */; };
+		F1DB36F41C1965D10029F6ED /* Concerts.png in Resources */ = {isa = PBXBuildFile; fileRef = F1DB36ED1C1965D10029F6ED /* Concerts.png */; };
+		F1DB36FE1C1965DB0029F6ED /* DarkBlue.png in Resources */ = {isa = PBXBuildFile; fileRef = F1DB36F51C1965DB0029F6ED /* DarkBlue.png */; };
+		F1DB36FF1C1965DB0029F6ED /* LightBlue.png in Resources */ = {isa = PBXBuildFile; fileRef = F1DB36F61C1965DB0029F6ED /* LightBlue.png */; };
+		F1DB37001C1965DB0029F6ED /* Yellow.png in Resources */ = {isa = PBXBuildFile; fileRef = F1DB36F71C1965DB0029F6ED /* Yellow.png */; };
+		F1DB37011C1965DB0029F6ED /* Green.png in Resources */ = {isa = PBXBuildFile; fileRef = F1DB36F81C1965DB0029F6ED /* Green.png */; };
+		F1DB37021C1965DB0029F6ED /* Purple.png in Resources */ = {isa = PBXBuildFile; fileRef = F1DB36F91C1965DB0029F6ED /* Purple.png */; };
+		F1DB37031C1965DB0029F6ED /* GrayBlue.png in Resources */ = {isa = PBXBuildFile; fileRef = F1DB36FA1C1965DB0029F6ED /* GrayBlue.png */; };
+		F1DB37041C1965DB0029F6ED /* Black.png in Resources */ = {isa = PBXBuildFile; fileRef = F1DB36FB1C1965DB0029F6ED /* Black.png */; };
+		F1DB37051C1965DB0029F6ED /* RedPin.png in Resources */ = {isa = PBXBuildFile; fileRef = F1DB36FC1C1965DB0029F6ED /* RedPin.png */; };
+		F1DB37061C1965DB0029F6ED /* OrangePin.png in Resources */ = {isa = PBXBuildFile; fileRef = F1DB36FD1C1965DB0029F6ED /* OrangePin.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		F15C697E1C17FE9B00851E1C /* PBXContainerItemProxy */ = {
+		F1DB36831C19636E0029F6ED /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = F15C69611C17FE9B00851E1C /* Project object */;
+			containerPortal = F1DB36661C19636E0029F6ED /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = F15C69681C17FE9B00851E1C;
+			remoteGlobalIDString = F1DB366D1C19636E0029F6ED;
 			remoteInfo = Beto;
 		};
-		F15C69891C17FE9B00851E1C /* PBXContainerItemProxy */ = {
+		F1DB368E1C19636E0029F6ED /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = F15C69611C17FE9B00851E1C /* Project object */;
+			containerPortal = F1DB36661C19636E0029F6ED /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = F15C69681C17FE9B00851E1C;
+			remoteGlobalIDString = F1DB366D1C19636E0029F6ED;
 			remoteInfo = Beto;
 		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		593E5666A94B60FCDA4FE41E /* Pods-Beto.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Beto.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Beto/Pods-Beto.debug.xcconfig"; sourceTree = "<group>"; };
-		71082586F94F3D355BB8226E /* Pods_Beto.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Beto.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		9449C5FAF36520665A64B55A /* Pods-Beto.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Beto.release.xcconfig"; path = "Pods/Target Support Files/Pods-Beto/Pods-Beto.release.xcconfig"; sourceTree = "<group>"; };
-		F15C69691C17FE9B00851E1C /* Beto.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Beto.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		F15C696C1C17FE9B00851E1C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		F15C69731C17FE9B00851E1C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		F15C697D1C17FE9B00851E1C /* BetoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BetoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		F15C69811C17FE9B00851E1C /* BetoTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BetoTests.swift; sourceTree = "<group>"; };
-		F15C69881C17FE9B00851E1C /* BetoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BetoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		F15C698C1C17FE9B00851E1C /* BetoUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BetoUITests.swift; sourceTree = "<group>"; };
-		F15C698E1C17FE9B00851E1C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		F15C699E1C17FEE700851E1C /* Event.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
-		F15C69A01C17FF0A00851E1C /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
-		F15C69A41C17FF3500851E1C /* Trending.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Trending.swift; sourceTree = "<group>"; };
-		F15C69A81C17FF9100851E1C /* TrendingTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TrendingTableViewCell.swift; sourceTree = "<group>"; };
-		F15C69AA1C17FFAB00851E1C /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
-		F15C69AF1C17FFF500851E1C /* LogInViewControllerHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogInViewControllerHelper.swift; sourceTree = "<group>"; };
-		F15C69B21C18001400851E1C /* SignInViewControllerHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignInViewControllerHelper.swift; sourceTree = "<group>"; };
-		F15C69B41C18003100851E1C /* LogInViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogInViewController.swift; sourceTree = "<group>"; };
-		F15C69B61C18004800851E1C /* SignInViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
-		F15C69BA1C1800A700851E1C /* ParseBetoTabViewControllerHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParseBetoTabViewControllerHelper.swift; sourceTree = "<group>"; };
-		F15C69BC1C1800BE00851E1C /* BetoTabViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BetoTabViewController.swift; sourceTree = "<group>"; };
-		F15C69C11C1800F500851E1C /* TrendViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TrendViewController.swift; sourceTree = "<group>"; };
-		F15C69C31C18010D00851E1C /* ExploreViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExploreViewController.swift; sourceTree = "<group>"; };
-		F15C69C51C18012100851E1C /* InfoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InfoViewController.swift; sourceTree = "<group>"; };
-		F15C69C71C18015500851E1C /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
-		F15C69CB1C18020400851E1C /* BetoLogo.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = BetoLogo.jpg; sourceTree = "<group>"; };
-		F15C69CE1C18021A00851E1C /* BetoLaunchScreenLogo.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = BetoLaunchScreenLogo.jpg; sourceTree = "<group>"; };
-		F15C69D11C18023300851E1C /* background.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = background.jpg; sourceTree = "<group>"; };
-		F15C69D21C18023300851E1C /* facebook.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = facebook.png; sourceTree = "<group>"; };
-		F15C69D31C18023300851E1C /* twitter.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = twitter.png; sourceTree = "<group>"; };
-		F15C69D41C18023300851E1C /* password.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = password.png; sourceTree = "<group>"; };
-		F15C69D51C18023300851E1C /* signUp.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = signUp.png; sourceTree = "<group>"; };
-		F15C69DC1C18024F00851E1C /* SubmitUnFilled.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = SubmitUnFilled.png; sourceTree = "<group>"; };
-		F15C69DD1C18024F00851E1C /* SubmitFilled.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = SubmitFilled.png; sourceTree = "<group>"; };
-		F15C69DE1C18024F00851E1C /* Close.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Close.png; sourceTree = "<group>"; };
-		F15C69E31C18027400851E1C /* Settings.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Settings.png; sourceTree = "<group>"; };
-		F15C69E41C18027400851E1C /* Trending.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Trending.png; sourceTree = "<group>"; };
-		F15C69E51C18027400851E1C /* Map.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Map.png; sourceTree = "<group>"; };
-		F15C69EA1C18029600851E1C /* Refresh.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Refresh.png; sourceTree = "<group>"; };
-		F15C69EB1C18029600851E1C /* All.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = All.png; sourceTree = "<group>"; };
-		F15C69EC1C18029600851E1C /* Sports.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Sports.png; sourceTree = "<group>"; };
-		F15C69ED1C18029600851E1C /* Meetings.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Meetings.png; sourceTree = "<group>"; };
-		F15C69EE1C18029600851E1C /* Study.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Study.png; sourceTree = "<group>"; };
-		F15C69EF1C18029600851E1C /* NightLife.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = NightLife.png; sourceTree = "<group>"; };
-		F15C69F01C18029600851E1C /* Concerts.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Concerts.png; sourceTree = "<group>"; };
-		F15C69F81C18031A00851E1C /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		F18A8DF11C18C347000B016A /* EventAnnotation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventAnnotation.swift; sourceTree = "<group>"; };
-		F1DB342E1C18C8B70029F6ED /* AddEventFormViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddEventFormViewController.swift; sourceTree = "<group>"; };
-		F1DB34301C18C9890029F6ED /* CreateEventsForm.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateEventsForm.swift; sourceTree = "<group>"; };
-		F1DB343A1C18E96B0029F6ED /* DarkBlue.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = DarkBlue.png; sourceTree = "<group>"; };
-		F1DB343C1C18E9AD0029F6ED /* Yellow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Yellow.png; sourceTree = "<group>"; };
-		F1DB343E1C18E9BD0029F6ED /* Green.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Green.png; sourceTree = "<group>"; };
-		F1DB34401C18E9C80029F6ED /* LightBlue.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = LightBlue.png; sourceTree = "<group>"; };
-		F1DB34421C18E9D40029F6ED /* Purple.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Purple.png; sourceTree = "<group>"; };
-		F1DB34441C18E9F20029F6ED /* GrayBlue.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = GrayBlue.png; sourceTree = "<group>"; };
-		F1DB34461C18EA050029F6ED /* Black.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Black.png; sourceTree = "<group>"; };
-		F1DB34481C18EA100029F6ED /* RedPin.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = RedPin.png; sourceTree = "<group>"; };
-		F1DB344A1C18EA170029F6ED /* OrangePin.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = OrangePin.png; sourceTree = "<group>"; };
-		F1DB344F1C18ED510029F6ED /* MoreViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MoreViewController.swift; sourceTree = "<group>"; };
-		F1DB345A1C1924DD0029F6ED /* Profile.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Profile.png; sourceTree = "<group>"; };
-		F1DB345C1C19287A0029F6ED /* Plus.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Plus.png; sourceTree = "<group>"; };
-		F1DB345E1C19370C0029F6ED /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
-		F1F9D6B31C181E2400B6C84A /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		B3CE67479A223604908EC3B1 /* Pods_Beto.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Beto.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D9F603738CC989E8C2309301 /* Pods-Beto.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Beto.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Beto/Pods-Beto.debug.xcconfig"; sourceTree = "<group>"; };
+		E1C48DEF41D689576C10628A /* Pods-Beto.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Beto.release.xcconfig"; path = "Pods/Target Support Files/Pods-Beto/Pods-Beto.release.xcconfig"; sourceTree = "<group>"; };
+		F1DB366E1C19636E0029F6ED /* Beto.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Beto.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		F1DB36781C19636E0029F6ED /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		F1DB367D1C19636E0029F6ED /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F1DB36821C19636E0029F6ED /* BetoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BetoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		F1DB36861C19636E0029F6ED /* BetoTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BetoTests.swift; sourceTree = "<group>"; };
+		F1DB36881C19636E0029F6ED /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F1DB368D1C19636E0029F6ED /* BetoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BetoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		F1DB36911C19636E0029F6ED /* BetoUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BetoUITests.swift; sourceTree = "<group>"; };
+		F1DB36931C19636E0029F6ED /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F1DB369F1C1965200029F6ED /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		F1DB36A11C19652A0029F6ED /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
+		F1DB36A31C1965540029F6ED /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		F1DB36A41C1965540029F6ED /* Event.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
+		F1DB36A51C1965540029F6ED /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		F1DB36A61C1965540029F6ED /* Trending.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Trending.swift; sourceTree = "<group>"; };
+		F1DB36A71C1965540029F6ED /* EventAnnotation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventAnnotation.swift; sourceTree = "<group>"; };
+		F1DB36A81C1965540029F6ED /* CreateEventsForm.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateEventsForm.swift; sourceTree = "<group>"; };
+		F1DB36AF1C1965740029F6ED /* TrendingTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TrendingTableViewCell.swift; sourceTree = "<group>"; };
+		F1DB36B01C1965740029F6ED /* LogInViewControllerHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogInViewControllerHelper.swift; sourceTree = "<group>"; };
+		F1DB36B11C1965740029F6ED /* SignInViewControllerHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignInViewControllerHelper.swift; sourceTree = "<group>"; };
+		F1DB36B21C1965740029F6ED /* LogInViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogInViewController.swift; sourceTree = "<group>"; };
+		F1DB36B31C1965740029F6ED /* SignInViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
+		F1DB36B41C1965740029F6ED /* ParseBetoTabViewControllerHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParseBetoTabViewControllerHelper.swift; sourceTree = "<group>"; };
+		F1DB36B51C1965740029F6ED /* BetoTabViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BetoTabViewController.swift; sourceTree = "<group>"; };
+		F1DB36B61C1965740029F6ED /* TrendViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TrendViewController.swift; sourceTree = "<group>"; };
+		F1DB36B71C1965740029F6ED /* ExploreViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExploreViewController.swift; sourceTree = "<group>"; };
+		F1DB36B81C1965740029F6ED /* InfoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InfoViewController.swift; sourceTree = "<group>"; };
+		F1DB36B91C1965740029F6ED /* MoreViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MoreViewController.swift; sourceTree = "<group>"; };
+		F1DB36BA1C1965740029F6ED /* AddEventFormViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddEventFormViewController.swift; sourceTree = "<group>"; };
+		F1DB36BB1C1965740029F6ED /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		F1DB36BC1C1965740029F6ED /* BetoLogo.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = BetoLogo.jpg; sourceTree = "<group>"; };
+		F1DB36BD1C1965740029F6ED /* Settings.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Settings.png; sourceTree = "<group>"; };
+		F1DB36BE1C1965740029F6ED /* Trending.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Trending.png; sourceTree = "<group>"; };
+		F1DB36BF1C1965740029F6ED /* Map.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Map.png; sourceTree = "<group>"; };
+		F1DB36C01C1965740029F6ED /* Profile.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Profile.png; sourceTree = "<group>"; };
+		F1DB36C11C1965740029F6ED /* Plus.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Plus.png; sourceTree = "<group>"; };
+		F1DB36D51C1965B50029F6ED /* BetoLaunchScreenLogo.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = BetoLaunchScreenLogo.jpg; sourceTree = "<group>"; };
+		F1DB36D61C1965B50029F6ED /* background.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = background.jpg; sourceTree = "<group>"; };
+		F1DB36D71C1965B50029F6ED /* facebook.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = facebook.png; sourceTree = "<group>"; };
+		F1DB36D81C1965B50029F6ED /* twitter.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = twitter.png; sourceTree = "<group>"; };
+		F1DB36D91C1965B50029F6ED /* password.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = password.png; sourceTree = "<group>"; };
+		F1DB36DA1C1965B50029F6ED /* signUp.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = signUp.png; sourceTree = "<group>"; };
+		F1DB36E11C1965C80029F6ED /* SubmitUnFilled.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = SubmitUnFilled.png; sourceTree = "<group>"; };
+		F1DB36E21C1965C80029F6ED /* SubmitFilled.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = SubmitFilled.png; sourceTree = "<group>"; };
+		F1DB36E31C1965C80029F6ED /* Close.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Close.png; sourceTree = "<group>"; };
+		F1DB36E71C1965D10029F6ED /* Refresh.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Refresh.png; sourceTree = "<group>"; };
+		F1DB36E81C1965D10029F6ED /* All.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = All.png; sourceTree = "<group>"; };
+		F1DB36E91C1965D10029F6ED /* Sports.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Sports.png; sourceTree = "<group>"; };
+		F1DB36EA1C1965D10029F6ED /* Meetings.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Meetings.png; sourceTree = "<group>"; };
+		F1DB36EB1C1965D10029F6ED /* Study.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Study.png; sourceTree = "<group>"; };
+		F1DB36EC1C1965D10029F6ED /* NightLife.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = NightLife.png; sourceTree = "<group>"; };
+		F1DB36ED1C1965D10029F6ED /* Concerts.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Concerts.png; sourceTree = "<group>"; };
+		F1DB36F51C1965DB0029F6ED /* DarkBlue.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = DarkBlue.png; sourceTree = "<group>"; };
+		F1DB36F61C1965DB0029F6ED /* LightBlue.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = LightBlue.png; sourceTree = "<group>"; };
+		F1DB36F71C1965DB0029F6ED /* Yellow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Yellow.png; sourceTree = "<group>"; };
+		F1DB36F81C1965DB0029F6ED /* Green.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Green.png; sourceTree = "<group>"; };
+		F1DB36F91C1965DB0029F6ED /* Purple.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Purple.png; sourceTree = "<group>"; };
+		F1DB36FA1C1965DB0029F6ED /* GrayBlue.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = GrayBlue.png; sourceTree = "<group>"; };
+		F1DB36FB1C1965DB0029F6ED /* Black.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Black.png; sourceTree = "<group>"; };
+		F1DB36FC1C1965DB0029F6ED /* RedPin.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = RedPin.png; sourceTree = "<group>"; };
+		F1DB36FD1C1965DB0029F6ED /* OrangePin.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = OrangePin.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		F15C69661C17FE9B00851E1C /* Frameworks */ = {
+		F1DB366B1C19636E0029F6ED /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F1F9D6B41C181E2400B6C84A /* MapKit.framework in Frameworks */,
-				E18AC570440C39678AA7D222 /* Pods_Beto.framework in Frameworks */,
+				DB6A0A85B986559E59BCC545 /* Pods_Beto.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		F15C697A1C17FE9B00851E1C /* Frameworks */ = {
+		F1DB367F1C19636E0029F6ED /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		F15C69851C17FE9B00851E1C /* Frameworks */ = {
+		F1DB368A1C19636E0029F6ED /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -177,297 +175,297 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		218D8A13332553F822BD5BEE /* Pods */ = {
+		41F57C77444632AC2951863A /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				593E5666A94B60FCDA4FE41E /* Pods-Beto.debug.xcconfig */,
-				9449C5FAF36520665A64B55A /* Pods-Beto.release.xcconfig */,
+				D9F603738CC989E8C2309301 /* Pods-Beto.debug.xcconfig */,
+				E1C48DEF41D689576C10628A /* Pods-Beto.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
 		};
-		D43830DD1573C78B2E7AEB50 /* Frameworks */ = {
+		661611F28DA9104D7E813C65 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				F1F9D6B31C181E2400B6C84A /* MapKit.framework */,
-				71082586F94F3D355BB8226E /* Pods_Beto.framework */,
+				B3CE67479A223604908EC3B1 /* Pods_Beto.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		F15C69601C17FE9B00851E1C = {
+		F1DB36651C19636E0029F6ED = {
 			isa = PBXGroup;
 			children = (
-				F15C696B1C17FE9B00851E1C /* Beto */,
-				F15C69801C17FE9B00851E1C /* BetoTests */,
-				F15C698B1C17FE9B00851E1C /* BetoUITests */,
-				F15C696A1C17FE9B00851E1C /* Products */,
-				218D8A13332553F822BD5BEE /* Pods */,
-				D43830DD1573C78B2E7AEB50 /* Frameworks */,
+				F1DB36701C19636E0029F6ED /* Beto */,
+				F1DB36851C19636E0029F6ED /* BetoTests */,
+				F1DB36901C19636E0029F6ED /* BetoUITests */,
+				F1DB366F1C19636E0029F6ED /* Products */,
+				41F57C77444632AC2951863A /* Pods */,
+				661611F28DA9104D7E813C65 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
-		F15C696A1C17FE9B00851E1C /* Products */ = {
+		F1DB366F1C19636E0029F6ED /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				F15C69691C17FE9B00851E1C /* Beto.app */,
-				F15C697D1C17FE9B00851E1C /* BetoTests.xctest */,
-				F15C69881C17FE9B00851E1C /* BetoUITests.xctest */,
+				F1DB366E1C19636E0029F6ED /* Beto.app */,
+				F1DB36821C19636E0029F6ED /* BetoTests.xctest */,
+				F1DB368D1C19636E0029F6ED /* BetoUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		F15C696B1C17FE9B00851E1C /* Beto */ = {
+		F1DB36701C19636E0029F6ED /* Beto */ = {
 			isa = PBXGroup;
 			children = (
-				F15C696C1C17FE9B00851E1C /* AppDelegate.swift */,
-				F15C699A1C17FEC300851E1C /* Model */,
-				F15C699B1C17FECA00851E1C /* View */,
-				F15C699C1C17FECF00851E1C /* Controller */,
-				F15C69CA1C1801F000851E1C /* Assets */,
-				F15C69C91C1801D900851E1C /* Supporting Files */,
+				F1DB36A31C1965540029F6ED /* AppDelegate.swift */,
+				F1DB37071C1966740029F6ED /* Model */,
+				F1DB37081C1966790029F6ED /* View */,
+				F1DB37091C19667E0029F6ED /* Controller */,
+				F1DB37111C1967680029F6ED /* Assets */,
+				F1DB37121C1967800029F6ED /* Supporting Files */,
 			);
 			path = Beto;
 			sourceTree = "<group>";
 		};
-		F15C69801C17FE9B00851E1C /* BetoTests */ = {
+		F1DB36851C19636E0029F6ED /* BetoTests */ = {
 			isa = PBXGroup;
 			children = (
-				F15C69811C17FE9B00851E1C /* BetoTests.swift */,
+				F1DB36861C19636E0029F6ED /* BetoTests.swift */,
+				F1DB36881C19636E0029F6ED /* Info.plist */,
 			);
 			path = BetoTests;
 			sourceTree = "<group>";
 		};
-		F15C698B1C17FE9B00851E1C /* BetoUITests */ = {
+		F1DB36901C19636E0029F6ED /* BetoUITests */ = {
 			isa = PBXGroup;
 			children = (
-				F15C698C1C17FE9B00851E1C /* BetoUITests.swift */,
-				F15C698E1C17FE9B00851E1C /* Info.plist */,
+				F1DB36911C19636E0029F6ED /* BetoUITests.swift */,
+				F1DB36931C19636E0029F6ED /* Info.plist */,
 			);
 			path = BetoUITests;
 			sourceTree = "<group>";
 		};
-		F15C699A1C17FEC300851E1C /* Model */ = {
+		F1DB37071C1966740029F6ED /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				F15C699D1C17FEDB00851E1C /* Parse */,
-				F15C69A01C17FF0A00851E1C /* Constants.swift */,
-				F15C69A41C17FF3500851E1C /* Trending.swift */,
-				F18A8DF11C18C347000B016A /* EventAnnotation.swift */,
-				F1DB34301C18C9890029F6ED /* CreateEventsForm.swift */,
+				F1DB370A1C1966970029F6ED /* Parse */,
+				F1DB36A51C1965540029F6ED /* Constants.swift */,
+				F1DB36A61C1965540029F6ED /* Trending.swift */,
+				F1DB36A71C1965540029F6ED /* EventAnnotation.swift */,
+				F1DB36A81C1965540029F6ED /* CreateEventsForm.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
 		};
-		F15C699B1C17FECA00851E1C /* View */ = {
+		F1DB37081C1966790029F6ED /* View */ = {
 			isa = PBXGroup;
 			children = (
-				F15C69AA1C17FFAB00851E1C /* Main.storyboard */,
-				F15C69A61C17FF4B00851E1C /* BetoTabViewController */,
+				F1DB369F1C1965200029F6ED /* Main.storyboard */,
+				F1DB370B1C1966CA0029F6ED /* BetoTabViewController */,
 			);
 			name = View;
 			sourceTree = "<group>";
 		};
-		F15C699C1C17FECF00851E1C /* Controller */ = {
+		F1DB37091C19667E0029F6ED /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				F15C69AE1C17FFE000851E1C /* Helper */,
-				F15C69B41C18003100851E1C /* LogInViewController.swift */,
-				F15C69B61C18004800851E1C /* SignInViewController.swift */,
-				F15C69B81C18008000851E1C /* BetoTabViewController */,
+				F1DB370D1C1966EF0029F6ED /* Helper */,
+				F1DB36B21C1965740029F6ED /* LogInViewController.swift */,
+				F1DB36B31C1965740029F6ED /* SignInViewController.swift */,
+				F1DB370E1C19670E0029F6ED /* BetoTabViewController */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
 		};
-		F15C699D1C17FEDB00851E1C /* Parse */ = {
+		F1DB370A1C1966970029F6ED /* Parse */ = {
 			isa = PBXGroup;
 			children = (
-				F15C699E1C17FEE700851E1C /* Event.swift */,
+				F1DB36A41C1965540029F6ED /* Event.swift */,
 			);
 			name = Parse;
 			sourceTree = "<group>";
 		};
-		F15C69A61C17FF4B00851E1C /* BetoTabViewController */ = {
+		F1DB370B1C1966CA0029F6ED /* BetoTabViewController */ = {
 			isa = PBXGroup;
 			children = (
-				F15C69A71C17FF5E00851E1C /* Trending */,
+				F1DB370C1C1966DE0029F6ED /* Trending */,
 			);
 			name = BetoTabViewController;
 			sourceTree = "<group>";
 		};
-		F15C69A71C17FF5E00851E1C /* Trending */ = {
+		F1DB370C1C1966DE0029F6ED /* Trending */ = {
 			isa = PBXGroup;
 			children = (
-				F15C69A81C17FF9100851E1C /* TrendingTableViewCell.swift */,
+				F1DB36AF1C1965740029F6ED /* TrendingTableViewCell.swift */,
 			);
 			name = Trending;
 			sourceTree = "<group>";
 		};
-		F15C69AE1C17FFE000851E1C /* Helper */ = {
+		F1DB370D1C1966EF0029F6ED /* Helper */ = {
 			isa = PBXGroup;
 			children = (
-				F15C69AF1C17FFF500851E1C /* LogInViewControllerHelper.swift */,
-				F15C69B21C18001400851E1C /* SignInViewControllerHelper.swift */,
+				F1DB36B01C1965740029F6ED /* LogInViewControllerHelper.swift */,
+				F1DB36B11C1965740029F6ED /* SignInViewControllerHelper.swift */,
 			);
 			name = Helper;
 			sourceTree = "<group>";
 		};
-		F15C69B81C18008000851E1C /* BetoTabViewController */ = {
+		F1DB370E1C19670E0029F6ED /* BetoTabViewController */ = {
 			isa = PBXGroup;
 			children = (
-				F15C69B91C18008D00851E1C /* Parse Helper */,
-				F15C69BC1C1800BE00851E1C /* BetoTabViewController.swift */,
-				F15C69C11C1800F500851E1C /* TrendViewController.swift */,
-				F15C69C31C18010D00851E1C /* ExploreViewController.swift */,
-				F15C69C51C18012100851E1C /* InfoViewController.swift */,
-				F1DB34531C18F1D30029F6ED /* More */,
+				F1DB370F1C19671F0029F6ED /* Parse Helper */,
+				F1DB36B51C1965740029F6ED /* BetoTabViewController.swift */,
+				F1DB36B61C1965740029F6ED /* TrendViewController.swift */,
+				F1DB36B71C1965740029F6ED /* ExploreViewController.swift */,
+				F1DB36B81C1965740029F6ED /* InfoViewController.swift */,
+				F1DB37101C19673D0029F6ED /* More */,
 			);
 			name = BetoTabViewController;
 			sourceTree = "<group>";
 		};
-		F15C69B91C18008D00851E1C /* Parse Helper */ = {
+		F1DB370F1C19671F0029F6ED /* Parse Helper */ = {
 			isa = PBXGroup;
 			children = (
-				F15C69BA1C1800A700851E1C /* ParseBetoTabViewControllerHelper.swift */,
+				F1DB36B41C1965740029F6ED /* ParseBetoTabViewControllerHelper.swift */,
 			);
 			name = "Parse Helper";
 			sourceTree = "<group>";
 		};
-		F15C69C91C1801D900851E1C /* Supporting Files */ = {
+		F1DB37101C19673D0029F6ED /* More */ = {
 			isa = PBXGroup;
 			children = (
-				F15C69C71C18015500851E1C /* LaunchScreen.storyboard */,
-				F15C69731C17FE9B00851E1C /* Assets.xcassets */,
-				F15C69F81C18031A00851E1C /* Info.plist */,
+				F1DB36B91C1965740029F6ED /* MoreViewController.swift */,
+				F1DB36BA1C1965740029F6ED /* AddEventFormViewController.swift */,
+				F1DB36BB1C1965740029F6ED /* ProfileViewController.swift */,
 			);
-			name = "Supporting Files";
+			name = More;
 			sourceTree = "<group>";
 		};
-		F15C69CA1C1801F000851E1C /* Assets */ = {
+		F1DB37111C1967680029F6ED /* Assets */ = {
 			isa = PBXGroup;
 			children = (
-				F15C69CB1C18020400851E1C /* BetoLogo.jpg */,
-				F15C69CD1C18020900851E1C /* LaunchScreenData */,
-				F15C69D01C18021E00851E1C /* LogInData */,
-				F15C69DB1C18023B00851E1C /* SignInData */,
-				F15C69E21C18025900851E1C /* BetoTabViewData */,
+				F1DB36BC1C1965740029F6ED /* BetoLogo.jpg */,
+				F1DB37131C1967A50029F6ED /* LaunchScreenData */,
+				F1DB371A1C1968990029F6ED /* LogInData */,
+				F1DB37141C1967B90029F6ED /* SignInData */,
+				F1DB37151C1967D30029F6ED /* BetoTabViewData */,
 			);
 			name = Assets;
 			sourceTree = "<group>";
 		};
-		F15C69CD1C18020900851E1C /* LaunchScreenData */ = {
+		F1DB37121C1967800029F6ED /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				F15C69CE1C18021A00851E1C /* BetoLaunchScreenLogo.jpg */,
+				F1DB36A11C19652A0029F6ED /* LaunchScreen.storyboard */,
+				F1DB36781C19636E0029F6ED /* Assets.xcassets */,
+				F1DB367D1C19636E0029F6ED /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		F1DB37131C1967A50029F6ED /* LaunchScreenData */ = {
+			isa = PBXGroup;
+			children = (
+				F1DB36D51C1965B50029F6ED /* BetoLaunchScreenLogo.jpg */,
 			);
 			name = LaunchScreenData;
 			sourceTree = "<group>";
 		};
-		F15C69D01C18021E00851E1C /* LogInData */ = {
+		F1DB37141C1967B90029F6ED /* SignInData */ = {
 			isa = PBXGroup;
 			children = (
-				F15C69D11C18023300851E1C /* background.jpg */,
-				F15C69D21C18023300851E1C /* facebook.png */,
-				F15C69D31C18023300851E1C /* twitter.png */,
-				F15C69D41C18023300851E1C /* password.png */,
-				F15C69D51C18023300851E1C /* signUp.png */,
-			);
-			name = LogInData;
-			sourceTree = "<group>";
-		};
-		F15C69DB1C18023B00851E1C /* SignInData */ = {
-			isa = PBXGroup;
-			children = (
-				F15C69DC1C18024F00851E1C /* SubmitUnFilled.png */,
-				F15C69DD1C18024F00851E1C /* SubmitFilled.png */,
-				F15C69DE1C18024F00851E1C /* Close.png */,
+				F1DB36E11C1965C80029F6ED /* SubmitUnFilled.png */,
+				F1DB36E21C1965C80029F6ED /* SubmitFilled.png */,
+				F1DB36E31C1965C80029F6ED /* Close.png */,
 			);
 			name = SignInData;
 			sourceTree = "<group>";
 		};
-		F15C69E21C18025900851E1C /* BetoTabViewData */ = {
+		F1DB37151C1967D30029F6ED /* BetoTabViewData */ = {
 			isa = PBXGroup;
 			children = (
-				F15C69E31C18027400851E1C /* Settings.png */,
-				F15C69E41C18027400851E1C /* Trending.png */,
-				F15C69E51C18027400851E1C /* Map.png */,
-				F15C69E91C18028600851E1C /* Trending */,
-				F1DB34341C18E9390029F6ED /* Explore */,
-				F1DB34541C1922D60029F6ED /* More */,
+				F1DB36BD1C1965740029F6ED /* Settings.png */,
+				F1DB36BE1C1965740029F6ED /* Trending.png */,
+				F1DB36BF1C1965740029F6ED /* Map.png */,
+				F1DB37161C1968380029F6ED /* Trending */,
+				F1DB37171C19683F0029F6ED /* Explore */,
+				F1DB37191C19685C0029F6ED /* More */,
 			);
 			name = BetoTabViewData;
 			sourceTree = "<group>";
 		};
-		F15C69E91C18028600851E1C /* Trending */ = {
+		F1DB37161C1968380029F6ED /* Trending */ = {
 			isa = PBXGroup;
 			children = (
-				F15C69EA1C18029600851E1C /* Refresh.png */,
-				F15C69EB1C18029600851E1C /* All.png */,
-				F15C69EC1C18029600851E1C /* Sports.png */,
-				F15C69ED1C18029600851E1C /* Meetings.png */,
-				F15C69EE1C18029600851E1C /* Study.png */,
-				F15C69EF1C18029600851E1C /* NightLife.png */,
-				F15C69F01C18029600851E1C /* Concerts.png */,
+				F1DB36E71C1965D10029F6ED /* Refresh.png */,
+				F1DB36E81C1965D10029F6ED /* All.png */,
+				F1DB36E91C1965D10029F6ED /* Sports.png */,
+				F1DB36EA1C1965D10029F6ED /* Meetings.png */,
+				F1DB36EB1C1965D10029F6ED /* Study.png */,
+				F1DB36EC1C1965D10029F6ED /* NightLife.png */,
+				F1DB36ED1C1965D10029F6ED /* Concerts.png */,
 			);
 			name = Trending;
 			sourceTree = "<group>";
 		};
-		F1DB34341C18E9390029F6ED /* Explore */ = {
+		F1DB37171C19683F0029F6ED /* Explore */ = {
 			isa = PBXGroup;
 			children = (
-				F1DB34351C18E9430029F6ED /* Pins */,
+				F1DB37181C1968450029F6ED /* Pins */,
 			);
 			name = Explore;
 			sourceTree = "<group>";
 		};
-		F1DB34351C18E9430029F6ED /* Pins */ = {
+		F1DB37181C1968450029F6ED /* Pins */ = {
 			isa = PBXGroup;
 			children = (
-				F1DB343A1C18E96B0029F6ED /* DarkBlue.png */,
-				F1DB34401C18E9C80029F6ED /* LightBlue.png */,
-				F1DB343C1C18E9AD0029F6ED /* Yellow.png */,
-				F1DB343E1C18E9BD0029F6ED /* Green.png */,
-				F1DB34421C18E9D40029F6ED /* Purple.png */,
-				F1DB34441C18E9F20029F6ED /* GrayBlue.png */,
-				F1DB34461C18EA050029F6ED /* Black.png */,
-				F1DB34481C18EA100029F6ED /* RedPin.png */,
-				F1DB344A1C18EA170029F6ED /* OrangePin.png */,
+				F1DB36F51C1965DB0029F6ED /* DarkBlue.png */,
+				F1DB36F61C1965DB0029F6ED /* LightBlue.png */,
+				F1DB36F71C1965DB0029F6ED /* Yellow.png */,
+				F1DB36F81C1965DB0029F6ED /* Green.png */,
+				F1DB36F91C1965DB0029F6ED /* Purple.png */,
+				F1DB36FA1C1965DB0029F6ED /* GrayBlue.png */,
+				F1DB36FB1C1965DB0029F6ED /* Black.png */,
+				F1DB36FC1C1965DB0029F6ED /* RedPin.png */,
+				F1DB36FD1C1965DB0029F6ED /* OrangePin.png */,
 			);
 			name = Pins;
 			sourceTree = "<group>";
 		};
-		F1DB34531C18F1D30029F6ED /* More */ = {
+		F1DB37191C19685C0029F6ED /* More */ = {
 			isa = PBXGroup;
 			children = (
-				F1DB344F1C18ED510029F6ED /* MoreViewController.swift */,
-				F1DB342E1C18C8B70029F6ED /* AddEventFormViewController.swift */,
-				F1DB345E1C19370C0029F6ED /* ProfileViewController.swift */,
+				F1DB36C01C1965740029F6ED /* Profile.png */,
+				F1DB36C11C1965740029F6ED /* Plus.png */,
 			);
 			name = More;
 			sourceTree = "<group>";
 		};
-		F1DB34541C1922D60029F6ED /* More */ = {
+		F1DB371A1C1968990029F6ED /* LogInData */ = {
 			isa = PBXGroup;
 			children = (
-				F1DB345A1C1924DD0029F6ED /* Profile.png */,
-				F1DB345C1C19287A0029F6ED /* Plus.png */,
+				F1DB36D61C1965B50029F6ED /* background.jpg */,
+				F1DB36D71C1965B50029F6ED /* facebook.png */,
+				F1DB36D81C1965B50029F6ED /* twitter.png */,
+				F1DB36D91C1965B50029F6ED /* password.png */,
+				F1DB36DA1C1965B50029F6ED /* signUp.png */,
 			);
-			name = More;
+			name = LogInData;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		F15C69681C17FE9B00851E1C /* Beto */ = {
+		F1DB366D1C19636E0029F6ED /* Beto */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = F15C69911C17FE9B00851E1C /* Build configuration list for PBXNativeTarget "Beto" */;
+			buildConfigurationList = F1DB36961C19636E0029F6ED /* Build configuration list for PBXNativeTarget "Beto" */;
 			buildPhases = (
-				27AC05C8C828BF534834D8AC /* Check Pods Manifest.lock */,
-				F15C69651C17FE9B00851E1C /* Sources */,
-				F15C69661C17FE9B00851E1C /* Frameworks */,
-				F15C69671C17FE9B00851E1C /* Resources */,
-				E2F784CB91457C53649E5101 /* Embed Pods Frameworks */,
-				5D0A1C4A62153308A448D32C /* Copy Pods Resources */,
+				A4DBB82F018DA3394AD55956 /* Check Pods Manifest.lock */,
+				F1DB366A1C19636E0029F6ED /* Sources */,
+				F1DB366B1C19636E0029F6ED /* Frameworks */,
+				F1DB366C1C19636E0029F6ED /* Resources */,
+				1D9EB804D38FFDEFBB3985E4 /* Embed Pods Frameworks */,
+				315034CC1C8D221697462411 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -475,69 +473,69 @@
 			);
 			name = Beto;
 			productName = Beto;
-			productReference = F15C69691C17FE9B00851E1C /* Beto.app */;
+			productReference = F1DB366E1C19636E0029F6ED /* Beto.app */;
 			productType = "com.apple.product-type.application";
 		};
-		F15C697C1C17FE9B00851E1C /* BetoTests */ = {
+		F1DB36811C19636E0029F6ED /* BetoTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = F15C69941C17FE9B00851E1C /* Build configuration list for PBXNativeTarget "BetoTests" */;
+			buildConfigurationList = F1DB36991C19636E0029F6ED /* Build configuration list for PBXNativeTarget "BetoTests" */;
 			buildPhases = (
-				F15C69791C17FE9B00851E1C /* Sources */,
-				F15C697A1C17FE9B00851E1C /* Frameworks */,
-				F15C697B1C17FE9B00851E1C /* Resources */,
+				F1DB367E1C19636E0029F6ED /* Sources */,
+				F1DB367F1C19636E0029F6ED /* Frameworks */,
+				F1DB36801C19636E0029F6ED /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				F15C697F1C17FE9B00851E1C /* PBXTargetDependency */,
+				F1DB36841C19636E0029F6ED /* PBXTargetDependency */,
 			);
 			name = BetoTests;
 			productName = BetoTests;
-			productReference = F15C697D1C17FE9B00851E1C /* BetoTests.xctest */;
+			productReference = F1DB36821C19636E0029F6ED /* BetoTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		F15C69871C17FE9B00851E1C /* BetoUITests */ = {
+		F1DB368C1C19636E0029F6ED /* BetoUITests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = F15C69971C17FE9B00851E1C /* Build configuration list for PBXNativeTarget "BetoUITests" */;
+			buildConfigurationList = F1DB369C1C19636E0029F6ED /* Build configuration list for PBXNativeTarget "BetoUITests" */;
 			buildPhases = (
-				F15C69841C17FE9B00851E1C /* Sources */,
-				F15C69851C17FE9B00851E1C /* Frameworks */,
-				F15C69861C17FE9B00851E1C /* Resources */,
+				F1DB36891C19636E0029F6ED /* Sources */,
+				F1DB368A1C19636E0029F6ED /* Frameworks */,
+				F1DB368B1C19636E0029F6ED /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				F15C698A1C17FE9B00851E1C /* PBXTargetDependency */,
+				F1DB368F1C19636E0029F6ED /* PBXTargetDependency */,
 			);
 			name = BetoUITests;
 			productName = BetoUITests;
-			productReference = F15C69881C17FE9B00851E1C /* BetoUITests.xctest */;
+			productReference = F1DB368D1C19636E0029F6ED /* BetoUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		F15C69611C17FE9B00851E1C /* Project object */ = {
+		F1DB36661C19636E0029F6ED /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 0710;
-				LastUpgradeCheck = 0710;
+				LastSwiftUpdateCheck = 0720;
+				LastUpgradeCheck = 0720;
 				ORGANIZATIONNAME = "Varun D Patel";
 				TargetAttributes = {
-					F15C69681C17FE9B00851E1C = {
-						CreatedOnToolsVersion = 7.1.1;
+					F1DB366D1C19636E0029F6ED = {
+						CreatedOnToolsVersion = 7.2;
 					};
-					F15C697C1C17FE9B00851E1C = {
-						CreatedOnToolsVersion = 7.1.1;
-						TestTargetID = F15C69681C17FE9B00851E1C;
+					F1DB36811C19636E0029F6ED = {
+						CreatedOnToolsVersion = 7.2;
+						TestTargetID = F1DB366D1C19636E0029F6ED;
 					};
-					F15C69871C17FE9B00851E1C = {
-						CreatedOnToolsVersion = 7.1.1;
-						TestTargetID = F15C69681C17FE9B00851E1C;
+					F1DB368C1C19636E0029F6ED = {
+						CreatedOnToolsVersion = 7.2;
+						TestTargetID = F1DB366D1C19636E0029F6ED;
 					};
 				};
 			};
-			buildConfigurationList = F15C69641C17FE9B00851E1C /* Build configuration list for PBXProject "Beto" */;
+			buildConfigurationList = F1DB36691C19636E0029F6ED /* Build configuration list for PBXProject "Beto" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -545,68 +543,68 @@
 				en,
 				Base,
 			);
-			mainGroup = F15C69601C17FE9B00851E1C;
-			productRefGroup = F15C696A1C17FE9B00851E1C /* Products */;
+			mainGroup = F1DB36651C19636E0029F6ED;
+			productRefGroup = F1DB366F1C19636E0029F6ED /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				F15C69681C17FE9B00851E1C /* Beto */,
-				F15C697C1C17FE9B00851E1C /* BetoTests */,
-				F15C69871C17FE9B00851E1C /* BetoUITests */,
+				F1DB366D1C19636E0029F6ED /* Beto */,
+				F1DB36811C19636E0029F6ED /* BetoTests */,
+				F1DB368C1C19636E0029F6ED /* BetoUITests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		F15C69671C17FE9B00851E1C /* Resources */ = {
+		F1DB366C1C19636E0029F6ED /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F1DB343F1C18E9BD0029F6ED /* Green.png in Resources */,
-				F15C6A101C18070100851E1C /* Assets.xcassets in Resources */,
-				F15C6A0F1C1806F100851E1C /* Main.storyboard in Resources */,
-				F1DB344B1C18EA170029F6ED /* OrangePin.png in Resources */,
-				F15C6A0E1C1806E700851E1C /* LaunchScreen.storyboard in Resources */,
-				F15C69FA1C1806E100851E1C /* BetoLogo.jpg in Resources */,
-				F15C69FB1C1806E100851E1C /* BetoLaunchScreenLogo.jpg in Resources */,
-				F15C69FC1C1806E100851E1C /* background.jpg in Resources */,
-				F1DB343D1C18E9AD0029F6ED /* Yellow.png in Resources */,
-				F15C69FD1C1806E100851E1C /* facebook.png in Resources */,
-				F15C69FE1C1806E100851E1C /* twitter.png in Resources */,
-				F1DB34431C18E9D40029F6ED /* Purple.png in Resources */,
-				F1DB345B1C1924DD0029F6ED /* Profile.png in Resources */,
-				F1DB343B1C18E96B0029F6ED /* DarkBlue.png in Resources */,
-				F15C69FF1C1806E100851E1C /* password.png in Resources */,
-				F15C6A001C1806E100851E1C /* signUp.png in Resources */,
-				F1DB34411C18E9C80029F6ED /* LightBlue.png in Resources */,
-				F15C6A011C1806E100851E1C /* SubmitUnFilled.png in Resources */,
-				F1DB345D1C19287A0029F6ED /* Plus.png in Resources */,
-				F1DB34471C18EA050029F6ED /* Black.png in Resources */,
-				F15C6A021C1806E100851E1C /* SubmitFilled.png in Resources */,
-				F15C6A031C1806E100851E1C /* Close.png in Resources */,
-				F1DB34451C18E9F20029F6ED /* GrayBlue.png in Resources */,
-				F15C6A041C1806E100851E1C /* Settings.png in Resources */,
-				F15C6A051C1806E100851E1C /* Trending.png in Resources */,
-				F15C6A061C1806E100851E1C /* Map.png in Resources */,
-				F1DB34491C18EA100029F6ED /* RedPin.png in Resources */,
-				F15C6A071C1806E100851E1C /* Refresh.png in Resources */,
-				F15C6A081C1806E100851E1C /* All.png in Resources */,
-				F15C6A091C1806E100851E1C /* Sports.png in Resources */,
-				F15C6A0A1C1806E100851E1C /* Meetings.png in Resources */,
-				F15C6A0B1C1806E100851E1C /* Study.png in Resources */,
-				F15C6A0C1C1806E100851E1C /* NightLife.png in Resources */,
-				F15C6A0D1C1806E100851E1C /* Concerts.png in Resources */,
+				F1DB36DF1C1965B50029F6ED /* password.png in Resources */,
+				F1DB36FF1C1965DB0029F6ED /* LightBlue.png in Resources */,
+				F1DB36E51C1965C80029F6ED /* SubmitFilled.png in Resources */,
+				F1DB36F31C1965D10029F6ED /* NightLife.png in Resources */,
+				F1DB36D41C1965740029F6ED /* Plus.png in Resources */,
+				F1DB37031C1965DB0029F6ED /* GrayBlue.png in Resources */,
+				F1DB36F01C1965D10029F6ED /* Sports.png in Resources */,
+				F1DB36F41C1965D10029F6ED /* Concerts.png in Resources */,
+				F1DB36DD1C1965B50029F6ED /* facebook.png in Resources */,
+				F1DB36DB1C1965B50029F6ED /* BetoLaunchScreenLogo.jpg in Resources */,
+				F1DB36D01C1965740029F6ED /* Settings.png in Resources */,
+				F1DB36DE1C1965B50029F6ED /* twitter.png in Resources */,
+				F1DB36F21C1965D10029F6ED /* Study.png in Resources */,
+				F1DB36FE1C1965DB0029F6ED /* DarkBlue.png in Resources */,
+				F1DB36EF1C1965D10029F6ED /* All.png in Resources */,
+				F1DB36F11C1965D10029F6ED /* Meetings.png in Resources */,
+				F1DB36EE1C1965D10029F6ED /* Refresh.png in Resources */,
+				F1DB36A21C19652A0029F6ED /* LaunchScreen.storyboard in Resources */,
+				F1DB37051C1965DB0029F6ED /* RedPin.png in Resources */,
+				F1DB37001C1965DB0029F6ED /* Yellow.png in Resources */,
+				F1DB36791C19636E0029F6ED /* Assets.xcassets in Resources */,
+				F1DB36CF1C1965740029F6ED /* BetoLogo.jpg in Resources */,
+				F1DB37011C1965DB0029F6ED /* Green.png in Resources */,
+				F1DB37021C1965DB0029F6ED /* Purple.png in Resources */,
+				F1DB36E01C1965B50029F6ED /* signUp.png in Resources */,
+				F1DB36D11C1965740029F6ED /* Trending.png in Resources */,
+				F1DB37041C1965DB0029F6ED /* Black.png in Resources */,
+				F1DB36A01C1965200029F6ED /* Main.storyboard in Resources */,
+				F1DB36E41C1965C80029F6ED /* SubmitUnFilled.png in Resources */,
+				F1DB36D21C1965740029F6ED /* Map.png in Resources */,
+				F1DB36DC1C1965B50029F6ED /* background.jpg in Resources */,
+				F1DB36E61C1965C80029F6ED /* Close.png in Resources */,
+				F1DB36D31C1965740029F6ED /* Profile.png in Resources */,
+				F1DB37061C1965DB0029F6ED /* OrangePin.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		F15C697B1C17FE9B00851E1C /* Resources */ = {
+		F1DB36801C19636E0029F6ED /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		F15C69861C17FE9B00851E1C /* Resources */ = {
+		F1DB368B1C19636E0029F6ED /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -616,37 +614,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		27AC05C8C828BF534834D8AC /* Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Check Pods Manifest.lock";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
-			showEnvVarsInLog = 0;
-		};
-		5D0A1C4A62153308A448D32C /* Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Beto/Pods-Beto-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		E2F784CB91457C53649E5101 /* Embed Pods Frameworks */ = {
+		1D9EB804D38FFDEFBB3985E4 /* Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -661,68 +629,98 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Beto/Pods-Beto-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
+		315034CC1C8D221697462411 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Beto/Pods-Beto-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A4DBB82F018DA3394AD55956 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		F15C69651C17FE9B00851E1C /* Sources */ = {
+		F1DB366A1C19636E0029F6ED /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F1DB34311C18C9890029F6ED /* CreateEventsForm.swift in Sources */,
-				F15C69A91C17FF9100851E1C /* TrendingTableViewCell.swift in Sources */,
-				F15C69C41C18010E00851E1C /* ExploreViewController.swift in Sources */,
-				F15C69A51C17FF3500851E1C /* Trending.swift in Sources */,
-				F15C69BD1C1800BE00851E1C /* BetoTabViewController.swift in Sources */,
-				F1DB34501C18ED510029F6ED /* MoreViewController.swift in Sources */,
-				F15C69C21C1800F500851E1C /* TrendViewController.swift in Sources */,
-				F15C69BB1C1800A700851E1C /* ParseBetoTabViewControllerHelper.swift in Sources */,
-				F15C69B51C18003100851E1C /* LogInViewController.swift in Sources */,
-				F1DB345F1C19370C0029F6ED /* ProfileViewController.swift in Sources */,
-				F15C699F1C17FEE700851E1C /* Event.swift in Sources */,
-				F15C696D1C17FE9B00851E1C /* AppDelegate.swift in Sources */,
-				F18A8DF21C18C347000B016A /* EventAnnotation.swift in Sources */,
-				F15C69B31C18001400851E1C /* SignInViewControllerHelper.swift in Sources */,
-				F15C69B01C17FFF500851E1C /* LogInViewControllerHelper.swift in Sources */,
-				F15C69B71C18004800851E1C /* SignInViewController.swift in Sources */,
-				F15C69C61C18012100851E1C /* InfoViewController.swift in Sources */,
-				F15C69A11C17FF0A00851E1C /* Constants.swift in Sources */,
-				F1DB342F1C18C8B70029F6ED /* AddEventFormViewController.swift in Sources */,
+				F1DB36CD1C1965740029F6ED /* AddEventFormViewController.swift in Sources */,
+				F1DB36C61C1965740029F6ED /* SignInViewController.swift in Sources */,
+				F1DB36AE1C1965540029F6ED /* CreateEventsForm.swift in Sources */,
+				F1DB36CA1C1965740029F6ED /* ExploreViewController.swift in Sources */,
+				F1DB36AC1C1965540029F6ED /* Trending.swift in Sources */,
+				F1DB36C41C1965740029F6ED /* SignInViewControllerHelper.swift in Sources */,
+				F1DB36C91C1965740029F6ED /* TrendViewController.swift in Sources */,
+				F1DB36CC1C1965740029F6ED /* MoreViewController.swift in Sources */,
+				F1DB36C31C1965740029F6ED /* LogInViewControllerHelper.swift in Sources */,
+				F1DB36CE1C1965740029F6ED /* ProfileViewController.swift in Sources */,
+				F1DB36AA1C1965540029F6ED /* Event.swift in Sources */,
+				F1DB36C21C1965740029F6ED /* TrendingTableViewCell.swift in Sources */,
+				F1DB36A91C1965540029F6ED /* AppDelegate.swift in Sources */,
+				F1DB36C71C1965740029F6ED /* ParseBetoTabViewControllerHelper.swift in Sources */,
+				F1DB36AD1C1965540029F6ED /* EventAnnotation.swift in Sources */,
+				F1DB36C51C1965740029F6ED /* LogInViewController.swift in Sources */,
+				F1DB36AB1C1965540029F6ED /* Constants.swift in Sources */,
+				F1DB36CB1C1965740029F6ED /* InfoViewController.swift in Sources */,
+				F1DB36C81C1965740029F6ED /* BetoTabViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		F15C69791C17FE9B00851E1C /* Sources */ = {
+		F1DB367E1C19636E0029F6ED /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F15C69821C17FE9B00851E1C /* BetoTests.swift in Sources */,
+				F1DB36871C19636E0029F6ED /* BetoTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		F15C69841C17FE9B00851E1C /* Sources */ = {
+		F1DB36891C19636E0029F6ED /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F15C698D1C17FE9B00851E1C /* BetoUITests.swift in Sources */,
+				F1DB36921C19636E0029F6ED /* BetoUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		F15C697F1C17FE9B00851E1C /* PBXTargetDependency */ = {
+		F1DB36841C19636E0029F6ED /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = F15C69681C17FE9B00851E1C /* Beto */;
-			targetProxy = F15C697E1C17FE9B00851E1C /* PBXContainerItemProxy */;
+			target = F1DB366D1C19636E0029F6ED /* Beto */;
+			targetProxy = F1DB36831C19636E0029F6ED /* PBXContainerItemProxy */;
 		};
-		F15C698A1C17FE9B00851E1C /* PBXTargetDependency */ = {
+		F1DB368F1C19636E0029F6ED /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = F15C69681C17FE9B00851E1C /* Beto */;
-			targetProxy = F15C69891C17FE9B00851E1C /* PBXContainerItemProxy */;
+			target = F1DB366D1C19636E0029F6ED /* Beto */;
+			targetProxy = F1DB368E1C19636E0029F6ED /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
-		F15C698F1C17FE9B00851E1C /* Debug */ = {
+		F1DB36941C19636E0029F6ED /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -758,16 +756,15 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
-		F15C69901C17FE9B00851E1C /* Release */ = {
+		F1DB36951C19636E0029F6ED /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -797,31 +794,33 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
-				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
 		};
-		F15C69921C17FE9B00851E1C /* Debug */ = {
+		F1DB36971C19636E0029F6ED /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 593E5666A94B60FCDA4FE41E /* Pods-Beto.debug.xcconfig */;
+			baseConfigurationReference = D9F603738CC989E8C2309301 /* Pods-Beto.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = Beto/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = edu.psu.cse.vdp5013.Beto;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
-		F15C69931C17FE9B00851E1C /* Release */ = {
+		F1DB36981C19636E0029F6ED /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 9449C5FAF36520665A64B55A /* Pods-Beto.release.xcconfig */;
+			baseConfigurationReference = E1C48DEF41D689576C10628A /* Pods-Beto.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = Beto/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = edu.psu.cse.vdp5013.Beto;
@@ -829,7 +828,7 @@
 			};
 			name = Release;
 		};
-		F15C69951C17FE9B00851E1C /* Debug */ = {
+		F1DB369A1C19636E0029F6ED /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -841,7 +840,7 @@
 			};
 			name = Debug;
 		};
-		F15C69961C17FE9B00851E1C /* Release */ = {
+		F1DB369B1C19636E0029F6ED /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -853,7 +852,7 @@
 			};
 			name = Release;
 		};
-		F15C69981C17FE9B00851E1C /* Debug */ = {
+		F1DB369D1C19636E0029F6ED /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				INFOPLIST_FILE = BetoUITests/Info.plist;
@@ -865,7 +864,7 @@
 			};
 			name = Debug;
 		};
-		F15C69991C17FE9B00851E1C /* Release */ = {
+		F1DB369E1C19636E0029F6ED /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				INFOPLIST_FILE = BetoUITests/Info.plist;
@@ -880,43 +879,43 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		F15C69641C17FE9B00851E1C /* Build configuration list for PBXProject "Beto" */ = {
+		F1DB36691C19636E0029F6ED /* Build configuration list for PBXProject "Beto" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				F15C698F1C17FE9B00851E1C /* Debug */,
-				F15C69901C17FE9B00851E1C /* Release */,
+				F1DB36941C19636E0029F6ED /* Debug */,
+				F1DB36951C19636E0029F6ED /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		F15C69911C17FE9B00851E1C /* Build configuration list for PBXNativeTarget "Beto" */ = {
+		F1DB36961C19636E0029F6ED /* Build configuration list for PBXNativeTarget "Beto" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				F15C69921C17FE9B00851E1C /* Debug */,
-				F15C69931C17FE9B00851E1C /* Release */,
+				F1DB36971C19636E0029F6ED /* Debug */,
+				F1DB36981C19636E0029F6ED /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		F15C69941C17FE9B00851E1C /* Build configuration list for PBXNativeTarget "BetoTests" */ = {
+		F1DB36991C19636E0029F6ED /* Build configuration list for PBXNativeTarget "BetoTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				F15C69951C17FE9B00851E1C /* Debug */,
-				F15C69961C17FE9B00851E1C /* Release */,
+				F1DB369A1C19636E0029F6ED /* Debug */,
+				F1DB369B1C19636E0029F6ED /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		F15C69971C17FE9B00851E1C /* Build configuration list for PBXNativeTarget "BetoUITests" */ = {
+		F1DB369C1C19636E0029F6ED /* Build configuration list for PBXNativeTarget "BetoUITests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				F15C69981C17FE9B00851E1C /* Debug */,
-				F15C69991C17FE9B00851E1C /* Release */,
+				F1DB369D1C19636E0029F6ED /* Debug */,
+				F1DB369E1C19636E0029F6ED /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = F15C69611C17FE9B00851E1C /* Project object */;
+	rootObject = F1DB36661C19636E0029F6ED /* Project object */;
 }
