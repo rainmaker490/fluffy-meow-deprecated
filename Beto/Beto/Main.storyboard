@@ -271,7 +271,9 @@
                             <constraint firstItem="84W-ww-MtQ" firstAttribute="centerX" secondItem="Zza-E4-P7T" secondAttribute="centerX" id="dtM-cO-zwa"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="🌐 More 🌎" id="njf-ag-obo"/>
+                    <navigationItem key="navigationItem" title="🌐 More 🌎" id="njf-ag-obo">
+                        <barButtonItem key="rightBarButtonItem" title="Save" id="FeL-2f-YIu"/>
+                    </navigationItem>
                     <connections>
                         <outlet property="tableView" destination="84W-ww-MtQ" id="dxM-1e-Rzk"/>
                         <segue destination="M56-8a-tXa" kind="modal" identifier="AddEventSegue" id="xke-HR-xzV"/>
@@ -311,6 +313,7 @@
                     </view>
                     <navigationItem key="navigationItem" title="Add Event" id="NKn-Ch-9Ba">
                         <barButtonItem key="leftBarButtonItem" title="Cancel" id="LLo-OV-PKy"/>
+                        <barButtonItem key="rightBarButtonItem" title="Save" id="nkP-32-T9p"/>
                     </navigationItem>
                     <connections>
                         <outlet property="tableView" destination="TZZ-FW-oWL" id="J4D-zb-SeK"/>
@@ -627,7 +630,7 @@
         <!--🔍 Search 🔎-->
         <scene sceneID="Sjx-xj-znY">
             <objects>
-                <viewController id="dX5-ng-FIW" sceneMemberID="viewController">
+                <viewController id="dX5-ng-FIW" customClass="SearchViewController" customModule="Beto" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="aPg-aO-xmq"/>
                         <viewControllerLayoutGuide type="bottom" id="xfx-CA-CDj"/>
@@ -635,9 +638,26 @@
                     <view key="view" contentMode="scaleToFill" id="g8i-cS-A3f">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="hXb-f4-j60">
+                                <rect key="frame" x="0.0" y="64" width="320" height="455"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="hXb-f4-j60" secondAttribute="height" multiplier="64:91" id="ljR-0i-zHY"/>
+                                </constraints>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="hXb-f4-j60" firstAttribute="top" secondItem="aPg-aO-xmq" secondAttribute="bottom" id="Kui-H1-uEZ"/>
+                            <constraint firstItem="hXb-f4-j60" firstAttribute="centerX" secondItem="g8i-cS-A3f" secondAttribute="centerX" id="Q3a-vC-aNh"/>
+                            <constraint firstItem="xfx-CA-CDj" firstAttribute="top" secondItem="hXb-f4-j60" secondAttribute="bottom" id="bQV-By-zEB"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="🔍 Search 🔎" id="Cef-mU-YzW"/>
+                    <connections>
+                        <outlet property="tableView" destination="hXb-f4-j60" id="HTx-DS-bVr"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Bcu-eL-CeY" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

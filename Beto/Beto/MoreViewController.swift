@@ -14,6 +14,9 @@ class MoreViewController: FormViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         initializeForm()
+        
+        self.navigationItem.rightBarButtonItem?.target = self
+        self.navigationItem.rightBarButtonItem?.action = "saveTapped:"
     }
     
     private func initializeForm() {
@@ -53,10 +56,6 @@ class MoreViewController: FormViewController {
     
     private func logOut(){
         
-    }
-    
-    func cancelTapped(barButtonItem: UIBarButtonItem) {
-        dismissViewControllerAnimated(true, completion: nil)
     }
     
     func saveTapped(sender: UIBarButtonItem){

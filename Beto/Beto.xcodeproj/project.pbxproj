@@ -24,7 +24,6 @@
 		F1DB36C41C1965740029F6ED /* SignInViewControllerHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1DB36B11C1965740029F6ED /* SignInViewControllerHelper.swift */; };
 		F1DB36C51C1965740029F6ED /* LogInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1DB36B21C1965740029F6ED /* LogInViewController.swift */; };
 		F1DB36C61C1965740029F6ED /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1DB36B31C1965740029F6ED /* SignInViewController.swift */; };
-		F1DB36C71C1965740029F6ED /* ParseBetoTabViewControllerHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1DB36B41C1965740029F6ED /* ParseBetoTabViewControllerHelper.swift */; };
 		F1DB36C81C1965740029F6ED /* BetoTabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1DB36B51C1965740029F6ED /* BetoTabViewController.swift */; };
 		F1DB36C91C1965740029F6ED /* TrendViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1DB36B61C1965740029F6ED /* TrendViewController.swift */; };
 		F1DB36CA1C1965740029F6ED /* ExploreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1DB36B71C1965740029F6ED /* ExploreViewController.swift */; };
@@ -65,6 +64,8 @@
 		F1DB37061C1965DB0029F6ED /* OrangePin.png in Resources */ = {isa = PBXBuildFile; fileRef = F1DB36FD1C1965DB0029F6ED /* OrangePin.png */; };
 		F1DB371C1C196D8A0029F6ED /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F1DB371B1C196D8A0029F6ED /* MapKit.framework */; };
 		F1DB371E1C1989670029F6ED /* Camera.png in Resources */ = {isa = PBXBuildFile; fileRef = F1DB371D1C1989670029F6ED /* Camera.png */; };
+		F1E23AF81C1A1CDF00763AF5 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1E23AF71C1A1CDF00763AF5 /* User.swift */; };
+		F1E23AFC1C1A279F00763AF5 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1E23AFB1C1A279F00763AF5 /* SearchViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -110,7 +111,6 @@
 		F1DB36B11C1965740029F6ED /* SignInViewControllerHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignInViewControllerHelper.swift; sourceTree = "<group>"; };
 		F1DB36B21C1965740029F6ED /* LogInViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogInViewController.swift; sourceTree = "<group>"; };
 		F1DB36B31C1965740029F6ED /* SignInViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
-		F1DB36B41C1965740029F6ED /* ParseBetoTabViewControllerHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParseBetoTabViewControllerHelper.swift; sourceTree = "<group>"; };
 		F1DB36B51C1965740029F6ED /* BetoTabViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BetoTabViewController.swift; sourceTree = "<group>"; };
 		F1DB36B61C1965740029F6ED /* TrendViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TrendViewController.swift; sourceTree = "<group>"; };
 		F1DB36B71C1965740029F6ED /* ExploreViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExploreViewController.swift; sourceTree = "<group>"; };
@@ -151,6 +151,8 @@
 		F1DB36FD1C1965DB0029F6ED /* OrangePin.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = OrangePin.png; sourceTree = "<group>"; };
 		F1DB371B1C196D8A0029F6ED /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		F1DB371D1C1989670029F6ED /* Camera.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Camera.png; sourceTree = "<group>"; };
+		F1E23AF71C1A1CDF00763AF5 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		F1E23AFB1C1A279F00763AF5 /* SearchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -286,6 +288,7 @@
 		F1DB370A1C1966970029F6ED /* Parse */ = {
 			isa = PBXGroup;
 			children = (
+				F1E23AF71C1A1CDF00763AF5 /* User.swift */,
 				F1DB36A41C1965540029F6ED /* Event.swift */,
 			);
 			name = Parse;
@@ -319,22 +322,14 @@
 		F1DB370E1C19670E0029F6ED /* BetoTabViewController */ = {
 			isa = PBXGroup;
 			children = (
-				F1DB370F1C19671F0029F6ED /* Parse Helper */,
 				F1DB36B51C1965740029F6ED /* BetoTabViewController.swift */,
 				F1DB36B61C1965740029F6ED /* TrendViewController.swift */,
 				F1DB36B71C1965740029F6ED /* ExploreViewController.swift */,
 				F1DB36B81C1965740029F6ED /* InfoViewController.swift */,
 				F1DB37101C19673D0029F6ED /* More */,
+				F1E23AFB1C1A279F00763AF5 /* SearchViewController.swift */,
 			);
 			name = BetoTabViewController;
-			sourceTree = "<group>";
-		};
-		F1DB370F1C19671F0029F6ED /* Parse Helper */ = {
-			isa = PBXGroup;
-			children = (
-				F1DB36B41C1965740029F6ED /* ParseBetoTabViewControllerHelper.swift */,
-			);
-			name = "Parse Helper";
 			sourceTree = "<group>";
 		};
 		F1DB37101C19673D0029F6ED /* More */ = {
@@ -690,12 +685,13 @@
 				F1DB36C41C1965740029F6ED /* SignInViewControllerHelper.swift in Sources */,
 				F1DB36C91C1965740029F6ED /* TrendViewController.swift in Sources */,
 				F1DB36CC1C1965740029F6ED /* MoreViewController.swift in Sources */,
+				F1E23AF81C1A1CDF00763AF5 /* User.swift in Sources */,
 				F1DB36C31C1965740029F6ED /* LogInViewControllerHelper.swift in Sources */,
 				F1DB36CE1C1965740029F6ED /* ProfileViewController.swift in Sources */,
 				F1DB36AA1C1965540029F6ED /* Event.swift in Sources */,
 				F1DB36C21C1965740029F6ED /* TrendingTableViewCell.swift in Sources */,
 				F1DB36A91C1965540029F6ED /* AppDelegate.swift in Sources */,
-				F1DB36C71C1965740029F6ED /* ParseBetoTabViewControllerHelper.swift in Sources */,
+				F1E23AFC1C1A279F00763AF5 /* SearchViewController.swift in Sources */,
 				F1DB36AD1C1965540029F6ED /* EventAnnotation.swift in Sources */,
 				F1DB36C51C1965740029F6ED /* LogInViewController.swift in Sources */,
 				F1DB36AB1C1965540029F6ED /* Constants.swift in Sources */,

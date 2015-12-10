@@ -17,4 +17,5 @@ struct EventsForm {
     var type: String?
     var url: String?
     var description: String?
+    var locationString: String?
 }

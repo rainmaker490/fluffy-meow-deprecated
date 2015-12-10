@@ -37,7 +37,7 @@ class Trending {
                 var allEventsList = [Event]()
                 if let event = objects as? [Event] {
                     allEventsList = event
-                    allEventsList.sortInPlace({ $0.checkIns > $1.checkIns })
+                    allEventsList.sortInPlace({ $0.views > $1.views })
                     if numberOfEvents < 0 {
                         trendingFactory = allEventsList
                     } else {

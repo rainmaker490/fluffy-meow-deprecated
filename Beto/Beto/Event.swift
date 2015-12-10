@@ -24,9 +24,10 @@ class Event: PFObject, PFSubclassing {
     }
     
     @NSManaged var category : String
-    @NSManaged var checkIns : Int
+    @NSManaged var views : Int
     @NSManaged var eventDate : NSDate
     @NSManaged var location : PFGeoPoint
     @NSManaged var expirationDate : NSDate
     @NSManaged var title : String
+    @NSManaged var locationString : String
 }

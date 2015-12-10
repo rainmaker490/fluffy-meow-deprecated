@@ -17,6 +17,7 @@ class NativeEventNavigationController: UINavigationController, RowControllerType
 
 class AddEventFormViewController: FormViewController {
     
+    let userData = User.sharedInstance
     var event = EventsForm()
     
     override func viewDidLoad() {
@@ -53,16 +54,19 @@ class AddEventFormViewController: FormViewController {
                                 }
                             }
                         }
+                    }.onChange{ (row) -> () in
+                        self.event.locationString = row.value
                     }
             
             +++
                 DateTimeInlineRow("Starts *") {
                     $0.title = $0.tag
+                    $0.value = NSDate().dateByAddingTimeInterval(60*60*24)
+                    self.event.startDate = $0.value
                 }.onChange { [weak self] row in
                     let endRow: DateTimeInlineRow! = self?.form.rowByTag("Ends *")
                     if row.value?.compare(endRow.value!) == .OrderedDescending {
                         endRow.value = NSDate(timeInterval: 60*60*24, sinceDate: row.value!)
-                        endRow.cell!.backgroundColor = .whiteColor()
                         endRow.updateCell()
                     }
                     self?.event.startDate = row.value
@@ -78,6 +82,8 @@ class AddEventFormViewController: FormViewController {
                 }
                 <<< DateTimeInlineRow("Ends *"){
                         $0.title = $0.tag
+                        $0.value = NSDate().dateByAddingTimeInterval(60*60*25)
+                        self.event.endDate = $0.value
                     }.onChange { [weak self] row in
                         let startRow: DateTimeInlineRow? = self?.form.rowByTag("Starts *")
                         row.cell!.backgroundColor =  row.value?.compare(startRow!.value!) == .OrderedAscending ? .redColor() : .whiteColor()
@@ -100,6 +106,7 @@ class AddEventFormViewController: FormViewController {
                         $0.selectorTitle = "Event Category"
                         $0.options = Categories.CategoryOfEvents
                         $0.value = $0.options[0]
+                        self.event.type = $0.value
                     }.onChange { row in
                         print(row.value)
                         self.event.type = row.value
@@ -124,6 +131,45 @@ class AddEventFormViewController: FormViewController {
     }
     
     func saveTapped(sender: UIBarButtonItem){
-        // Save to Parse
+        let eventIsValid = isEventValid(event)
+        if eventIsValid {
+            let newEvent = PFObject(className: "Event")
+            newEvent["title"] = event.title
+            newEvent["eventDate"] = event.startDate
+            newEvent["expirationDate"] = event.endDate
+            newEvent["category"] = event.type
+            newEvent["location"] = PFGeoPoint(latitude: event.location!.latitude, longitude: event.location!.longitude)
+            newEvent["views"] = 1
+            newEvent["locationString"] = event.locationString
+            newEvent.saveInBackgroundWithBlock({ (success, error) -> Void in
+                if success {
+                    print("new event has been saved")
+                    self.userData.user!.relationForKey("myCreatedEvents").addObject(newEvent)
+                    self.userData.saveUser()
+                } else {
+                    print("error saving new event")
+                }
+            })
+            dismissViewControllerAnimated(true, completion: nil)
+        } else {
+            presentAlertView()
+        }
+    }
+    
+    func isEventValid(event: EventsForm)-> Bool{
+        var eventIsValid = event.title != nil
+        eventIsValid = eventIsValid && (event.startDate != nil)
+        eventIsValid = eventIsValid && (event.endDate != nil)
+        eventIsValid = eventIsValid && (event.location != nil)
+        eventIsValid = eventIsValid && (event.type != nil)
+        eventIsValid = eventIsValid && (event.startDate?.compare(event.endDate!) == .OrderedAscending)
+        eventIsValid = eventIsValid && (event.startDate?.compare(NSDate()) == .OrderedDescending)
+        return eventIsValid
+    }
+    
+    func presentAlertView(){
+        let alertView = UIAlertController(title: "Incomplete Parameters", message: "Missing Required Fields \n -Fields marked with * \n -Is Address Correct?", preferredStyle: .Alert)
+        alertView.addAction(UIAlertAction(title: "Ok", style: .Default, handler: nil))
+        presentViewController(alertView, animated: true, completion: nil)
     }
 }
