@@ -24,6 +24,14 @@ class InfoViewController: UIViewController {
     
     override func viewDidLoad() {
         eventTitle.text = dataSource?.currentEvent.title
+        dataSource?.currentEvent.incrementKey("views", byAmount: 1)
+        dataSource?.currentEvent.saveInBackgroundWithBlock({ (success, error) -> Void in
+            if success {
+                print("views incremented")
+            } else {
+                print(error)
+            }
+        })
     }
     
 }

@@ -271,9 +271,7 @@
                             <constraint firstItem="84W-ww-MtQ" firstAttribute="centerX" secondItem="Zza-E4-P7T" secondAttribute="centerX" id="dtM-cO-zwa"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="🌐 More 🌎" id="njf-ag-obo">
-                        <barButtonItem key="rightBarButtonItem" title="Save" id="FeL-2f-YIu"/>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" title="🌐 More 🌎" id="njf-ag-obo"/>
                     <connections>
                         <outlet property="tableView" destination="84W-ww-MtQ" id="dxM-1e-Rzk"/>
                         <segue destination="M56-8a-tXa" kind="modal" identifier="AddEventSegue" id="xke-HR-xzV"/>
@@ -639,38 +637,39 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="hXb-f4-j60">
-                                <rect key="frame" x="0.0" y="64" width="320" height="455"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="O5x-Tm-dE8">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="519"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" secondItem="hXb-f4-j60" secondAttribute="height" multiplier="64:91" id="ljR-0i-zHY"/>
+                                    <constraint firstAttribute="width" secondItem="O5x-Tm-dE8" secondAttribute="height" multiplier="320:519" id="qdJ-wF-UtL"/>
                                 </constraints>
+                                <color key="separatorColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="EventTitles" id="4kg-lN-Pi5" customClass="TrendingTableViewCell" customModule="Beto" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="EventTitles" id="vpY-4E-kmK" customClass="TrendingTableViewCell" customModule="Beto" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="92" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="4kg-lN-Pi5" id="38R-z0-Nyo">
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="vpY-4E-kmK" id="vzr-zb-Fhx">
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ONR-mP-Mt6">
-                                                    <rect key="frame" x="6" y="11" width="308" height="21"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iIu-c0-xVv">
+                                                    <rect key="frame" x="6" y="5" width="308" height="32.5"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="width" secondItem="ONR-mP-Mt6" secondAttribute="height" multiplier="304:21" id="g1y-kW-Yhe"/>
+                                                        <constraint firstAttribute="width" secondItem="iIu-c0-xVv" secondAttribute="height" multiplier="304:21" constant="-162.47619047619048" id="q9S-Ug-DbU"/>
                                                     </constraints>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <fontDescription key="fontDescription" type="system" weight="thin" pointSize="25"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="ONR-mP-Mt6" firstAttribute="centerY" secondItem="38R-z0-Nyo" secondAttribute="centerY" id="BA3-kc-MhF"/>
-                                                <constraint firstItem="ONR-mP-Mt6" firstAttribute="centerX" secondItem="38R-z0-Nyo" secondAttribute="centerX" id="ClD-dj-Rwd"/>
-                                                <constraint firstItem="ONR-mP-Mt6" firstAttribute="width" secondItem="38R-z0-Nyo" secondAttribute="height" multiplier="304:43" id="eba-ly-jdN"/>
+                                                <constraint firstItem="iIu-c0-xVv" firstAttribute="centerY" secondItem="vzr-zb-Fhx" secondAttribute="centerY" id="4y6-Pl-3Fv"/>
+                                                <constraint firstItem="iIu-c0-xVv" firstAttribute="width" secondItem="vzr-zb-Fhx" secondAttribute="height" multiplier="304:43" id="7eI-2G-UTI"/>
+                                                <constraint firstItem="iIu-c0-xVv" firstAttribute="centerX" secondItem="vzr-zb-Fhx" secondAttribute="centerX" id="Obt-GH-iU4"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <outlet property="trendingEventTitle" destination="ONR-mP-Mt6" id="v1T-1f-MxQ"/>
+                                            <outlet property="trendingEventTitle" destination="iIu-c0-xVv" id="10g-h0-Gar"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -678,14 +677,14 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="hXb-f4-j60" firstAttribute="top" secondItem="aPg-aO-xmq" secondAttribute="bottom" id="Kui-H1-uEZ"/>
-                            <constraint firstItem="hXb-f4-j60" firstAttribute="centerX" secondItem="g8i-cS-A3f" secondAttribute="centerX" id="Q3a-vC-aNh"/>
-                            <constraint firstItem="xfx-CA-CDj" firstAttribute="top" secondItem="hXb-f4-j60" secondAttribute="bottom" id="bQV-By-zEB"/>
+                            <constraint firstItem="O5x-Tm-dE8" firstAttribute="centerX" secondItem="g8i-cS-A3f" secondAttribute="centerX" id="e4D-Iq-Okv"/>
+                            <constraint firstItem="O5x-Tm-dE8" firstAttribute="width" secondItem="g8i-cS-A3f" secondAttribute="height" multiplier="40:71" id="zOh-U7-AEg"/>
+                            <constraint firstItem="O5x-Tm-dE8" firstAttribute="centerY" secondItem="g8i-cS-A3f" secondAttribute="centerY" constant="-24.5" id="zU7-nf-rvo"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="🔍 Search 🔎" id="Cef-mU-YzW"/>
                     <connections>
-                        <outlet property="tableView" destination="hXb-f4-j60" id="HTx-DS-bVr"/>
+                        <outlet property="tableView" destination="O5x-Tm-dE8" id="PMa-wa-SQ2"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Bcu-eL-CeY" userLabel="First Responder" sceneMemberID="firstResponder"/>
