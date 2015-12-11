@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		DB6A0A85B986559E59BCC545 /* Pods_Beto.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B3CE67479A223604908EC3B1 /* Pods_Beto.framework */; };
+		F17EB3601C1AD43A0055FD18 /* CompressImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = F17EB35F1C1AD43A0055FD18 /* CompressImage.swift */; };
+		F17EB3621C1AFFCB0055FD18 /* SearchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F17EB3611C1AFFCB0055FD18 /* SearchTableViewCell.swift */; };
 		F1DB36791C19636E0029F6ED /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F1DB36781C19636E0029F6ED /* Assets.xcassets */; };
 		F1DB36871C19636E0029F6ED /* BetoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1DB36861C19636E0029F6ED /* BetoTests.swift */; };
 		F1DB36921C19636E0029F6ED /* BetoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1DB36911C19636E0029F6ED /* BetoUITests.swift */; };
@@ -89,6 +91,8 @@
 		B3CE67479A223604908EC3B1 /* Pods_Beto.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Beto.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D9F603738CC989E8C2309301 /* Pods-Beto.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Beto.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Beto/Pods-Beto.debug.xcconfig"; sourceTree = "<group>"; };
 		E1C48DEF41D689576C10628A /* Pods-Beto.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Beto.release.xcconfig"; path = "Pods/Target Support Files/Pods-Beto/Pods-Beto.release.xcconfig"; sourceTree = "<group>"; };
+		F17EB35F1C1AD43A0055FD18 /* CompressImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CompressImage.swift; sourceTree = "<group>"; };
+		F17EB3611C1AFFCB0055FD18 /* SearchTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchTableViewCell.swift; sourceTree = "<group>"; };
 		F1DB366E1C19636E0029F6ED /* Beto.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Beto.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F1DB36781C19636E0029F6ED /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F1DB367D1C19636E0029F6ED /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -261,6 +265,7 @@
 				F1DB36A61C1965540029F6ED /* Trending.swift */,
 				F1DB36A71C1965540029F6ED /* EventAnnotation.swift */,
 				F1DB36A81C1965540029F6ED /* CreateEventsForm.swift */,
+				F17EB35F1C1AD43A0055FD18 /* CompressImage.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -297,17 +302,10 @@
 		F1DB370B1C1966CA0029F6ED /* BetoTabViewController */ = {
 			isa = PBXGroup;
 			children = (
-				F1DB370C1C1966DE0029F6ED /* Trending */,
-			);
-			name = BetoTabViewController;
-			sourceTree = "<group>";
-		};
-		F1DB370C1C1966DE0029F6ED /* Trending */ = {
-			isa = PBXGroup;
-			children = (
+				F17EB3611C1AFFCB0055FD18 /* SearchTableViewCell.swift */,
 				F1DB36AF1C1965740029F6ED /* TrendingTableViewCell.swift */,
 			);
-			name = Trending;
+			name = BetoTabViewController;
 			sourceTree = "<group>";
 		};
 		F1DB370D1C1966EF0029F6ED /* Helper */ = {
@@ -692,6 +690,8 @@
 				F1DB36C21C1965740029F6ED /* TrendingTableViewCell.swift in Sources */,
 				F1DB36A91C1965540029F6ED /* AppDelegate.swift in Sources */,
 				F1E23AFC1C1A279F00763AF5 /* SearchViewController.swift in Sources */,
+				F17EB3621C1AFFCB0055FD18 /* SearchTableViewCell.swift in Sources */,
+				F17EB3601C1AD43A0055FD18 /* CompressImage.swift in Sources */,
 				F1DB36AD1C1965540029F6ED /* EventAnnotation.swift in Sources */,
 				F1DB36C51C1965740029F6ED /* LogInViewController.swift in Sources */,
 				F1DB36AB1C1965540029F6ED /* Constants.swift in Sources */,

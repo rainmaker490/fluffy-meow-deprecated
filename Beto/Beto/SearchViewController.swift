@@ -10,66 +10,49 @@ import UIKit
 
 class SearchViewController: UIViewController , UITableViewDelegate, UITableViewDataSource {
     
-    let trending = SharedInstances.sharedInstance
-    let search = SharedInstances.sharedInstance
+    let search = SharedInstances.searchInstance
     
     @IBOutlet weak var tableView: UITableView!
     
     var refreshControl: UIRefreshControl!
     
     override func viewDidLoad() {
-        
         let notifications = NSNotificationCenter.defaultCenter()
-        notifications.addObserver(self, selector: "receivedTopTenTrending", name: Notifications.TopTenReady, object: nil)
+        notifications.addObserver(self, selector: "receivedTopTenTrending", name: Notifications.EventFactoryReady, object: nil)
         notifications.addObserver(self, selector: "receivedCurrentLocationData", name: Notifications.CurrentLocationRecieved, object: nil)
         search.getCurrentLocation()
-        search.category = "All"
 
         tableView.dataSource = self
         tableView.delegate = self
         refreshControl = UIRefreshControl()
-        tableView.addSubview(refreshControl)
         refreshControl.addTarget(self, action: "refresh:", forControlEvents: .ValueChanged)
+        tableView.addSubview(refreshControl)
     }
     
     func receivedCurrentLocationData(){
-        // spinner.startAnimating()
-        trending.getEvents(trending.category!, userGeoPoint: trending.currentLocation!, miles: 10, numberOfEvents: 10)
+        search.getAllEvents(search.currentLocation!, miles: 10)
     }
     
     func receivedTopTenTrending() {
         tableView.reloadData()
-        // spinner.stopAnimating()
     }
 
-    override func viewDidAppear(animated: Bool) {
-        tableView.reloadData()
-    }
-    
     func refresh(refreshControl: UIRefreshControl) {
-        trending.getEvents(trending.category!, userGeoPoint: trending.currentLocation!, miles: 10, numberOfEvents: -1)
+        search.getAllEvents(search.currentLocation!, miles: 10)
         refreshControl.endRefreshing()
     }
     
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        var numberOfSections = 0
-        if search.eventsFactory.keys.count > 0{
-            numberOfSections = search.eventsFactory.keys.count
-        }
-        return numberOfSections
+        return search.numberOfSections
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        var numberOfSections = 0
-        if let _ =  search.eventsFactory[trending.category!] {
-            numberOfSections = search.eventsFactory[trending.category!]!.count
-        }
-        return numberOfSections
+        return search.numberOfEventsInSection(section)
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("EventTitles") as! TrendingTableViewCell
-        cell.trendingEventTitle.text = String(search.eventsFactory[search.category!]![indexPath.row].title)
+        let cell = tableView.dequeueReusableCellWithIdentifier("AllEventTitles") as! SearchTableViewCell
+        cell.allEventTitle.text = search.eventNameAtIndexPath(indexPath).title
         return cell
     }
 }

@@ -32,6 +32,23 @@ class AddEventFormViewController: FormViewController {
     }
     
     private func initializeForm() {
+        form +++=
+            /*Section(footer: "These are 10 ButtonRow rows") {
+                   /$0.header = HeaderFooterView<EurekaLogoView>(HeaderFooterProvider.Class)
+            }*/
+            Section("Image :")
+                <<< ImageRow("Event Image").cellSetup{ (cell, row) -> () in
+                        cell.accessoryView?.layer.cornerRadius = 17
+                        cell.accessoryView?.frame = CGRectMake(0, 0, 50, 50)
+                        cell.detailTextLabel?.tintColor = .grayColor()
+                        cell.row.value = UIImage(named: "Camera.png")
+                        cell.row.title = "Set Event Image-Tap Me"
+                    }.onChange{ (image) -> () in
+                        if let imageValue = image.value {
+                            self.event.image = imageValue
+                        }
+                    }
+        
         form +++= Section("Title and Location")
                 <<< TextRow("Event Title *").cellSetup { cell, row in
                         cell.textField.placeholder = row.tag
@@ -136,11 +153,16 @@ class AddEventFormViewController: FormViewController {
             newEvent["location"] = PFGeoPoint(latitude: event.location!.latitude, longitude: event.location!.longitude)
             newEvent["views"] = 1
             newEvent["locationString"] = event.locationString
+            
+            if let image = event.image {
+                let imageData = image.mediumQualityJPEGNSData
+                let imageFile = PFFile(name:"eventImage.png", data: imageData)
+                newEvent["eventPhoto"] = imageFile
+            }
+            
             newEvent.saveInBackgroundWithBlock({ (success, error) -> Void in
                 if success {
                     print("new event has been saved")
-                    self.userData.user!.relationForKey("myCreatedEvents").addObject(newEvent)
-                    self.userData.saveUser()
                 } else {
                     print("error saving new event")
                 }

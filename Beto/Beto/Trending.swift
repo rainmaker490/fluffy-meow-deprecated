@@ -10,7 +10,7 @@ import Foundation
 import Parse
 
 class SharedInstances {
-    static let sharedInstance = Trending()
+    static let trendingInstance = Trending()
     static let mapInstance = Trending()
     static let searchInstance = Trending()
 }
@@ -22,37 +22,69 @@ class Trending {
     var category : String?
     private var trendingFactory = [Event]()
     var eventsFactory = [String:[Event]]()
+    private var keys = [String]()
     
-    func getEvents(category : String, userGeoPoint: PFGeoPoint, miles: Double, numberOfEvents: Int){
+    func getEvents(type : String, userGeoPoint: PFGeoPoint, miles: Double, numberOfEvents: Int){
         let query = PFQuery(className: "Event")
-        
-        if(category == "All") {
+        print (currentLocation)
+        if type == Categories.All {
             query.whereKey("location", nearGeoPoint: userGeoPoint, withinMiles: miles)
         } else {
-            query.whereKey("location", nearGeoPoint: userGeoPoint, withinMiles: miles).whereKey("category", containsString: category)
+            query.whereKey("location", nearGeoPoint: userGeoPoint, withinMiles: miles).whereKey("category", containsString: type)
         }
-        
-        query.findObjectsInBackgroundWithBlock({ (objects, error) -> Void in
+        query.orderByDescending("views")
+        if numberOfEvents > 0 {
+            query.limit = numberOfEvents
+        }
+        query.findObjectsInBackgroundWithBlock{ (objects, error) -> Void in
             if error == nil {
-                var trendingFactory = [Event]()
                 var allEventsList = [Event]()
                 if let event = objects as? [Event] {
                     allEventsList = event
-                    allEventsList.sortInPlace({ $0.views > $1.views })
-                    if numberOfEvents < 0 {
-                        trendingFactory = allEventsList
-                    } else {
-                        for var i = 0; i<numberOfEvents && i < allEventsList.count ; i++ {
-                            trendingFactory.append(allEventsList[i])
-                        }
-                    }
                 }
-                self.eventsFactory[category] = trendingFactory
+                self.eventsFactory[self.category!]?.removeAll()
+                self.eventsFactory[self.category!] = allEventsList
                 
                 let notification = NSNotificationCenter.defaultCenter()
                 notification.postNotificationName(Notifications.TopTenReady, object: self)
             }
-        })
+        }
+    }
+    
+    func getAllEvents(userGeoPoint: PFGeoPoint, miles: Double){
+        let query = PFQuery(className: "Event")
+         query.whereKey("location", nearGeoPoint: userGeoPoint, withinMiles: miles)
+        query.findObjectsInBackgroundWithBlock{ (objects, error) -> Void in
+            if error == nil {
+                var tempEventsFactory = [String:[Event]]()
+                if let events = objects as? [Event] {
+                    for event in events {
+                        let eventCategory = event.category
+                        if let _ = tempEventsFactory[eventCategory] {
+                            tempEventsFactory[eventCategory]!.append(event)
+                        } else {
+                            tempEventsFactory[eventCategory] = [event]
+                        }
+                    }
+                }
+                self.eventsFactory = tempEventsFactory
+                self.keys = Array(self.eventsFactory.keys).sort()
+                let notification = NSNotificationCenter.defaultCenter()
+                notification.postNotificationName(Notifications.EventFactoryReady, object: self)
+            }
+        }
+    }
+    
+    func eventNameAtIndexPath(indexPath: NSIndexPath) -> Event {
+        return (eventsFactory[(keys[indexPath.section])]!)[indexPath.row]
+    }
+    
+    var numberOfSections : Int {
+        return keys.count
+    }
+    
+    func numberOfEventsInSection(section: Int) -> Int {
+        return eventsFactory[(keys[section])]!.count
     }
     
     func getCurrentLocation(){

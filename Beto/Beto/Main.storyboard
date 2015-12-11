@@ -274,8 +274,8 @@
                     <navigationItem key="navigationItem" title="🌐 More 🌎" id="njf-ag-obo"/>
                     <connections>
                         <outlet property="tableView" destination="84W-ww-MtQ" id="dxM-1e-Rzk"/>
-                        <segue destination="M56-8a-tXa" kind="modal" identifier="AddEventSegue" id="xke-HR-xzV"/>
-                        <segue destination="9Uk-2g-1vE" kind="modal" identifier="MyProfileSegue" id="F2M-Yq-Tuk"/>
+                        <segue destination="M56-8a-tXa" kind="modal" identifier="AddEventSegue" modalTransitionStyle="flipHorizontal" id="xke-HR-xzV"/>
+                        <segue destination="9Uk-2g-1vE" kind="modal" identifier="MyProfileSegue" modalTransitionStyle="flipHorizontal" id="F2M-Yq-Tuk"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rf8-3e-oWo" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -351,9 +351,6 @@
                                     <action selector="segmentedControlSelected:" destination="toR-JW-R22" eventType="valueChanged" id="jTJ-ou-meO"/>
                                 </connections>
                             </segmentedControl>
-                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="cF3-Yq-Q61">
-                                <rect key="frame" x="0.0" y="274" width="320" height="20"/>
-                            </activityIndicatorView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="SXh-BO-SnS">
                                 <rect key="frame" x="0.0" y="116" width="320" height="395"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -392,20 +389,16 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="cF3-Yq-Q61" firstAttribute="centerX" secondItem="sQ0-o4-w3J" secondAttribute="centerX" id="6PR-bA-8ts"/>
                             <constraint firstItem="SXh-BO-SnS" firstAttribute="centerX" secondItem="sQ0-o4-w3J" secondAttribute="centerX" id="BUG-59-ROf"/>
                             <constraint firstItem="htM-Sa-Kwr" firstAttribute="top" secondItem="9Ql-wN-Wfx" secondAttribute="bottom" constant="8" id="Jc6-Yg-Bwo"/>
                             <constraint firstItem="SXh-BO-SnS" firstAttribute="centerY" secondItem="sQ0-o4-w3J" secondAttribute="centerY" constant="29.5" id="U9v-VJ-MUM"/>
-                            <constraint firstItem="cF3-Yq-Q61" firstAttribute="width" secondItem="sQ0-o4-w3J" secondAttribute="height" multiplier="40:71" id="WDP-t2-uiz"/>
                             <constraint firstItem="htM-Sa-Kwr" firstAttribute="centerX" secondItem="sQ0-o4-w3J" secondAttribute="centerX" id="YCR-wj-hFM"/>
-                            <constraint firstItem="cF3-Yq-Q61" firstAttribute="centerY" secondItem="sQ0-o4-w3J" secondAttribute="centerY" id="bKb-me-v15"/>
                             <constraint firstItem="htM-Sa-Kwr" firstAttribute="width" secondItem="sQ0-o4-w3J" secondAttribute="height" multiplier="35:71" id="qrd-Il-XBh"/>
                             <constraint firstItem="SXh-BO-SnS" firstAttribute="width" secondItem="sQ0-o4-w3J" secondAttribute="height" multiplier="40:71" id="yrG-3G-S9L"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="📈 Trending 📉" id="eMI-mD-Y42"/>
                     <connections>
-                        <outlet property="spinner" destination="cF3-Yq-Q61" id="l0r-kh-1a1"/>
                         <outlet property="tableView" destination="SXh-BO-SnS" id="Lnf-lN-6yv"/>
                     </connections>
                 </viewController>
@@ -645,7 +638,7 @@
                                 </constraints>
                                 <color key="separatorColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="EventTitles" id="vpY-4E-kmK" customClass="TrendingTableViewCell" customModule="Beto" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="AllEventTitles" id="vpY-4E-kmK" customClass="SearchTableViewCell" customModule="Beto" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="92" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="vpY-4E-kmK" id="vzr-zb-Fhx">
@@ -658,7 +651,7 @@
                                                         <constraint firstAttribute="width" secondItem="iIu-c0-xVv" secondAttribute="height" multiplier="304:21" constant="-162.47619047619048" id="q9S-Ug-DbU"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" type="system" weight="thin" pointSize="25"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
@@ -669,7 +662,7 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <outlet property="trendingEventTitle" destination="iIu-c0-xVv" id="10g-h0-Gar"/>
+                                            <outlet property="allEventTitle" destination="iIu-c0-xVv" id="qkG-oP-q1f"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>

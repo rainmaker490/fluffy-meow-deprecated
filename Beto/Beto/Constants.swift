@@ -26,13 +26,17 @@ struct SignInPageImage {
 struct Notifications {
     static let TopTenReady = "TopTenReady"
     static let CurrentLocationRecieved = "CurrentLocationRecieved"
+    static let EventFactoryReady = "EventsPopulated"
+    static let EnableRefreshControl = "EnableRefreshControl"
+    static let DisableRefreshControl = "DisableRefreshControl"
 }
 
 struct Categories {
-    static let CategoryOfEvents = ["Sport", "Clubs", "Study Groups", "Night Life", "Concerts"]
+    static let CategoryOfEvents = ["Sports", "Clubs", "Study Groups", "Night Life", "Concerts"]
+    static let All = "All"
     static let Sport = "Sport"
     static let Clubs = "Clubs"
     static let StudyGroups = "Study Groups"
     static let NightLife = "Night Life"
-    static let Concerts = "Concers"
+    static let Concerts = "Concerts"
 }

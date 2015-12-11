@@ -12,15 +12,14 @@ import MapKit
 
 class TrendViewController: UIViewController, UITableViewDelegate, UITableViewDataSource , EventDetails{
     
-    let trending = SharedInstances.sharedInstance
+    let trending = SharedInstances.trendingInstance
     
     @IBOutlet weak var tableView: UITableView!
-    @IBOutlet weak var spinner: UIActivityIndicatorView!
     
     var refreshControl: UIRefreshControl!
     
     override func viewDidLoad() {
-        
+        trending.category = "All"
         let notifications = NSNotificationCenter.defaultCenter()
         notifications.addObserver(self, selector: "receivedCurrentLocationData", name: Notifications.CurrentLocationRecieved, object: nil)
         notifications.addObserver(self, selector: "receivedTopTenTrending", name: Notifications.TopTenReady, object: nil)
@@ -40,60 +39,52 @@ class TrendViewController: UIViewController, UITableViewDelegate, UITableViewDat
         tableView.dataSource = self
         tableView.delegate = self
         refreshControl = UIRefreshControl()
-        tableView.addSubview(refreshControl)
+        refreshControl!.attributedTitle = NSAttributedString(string: " ↓ Refresh ↓ ")
         refreshControl.addTarget(self, action: "refresh:", forControlEvents: .ValueChanged)
-        trending.category = "All"
-    }
-    
-    @IBAction func segmentedControlSelected(sender: UISegmentedControl) {
-        spinner.startAnimating()
-        switch sender.selectedSegmentIndex {
-        case 0:
-            trending.category = "All"
-            break
-        case 1:
-            trending.category = "Sport"
-            break
-        case 2:
-            trending.category = "Clubs"
-            break
-        case 3:
-            trending.category = "Study Groups"
-            break
-        case 4:
-            trending.category = "Night Life"
-            break
-        case 5:
-            trending.category = "Concerts"
-            break
-        default:
-            break
-        }
-        
-        if let _ = trending.eventsFactory[trending.category!] {
-            receivedTopTenTrending()
-        } else {
-            trending.getEvents(trending.category!, userGeoPoint: trending.currentLocation!, miles: 10, numberOfEvents: 10)
-        }
-    }
-    
-    func receivedCurrentLocationData(){
-        spinner.startAnimating()
-        trending.getEvents(trending.category!, userGeoPoint: trending.currentLocation!, miles: 10, numberOfEvents: 10)
-    }
-    
-    func receivedTopTenTrending() {
-        tableView.reloadData()
-        spinner.stopAnimating()
+        tableView.addSubview(refreshControl)
     }
     
     override func viewDidAppear(animated: Bool) {
         tableView.reloadData()
     }
     
-    func refresh(refreshControl: UIRefreshControl) {
+    @IBAction func segmentedControlSelected(sender: UISegmentedControl) {
+        switch sender.selectedSegmentIndex {
+        case 0:
+            trending.category = Categories.All
+            break
+        case 1:
+            trending.category = Categories.Sport
+            break
+        case 2:
+            trending.category = Categories.Clubs
+            break
+        case 3:
+            trending.category = Categories.StudyGroups
+            break
+        case 4:
+            trending.category = Categories.NightLife
+            break
+        case 5:
+            trending.category = Categories.Concerts
+            break
+        default:
+            break
+        }
         trending.getEvents(trending.category!, userGeoPoint: trending.currentLocation!, miles: 10, numberOfEvents: 10)
+    }
+    
+    func receivedCurrentLocationData(){
+        trending.getEvents(trending.category!, userGeoPoint: trending.currentLocation!, miles: 10, numberOfEvents: 10)
+    }
+    
+    func receivedTopTenTrending() {
         refreshControl.endRefreshing()
+        tableView.reloadData()
+    }
+    
+    func refresh(refreshControl: UIRefreshControl) {
+        trending.getCurrentLocation()
     }
     
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {

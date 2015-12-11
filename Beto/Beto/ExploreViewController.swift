@@ -9,21 +9,20 @@
 import UIKit
 import MapKit
 
-class ExploreViewController: UIViewController , MKMapViewDelegate, CLLocationManagerDelegate{
+class ExploreViewController: UIViewController , MKMapViewDelegate{
     
     let mapViewEvents = SharedInstances.mapInstance
-    let trending = SharedInstances.sharedInstance
-    let locationManager = CLLocationManager()
+    let trending = SharedInstances.trendingInstance
     
     @IBOutlet weak var mapView: MKMapView!
     
     override func viewDidLoad() {
         let notifications = NSNotificationCenter.defaultCenter()
+        notifications.addObserver(self, selector: "receivedCurrentLocationData", name: Notifications.CurrentLocationRecieved, object: nil)
         notifications.addObserver(self, selector: "receivedTopTenTrending", name: Notifications.TopTenReady, object: nil)
         mapViewEvents.getCurrentLocation()
+        mapViewEvents.category = "All"
         mapView.delegate = self
-        locationManager.delegate = self
-        locationManager.desiredAccuracy = kCLLocationAccuracyBest
 
     }
     
@@ -36,26 +35,30 @@ class ExploreViewController: UIViewController , MKMapViewDelegate, CLLocationMan
     @IBAction func segmentedControl(sender: UISegmentedControl) {
         switch sender.selectedSegmentIndex {
         case 0:
-            mapViewEvents.category = "All"
+            mapViewEvents.category = Categories.All
             break
         case 1:
-            mapViewEvents.category = "Sport"
+            mapViewEvents.category = Categories.Sport
             break
         case 2:
-            mapViewEvents.category = "Clubs"
+            mapViewEvents.category = Categories.Clubs
             break
         case 3:
-            mapViewEvents.category = "Study Groups"
+            mapViewEvents.category = Categories.StudyGroups
             break
         case 4:
-            mapViewEvents.category = "Night Life"
+            mapViewEvents.category = Categories.NightLife
             break
         case 5:
-            mapViewEvents.category = "Concerts"
+            mapViewEvents.category = Categories.Concerts
             break
         default:
             break
         }
+    }
+    
+    func receivedCurrentLocationData(){
+        mapViewEvents.getEvents(mapViewEvents.category!, userGeoPoint: mapViewEvents.currentLocation!, miles: 10, numberOfEvents: -1)
     }
     
     func receivedTopTenTrending() {

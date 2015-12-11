@@ -18,4 +18,5 @@ struct EventsForm {
     var url: String?
     var description: String?
     var locationString: String?
+    var image: UIImage?
 }
