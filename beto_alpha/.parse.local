@@ -1,0 +1,10 @@
+{
+  "applications": {
+    "_default": {
+      "link": "beto_alpha"
+    },
+    "beto_alpha": {
+      "applicationId": "xVJqa388HgP9wdHalRnUfOfF0vqBStUhVSbMz6yT"
+    }
+  }
+}
