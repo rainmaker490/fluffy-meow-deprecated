@@ -11,6 +11,8 @@ import Eureka
 
 class MoreViewController: FormViewController {
     
+    let userData = User.sharedInstance
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         initializeForm()

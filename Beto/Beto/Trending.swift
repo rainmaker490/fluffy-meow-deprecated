@@ -26,7 +26,6 @@ class Trending {
     
     func getEvents(type : String, userGeoPoint: PFGeoPoint, miles: Double, numberOfEvents: Int){
         let query = PFQuery(className: "Event")
-        print (currentLocation)
         if type == Categories.All {
             query.whereKey("location", nearGeoPoint: userGeoPoint, withinMiles: miles)
         } else {

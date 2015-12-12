@@ -19,16 +19,16 @@ class AddEventFormViewController: FormViewController {
     
     let userData = User.sharedInstance
     var event = EventsForm()
+    var relationalEvent = PFObject(className: "Event")
     
     override func viewDidLoad() {
-        super.viewDidLoad()
-        
         initializeForm()
         
         self.navigationItem.leftBarButtonItem?.target = self
         self.navigationItem.leftBarButtonItem?.action = "cancelTapped:"
         self.navigationItem.rightBarButtonItem?.target = self
         self.navigationItem.rightBarButtonItem?.action = "saveTapped:"
+        super.viewDidLoad()
     }
     
     private func initializeForm() {
@@ -159,14 +159,16 @@ class AddEventFormViewController: FormViewController {
                 let imageFile = PFFile(name:"eventImage.png", data: imageData)
                 newEvent["eventPhoto"] = imageFile
             }
-            
-            newEvent.saveInBackgroundWithBlock({ (success, error) -> Void in
+            relationalEvent = newEvent
+            newEvent.saveInBackgroundWithBlock{ (success, error) -> Void in
                 if success {
-                    print("new event has been saved")
+                    print("New event saved")
+                    self.userData.user!.relationForKey("myCreatedEvents").addObject(self.relationalEvent)
+                    self.userData.user!.saveInBackground()
                 } else {
                     print("error saving new event")
                 }
-            })
+            }
             dismissViewControllerAnimated(true, completion: nil)
         } else {
             presentAlertView()
@@ -186,7 +188,7 @@ class AddEventFormViewController: FormViewController {
     
     func presentAlertView(){
         let alertView = UIAlertController(title: "Incomplete Parameters", message: "Missing Required Fields \n -Fields marked with * \n -Is Address Correct?", preferredStyle: .Alert)
-        alertView.addAction(UIAlertAction(title: "Ok", style: .Default, handler: nil))
+        alertView.addAction(UIAlertAction(title: "OK", style: .Default, handler: nil))
         presentViewController(alertView, animated: true, completion: nil)
     }
 }

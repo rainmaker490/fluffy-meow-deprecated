@@ -37,7 +37,6 @@ class LogInViewController: UIViewController {
                 // MARK : Clean below
                 let betoTabViewController = self.storyboard?.instantiateViewControllerWithIdentifier("BetoTabViewController") as! BetoTabViewController
                 self.presentViewController(betoTabViewController, animated: true, completion: nil)
-                
             } else {
                 print("Uh oh. The user cancelled the Facebook login.")
             }

@@ -14,7 +14,7 @@ class User {
     
     let user = PFUser.currentUser()
     
-    func saveUser(){
+    func saveUser() {
         user!.saveInBackgroundWithBlock {
             (success: Bool, error: NSError?) -> Void in
             if (success) {
@@ -24,4 +24,12 @@ class User {
             }
         }
     }
+}
+
+struct SignUpUser {
+    var username: String?
+    var password: String?
+    var verifyPassword: String?
+    var email: String?
+    var image: UIImage?
 }

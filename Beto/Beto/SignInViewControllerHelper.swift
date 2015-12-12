@@ -21,8 +21,8 @@ class SignInViewControllerHelper {
     }
     
     /*static func setAllSignInPageTextFieldBorderColor(signInPageTextFields : [UITextField], borderColor : CGColor){
-    for textField in signInPageTextFields {
-    textField.layer.borderColor = borderColor
-    }
+        for textField in signInPageTextFields {
+            textField.layer.borderColor = borderColor
+        }
     }*/
 }
