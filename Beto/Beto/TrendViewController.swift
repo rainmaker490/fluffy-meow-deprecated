@@ -13,6 +13,7 @@ import MapKit
 class TrendViewController: UIViewController, UITableViewDelegate, UITableViewDataSource , EventDetails{
     
     let trending = SharedInstances.trendingInstance
+    let userData = User.sharedInstance
     
     @IBOutlet weak var tableView: UITableView!
     
@@ -36,6 +37,16 @@ class TrendViewController: UIViewController, UITableViewDelegate, UITableViewDat
         geocoder.geocodeAddressString(address, completionHandler: {(placemarks: [CLPlacemark]?, error: NSError?) -> Void in
         
         })*/
+        let query = userData.user!["favoriteEvents"].query()
+        query.findObjectsInBackgroundWithBlock { (events, error) -> Void in
+            if error == nil {
+                self.userData.userEvents.removeAll()
+                if let  event  = events as? [Event] {
+                    self.userData.userEvents = event
+                }
+            }
+        }
+        
         tableView.dataSource = self
         tableView.delegate = self
         refreshControl = UIRefreshControl()

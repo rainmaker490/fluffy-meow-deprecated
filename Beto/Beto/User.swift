@@ -13,6 +13,7 @@ class User {
     static let sharedInstance = User()
     
     let user = PFUser.currentUser()
+    var userEvents = [Event]()
     
     func saveUser() {
         user!.saveInBackgroundWithBlock {
@@ -21,6 +22,17 @@ class User {
                 print("user saved")
             } else {
                 print(error?.description)
+            }
+        }
+    }
+    
+    func getFavorites(){
+        let query = user!["favoriteEvents"].query()
+        query.findObjectsInBackgroundWithBlock { (events, error) -> Void in
+            if error != nil {
+                for event in events! {
+                    self.userEvents.append((event as? Event)!)
+                }
             }
         }
     }

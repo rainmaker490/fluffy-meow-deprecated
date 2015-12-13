@@ -30,5 +30,6 @@ class Event: PFObject, PFSubclassing {
     @NSManaged var expirationDate : NSDate
     @NSManaged var title : String
     @NSManaged var locationString : String
-    @NSManaged var eventPicture : PFFile
+    @NSManaged var eventPhoto : PFFile
+    @NSManaged var objectID : String
 }

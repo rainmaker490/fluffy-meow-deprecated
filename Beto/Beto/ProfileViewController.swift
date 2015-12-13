@@ -19,21 +19,16 @@ class ProfileViewController: UIViewController {
         super.viewDidLoad()
         firstName.text = userData.user!.username
         
+        let userPicture = userData.user!["avatar"]! as! PFFile
+        userPicture.getDataInBackgroundWithBlock { (picture, error) -> Void in
+            if error == nil {
+                self.avatar.image = UIImage(data: picture!)
+            }
+        }
     }
 
     @IBAction func closeButtonTapped(sender: UIButton) {
         dismissViewControllerAnimated(true, completion: nil)
-    }
-    
-    func test() {
-        let userPicture = userData.user!["avatar"]! as! PFFile
-        userPicture.getDataInBackgroundWithBlock { (picture, error) -> Void in
-            if error != nil {
-                self.avatar.image = UIImage(data: picture!)
-            }
-        }
-        
-        
     }
     
 }

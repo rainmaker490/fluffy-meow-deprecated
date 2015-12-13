@@ -486,6 +486,9 @@
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" weight="thin" pointSize="15"/>
                                 <state key="normal" title="Add to Favorites"/>
+                                <connections>
+                                    <action selector="addToFavoritesButtonPressed:" destination="XCD-N4-7Cp" eventType="touchUpInside" id="JK7-RW-MnA"/>
+                                </connections>
                             </button>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="Description" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oRT-I8-2B0">
                                 <rect key="frame" x="40" y="329" width="240" height="128"/>
@@ -496,11 +499,6 @@
                                 <fontDescription key="fontDescription" type="system" weight="thin" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ODa-Wg-bzo">
-                                <rect key="frame" x="40" y="291" width="240" height="30"/>
-                                <fontDescription key="fontDescription" type="system" weight="thin" pointSize="15"/>
-                                <state key="normal" title="Pin To Map"/>
-                            </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lS0-3i-gri">
                                 <rect key="frame" x="20" y="72" width="280" height="37"/>
                                 <constraints>
@@ -510,6 +508,11 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ODa-Wg-bzo">
+                                <rect key="frame" x="40" y="291" width="240" height="30"/>
+                                <fontDescription key="fontDescription" type="system" weight="thin" pointSize="15"/>
+                                <state key="normal" title="Pin To Map"/>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -532,8 +535,10 @@
                     </view>
                     <navigationItem key="navigationItem" id="0Px-4h-VuV"/>
                     <connections>
+                        <outlet property="addToFavorites" destination="BDa-EB-sFD" id="sZ3-lH-5DB"/>
                         <outlet property="eventImage" destination="1X1-Gb-bci" id="bLM-A7-ZCe"/>
                         <outlet property="eventTitle" destination="lS0-3i-gri" id="0Zw-Ju-qhC"/>
+                        <outlet property="pinToMap" destination="ODa-Wg-bzo" id="ZNK-1f-5G1"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Yes-gs-cGq" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -758,10 +763,10 @@
             </objects>
             <point key="canvasLocation" x="107" y="1537"/>
         </scene>
-        <!--View Controller-->
+        <!--Favorite View Controller-->
         <scene sceneID="NWl-Rc-OMp">
             <objects>
-                <viewController id="AD7-po-zhZ" sceneMemberID="viewController">
+                <viewController id="AD7-po-zhZ" customClass="FavoriteViewController" customModule="Beto" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="tvT-7S-k2k"/>
                         <viewControllerLayoutGuide type="bottom" id="mxr-iq-hKu"/>
@@ -769,9 +774,50 @@
                     <view key="view" contentMode="scaleToFill" id="5Q6-YV-VW3">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="RpM-yf-YDw">
+                                <rect key="frame" x="0.0" y="20" width="320" height="548"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="FavoriteEvents" id="L4f-md-FaZ" customClass="SearchTableViewCell" customModule="Beto" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="320" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="L4f-md-FaZ" id="Rzg-5W-qhc">
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pHp-Fr-4M0">
+                                                    <rect key="frame" x="6" y="8.5" width="308" height="26.5"/>
+                                                    <fontDescription key="fontDescription" type="system" weight="thin" pointSize="22"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="pHp-Fr-4M0" firstAttribute="centerY" secondItem="Rzg-5W-qhc" secondAttribute="centerY" id="S3Q-oH-1uo"/>
+                                                <constraint firstItem="pHp-Fr-4M0" firstAttribute="width" secondItem="Rzg-5W-qhc" secondAttribute="height" multiplier="304:43" id="Uhd-2d-mYd"/>
+                                                <constraint firstItem="pHp-Fr-4M0" firstAttribute="centerX" secondItem="Rzg-5W-qhc" secondAttribute="centerX" id="VRf-9L-Jgz"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="allEventTitle" destination="pHp-Fr-4M0" id="UFB-kT-w7P"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="RpM-yf-YDw" firstAttribute="centerX" secondItem="5Q6-YV-VW3" secondAttribute="centerX" id="1m0-tv-tNt"/>
+                            <constraint firstItem="RpM-yf-YDw" firstAttribute="height" secondItem="5Q6-YV-VW3" secondAttribute="height" constant="-20" id="A5x-Eo-D1F"/>
+                            <constraint firstItem="RpM-yf-YDw" firstAttribute="centerY" secondItem="5Q6-YV-VW3" secondAttribute="centerY" constant="10" id="AHW-DL-Uqr"/>
+                            <constraint firstItem="RpM-yf-YDw" firstAttribute="width" secondItem="5Q6-YV-VW3" secondAttribute="width" id="qTg-rx-U7j"/>
+                        </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" systemItem="favorites" id="PZG-c4-Jmj"/>
+                    <connections>
+                        <outlet property="tableView" destination="RpM-yf-YDw" id="d14-M1-hIr"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3nS-GW-BLZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

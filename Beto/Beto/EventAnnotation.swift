@@ -8,19 +8,21 @@
 
 import Foundation
 import MapKit
+import Parse
 
 
 class EventAnnotation: NSObject, MKAnnotation {
-    let coordinate: CLLocationCoordinate2D
-    let lat: CLLocationDegrees
-    let long: CLLocationDegrees
-    let eventTitle: String?
     
-    init(coordinate: CLLocationCoordinate2D, eventTitle: String) {
-        self.coordinate = coordinate
-        self.eventTitle = eventTitle
-        self.lat = coordinate.latitude
-        self.long = coordinate.longitude
+    let event: Event
+    let eventTitle: String?
+    let coordinateParse: PFGeoPoint
+    let coordinate: CLLocationCoordinate2D
+    
+    init(event: Event) {
+        self.event = event
+        self.eventTitle = event.title
+        self.coordinateParse = event.location
+        self.coordinate = CLLocationCoordinate2D(latitude: coordinateParse.latitude, longitude: coordinateParse.longitude)
         super.init()
     }
     

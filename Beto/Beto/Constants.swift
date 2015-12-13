@@ -39,4 +39,5 @@ struct Categories {
     static let StudyGroups = "Study Groups"
     static let NightLife = "Night Life"
     static let Concerts = "Concerts"
+    static let Favorites = "Favorites"
 }

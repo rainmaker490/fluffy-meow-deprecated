@@ -91,6 +91,7 @@ class Trending {
             (geoPoint: PFGeoPoint?, error: NSError?) -> Void in
             if error == nil {
                 self.currentLocation = geoPoint
+                print(geoPoint)
                 let notifications = NSNotificationCenter.defaultCenter()
                 notifications.postNotificationName(Notifications.CurrentLocationRecieved, object: self)
             }
