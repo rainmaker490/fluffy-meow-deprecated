@@ -29,6 +29,7 @@ struct Notifications {
     static let EventFactoryReady = "EventsPopulated"
     static let EnableRefreshControl = "EnableRefreshControl"
     static let DisableRefreshControl = "DisableRefreshControl"
+    static let FavoritesReceived = "FavoritesReceived"
 }
 
 struct Categories {

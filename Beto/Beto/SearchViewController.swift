@@ -8,7 +8,7 @@
 
 import UIKit
 
-class SearchViewController: UIViewController , UITableViewDelegate, UITableViewDataSource {
+class SearchViewController: UIViewController , UITableViewDelegate, UITableViewDataSource , EventDetails{
     
     let search = SharedInstances.searchInstance
     
@@ -54,5 +54,28 @@ class SearchViewController: UIViewController , UITableViewDelegate, UITableViewD
         let cell = tableView.dequeueReusableCellWithIdentifier("AllEventTitles") as! SearchTableViewCell
         cell.allEventTitle.text = search.eventNameAtIndexPath(indexPath).title
         return cell
+    }
+    
+    func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        return search.titleForSection(section)
+    }
+    
+    var currentEvent : Event {
+        get {
+            let indexPath = tableView.indexPathForSelectedRow!
+            return search.eventsFactory[search.getKey(indexPath.section)]![indexPath.row]
+        }
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        switch segue.identifier! {
+        case "SearchViewControllerGetInfo":
+            let infoViewController = segue.destinationViewController as! InfoViewController
+            infoViewController.dataSource = self
+            infoViewController.completionBlock = { () in self.dismissViewControllerAnimated(true, completion: nil)}
+            break
+        default:
+            assert(false, "Unhandled Segue")
+        }
     }
 }

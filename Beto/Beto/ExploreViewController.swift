@@ -19,30 +19,51 @@ class ExploreViewController: UIViewController , MKMapViewDelegate {
     @IBOutlet weak var mapView: MKMapView!
     
     override func viewDidLoad() {
-        let notifications = NSNotificationCenter.defaultCenter()
-        notifications.addObserver(self, selector: "receivedCurrentLocationData", name: Notifications.CurrentLocationRecieved, object: nil)
-        notifications.addObserver(self, selector: "receivedTopTenTrending", name: Notifications.TopTenReady, object: nil)
-        
-        let query = userData.user!["favoriteEvents"].query()
-        query.findObjectsInBackgroundWithBlock { (events, error) -> Void in
-            if error == nil {
-                self.userData.userEvents.removeAll()
-                for event in events! {
-                    self.userData.userEvents.append((event as? Event)!)
-                }
-            }
-        }
+        getUserEvents()
         
         mapViewEvents.getCurrentLocation()
         mapViewEvents.category = Categories.Favorites
         mapView.delegate = self
         
+        let notifications = NSNotificationCenter.defaultCenter()
+        notifications.addObserver(self, selector: "favoritesReceivedPlotOnMap", name: Notifications.FavoritesReceived, object: nil)
+        
+    }
+    
+    func getUserEvents() {
+        let query = userData.user!["favoriteEvents"].query()
+        query.findObjectsInBackgroundWithBlock { (events, error) -> Void in
+            if error == nil {
+                self.userData.userEvents.removeAll()
+                if let favoriteEvents = events as? [Event] {
+                    self.userData.userEvents = favoriteEvents
+                    let notification = NSNotificationCenter.defaultCenter()
+                    notification.postNotificationName(Notifications.FavoritesReceived, object: self)
+
+                }
+            }
+        }
+    }
+    
+    func favoritesReceivedPlotOnMap(){
+        makeAnnotation(userData.userEvents)
+        let location = CLLocation(latitude: 37.787359, longitude: -122.408227)
+        centerMapOnLocation(location)
+        mapView.addAnnotations(annotations)
     }
     
     func centerMapOnLocation(location: CLLocation) {
         let coordinateRegion = MKCoordinateRegion(center: location.coordinate, span: MKCoordinateSpanMake(0.01, 0.01))
         mapView.setRegion(coordinateRegion, animated: true)
         mapView.regionThatFits(coordinateRegion)
+    }
+    
+    func makeAnnotation(events: [Event]){
+        annotations.removeAll()
+        for event in events{
+            let annotation = EventAnnotation(event: event)
+            annotations.append(annotation)
+        }
     }
     
     @IBAction func segmentedControl(sender: UISegmentedControl) {
@@ -68,6 +89,7 @@ class ExploreViewController: UIViewController , MKMapViewDelegate {
         default:
             break
         }
+        receivedCurrentLocationData()
     }
     
     func receivedCurrentLocationData(){
@@ -97,12 +119,12 @@ class ExploreViewController: UIViewController , MKMapViewDelegate {
                 dequeuedView.annotation = annotation
                 view = dequeuedView
             } else {
-                let pinView =  MKPinAnnotationView(annotation: annotation, reuseIdentifier: identifier)
-                pinView.canShowCallout = true
-                pinView.calloutOffset = CGPoint(x: -5, y: 5)
-                pinView.pinTintColor = .blueColor()
-                pinView.rightCalloutAccessoryView = UIButton(type: .DetailDisclosure) as UIView
-                pinView.image = UIImage(named: "LightBlue.png")
+                let pinView =  MKAnnotationView(annotation: annotation, reuseIdentifier: identifier)
+                // pinView.canShowCallout = true
+                // pinView.calloutOffset = CGPoint(x: -5, y: 5)
+                // pinView.pinTintColor = .blueColor()
+                // pinView.rightCalloutAccessoryView = UIButton(type: .DetailDisclosure) as UIView
+                pinView.image = UIImage(named: "Green.png")
                 return pinView
             }
             return view

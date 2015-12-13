@@ -8,7 +8,7 @@
 
 import UIKit
 
-class FavoriteViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class FavoriteViewController: UIViewController, UITableViewDelegate, UITableViewDataSource , EventDetails{
     
     @IBOutlet weak var tableView: UITableView!
     let search = SharedInstances.trendingInstance
@@ -24,6 +24,12 @@ class FavoriteViewController: UIViewController, UITableViewDelegate, UITableView
         refreshControl = UIRefreshControl()
         refreshControl.addTarget(self, action: "refresh:", forControlEvents: .ValueChanged)
         tableView.addSubview(refreshControl)
+    }
+    
+    var currentEvent : Event {
+        get {
+            return userData.userEvents[tableView.indexPathForSelectedRow!.row]
+        }
     }
     
     override func viewDidAppear(animated: Bool) {
@@ -48,6 +54,18 @@ class FavoriteViewController: UIViewController, UITableViewDelegate, UITableView
         let cell = tableView.dequeueReusableCellWithIdentifier("FavoriteEvents") as! SearchTableViewCell
         cell.allEventTitle.text = userEvents[indexPath.row].title
         return cell
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        switch segue.identifier! {
+        case "FavoriteGetInfo":
+            let infoViewController = segue.destinationViewController as! InfoViewController
+            infoViewController.dataSource = self
+            infoViewController.completionBlock = { () in self.dismissViewControllerAnimated(true, completion: nil)}
+            break
+        default:
+            assert(false, "Unhandled Segue")
+        }
     }
 
 }
