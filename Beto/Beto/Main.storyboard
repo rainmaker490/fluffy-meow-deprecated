@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="Lc7-e7-Ac6">
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
@@ -30,14 +31,16 @@
                             </button>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="none" rowHeight="44" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="VNW-HC-rY8">
                                 <rect key="frame" x="0.0" y="47" width="320" height="521"/>
-                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
-                                <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="VNW-HC-rY8" secondAttribute="height" multiplier="320:521" id="B3v-tn-H8b"/>
                                 </constraints>
+                                <color key="sectionIndexColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="sectionIndexBackgroundColor" red="0.90196079019999997" green="0.90196079019999997" blue="0.90196079019999997" alpha="1" colorSpace="calibratedRGB"/>
                             </tableView>
                         </subviews>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" red="0.90196079019999997" green="0.90196079019999997" blue="0.90196079019999997" alpha="0.79000000000000004" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="VNW-HC-rY8" firstAttribute="centerX" secondItem="eSN-n0-O3q" secondAttribute="centerX" id="2uq-qq-yvk"/>
                             <constraint firstItem="te7-h6-61N" firstAttribute="top" secondItem="UZi-c9-GIw" secondAttribute="bottom" id="44N-Td-Fws"/>
@@ -187,7 +190,7 @@
                                     <constraint firstAttribute="width" secondItem="Yr3-4R-AdC" secondAttribute="height" multiplier="10:1" id="Cqt-fx-5gj"/>
                                 </constraints>
                                 <segments>
-                                    <segment title="All"/>
+                                    <segment title="" image="Favorite.png"/>
                                     <segment title="" image="Sports.png"/>
                                     <segment title="" image="Meetings.png"/>
                                     <segment title="" image="Study.png"/>
@@ -585,7 +588,7 @@
                                             <constraint firstAttribute="width" secondItem="tGa-Kw-uLM" secondAttribute="height" multiplier="112:15" id="Cli-1C-LKt"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" weight="thin" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
+                                        <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no"/>
                                     </textField>
                                     <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Invalid Log in" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zMn-Ka-c42">
                                         <rect key="frame" x="8" y="90" width="186" height="12"/>
@@ -634,8 +637,8 @@
                                     <constraint firstAttribute="trailing" secondItem="zYx-vR-EoC" secondAttribute="trailing" constant="8" id="wPx-1Q-i2E"/>
                                 </constraints>
                             </view>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="e1W-P7-4GF">
-                                <rect key="frame" x="20" y="20" width="20" height="20"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="e1W-P7-4GF">
+                                <rect key="frame" x="16" y="20" width="20" height="20"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="e1W-P7-4GF" secondAttribute="height" multiplier="1:1" id="ebf-fz-Ws4"/>
                                 </constraints>
@@ -857,6 +860,7 @@
         <image name="Camera.png" width="100" height="100"/>
         <image name="Close.png" width="100" height="100"/>
         <image name="Concerts.png" width="32" height="32"/>
+        <image name="Favorite.png" width="32" height="32"/>
         <image name="Map.png" width="32" height="32"/>
         <image name="Meetings.png" width="32" height="32"/>
         <image name="NightLife.png" width="32" height="32"/>

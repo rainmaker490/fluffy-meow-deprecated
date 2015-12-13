@@ -39,7 +39,7 @@ class SignInViewController: UIViewController {
     }
     
     @IBAction func logInButtonPressed(sender: UIButton) {
-        PFUser.logInWithUsernameInBackground(username.text!, password: password.text!) {
+        PFUser.logInWithUsernameInBackground(username.text!.lowercaseString, password: password.text!) {
             (user: PFUser?, error: NSError?) -> Void in
             if user != nil {
                 self.invalidLogIn.hidden = true

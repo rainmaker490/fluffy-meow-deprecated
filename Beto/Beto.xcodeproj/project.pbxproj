@@ -11,6 +11,8 @@
 		F11662F01C1BE059002D02D1 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F11662EF1C1BE059002D02D1 /* SignUpViewController.swift */; };
 		F17EB3601C1AD43A0055FD18 /* CompressImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = F17EB35F1C1AD43A0055FD18 /* CompressImage.swift */; };
 		F17EB3621C1AFFCB0055FD18 /* SearchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F17EB3611C1AFFCB0055FD18 /* SearchTableViewCell.swift */; };
+		F1A673621C1D15F10017090A /* Favorite.png in Resources */ = {isa = PBXBuildFile; fileRef = F1A673611C1D15F10017090A /* Favorite.png */; };
+		F1A673641C1D16740017090A /* SignUpButton.png in Resources */ = {isa = PBXBuildFile; fileRef = F1A673631C1D16740017090A /* SignUpButton.png */; };
 		F1DB36791C19636E0029F6ED /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F1DB36781C19636E0029F6ED /* Assets.xcassets */; };
 		F1DB36871C19636E0029F6ED /* BetoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1DB36861C19636E0029F6ED /* BetoTests.swift */; };
 		F1DB36921C19636E0029F6ED /* BetoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1DB36911C19636E0029F6ED /* BetoUITests.swift */; };
@@ -44,8 +46,6 @@
 		F1DB36DC1C1965B50029F6ED /* background.jpg in Resources */ = {isa = PBXBuildFile; fileRef = F1DB36D61C1965B50029F6ED /* background.jpg */; };
 		F1DB36DD1C1965B50029F6ED /* facebook.png in Resources */ = {isa = PBXBuildFile; fileRef = F1DB36D71C1965B50029F6ED /* facebook.png */; };
 		F1DB36DE1C1965B50029F6ED /* twitter.png in Resources */ = {isa = PBXBuildFile; fileRef = F1DB36D81C1965B50029F6ED /* twitter.png */; };
-		F1DB36DF1C1965B50029F6ED /* password.png in Resources */ = {isa = PBXBuildFile; fileRef = F1DB36D91C1965B50029F6ED /* password.png */; };
-		F1DB36E01C1965B50029F6ED /* signUp.png in Resources */ = {isa = PBXBuildFile; fileRef = F1DB36DA1C1965B50029F6ED /* signUp.png */; };
 		F1DB36E41C1965C80029F6ED /* SubmitUnFilled.png in Resources */ = {isa = PBXBuildFile; fileRef = F1DB36E11C1965C80029F6ED /* SubmitUnFilled.png */; };
 		F1DB36E51C1965C80029F6ED /* SubmitFilled.png in Resources */ = {isa = PBXBuildFile; fileRef = F1DB36E21C1965C80029F6ED /* SubmitFilled.png */; };
 		F1DB36E61C1965C80029F6ED /* Close.png in Resources */ = {isa = PBXBuildFile; fileRef = F1DB36E31C1965C80029F6ED /* Close.png */; };
@@ -95,6 +95,8 @@
 		F11662EF1C1BE059002D02D1 /* SignUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		F17EB35F1C1AD43A0055FD18 /* CompressImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CompressImage.swift; sourceTree = "<group>"; };
 		F17EB3611C1AFFCB0055FD18 /* SearchTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchTableViewCell.swift; sourceTree = "<group>"; };
+		F1A673611C1D15F10017090A /* Favorite.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Favorite.png; sourceTree = "<group>"; };
+		F1A673631C1D16740017090A /* SignUpButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = SignUpButton.png; sourceTree = "<group>"; };
 		F1DB366E1C19636E0029F6ED /* Beto.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Beto.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F1DB36781C19636E0029F6ED /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F1DB367D1C19636E0029F6ED /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -134,8 +136,6 @@
 		F1DB36D61C1965B50029F6ED /* background.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = background.jpg; sourceTree = "<group>"; };
 		F1DB36D71C1965B50029F6ED /* facebook.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = facebook.png; sourceTree = "<group>"; };
 		F1DB36D81C1965B50029F6ED /* twitter.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = twitter.png; sourceTree = "<group>"; };
-		F1DB36D91C1965B50029F6ED /* password.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = password.png; sourceTree = "<group>"; };
-		F1DB36DA1C1965B50029F6ED /* signUp.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = signUp.png; sourceTree = "<group>"; };
 		F1DB36E11C1965C80029F6ED /* SubmitUnFilled.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = SubmitUnFilled.png; sourceTree = "<group>"; };
 		F1DB36E21C1965C80029F6ED /* SubmitFilled.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = SubmitFilled.png; sourceTree = "<group>"; };
 		F1DB36E31C1965C80029F6ED /* Close.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Close.png; sourceTree = "<group>"; };
@@ -204,6 +204,14 @@
 				B3CE67479A223604908EC3B1 /* Pods_Beto.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		F11662F31C1C09BD002D02D1 /* SignUpData */ = {
+			isa = PBXGroup;
+			children = (
+				F1A673631C1D16740017090A /* SignUpButton.png */,
+			);
+			name = SignUpData;
 			sourceTree = "<group>";
 		};
 		F1DB36651C19636E0029F6ED = {
@@ -350,6 +358,7 @@
 				F1DB37131C1967A50029F6ED /* LaunchScreenData */,
 				F1DB371A1C1968990029F6ED /* LogInData */,
 				F1DB37141C1967B90029F6ED /* SignInData */,
+				F11662F31C1C09BD002D02D1 /* SignUpData */,
 				F1DB37151C1967D30029F6ED /* BetoTabViewData */,
 			);
 			name = Assets;
@@ -414,6 +423,7 @@
 		F1DB37171C19683F0029F6ED /* Explore */ = {
 			isa = PBXGroup;
 			children = (
+				F1A673611C1D15F10017090A /* Favorite.png */,
 				F1DB37181C1968450029F6ED /* Pins */,
 			);
 			name = Explore;
@@ -450,8 +460,6 @@
 				F1DB36D61C1965B50029F6ED /* background.jpg */,
 				F1DB36D71C1965B50029F6ED /* facebook.png */,
 				F1DB36D81C1965B50029F6ED /* twitter.png */,
-				F1DB36D91C1965B50029F6ED /* password.png */,
-				F1DB36DA1C1965B50029F6ED /* signUp.png */,
 			);
 			name = LogInData;
 			sourceTree = "<group>";
@@ -571,7 +579,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F1DB36DF1C1965B50029F6ED /* password.png in Resources */,
 				F1DB36FF1C1965DB0029F6ED /* LightBlue.png in Resources */,
 				F1DB36E51C1965C80029F6ED /* SubmitFilled.png in Resources */,
 				F1DB36F31C1965D10029F6ED /* NightLife.png in Resources */,
@@ -580,6 +587,7 @@
 				F1DB36F01C1965D10029F6ED /* Sports.png in Resources */,
 				F1DB36F41C1965D10029F6ED /* Concerts.png in Resources */,
 				F1DB36DD1C1965B50029F6ED /* facebook.png in Resources */,
+				F1A673641C1D16740017090A /* SignUpButton.png in Resources */,
 				F1DB36DB1C1965B50029F6ED /* BetoLaunchScreenLogo.jpg in Resources */,
 				F1DB36D01C1965740029F6ED /* Settings.png in Resources */,
 				F1DB36DE1C1965B50029F6ED /* twitter.png in Resources */,
@@ -596,12 +604,12 @@
 				F1DB36CF1C1965740029F6ED /* BetoLogo.jpg in Resources */,
 				F1DB37011C1965DB0029F6ED /* Green.png in Resources */,
 				F1DB37021C1965DB0029F6ED /* Purple.png in Resources */,
-				F1DB36E01C1965B50029F6ED /* signUp.png in Resources */,
 				F1DB36D11C1965740029F6ED /* Trending.png in Resources */,
 				F1DB37041C1965DB0029F6ED /* Black.png in Resources */,
 				F1DB36A01C1965200029F6ED /* Main.storyboard in Resources */,
 				F1DB36E41C1965C80029F6ED /* SubmitUnFilled.png in Resources */,
 				F1DB36D21C1965740029F6ED /* Map.png in Resources */,
+				F1A673621C1D15F10017090A /* Favorite.png in Resources */,
 				F1DB36DC1C1965B50029F6ED /* background.jpg in Resources */,
 				F1DB36E61C1965C80029F6ED /* Close.png in Resources */,
 				F1DB36D31C1965740029F6ED /* Profile.png in Resources */,

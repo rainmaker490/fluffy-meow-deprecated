@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Parse
 
 class ProfileViewController: UIViewController {
     @IBOutlet weak var firstName: UILabel!
@@ -16,11 +17,23 @@ class ProfileViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        firstName.text = String(userData.user!["username"])
+        firstName.text = userData.user!.username
+        
     }
 
     @IBAction func closeButtonTapped(sender: UIButton) {
         dismissViewControllerAnimated(true, completion: nil)
+    }
+    
+    func test() {
+        let userPicture = userData.user!["avatar"]! as! PFFile
+        userPicture.getDataInBackgroundWithBlock { (picture, error) -> Void in
+            if error != nil {
+                self.avatar.image = UIImage(data: picture!)
+            }
+        }
+        
+        
     }
     
 }
