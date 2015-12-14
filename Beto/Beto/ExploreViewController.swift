@@ -99,7 +99,7 @@ class ExploreViewController: UIViewController , MKMapViewDelegate {
         default:
             break
         }
-        
+        mapView.reloadInputViews()
         receivedCurrentLocationData()
     }
     
@@ -127,10 +127,6 @@ class ExploreViewController: UIViewController , MKMapViewDelegate {
         let currentLocation = CLLocation(latitude: (mapViewEvents.currentLocation?.latitude)!, longitude: (mapViewEvents.currentLocation?.longitude)!)
         centerMapOnLocation(currentLocation)
         mapView.addAnnotations(annotations)
-    }
-    
-    func mapView(mapView: MKMapView, didSelectAnnotationView view: MKAnnotationView) {
-        
     }
     
     func mapView(mapView: MKMapView, viewForAnnotation annotation: MKAnnotation) -> MKAnnotationView? {
