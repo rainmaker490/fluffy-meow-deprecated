@@ -11,7 +11,7 @@ import UIKit
 class SearchViewController: UIViewController , UITableViewDelegate, UITableViewDataSource , EventDetails{
     
     let search = SharedInstances.searchInstance
-    
+    let userData = User.sharedInstance
     @IBOutlet weak var tableView: UITableView!
     
     var refreshControl: UIRefreshControl!
@@ -30,7 +30,7 @@ class SearchViewController: UIViewController , UITableViewDelegate, UITableViewD
     }
     
     func receivedCurrentLocationData(){
-        search.getAllEvents(search.currentLocation!, miles: 10)
+        search.getAllEvents(search.currentLocation!, miles: userData.user!["distance"] as! Double)
     }
     
     func receivedTopTenTrending() {
@@ -38,7 +38,7 @@ class SearchViewController: UIViewController , UITableViewDelegate, UITableViewD
     }
 
     func refresh(refreshControl: UIRefreshControl) {
-        search.getAllEvents(search.currentLocation!, miles: 10)
+        search.getAllEvents(search.currentLocation!, miles: userData.user!["distance"] as! Double)
         refreshControl.endRefreshing()
     }
     

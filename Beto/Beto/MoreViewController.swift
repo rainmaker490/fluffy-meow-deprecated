@@ -8,6 +8,7 @@
 
 import UIKit
 import Eureka
+import Parse
 
 class MoreViewController: FormViewController {
     
@@ -16,9 +17,11 @@ class MoreViewController: FormViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         initializeForm()
-        
-        self.navigationItem.rightBarButtonItem?.target = self
-        self.navigationItem.rightBarButtonItem?.action = "saveTapped:"
+    }
+    
+    override func viewWillDisappear(animated: Bool) {
+        super.viewWillDisappear(animated)
+        userData.user!.saveInBackground()
     }
     
     private func initializeForm() {
@@ -39,16 +42,19 @@ class MoreViewController: FormViewController {
         
         form +++= Section("Properties")
             <<< SegmentedRow<Int>(){
-                    $0.title = "Events Distance (Miles)"
-                    $0.options = [10, 25, 50]
-                    $0.value = 25
-                    $0.cell.tintColor = .blueColor()
-                }
+                        $0.title = "Events Distance (Miles)"
+                        $0.options = [10, 25, 50]
+                        $0.value = userData.user!["distance"] as? Int
+                        $0.cell.tintColor = .blueColor()
+                    }.onChange{ (row) -> () in
+                        self.userData.user!["distance"] = row.value
+                    }
         form +++= Section("User Options")
             <<< ButtonRow("Log Out") { (row: ButtonRow) in
                     row.title = row.tag
-                    logOut()
                     row.cell.tintColor = .redColor()
+                }.onCellSelection{ (cell, row) -> () in
+                    self.logOut()
                 }
         
         // Space so footer does not cover up Logout button
@@ -57,11 +63,15 @@ class MoreViewController: FormViewController {
     }
     
     private func logOut(){
-        
-    }
-    
-    func saveTapped(sender: UIBarButtonItem){
-        
+        SharedInstances.mapInstance = nil
+        SharedInstances.searchInstance = nil
+        SharedInstances.trendingInstance = nil
+        PFUser.logOut()
+        SharedInstances.mapInstance = Trending()
+        SharedInstances.searchInstance = Trending()
+        SharedInstances.trendingInstance = Trending()
+        let betoTabViewController = self.storyboard?.instantiateViewControllerWithIdentifier("LogInViewControllerID") as! LogInViewController
+        self.presentViewController(betoTabViewController, animated: true, completion: nil)
     }
     
     /*

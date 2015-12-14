@@ -25,13 +25,13 @@ class User {
             }
         }
     }
-    
+        
     func getFavorites(){
         let query = user!["favoriteEvents"].query()
         query.findObjectsInBackgroundWithBlock { (events, error) -> Void in
-            if error != nil {
-                for event in events! {
-                    self.userEvents.append((event as? Event)!)
+            if error == nil {
+                if let favorites = events as? [Event] {
+                    self.userEvents = favorites
                 }
             }
         }

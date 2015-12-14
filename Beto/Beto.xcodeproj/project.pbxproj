@@ -70,7 +70,6 @@
 		F1DB371E1C1989670029F6ED /* Camera.png in Resources */ = {isa = PBXBuildFile; fileRef = F1DB371D1C1989670029F6ED /* Camera.png */; };
 		F1E23AF81C1A1CDF00763AF5 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1E23AF71C1A1CDF00763AF5 /* User.swift */; };
 		F1E23AFC1C1A279F00763AF5 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1E23AFB1C1A279F00763AF5 /* SearchViewController.swift */; };
-		F1E2735B1C1DE1E90052E958 /* ViewMyCreatedEvents.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1E2735A1C1DE1E90052E958 /* ViewMyCreatedEvents.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -162,7 +161,6 @@
 		F1DB371D1C1989670029F6ED /* Camera.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Camera.png; sourceTree = "<group>"; };
 		F1E23AF71C1A1CDF00763AF5 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		F1E23AFB1C1A279F00763AF5 /* SearchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
-		F1E2735A1C1DE1E90052E958 /* ViewMyCreatedEvents.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewMyCreatedEvents.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -358,7 +356,6 @@
 				F1DB37101C19673D0029F6ED /* More */,
 				F1E23AFB1C1A279F00763AF5 /* SearchViewController.swift */,
 				F10B1A0C1C1D82BF00A0E59F /* FavoriteViewController.swift */,
-				F1E2735A1C1DE1E90052E958 /* ViewMyCreatedEvents.swift */,
 			);
 			name = BetoTabViewController;
 			sourceTree = "<group>";
@@ -728,7 +725,6 @@
 				F17EB3601C1AD43A0055FD18 /* CompressImage.swift in Sources */,
 				F1DB36AD1C1965540029F6ED /* EventAnnotation.swift in Sources */,
 				F1DB36C51C1965740029F6ED /* LogInViewController.swift in Sources */,
-				F1E2735B1C1DE1E90052E958 /* ViewMyCreatedEvents.swift in Sources */,
 				F1DB36AB1C1965540029F6ED /* Constants.swift in Sources */,
 				F1DB36CB1C1965740029F6ED /* InfoViewController.swift in Sources */,
 				F10B1A0D1C1D82BF00A0E59F /* FavoriteViewController.swift in Sources */,

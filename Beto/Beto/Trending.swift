@@ -10,12 +10,12 @@ import Foundation
 import Parse
 
 class SharedInstances {
-    static let trendingInstance = Trending()
-    static let mapInstance = Trending()
-    static let searchInstance = Trending()
+    static var trendingInstance = Trending()
+    static var mapInstance = Trending()
+    static var searchInstance = Trending()
 }
 
-class Trending {
+class Trending : NilLiteralConvertible {
     
     var currentLocation: PFGeoPoint?
     
@@ -94,8 +94,6 @@ class Trending {
         return keys.count
     }
     
-    
-    
     func numberOfEventsInSection(section: Int) -> Int {
         return eventsFactory[(keys[section])]!.count
     }
@@ -112,6 +110,10 @@ class Trending {
         }
     }
     
-    private init(){}
+    init(){}
+    
+    required init(nilLiteral: ()) {
+        
+    }
     
 }

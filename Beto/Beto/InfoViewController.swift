@@ -46,20 +46,26 @@ class InfoViewController: UIViewController {
         
     }
     
+    override func viewWillDisappear(animated: Bool) {
+        super.viewWillDisappear(animated)
+        userData.user!.saveInBackground()
+        self.userData.getFavorites()
+    }
+    
     @IBAction func addToFavoritesButtonPressed(sender: UIButton) {
         if sender.titleLabel?.text == "Add to Favorites" {
             let event = dataSource?.currentEvent
             userData.user!.relationForKey("favoriteEvents").addObject(event!)
-            userData.user!.saveInBackground()
             sender.setTitle("Remove From Favorites", forState: .Normal)
         } else {
             let relation = userData.user!.relationForKey("favoriteEvents")
-            
             relation.removeObject(dataSource!.currentEvent)
-            userData.user!.saveInBackground()
             sender.setTitle("Add to Favorites", forState: .Normal)
         }
-        
+        let qos = QOS_CLASS_USER_INITIATED
+        dispatch_async(dispatch_get_global_queue(qos, 0)) { () -> Void in
+            self.userData.getFavorites()
+        }
     }
     
 }

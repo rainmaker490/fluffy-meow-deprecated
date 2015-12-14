@@ -15,6 +15,7 @@ class ExploreViewController: UIViewController , MKMapViewDelegate {
     let trending = SharedInstances.trendingInstance
     let userData = User.sharedInstance
     var annotations = [EventAnnotation]()
+    var pinName : String?
     
     @IBOutlet weak var mapView: MKMapView!
     
@@ -26,7 +27,10 @@ class ExploreViewController: UIViewController , MKMapViewDelegate {
         mapView.delegate = self
         
         let notifications = NSNotificationCenter.defaultCenter()
+        notifications.addObserver(self, selector: "receivedCurrentLocationData", name: Notifications.CurrentLocationRecieved, object: nil)
+        notifications.addObserver(self, selector: "receivedTopTenTrending", name: Notifications.TopTenReady, object: nil)
         notifications.addObserver(self, selector: "favoritesReceivedPlotOnMap", name: Notifications.FavoritesReceived, object: nil)
+        pinName = "DarkBlue.png"
         
     }
     
@@ -70,39 +74,56 @@ class ExploreViewController: UIViewController , MKMapViewDelegate {
         switch sender.selectedSegmentIndex {
         case 0:
             mapViewEvents.category = Categories.Favorites
+            pinName = "DarkBlue.png"
             break
         case 1:
             mapViewEvents.category = Categories.Sport
+            pinName = "LightBlue.png"
             break
         case 2:
             mapViewEvents.category = Categories.Clubs
+            pinName = "Yellow.png"
             break
         case 3:
             mapViewEvents.category = Categories.StudyGroups
+            pinName = "Green.png"
             break
         case 4:
             mapViewEvents.category = Categories.NightLife
+            pinName = "Purple.png"
             break
         case 5:
             mapViewEvents.category = Categories.Concerts
+            pinName = "RedPin.png"
             break
         default:
             break
         }
+        
         receivedCurrentLocationData()
     }
     
     func receivedCurrentLocationData(){
         annotations.removeAll()
         mapViewEvents.getEvents(mapViewEvents.category!, userGeoPoint: mapViewEvents.currentLocation!, miles: 10, numberOfEvents: -1)
-        for event in mapViewEvents.eventsFactory[mapViewEvents.category!]!{
+        // if let _ = mapViewEvents.eventsFactory[mapViewEvents.category!]!
+        /*for event in mapViewEvents.eventsFactory[mapViewEvents.category!]!{
             let annotation = EventAnnotation(event: event)
             annotations.append(annotation)
-        }
-        
+        }*/
+        // mapViewEvents.getAllEvents(mapViewEvents.currentLocation!, miles: userData.user!["distance"] as! Double)
     }
     
     func receivedTopTenTrending() {
+        if mapViewEvents.eventsFactory.count != 0 {
+            if mapViewEvents.eventsFactory[mapViewEvents.category!] != nil {
+                for event in mapViewEvents.eventsFactory[mapViewEvents.category!]!{
+                    let annotation = EventAnnotation(event: event)
+                    annotations.append(annotation)
+                }
+            }
+        }
+        
         let currentLocation = CLLocation(latitude: (mapViewEvents.currentLocation?.latitude)!, longitude: (mapViewEvents.currentLocation?.longitude)!)
         centerMapOnLocation(currentLocation)
         mapView.addAnnotations(annotations)
@@ -124,7 +145,7 @@ class ExploreViewController: UIViewController , MKMapViewDelegate {
                 // pinView.calloutOffset = CGPoint(x: -5, y: 5)
                 // pinView.pinTintColor = .blueColor()
                 // pinView.rightCalloutAccessoryView = UIButton(type: .DetailDisclosure) as UIView
-                pinView.image = UIImage(named: "Green.png")
+                pinView.image = UIImage(named: pinName!)
                 return pinView
             }
             return view

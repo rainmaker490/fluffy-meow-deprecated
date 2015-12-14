@@ -100,6 +100,7 @@ class SignUpViewController: FormViewController {
                 user["avatar"] = imageFile
             }
             
+            user["distance"] = 10
             user.signUpInBackgroundWithBlock { (success, error) -> Void in
                 if success {
                     // TODO: check if email is unique

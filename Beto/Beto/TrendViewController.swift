@@ -14,7 +14,7 @@ class TrendViewController: UIViewController, UITableViewDelegate, UITableViewDat
     
     let trending = SharedInstances.trendingInstance
     let userData = User.sharedInstance
-    
+    var distance : Double?
     @IBOutlet weak var tableView: UITableView!
     
     var refreshControl: UIRefreshControl!
@@ -82,11 +82,11 @@ class TrendViewController: UIViewController, UITableViewDelegate, UITableViewDat
         default:
             break
         }
-        trending.getEvents(trending.category!, userGeoPoint: trending.currentLocation!, miles: 10, numberOfEvents: 10)
+        trending.getEvents(trending.category!, userGeoPoint: trending.currentLocation!, miles: userData.user!["distance"] as! Double, numberOfEvents: 10)
     }
     
     func receivedCurrentLocationData(){
-        trending.getEvents(trending.category!, userGeoPoint: trending.currentLocation!, miles: 10, numberOfEvents: 10)
+        trending.getEvents(trending.category!, userGeoPoint: trending.currentLocation!, miles: userData.user!["distance"] as! Double, numberOfEvents: 10)
     }
     
     func receivedTopTenTrending() {
