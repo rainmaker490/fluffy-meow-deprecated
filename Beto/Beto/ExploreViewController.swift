@@ -129,6 +129,10 @@ class ExploreViewController: UIViewController , MKMapViewDelegate {
         mapView.addAnnotations(annotations)
     }
     
+    func mapView(mapView: MKMapView, didSelectAnnotationView view: MKAnnotationView) {
+        
+    }
+    
     func mapView(mapView: MKMapView, viewForAnnotation annotation: MKAnnotation) -> MKAnnotationView? {
         if annotation is MKUserLocation {
             return nil
@@ -141,7 +145,7 @@ class ExploreViewController: UIViewController , MKMapViewDelegate {
                 view = dequeuedView
             } else {
                 let pinView =  MKAnnotationView(annotation: annotation, reuseIdentifier: identifier)
-                // pinView.canShowCallout = true
+                pinView.canShowCallout = true
                 // pinView.calloutOffset = CGPoint(x: -5, y: 5)
                 // pinView.pinTintColor = .blueColor()
                 // pinView.rightCalloutAccessoryView = UIButton(type: .DetailDisclosure) as UIView

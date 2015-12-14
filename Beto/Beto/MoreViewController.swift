@@ -10,17 +10,22 @@ import UIKit
 import Eureka
 import Parse
 
+protocol GetAddedEvent : class{
+    var addedEvent : PFObject {
+        get
+    }
+}
 class MoreViewController: FormViewController {
     
     let userData = User.sharedInstance
-    
+    weak var dataSource : GetAddedEvent?
     override func viewDidLoad() {
         super.viewDidLoad()
         initializeForm()
     }
     
-    override func viewWillDisappear(animated: Bool) {
-        super.viewWillDisappear(animated)
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
         userData.user!.saveInBackground()
     }
     

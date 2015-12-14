@@ -7,10 +7,12 @@
 //
 
 import UIKit
+import Parse
 
 class SearchViewController: UIViewController , UITableViewDelegate, UITableViewDataSource , EventDetails{
     
     let search = SharedInstances.searchInstance
+    var currentLocation : PFGeoPoint?
     let userData = User.sharedInstance
     @IBOutlet weak var tableView: UITableView!
     
@@ -21,13 +23,18 @@ class SearchViewController: UIViewController , UITableViewDelegate, UITableViewD
         notifications.addObserver(self, selector: "receivedTopTenTrending", name: Notifications.EventFactoryReady, object: nil)
         notifications.addObserver(self, selector: "receivedCurrentLocationData", name: Notifications.CurrentLocationRecieved, object: nil)
         search.getCurrentLocation()
-
+        // currentLocation = SharedInstances.trendingInstance.currentLocation!
         tableView.dataSource = self
         tableView.delegate = self
         refreshControl = UIRefreshControl()
         refreshControl.addTarget(self, action: "refresh:", forControlEvents: .ValueChanged)
         tableView.addSubview(refreshControl)
     }
+    
+    /*override func viewWillAppear(animated: Bool) {
+        super.viewWillDisappear(animated)
+        receivedCurrentLocationData()
+    }*/
     
     func receivedCurrentLocationData(){
         search.getAllEvents(search.currentLocation!, miles: userData.user!["distance"] as! Double)

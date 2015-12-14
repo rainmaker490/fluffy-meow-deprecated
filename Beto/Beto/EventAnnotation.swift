@@ -14,13 +14,13 @@ import Parse
 class EventAnnotation: NSObject, MKAnnotation {
     
     let event: Event
-    let eventTitle: String?
+    let title: String?
     let coordinateParse: PFGeoPoint
     let coordinate: CLLocationCoordinate2D
     
     init(event: Event) {
         self.event = event
-        self.eventTitle = event.title
+        self.title = event.title
         self.coordinateParse = event.location
         self.coordinate = CLLocationCoordinate2D(latitude: coordinateParse.latitude, longitude: coordinateParse.longitude)
         super.init()
@@ -29,7 +29,7 @@ class EventAnnotation: NSObject, MKAnnotation {
     func mapItem() -> MKMapItem {
         let placemark = MKPlacemark(coordinate: coordinate, addressDictionary: nil)
         let mapItem = MKMapItem(placemark: placemark)
-        mapItem.name = eventTitle
+        mapItem.name = title
         return mapItem
     }
 }

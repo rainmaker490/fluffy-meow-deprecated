@@ -55,9 +55,14 @@ class TrendViewController: UIViewController, UITableViewDelegate, UITableViewDat
         tableView.addSubview(refreshControl)
     }
     
-    override func viewDidAppear(animated: Bool) {
-        tableView.reloadData()
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        trending.getCurrentLocation()
     }
+    
+    /*override func viewDidAppear(animated: Bool) {
+        tableView.reloadData()
+    }*/
     
     @IBAction func segmentedControlSelected(sender: UISegmentedControl) {
         switch sender.selectedSegmentIndex {

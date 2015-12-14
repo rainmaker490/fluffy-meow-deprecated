@@ -145,26 +145,31 @@ class AddEventFormViewController: FormViewController {
     func saveTapped(sender: UIBarButtonItem){
         let eventIsValid = isEventValid(event)
         if eventIsValid {
-            let newEvent = PFObject(className: "Event")
-            newEvent["title"] = event.title
-            newEvent["eventDate"] = event.startDate
-            newEvent["expirationDate"] = event.endDate
-            newEvent["category"] = event.type
-            newEvent["location"] = PFGeoPoint(latitude: event.location!.latitude, longitude: event.location!.longitude)
-            newEvent["views"] = 1
-            newEvent["locationString"] = event.locationString
+            let newEvent = Event()
+            newEvent.title = event.title!
+            newEvent.eventDate = event.startDate!
+            newEvent.expirationDate = event.endDate!
+            newEvent.category = event.type!
+            newEvent.location = PFGeoPoint(latitude: event.location!.latitude, longitude: event.location!.longitude)
+            newEvent.views = 1
+            newEvent.locationString = event.locationString!
             
             if let image = event.image {
                 let imageData = image.mediumQualityJPEGNSData
                 let imageFile = PFFile(name:"eventImage.png", data: imageData)
-                newEvent["eventPhoto"] = imageFile
+                newEvent.eventPhoto = imageFile!
             }
             relationalEvent = newEvent
+            newEvent.saveInBackground()
+            //self.userData.user!.relationForKey("myCreatedEvents").addObject(newEvent)
+            // self.userData.saveUser()
             newEvent.saveInBackgroundWithBlock{ (success, error) -> Void in
-                if success {
+                if error == nil {
                     print("New event saved")
-                    self.userData.user!.relationForKey("myCreatedEvents").addObject(self.relationalEvent)
+                    self.userData.user!.relationForKey("myCreatedEvents").addObject(newEvent)
                     self.userData.user!.saveInBackground()
+                    SharedInstances.trendingInstance = nil
+                    SharedInstances.trendingInstance = Trending()
                 } else {
                     print("error saving new event")
                 }
