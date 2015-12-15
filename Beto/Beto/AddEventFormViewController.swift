@@ -18,7 +18,8 @@ class NativeEventNavigationController: UINavigationController, RowControllerType
 class AddEventFormViewController: FormViewController {
     
     let userData = User.sharedInstance
-    var event = EventsForm()
+    var isLocationValid: Bool = false
+    var event = Event()
     var relationalEvent = PFObject(className: "Event")
     
     override func viewDidLoad() {
@@ -45,7 +46,9 @@ class AddEventFormViewController: FormViewController {
                         cell.row.title = "Set Event Image-Tap Me"
                     }.onChange{ (image) -> () in
                         if let imageValue = image.value {
-                            self.event.image = imageValue
+                            let imageData = imageValue.mediumQualityJPEGNSData
+                            let imageFile = PFFile(name:"eventImage.png", data: imageData)
+                            self.event.eventPhoto = imageFile!
                         }
                     }
         
@@ -53,20 +56,27 @@ class AddEventFormViewController: FormViewController {
                 <<< TextRow("Event Title *").cellSetup { cell, row in
                         cell.textField.placeholder = row.tag
                     }.onChange{ (row) -> () in
-                        self.event.title = row.value
+                        if let title = row.value {
+                            self.event.title = title
+                        }
                     }
             
                 <<< TextRow("Location *").cellSetup {
                         $0.cell.textField.placeholder = $0.row.tag
                     }.onChange{ (row) -> () in
-                        self.event.locationString = row.value
-                        if let location = row.value {
-                            CLGeocoder().geocodeAddressString(location) { (placemarks, error) -> Void in
-                                if((error) != nil){
-                                    print("Error", error)
-                                }
-                                if let placemark = placemarks?.first {
-                                    self.event.location = placemark.location!.coordinate
+                        if let _ = row.value {
+                        self.event.locationString = row.value!
+                            if let location = row.value {
+                                CLGeocoder().geocodeAddressString(location) { (placemarks, error) -> Void in
+                                    if((error) != nil){
+                                        print("Error", error)
+                                    }
+                                    if let placemark = placemarks?.first {
+                                        self.event.location = PFGeoPoint(location: placemark.location!)
+                                        self.isLocationValid = true
+                                    } else {
+                                        self.isLocationValid = false
+                                    }
                                 }
                             }
                         }
@@ -76,14 +86,14 @@ class AddEventFormViewController: FormViewController {
                 <<< DateTimeInlineRow("Starts *") {
                         $0.title = $0.tag
                         $0.value = NSDate().dateByAddingTimeInterval(60*60*24)
-                        self.event.startDate = $0.value
+                        self.event.eventDate = $0.value!
                     }.onChange { [weak self] row in
                         let endRow: DateTimeInlineRow! = self?.form.rowByTag("Ends *")
                         if row.value?.compare(endRow.value!) == .OrderedDescending {
                             endRow.value = NSDate(timeInterval: 60*60*24, sinceDate: row.value!)
                             endRow.updateCell()
                         }
-                        self?.event.startDate = row.value
+                        self?.event.eventDate = row.value!
                     }.onExpandInlineRow { cell, row, inlineRow in
                         inlineRow.cellUpdate { cell, dateRow in
                             cell.datePicker.datePickerMode = .DateAndTime
@@ -97,12 +107,12 @@ class AddEventFormViewController: FormViewController {
                 <<< DateTimeInlineRow("Ends *"){
                         $0.title = $0.tag
                         $0.value = NSDate().dateByAddingTimeInterval(60*60*25)
-                        self.event.endDate = $0.value
+                        self.event.expirationDate = $0.value!
                     }.onChange { [weak self] row in
                         let startRow: DateTimeInlineRow? = self?.form.rowByTag("Starts *")
                         row.cell!.backgroundColor =  row.value?.compare(startRow!.value!) == .OrderedAscending ? .redColor() : .whiteColor()
                         row.updateCell()
-                        self?.event.endDate = row.value
+                        self?.event.expirationDate = row.value!
                     }.onExpandInlineRow { cell, row, inlineRow in
                         inlineRow.cellUpdate { cell, dateRow in
                             cell.datePicker.datePickerMode = .DateAndTime
@@ -121,7 +131,7 @@ class AddEventFormViewController: FormViewController {
                         $0.options = Categories.CategoryOfEvents
                     }.onChange { row in
                         print(row.value)
-                        self.event.type = row.value
+                        self.event.category = row.value!
                     }.onPresent{ _, to in
                         to.view.tintColor = .grayColor()
                     }
@@ -129,12 +139,12 @@ class AddEventFormViewController: FormViewController {
                 <<< URLRow("URL") {
                         $0.placeholder = "URL"
                     }.onChange{ (row) -> () in
-                        self.event.url = String(row.value)
+                        self.event.URL = String(row.value!)
                     }
                 <<< TextAreaRow("Description") {
                         $0.placeholder = "Description"
                     }.onChange{ (row) -> () in
-                        self.event.description = row.value
+                        self.event.eventDescription = row.value!
                     }
     }
     
@@ -145,28 +155,13 @@ class AddEventFormViewController: FormViewController {
     func saveTapped(sender: UIBarButtonItem){
         let eventIsValid = isEventValid(event)
         if eventIsValid {
-            let newEvent = Event()
-            newEvent.title = event.title!
-            newEvent.eventDate = event.startDate!
-            newEvent.expirationDate = event.endDate!
-            newEvent.category = event.type!
-            newEvent.location = PFGeoPoint(latitude: event.location!.latitude, longitude: event.location!.longitude)
-            newEvent.views = 1
-            newEvent.locationString = event.locationString!
-            
-            if let image = event.image {
-                let imageData = image.mediumQualityJPEGNSData
-                let imageFile = PFFile(name:"eventImage.png", data: imageData)
-                newEvent.eventPhoto = imageFile!
-            }
-            relationalEvent = newEvent
-            newEvent.saveInBackground()
+            event.saveInBackground()
             //self.userData.user!.relationForKey("myCreatedEvents").addObject(newEvent)
             // self.userData.saveUser()
-            newEvent.saveInBackgroundWithBlock{ (success, error) -> Void in
+            event.saveInBackgroundWithBlock{ (success, error) -> Void in
                 if error == nil {
                     print("New event saved")
-                    self.userData.user!.relationForKey("myCreatedEvents").addObject(newEvent)
+                    self.userData.user!.relationForKey("myCreatedEvents").addObject(self.event)
                     self.userData.user!.saveInBackground()
                     SharedInstances.trendingInstance = nil
                     SharedInstances.trendingInstance = Trending()
@@ -180,14 +175,13 @@ class AddEventFormViewController: FormViewController {
         }
     }
     
-    func isEventValid(event: EventsForm)-> Bool{
-        var eventIsValid = event.title != nil
-        eventIsValid = eventIsValid && (event.startDate != nil)
-        eventIsValid = eventIsValid && (event.endDate != nil)
-        eventIsValid = eventIsValid && (event.location != nil)
-        eventIsValid = eventIsValid && (event.type != nil)
-        eventIsValid = eventIsValid && (event.startDate?.compare(event.endDate!) == .OrderedAscending)
-        eventIsValid = eventIsValid && (event.startDate?.compare(NSDate()) == .OrderedDescending)
+    func isEventValid(event: Event)-> Bool{
+        var eventIsValid = event.title != ""
+        eventIsValid = eventIsValid && isLocationValid
+        eventIsValid = eventIsValid && (event.locationString != "")
+        eventIsValid = eventIsValid && (event.category != "")
+        eventIsValid = eventIsValid && (event.eventDate.compare(event.expirationDate) == .OrderedAscending)
+        eventIsValid = eventIsValid && (event.eventDate.compare(NSDate()) == .OrderedDescending)
         return eventIsValid
     }
     

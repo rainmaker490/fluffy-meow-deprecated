@@ -31,4 +31,6 @@ class Event: PFObject, PFSubclassing {
     @NSManaged var title : String
     @NSManaged var locationString : String
     @NSManaged var eventPhoto : PFFile
+    @NSManaged var eventDescription : String
+    @NSManaged var URL: String
 }
