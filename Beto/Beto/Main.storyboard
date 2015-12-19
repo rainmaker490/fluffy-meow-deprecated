@@ -418,7 +418,7 @@
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="SXh-BO-SnS" secondAttribute="height" multiplier="64:79" id="vtY-lX-EvR"/>
                                 </constraints>
-                                <color key="separatorColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="separatorColor" red="1" green="0.28990458969999999" blue="0.2584012604" alpha="1" colorSpace="calibratedRGB"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="EventTitles" id="ulQ-vy-9Rc" customClass="TrendingTableViewCell" customModule="Beto" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="320" height="44"/>
@@ -946,7 +946,7 @@
         <image name="twitter.png" width="1687" height="1687"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="utp-8k-GHM"/>
+        <segue reference="5XS-p9-C3u"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" red="0.66274509800000003" green="0.78823529410000004" blue="0.83137254900000002" alpha="1" colorSpace="calibratedRGB"/>
 </document>

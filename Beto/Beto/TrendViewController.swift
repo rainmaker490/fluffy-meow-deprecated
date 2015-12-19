@@ -10,11 +10,12 @@ import UIKit
 import Parse
 import MapKit
 
-class TrendViewController: UIViewController, UITableViewDelegate, UITableViewDataSource , EventDetails{
+class TrendViewController: UIViewController, UITableViewDelegate, UITableViewDataSource , EventDetails, CLLocationManagerDelegate{
     
     let trending = SharedInstances.trendingInstance
     let userData = User.sharedInstance
     var distance : Double?
+    let locationManager = CLLocationManager()
     @IBOutlet weak var tableView: UITableView!
     
     var refreshControl: UIRefreshControl!
@@ -24,19 +25,11 @@ class TrendViewController: UIViewController, UITableViewDelegate, UITableViewDat
         let notifications = NSNotificationCenter.defaultCenter()
         notifications.addObserver(self, selector: "receivedCurrentLocationData", name: Notifications.CurrentLocationRecieved, object: nil)
         notifications.addObserver(self, selector: "receivedTopTenTrending", name: Notifications.TopTenReady, object: nil)
-        trending.getCurrentLocation()
-        /*let region = CLCircularRegion(
-        center: CLLocationCoordinate2D(latitude: 39.05, longitude: -95.78),
-        radius: (25*1000*0.62137),
-        identifier: "USA"
-        )
         
-        let address = "1 Infinite Loop, CA, USA"
-        let geocoder = CLGeocoder()
+        locationManager.delegate = self
+        locationManager.desiredAccuracy = kCLLocationAccuracyBest
+        locationManager.requestAlwaysAuthorization()
         
-        geocoder.geocodeAddressString(address, completionHandler: {(placemarks: [CLPlacemark]?, error: NSError?) -> Void in
-        
-        })*/
         let query = userData.user!["favoriteEvents"].query()
         query.findObjectsInBackgroundWithBlock { (events, error) -> Void in
             if error == nil {
@@ -49,20 +42,30 @@ class TrendViewController: UIViewController, UITableViewDelegate, UITableViewDat
         
         tableView.dataSource = self
         tableView.delegate = self
+        
         refreshControl = UIRefreshControl()
         refreshControl!.attributedTitle = NSAttributedString(string: " ↓ Refresh ↓ ")
         refreshControl.addTarget(self, action: "refresh:", forControlEvents: .ValueChanged)
+        
         tableView.addSubview(refreshControl)
     }
     
-    override func viewWillAppear(animated: Bool) {
-        super.viewWillAppear(animated)
-        trending.getCurrentLocation()
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated)
+        if CLLocationManager.locationServicesEnabled()  {
+            if CLLocationManager.authorizationStatus() == .NotDetermined {
+                locationManager.requestWhenInUseAuthorization()
+            }
+        }
     }
     
-    /*override func viewDidAppear(animated: Bool) {
-        tableView.reloadData()
-    }*/
+    func locationManager(manager: CLLocationManager, didChangeAuthorizationStatus status: CLAuthorizationStatus) {
+        if status == .AuthorizedAlways || status == .AuthorizedWhenInUse {
+            locationManager.startUpdatingLocation()
+        } else {
+            locationManager.stopUpdatingLocation()
+        }
+    }
     
     @IBAction func segmentedControlSelected(sender: UISegmentedControl) {
         switch sender.selectedSegmentIndex {
@@ -128,7 +131,7 @@ class TrendViewController: UIViewController, UITableViewDelegate, UITableViewDat
     }
     
     /*func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-    performSegueWithIdentifier("didSelectRowAtIndexPath", sender: indexPath)
+        performSegueWithIdentifier("didSelectRowAtIndexPath", sender: indexPath)
     }*/
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
