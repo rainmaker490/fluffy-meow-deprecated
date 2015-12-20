@@ -15,21 +15,29 @@ class SharedInstances {
     static var searchInstance = Trending()
 }
 
+protocol CurrentLocationDelegate : class {
+    var currentLocation : PFGeoPoint {
+        get
+    }
+}
+
 class Trending : NilLiteralConvertible {
     
-    var currentLocation: PFGeoPoint?
     
+    weak var dataSource : CurrentLocationDelegate?
+    
+    var currentLocation: PFGeoPoint?
     var category : String?
     private var trendingFactory = [Event]()
     var eventsFactory = [String:[Event]]()
     private var keys = [String]()
     
-    func getEvents(type : String, userGeoPoint: PFGeoPoint, miles: Double, numberOfEvents: Int){
+    func getEvents(type : String, miles: Double, numberOfEvents: Int){
         let query = PFQuery(className: "Event")
         if type == Categories.All {
-            query.whereKey("location", nearGeoPoint: userGeoPoint, withinMiles: miles)
+            query.whereKey("location", nearGeoPoint: dataSource!.currentLocation, withinMiles: miles)
         } else {
-            query.whereKey("location", nearGeoPoint: userGeoPoint, withinMiles: miles).whereKey("category", containsString: type)
+            query.whereKey("location", nearGeoPoint: dataSource!.currentLocation, withinMiles: miles).whereKey("category", containsString: type)
         }
         query.orderByDescending("views")
         if numberOfEvents > 0 {
@@ -50,9 +58,9 @@ class Trending : NilLiteralConvertible {
         }
     }
     
-    func getAllEvents(userGeoPoint: PFGeoPoint, miles: Double){
+    func getAllEvents(miles: Double){
         let query = PFQuery(className: "Event")
-         query.whereKey("location", nearGeoPoint: userGeoPoint, withinMiles: miles)
+         query.whereKey("location", nearGeoPoint: dataSource!.currentLocation, withinMiles: miles)
         query.findObjectsInBackgroundWithBlock{ (objects, error) -> Void in
             if error == nil {
                 var tempEventsFactory = [String:[Event]]()

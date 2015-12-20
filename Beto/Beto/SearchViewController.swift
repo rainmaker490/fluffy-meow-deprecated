@@ -23,7 +23,6 @@ class SearchViewController: UIViewController , UITableViewDelegate, UITableViewD
         notifications.addObserver(self, selector: "receivedTopTenTrending", name: Notifications.EventFactoryReady, object: nil)
         notifications.addObserver(self, selector: "receivedCurrentLocationData", name: Notifications.CurrentLocationRecieved, object: nil)
         search.getCurrentLocation()
-        // currentLocation = SharedInstances.trendingInstance.currentLocation!
         tableView.dataSource = self
         tableView.delegate = self
         refreshControl = UIRefreshControl()
@@ -31,13 +30,8 @@ class SearchViewController: UIViewController , UITableViewDelegate, UITableViewD
         tableView.addSubview(refreshControl)
     }
     
-    /*override func viewWillAppear(animated: Bool) {
-        super.viewWillDisappear(animated)
-        receivedCurrentLocationData()
-    }*/
-    
     func receivedCurrentLocationData(){
-        search.getAllEvents(search.currentLocation!, miles: userData.user!["distance"] as! Double)
+        search.getAllEvents(userData.user!["distance"] as! Double)
     }
     
     func receivedTopTenTrending() {
@@ -45,7 +39,7 @@ class SearchViewController: UIViewController , UITableViewDelegate, UITableViewD
     }
 
     func refresh(refreshControl: UIRefreshControl) {
-        search.getAllEvents(search.currentLocation!, miles: userData.user!["distance"] as! Double)
+        search.getAllEvents(userData.user!["distance"] as! Double)
         refreshControl.endRefreshing()
     }
     

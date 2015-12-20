@@ -10,7 +10,7 @@ import UIKit
 import Parse
 import MapKit
 
-class TrendViewController: UIViewController, UITableViewDelegate, UITableViewDataSource , EventDetails, CLLocationManagerDelegate{
+class TrendViewController: UIViewController, UITableViewDelegate, UITableViewDataSource , EventDetails, CLLocationManagerDelegate, CurrentLocationDelegate{
     
     let trending = SharedInstances.trendingInstance
     let userData = User.sharedInstance
@@ -20,16 +20,29 @@ class TrendViewController: UIViewController, UITableViewDelegate, UITableViewDat
     
     var refreshControl: UIRefreshControl!
     
+    var currentLocation : PFGeoPoint {
+        get {
+            if let location = locationManager.location {
+                return PFGeoPoint(location: location)
+            } else {
+                let sanFrancisco = CLLocationCoordinate2D(latitude: 37.7833, longitude: -122.4167)
+                return PFGeoPoint(latitude: sanFrancisco.latitude , longitude: sanFrancisco.longitude)
+            }
+        }
+    }
+    
     override func viewDidLoad() {
         trending.category = "All"
         let notifications = NSNotificationCenter.defaultCenter()
-        notifications.addObserver(self, selector: "receivedCurrentLocationData", name: Notifications.CurrentLocationRecieved, object: nil)
         notifications.addObserver(self, selector: "receivedTopTenTrending", name: Notifications.TopTenReady, object: nil)
+        trending.dataSource = self
         
         locationManager.delegate = self
         locationManager.desiredAccuracy = kCLLocationAccuracyBest
         locationManager.requestAlwaysAuthorization()
         
+        // #TODO:
+        // REMOVE AND REFACTOR !!!
         let query = userData.user!["favoriteEvents"].query()
         query.findObjectsInBackgroundWithBlock { (events, error) -> Void in
             if error == nil {
@@ -46,8 +59,8 @@ class TrendViewController: UIViewController, UITableViewDelegate, UITableViewDat
         refreshControl = UIRefreshControl()
         refreshControl!.attributedTitle = NSAttributedString(string: " ↓ Refresh ↓ ")
         refreshControl.addTarget(self, action: "refresh:", forControlEvents: .ValueChanged)
-        
         tableView.addSubview(refreshControl)
+        
     }
     
     override func viewDidAppear(animated: Bool) {
@@ -90,11 +103,11 @@ class TrendViewController: UIViewController, UITableViewDelegate, UITableViewDat
         default:
             break
         }
-        trending.getEvents(trending.category!, userGeoPoint: trending.currentLocation!, miles: userData.user!["distance"] as! Double, numberOfEvents: 10)
+        trending.getEvents(trending.category!, miles: userData.user!["distance"] as! Double, numberOfEvents: 10)
     }
     
     func receivedCurrentLocationData(){
-        trending.getEvents(trending.category!, userGeoPoint: trending.currentLocation!, miles: userData.user!["distance"] as! Double, numberOfEvents: 10)
+        trending.getEvents(trending.category!, miles: userData.user!["distance"] as! Double, numberOfEvents: 10)
     }
     
     func receivedTopTenTrending() {

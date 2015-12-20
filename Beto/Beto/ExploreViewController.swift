@@ -105,7 +105,7 @@ class ExploreViewController: UIViewController , MKMapViewDelegate {
     
     func receivedCurrentLocationData(){
         annotations.removeAll()
-        mapViewEvents.getEvents(mapViewEvents.category!, userGeoPoint: mapViewEvents.currentLocation!, miles: 10, numberOfEvents: -1)
+        mapViewEvents.getEvents(mapViewEvents.category!, miles: 10, numberOfEvents: -1)
         // if let _ = mapViewEvents.eventsFactory[mapViewEvents.category!]!
         /*for event in mapViewEvents.eventsFactory[mapViewEvents.category!]!{
             let annotation = EventAnnotation(event: event)
