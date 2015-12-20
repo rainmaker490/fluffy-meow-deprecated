@@ -29,13 +29,13 @@ class InfoViewController: UIViewController {
         addToFavorites.tintColor = .blackColor()
         eventTitle.text = dataSource?.currentEvent.title
         dataSource?.currentEvent.incrementKey("views", byAmount: 1)
-        dataSource?.currentEvent.saveInBackgroundWithBlock({ (success, error) -> Void in
+        dataSource?.currentEvent.saveInBackgroundWithBlock { (success, error) -> Void in
             if success {
                 print("views incremented")
             } else {
                 print(error)
             }
-        })
+        }
         
         for event in userData.userEvents {
             if event.objectId == dataSource?.currentEvent.objectId {

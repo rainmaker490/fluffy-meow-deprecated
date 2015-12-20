@@ -480,63 +480,71 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="1X1-Gb-bci">
-                                <rect key="frame" x="40" y="117" width="240" height="128"/>
+                                <rect key="frame" x="0.0" y="64" width="320" height="163"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" secondItem="1X1-Gb-bci" secondAttribute="height" multiplier="15:8" id="YNC-7l-QeB"/>
+                                    <constraint firstAttribute="width" secondItem="1X1-Gb-bci" secondAttribute="height" multiplier="320:163" id="Kwt-M0-tvx"/>
                                 </constraints>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BDa-EB-sFD">
-                                <rect key="frame" x="40" y="253" width="240" height="30"/>
+                                <rect key="frame" x="40" y="235" width="240" height="30"/>
+                                <color key="backgroundColor" red="0.66274509800000003" green="0.78823529410000004" blue="0.83137254900000002" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" secondItem="BDa-EB-sFD" secondAttribute="height" multiplier="8:1" id="Vgf-7x-aeV"/>
+                                    <constraint firstAttribute="width" secondItem="BDa-EB-sFD" secondAttribute="height" multiplier="8:1" id="CAb-Bb-9Z6"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" weight="thin" pointSize="15"/>
-                                <state key="normal" title="Add to Favorites"/>
+                                <state key="normal" title="Add to Favorites">
+                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
                                 <connections>
                                     <action selector="addToFavoritesButtonPressed:" destination="XCD-N4-7Cp" eventType="touchUpInside" id="JK7-RW-MnA"/>
                                 </connections>
                             </button>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="Description" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oRT-I8-2B0">
-                                <rect key="frame" x="40" y="329" width="240" height="128"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="Description" textAlignment="center" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oRT-I8-2B0">
+                                <rect key="frame" x="40" y="316" width="240" height="128"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" secondItem="oRT-I8-2B0" secondAttribute="height" multiplier="15:8" id="NC3-iT-lor"/>
+                                    <constraint firstAttribute="width" secondItem="oRT-I8-2B0" secondAttribute="height" multiplier="15:8" id="Tag-th-ZTt"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" weight="thin" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ODa-Wg-bzo">
+                                <rect key="frame" x="40" y="273" width="240" height="30"/>
+                                <color key="backgroundColor" red="0.66274509800000003" green="0.78823529410000004" blue="0.83137254900000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="ODa-Wg-bzo" secondAttribute="height" multiplier="8:1" id="PVf-76-Aph"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" weight="thin" pointSize="15"/>
+                                <state key="normal" title="Pin To Map">
+                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                            </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lS0-3i-gri">
                                 <rect key="frame" x="20" y="72" width="280" height="37"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" secondItem="lS0-3i-gri" secondAttribute="height" multiplier="280:37" id="58c-PP-n7b"/>
+                                    <constraint firstAttribute="width" secondItem="lS0-3i-gri" secondAttribute="height" multiplier="280:37" id="JZH-bj-OKX"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" weight="thin" pointSize="22"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ODa-Wg-bzo">
-                                <rect key="frame" x="40" y="291" width="240" height="30"/>
-                                <fontDescription key="fontDescription" type="system" weight="thin" pointSize="15"/>
-                                <state key="normal" title="Pin To Map"/>
-                            </button>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="1" green="0.50196081400000003" blue="0.0" alpha="0.6003605769" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstItem="ODa-Wg-bzo" firstAttribute="width" secondItem="BDa-EB-sFD" secondAttribute="width" id="CXF-og-YJk"/>
-                            <constraint firstItem="lS0-3i-gri" firstAttribute="centerX" secondItem="Rdj-4d-LQg" secondAttribute="centerX" id="EtT-9x-00z"/>
-                            <constraint firstItem="ODa-Wg-bzo" firstAttribute="centerX" secondItem="Rdj-4d-LQg" secondAttribute="centerX" id="FyD-0s-jow"/>
-                            <constraint firstItem="oRT-I8-2B0" firstAttribute="centerX" secondItem="Rdj-4d-LQg" secondAttribute="centerX" id="Fzj-Sf-jlr"/>
-                            <constraint firstItem="1X1-Gb-bci" firstAttribute="centerX" secondItem="Rdj-4d-LQg" secondAttribute="centerX" id="Grh-Hx-tQI"/>
-                            <constraint firstItem="BDa-EB-sFD" firstAttribute="width" secondItem="1X1-Gb-bci" secondAttribute="width" id="KIk-7O-ZGD"/>
-                            <constraint firstItem="BDa-EB-sFD" firstAttribute="centerX" secondItem="Rdj-4d-LQg" secondAttribute="centerX" id="KdG-qB-JSI"/>
-                            <constraint firstItem="ODa-Wg-bzo" firstAttribute="top" secondItem="BDa-EB-sFD" secondAttribute="bottom" constant="8" id="Obi-Sa-iq3"/>
-                            <constraint firstItem="BDa-EB-sFD" firstAttribute="top" secondItem="1X1-Gb-bci" secondAttribute="bottom" constant="8" id="Rne-Ed-yGB"/>
-                            <constraint firstItem="1X1-Gb-bci" firstAttribute="top" secondItem="lS0-3i-gri" secondAttribute="bottom" constant="8" id="f7W-li-wWQ"/>
-                            <constraint firstItem="oRT-I8-2B0" firstAttribute="width" secondItem="1X1-Gb-bci" secondAttribute="width" id="k4A-es-tKe"/>
-                            <constraint firstItem="lS0-3i-gri" firstAttribute="width" secondItem="Rdj-4d-LQg" secondAttribute="height" multiplier="35:71" id="kSk-bA-7bo"/>
-                            <constraint firstItem="oRT-I8-2B0" firstAttribute="top" secondItem="ODa-Wg-bzo" secondAttribute="bottom" constant="8" id="psG-17-sc9"/>
-                            <constraint firstItem="lS0-3i-gri" firstAttribute="top" secondItem="TtM-ia-Gbw" secondAttribute="bottom" constant="8" id="vht-Jh-aBP"/>
-                            <constraint firstItem="1X1-Gb-bci" firstAttribute="width" secondItem="Rdj-4d-LQg" secondAttribute="height" multiplier="30:71" id="vpw-de-hjL"/>
+                            <constraint firstItem="ODa-Wg-bzo" firstAttribute="top" secondItem="BDa-EB-sFD" secondAttribute="bottom" constant="8" id="6gR-nX-eGY"/>
+                            <constraint firstItem="BDa-EB-sFD" firstAttribute="width" secondItem="Rdj-4d-LQg" secondAttribute="height" multiplier="30:71" id="9ur-dD-00n"/>
+                            <constraint firstItem="1X1-Gb-bci" firstAttribute="width" secondItem="Rdj-4d-LQg" secondAttribute="height" multiplier="40:71" id="Bs7-sn-pta"/>
+                            <constraint firstItem="BDa-EB-sFD" firstAttribute="centerX" secondItem="Rdj-4d-LQg" secondAttribute="centerX" id="Cyu-zn-JNl"/>
+                            <constraint firstItem="oRT-I8-2B0" firstAttribute="centerX" secondItem="Rdj-4d-LQg" secondAttribute="centerX" id="Qcf-cJ-uHJ"/>
+                            <constraint firstItem="oRT-I8-2B0" firstAttribute="width" secondItem="Rdj-4d-LQg" secondAttribute="height" multiplier="30:71" id="S9g-Qe-ZKA"/>
+                            <constraint firstItem="1X1-Gb-bci" firstAttribute="top" secondItem="TtM-ia-Gbw" secondAttribute="bottom" id="Umz-iR-MA6"/>
+                            <constraint firstItem="ODa-Wg-bzo" firstAttribute="centerX" secondItem="Rdj-4d-LQg" secondAttribute="centerX" id="bGJ-QF-SQe"/>
+                            <constraint firstItem="lS0-3i-gri" firstAttribute="width" secondItem="Rdj-4d-LQg" secondAttribute="height" multiplier="35:71" id="efF-La-XbP"/>
+                            <constraint firstItem="lS0-3i-gri" firstAttribute="centerX" secondItem="Rdj-4d-LQg" secondAttribute="centerX" id="ipG-Lh-hcn"/>
+                            <constraint firstItem="ODa-Wg-bzo" firstAttribute="width" secondItem="Rdj-4d-LQg" secondAttribute="height" multiplier="30:71" id="tVn-dr-FpY"/>
+                            <constraint firstItem="lS0-3i-gri" firstAttribute="top" secondItem="TtM-ia-Gbw" secondAttribute="bottom" constant="8" id="tgn-Bd-zq5"/>
+                            <constraint firstItem="BDa-EB-sFD" firstAttribute="top" secondItem="1X1-Gb-bci" secondAttribute="bottom" constant="8" id="wA8-xs-Qb6"/>
+                            <constraint firstItem="oRT-I8-2B0" firstAttribute="top" secondItem="ODa-Wg-bzo" secondAttribute="bottom" constant="13" id="xHZ-lV-b5Z"/>
+                            <constraint firstItem="1X1-Gb-bci" firstAttribute="centerX" secondItem="Rdj-4d-LQg" secondAttribute="centerX" id="zjP-WA-ac3"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="0Px-4h-VuV"/>
