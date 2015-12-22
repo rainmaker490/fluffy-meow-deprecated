@@ -113,7 +113,8 @@ class TrendViewController: UIViewController, UITableViewDelegate, UITableViewDat
     func tableView(tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         let cell = tableView.dequeueReusableCellWithIdentifier("EventHeader") as! TrendingTableViewHeaderCell
         cell.sectionHeader.text = trending.category
-        
+        // cell.sectionHeaderImage.contentMode = .ScaleAspectFit
+        cell.sectionHeaderImage.image = UIImage(named: trending.category!.stringByReplacingOccurrencesOfString(" ", withString: "")+".png")
         return cell
     }
     

@@ -402,8 +402,8 @@
                                 <segments>
                                     <segment title="" image="All.png"/>
                                     <segment title="" image="Sports.png"/>
-                                    <segment title="" image="Meetings.png"/>
-                                    <segment title="" image="Study.png"/>
+                                    <segment title="" image="Clubs.png"/>
+                                    <segment title="" image="StudyGroups.png"/>
                                     <segment title="" image="NightLife.png"/>
                                     <segment title="" image="Concerts.png"/>
                                 </segments>
@@ -420,19 +420,16 @@
                                 </constraints>
                                 <color key="separatorColor" red="0.7019608021" green="0.7019608021" blue="0.7019608021" alpha="1" colorSpace="calibratedRGB"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="EventHeader" id="ulQ-vy-9Rc" customClass="TrendingTableViewHeaderCell" customModule="Beto">
+                                    <tableViewCell clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="EventHeader" rowHeight="44" id="ulQ-vy-9Rc" customClass="TrendingTableViewHeaderCell" customModule="Beto">
                                         <rect key="frame" x="0.0" y="28" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ulQ-vy-9Rc" id="g3D-CF-ouo">
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="All.png" translatesAutoresizingMaskIntoConstraints="NO" id="SyW-ax-5Nn">
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="All.png" translatesAutoresizingMaskIntoConstraints="NO" id="SyW-ax-5Nn">
                                                     <rect key="frame" x="8" y="5.5" width="32" height="32"/>
                                                     <color key="tintColor" red="0.7019608021" green="0.7019608021" blue="0.7019608021" alpha="1" colorSpace="calibratedRGB"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="width" secondItem="SyW-ax-5Nn" secondAttribute="height" multiplier="1:1" id="fzR-F9-yDo"/>
-                                                    </constraints>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CMF-m2-c7q">
                                                     <rect key="frame" x="4.5" y="11" width="311" height="21.5"/>
@@ -975,6 +972,7 @@
         <image name="BetoLogo.jpg" width="134" height="172"/>
         <image name="Camera.png" width="100" height="100"/>
         <image name="Close.png" width="100" height="100"/>
+        <image name="Clubs.png" width="32" height="32"/>
         <image name="Concerts.png" width="32" height="32"/>
         <image name="Favorite.png" width="32" height="32"/>
         <image name="Map.png" width="32" height="32"/>
@@ -982,6 +980,7 @@
         <image name="NightLife.png" width="32" height="32"/>
         <image name="Sports.png" width="32" height="32"/>
         <image name="Study.png" width="32" height="32"/>
+        <image name="StudyGroups.png" width="32" height="32"/>
         <image name="SubmitUnFilled.png" width="100" height="100"/>
         <image name="Trending.png" width="32" height="32"/>
         <image name="background.jpg" width="650" height="1172"/>

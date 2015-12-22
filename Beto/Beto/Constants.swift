@@ -35,7 +35,7 @@ struct Notifications {
 struct Categories {
     static let CategoryOfEvents = ["Sports", "Clubs", "Study Groups", "Night Life", "Concerts"]
     static let All = "All"
-    static let Sport = "Sport"
+    static let Sport = "Sports"
     static let Clubs = "Clubs"
     static let StudyGroups = "Study Groups"
     static let NightLife = "Night Life"

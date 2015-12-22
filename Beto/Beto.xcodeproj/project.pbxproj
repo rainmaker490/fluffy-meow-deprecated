@@ -53,8 +53,8 @@
 		F1DB36EE1C1965D10029F6ED /* Refresh.png in Resources */ = {isa = PBXBuildFile; fileRef = F1DB36E71C1965D10029F6ED /* Refresh.png */; };
 		F1DB36EF1C1965D10029F6ED /* All.png in Resources */ = {isa = PBXBuildFile; fileRef = F1DB36E81C1965D10029F6ED /* All.png */; };
 		F1DB36F01C1965D10029F6ED /* Sports.png in Resources */ = {isa = PBXBuildFile; fileRef = F1DB36E91C1965D10029F6ED /* Sports.png */; };
-		F1DB36F11C1965D10029F6ED /* Meetings.png in Resources */ = {isa = PBXBuildFile; fileRef = F1DB36EA1C1965D10029F6ED /* Meetings.png */; };
-		F1DB36F21C1965D10029F6ED /* Study.png in Resources */ = {isa = PBXBuildFile; fileRef = F1DB36EB1C1965D10029F6ED /* Study.png */; };
+		F1DB36F11C1965D10029F6ED /* Clubs.png in Resources */ = {isa = PBXBuildFile; fileRef = F1DB36EA1C1965D10029F6ED /* Clubs.png */; };
+		F1DB36F21C1965D10029F6ED /* StudyGroups.png in Resources */ = {isa = PBXBuildFile; fileRef = F1DB36EB1C1965D10029F6ED /* StudyGroups.png */; };
 		F1DB36F31C1965D10029F6ED /* NightLife.png in Resources */ = {isa = PBXBuildFile; fileRef = F1DB36EC1C1965D10029F6ED /* NightLife.png */; };
 		F1DB36F41C1965D10029F6ED /* Concerts.png in Resources */ = {isa = PBXBuildFile; fileRef = F1DB36ED1C1965D10029F6ED /* Concerts.png */; };
 		F1DB36FE1C1965DB0029F6ED /* DarkBlue.png in Resources */ = {isa = PBXBuildFile; fileRef = F1DB36F51C1965DB0029F6ED /* DarkBlue.png */; };
@@ -144,8 +144,8 @@
 		F1DB36E71C1965D10029F6ED /* Refresh.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Refresh.png; sourceTree = "<group>"; };
 		F1DB36E81C1965D10029F6ED /* All.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = All.png; sourceTree = "<group>"; };
 		F1DB36E91C1965D10029F6ED /* Sports.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Sports.png; sourceTree = "<group>"; };
-		F1DB36EA1C1965D10029F6ED /* Meetings.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Meetings.png; sourceTree = "<group>"; };
-		F1DB36EB1C1965D10029F6ED /* Study.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Study.png; sourceTree = "<group>"; };
+		F1DB36EA1C1965D10029F6ED /* Clubs.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Clubs.png; sourceTree = "<group>"; };
+		F1DB36EB1C1965D10029F6ED /* StudyGroups.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = StudyGroups.png; sourceTree = "<group>"; };
 		F1DB36EC1C1965D10029F6ED /* NightLife.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = NightLife.png; sourceTree = "<group>"; };
 		F1DB36ED1C1965D10029F6ED /* Concerts.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Concerts.png; sourceTree = "<group>"; };
 		F1DB36F51C1965DB0029F6ED /* DarkBlue.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = DarkBlue.png; sourceTree = "<group>"; };
@@ -431,8 +431,8 @@
 				F1DB36E71C1965D10029F6ED /* Refresh.png */,
 				F1DB36E81C1965D10029F6ED /* All.png */,
 				F1DB36E91C1965D10029F6ED /* Sports.png */,
-				F1DB36EA1C1965D10029F6ED /* Meetings.png */,
-				F1DB36EB1C1965D10029F6ED /* Study.png */,
+				F1DB36EA1C1965D10029F6ED /* Clubs.png */,
+				F1DB36EB1C1965D10029F6ED /* StudyGroups.png */,
 				F1DB36EC1C1965D10029F6ED /* NightLife.png */,
 				F1DB36ED1C1965D10029F6ED /* Concerts.png */,
 			);
@@ -610,11 +610,11 @@
 				F1DB36DB1C1965B50029F6ED /* BetoLaunchScreenLogo.jpg in Resources */,
 				F1DB36D01C1965740029F6ED /* Settings.png in Resources */,
 				F1DB36DE1C1965B50029F6ED /* twitter.png in Resources */,
-				F1DB36F21C1965D10029F6ED /* Study.png in Resources */,
+				F1DB36F21C1965D10029F6ED /* StudyGroups.png in Resources */,
 				F1DB36FE1C1965DB0029F6ED /* DarkBlue.png in Resources */,
 				F1DB36EF1C1965D10029F6ED /* All.png in Resources */,
 				F1DB371E1C1989670029F6ED /* Camera.png in Resources */,
-				F1DB36F11C1965D10029F6ED /* Meetings.png in Resources */,
+				F1DB36F11C1965D10029F6ED /* Clubs.png in Resources */,
 				F1DB36EE1C1965D10029F6ED /* Refresh.png in Resources */,
 				F1DB36A21C19652A0029F6ED /* LaunchScreen.storyboard in Resources */,
 				F1DB37051C1965DB0029F6ED /* RedPin.png in Resources */,
