@@ -8,12 +8,10 @@
 
 import UIKit
 import MapKit
+import Parse
 
-class ExploreViewController: UIViewController , MKMapViewDelegate {
+class ExploreViewController: GetEventsViewController , MKMapViewDelegate{
     
-    let mapViewEvents = SharedInstances.mapInstance
-    let trending = SharedInstances.trendingInstance
-    let userData = User.sharedInstance
     var annotations = [EventAnnotation]()
     var pinName : String?
     
@@ -22,16 +20,17 @@ class ExploreViewController: UIViewController , MKMapViewDelegate {
     override func viewDidLoad() {
         getUserEvents()
         
-        mapViewEvents.getCurrentLocation()
-        mapViewEvents.category = Categories.Favorites
+        category.explore = Categories.Favorites
         mapView.delegate = self
         
-        let notifications = NSNotificationCenter.defaultCenter()
-        notifications.addObserver(self, selector: "receivedCurrentLocationData", name: Notifications.CurrentLocationRecieved, object: nil)
-        notifications.addObserver(self, selector: "receivedTopTenTrending", name: Notifications.TopTenReady, object: nil)
-        notifications.addObserver(self, selector: "favoritesReceivedPlotOnMap", name: Notifications.FavoritesReceived, object: nil)
         pinName = "DarkBlue.png"
-        
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        if let location = locationManager.location {
+            mapView.showsUserLocation = true
+            centerMapOnLocation(location)
+        }
     }
     
     func getUserEvents() {
@@ -73,27 +72,27 @@ class ExploreViewController: UIViewController , MKMapViewDelegate {
     @IBAction func segmentedControl(sender: UISegmentedControl) {
         switch sender.selectedSegmentIndex {
         case 0:
-            mapViewEvents.category = Categories.Favorites
+            category.explore = Categories.Favorites
             pinName = "DarkBlue.png"
             break
         case 1:
-            mapViewEvents.category = Categories.Sport
+            category.explore = Categories.Sport
             pinName = "LightBlue.png"
             break
         case 2:
-            mapViewEvents.category = Categories.Clubs
+            category.explore = Categories.Clubs
             pinName = "Yellow.png"
             break
         case 3:
-            mapViewEvents.category = Categories.StudyGroups
+            category.explore = Categories.StudyGroups
             pinName = "Green.png"
             break
         case 4:
-            mapViewEvents.category = Categories.NightLife
+            category.explore = Categories.NightLife
             pinName = "Purple.png"
             break
         case 5:
-            mapViewEvents.category = Categories.Concerts
+            category.explore = Categories.Concerts
             pinName = "RedPin.png"
             break
         default:
@@ -105,27 +104,24 @@ class ExploreViewController: UIViewController , MKMapViewDelegate {
     
     func receivedCurrentLocationData(){
         annotations.removeAll()
-        mapViewEvents.getEvents(mapViewEvents.category!, miles: 10, numberOfEvents: -1)
-        // if let _ = mapViewEvents.eventsFactory[mapViewEvents.category!]!
-        /*for event in mapViewEvents.eventsFactory[mapViewEvents.category!]!{
+        trending.getEvents(category.explore!, miles: 10, numberOfEvents: -1)
+        // if let _ = trending.eventsFactory[trending.category!]!
+        /*for event in trending.eventsFactory[trending.category!]!{
             let annotation = EventAnnotation(event: event)
             annotations.append(annotation)
         }*/
-        // mapViewEvents.getAllEvents(mapViewEvents.currentLocation!, miles: userData.user!["distance"] as! Double)
+        // trending.getAllEvents(trending.currentLocation!, miles: userData.user!["distance"] as! Double)
     }
     
     func receivedTopTenTrending() {
-        if mapViewEvents.eventsFactory.count != 0 {
-            if mapViewEvents.eventsFactory[mapViewEvents.category!] != nil {
-                for event in mapViewEvents.eventsFactory[mapViewEvents.category!]!{
+        if trending.eventsFactory.count != 0 {
+            if trending.eventsFactory[category.explore!] != nil {
+                for event in trending.eventsFactory[category.explore!]!{
                     let annotation = EventAnnotation(event: event)
                     annotations.append(annotation)
                 }
             }
         }
-        
-        let currentLocation = CLLocation(latitude: (mapViewEvents.currentLocation?.latitude)!, longitude: (mapViewEvents.currentLocation?.longitude)!)
-        centerMapOnLocation(currentLocation)
         mapView.addAnnotations(annotations)
     }
     

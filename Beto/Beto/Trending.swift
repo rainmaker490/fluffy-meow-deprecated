@@ -13,6 +13,7 @@ class SharedInstances {
     static var trendingInstance = Trending()
     static var mapInstance = Trending()
     static var searchInstance = Trending()
+    static var categoriesInstance = Category()
 }
 
 protocol CurrentLocationDelegate : class {
@@ -21,13 +22,17 @@ protocol CurrentLocationDelegate : class {
     }
 }
 
+struct Category : NilLiteralConvertible {
+    var trending: String?
+    var explore: String?
+    var search: String?
+    init(nilLiteral: ()) {}
+    private init() {}
+}
+
 class Trending : NilLiteralConvertible {
     
-    
     weak var dataSource : CurrentLocationDelegate?
-    
-    var currentLocation: PFGeoPoint?
-    var category : String?
     private var trendingFactory = [Event]()
     var eventsFactory = [String:[Event]]()
     private var keys = [String]()
@@ -49,8 +54,8 @@ class Trending : NilLiteralConvertible {
                 if let event = objects as? [Event] {
                     allEventsList = event
                 }
-                self.eventsFactory[self.category!]?.removeAll()
-                self.eventsFactory[self.category!] = allEventsList
+                self.eventsFactory[type]?.removeAll()
+                self.eventsFactory[type] = allEventsList
                 
                 let notification = NSNotificationCenter.defaultCenter()
                 notification.postNotificationName(Notifications.TopTenReady, object: self)
@@ -104,18 +109,6 @@ class Trending : NilLiteralConvertible {
     
     func numberOfEventsInSection(section: Int) -> Int {
         return eventsFactory[(keys[section])]!.count
-    }
-    
-    func getCurrentLocation(){
-        PFGeoPoint.geoPointForCurrentLocationInBackground {
-            (geoPoint: PFGeoPoint?, error: NSError?) -> Void in
-            if error == nil {
-                self.currentLocation = geoPoint
-                print(geoPoint)
-                let notifications = NSNotificationCenter.defaultCenter()
-                notifications.postNotificationName(Notifications.CurrentLocationRecieved, object: self)
-            }
-        }
     }
     
     init(){}

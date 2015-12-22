@@ -22,7 +22,6 @@ class SearchViewController: UIViewController , UITableViewDelegate, UITableViewD
         let notifications = NSNotificationCenter.defaultCenter()
         notifications.addObserver(self, selector: "receivedTopTenTrending", name: Notifications.EventFactoryReady, object: nil)
         notifications.addObserver(self, selector: "receivedCurrentLocationData", name: Notifications.CurrentLocationRecieved, object: nil)
-        search.getCurrentLocation()
         tableView.dataSource = self
         tableView.delegate = self
         refreshControl = UIRefreshControl()
