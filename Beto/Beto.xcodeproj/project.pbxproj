@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		DB6A0A85B986559E59BCC545 /* Pods_Beto.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B3CE67479A223604908EC3B1 /* Pods_Beto.framework */; };
+		F1012EFE1C28C7DC0070156F /* TrendingTableViewHeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1012EFD1C28C7DC0070156F /* TrendingTableViewHeaderCell.swift */; };
 		F10B1A0D1C1D82BF00A0E59F /* FavoriteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F10B1A0C1C1D82BF00A0E59F /* FavoriteViewController.swift */; };
 		F11662F01C1BE059002D02D1 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F11662EF1C1BE059002D02D1 /* SignUpViewController.swift */; };
 		F17EB3601C1AD43A0055FD18 /* CompressImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = F17EB35F1C1AD43A0055FD18 /* CompressImage.swift */; };
@@ -92,6 +93,7 @@
 		B3CE67479A223604908EC3B1 /* Pods_Beto.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Beto.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D9F603738CC989E8C2309301 /* Pods-Beto.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Beto.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Beto/Pods-Beto.debug.xcconfig"; sourceTree = "<group>"; };
 		E1C48DEF41D689576C10628A /* Pods-Beto.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Beto.release.xcconfig"; path = "Pods/Target Support Files/Pods-Beto/Pods-Beto.release.xcconfig"; sourceTree = "<group>"; };
+		F1012EFD1C28C7DC0070156F /* TrendingTableViewHeaderCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TrendingTableViewHeaderCell.swift; sourceTree = "<group>"; };
 		F10B1A0C1C1D82BF00A0E59F /* FavoriteViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FavoriteViewController.swift; sourceTree = "<group>"; };
 		F11662EF1C1BE059002D02D1 /* SignUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		F17EB35F1C1AD43A0055FD18 /* CompressImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CompressImage.swift; sourceTree = "<group>"; };
@@ -330,6 +332,7 @@
 			children = (
 				F17EB3611C1AFFCB0055FD18 /* SearchTableViewCell.swift */,
 				F1DB36AF1C1965740029F6ED /* TrendingTableViewCell.swift */,
+				F1012EFD1C28C7DC0070156F /* TrendingTableViewHeaderCell.swift */,
 			);
 			name = BetoTabViewController;
 			sourceTree = "<group>";
@@ -711,6 +714,7 @@
 				F1DB36C91C1965740029F6ED /* TrendViewController.swift in Sources */,
 				F1DB36CC1C1965740029F6ED /* MoreViewController.swift in Sources */,
 				F1E23AF81C1A1CDF00763AF5 /* User.swift in Sources */,
+				F1012EFE1C28C7DC0070156F /* TrendingTableViewHeaderCell.swift in Sources */,
 				F1DB36C31C1965740029F6ED /* LogInViewControllerHelper.swift in Sources */,
 				F1DB36CE1C1965740029F6ED /* ProfileViewController.swift in Sources */,
 				F1DB36AA1C1965540029F6ED /* Event.swift in Sources */,

@@ -106,6 +106,17 @@ class TrendViewController: UIViewController, UITableViewDelegate, UITableViewDat
         trending.getEvents(trending.category!, miles: userData.user!["distance"] as! Double, numberOfEvents: 10)
     }
     
+    func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        return trending.category
+    }
+    
+    func tableView(tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        let cell = tableView.dequeueReusableCellWithIdentifier("EventHeader") as! TrendingTableViewHeaderCell
+        cell.sectionHeader.text = trending.category
+        
+        return cell
+    }
+    
     func receivedCurrentLocationData(){
         trending.getEvents(trending.category!, miles: userData.user!["distance"] as! Double, numberOfEvents: 10)
     }
@@ -116,7 +127,7 @@ class TrendViewController: UIViewController, UITableViewDelegate, UITableViewDat
     }
     
     func refresh(refreshControl: UIRefreshControl) {
-        trending.getCurrentLocation()
+        trending.getEvents(trending.category!, miles: userData.user!["distance"] as! Double, numberOfEvents: 10)
     }
     
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
