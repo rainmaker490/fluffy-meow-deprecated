@@ -477,7 +477,7 @@
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="trendingEventTitle" destination="JuF-Gb-62R" id="Oyh-nD-I2S"/>
-                                            <segue destination="XCD-N4-7Cp" kind="push" identifier="InfoSegue" id="TYZ-PQ-wzh"/>
+                                            <segue destination="XCD-N4-7Cp" kind="push" identifier="InfoSegue" animates="NO" id="TYZ-PQ-wzh"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -514,13 +514,13 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1X1-Gb-bci">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="1X1-Gb-bci">
                                 <rect key="frame" x="0.0" y="64" width="320" height="163"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="1X1-Gb-bci" secondAttribute="height" multiplier="320:163" id="Kwt-M0-tvx"/>
                                 </constraints>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BDa-EB-sFD">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BDa-EB-sFD">
                                 <rect key="frame" x="40" y="235" width="240" height="30"/>
                                 <color key="backgroundColor" red="0.66274509800000003" green="0.78823529410000004" blue="0.83137254900000002" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
@@ -534,7 +534,7 @@
                                     <action selector="addToFavoritesButtonPressed:" destination="XCD-N4-7Cp" eventType="touchUpInside" id="JK7-RW-MnA"/>
                                 </connections>
                             </button>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" editable="NO" text="Description" textAlignment="center" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oRT-I8-2B0">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="Description" textAlignment="center" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oRT-I8-2B0">
                                 <rect key="frame" x="40" y="316" width="240" height="128"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="oRT-I8-2B0" secondAttribute="height" multiplier="15:8" id="Tag-th-ZTt"/>
@@ -542,7 +542,7 @@
                                 <fontDescription key="fontDescription" type="system" weight="thin" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ODa-Wg-bzo">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ODa-Wg-bzo">
                                 <rect key="frame" x="40" y="273" width="240" height="30"/>
                                 <color key="backgroundColor" red="0.66274509800000003" green="0.78823529410000004" blue="0.83137254900000002" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
@@ -553,7 +553,7 @@
                                     <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lS0-3i-gri">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lS0-3i-gri">
                                 <rect key="frame" x="20" y="72" width="280" height="37"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="lS0-3i-gri" secondAttribute="height" multiplier="280:37" id="JZH-bj-OKX"/>
