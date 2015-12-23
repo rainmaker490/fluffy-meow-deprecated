@@ -68,11 +68,9 @@ class MoreViewController: FormViewController {
     }
     
     private func logOut(){
-        SharedInstances.mapInstance = nil
         SharedInstances.searchInstance = nil
         SharedInstances.trendingInstance = nil
         PFUser.logOut()
-        SharedInstances.mapInstance = Trending()
         SharedInstances.searchInstance = Trending()
         SharedInstances.trendingInstance = Trending()
         let betoTabViewController = self.storyboard?.instantiateViewControllerWithIdentifier("LogInViewControllerID") as! LogInViewController

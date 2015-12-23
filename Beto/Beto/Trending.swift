@@ -9,25 +9,10 @@
 import Foundation
 import Parse
 
-class SharedInstances {
-    static var trendingInstance = Trending()
-    static var mapInstance = Trending()
-    static var searchInstance = Trending()
-    static var categoriesInstance = Category()
-}
-
 protocol CurrentLocationDelegate : class {
     var currentLocation : PFGeoPoint {
         get
     }
-}
-
-struct Category : NilLiteralConvertible {
-    var trending: String?
-    var explore: String?
-    var search: String?
-    init(nilLiteral: ()) {}
-    private init() {}
 }
 
 class Trending : NilLiteralConvertible {
@@ -37,7 +22,7 @@ class Trending : NilLiteralConvertible {
     var eventsFactory = [String:[Event]]()
     private var keys = [String]()
     
-    func getEvents(type : String, miles: Double, numberOfEvents: Int){
+    func getEvents(type : String, miles: Double){
         let query = PFQuery(className: "Event")
         if type == Categories.All {
             query.whereKey("location", nearGeoPoint: dataSource!.currentLocation, withinMiles: miles)
@@ -45,9 +30,9 @@ class Trending : NilLiteralConvertible {
             query.whereKey("location", nearGeoPoint: dataSource!.currentLocation, withinMiles: miles).whereKey("category", containsString: type)
         }
         query.orderByDescending("views")
-        if numberOfEvents > 0 {
+        /*if numberOfEvents > 0 {
             query.limit = numberOfEvents
-        }
+        }*/
         query.findObjectsInBackgroundWithBlock{ (objects, error) -> Void in
             if error == nil {
                 var allEventsList = [Event]()
@@ -56,7 +41,6 @@ class Trending : NilLiteralConvertible {
                 }
                 self.eventsFactory[type]?.removeAll()
                 self.eventsFactory[type] = allEventsList
-                
                 let notification = NSNotificationCenter.defaultCenter()
                 notification.postNotificationName(Notifications.TopTenReady, object: self)
             }
@@ -113,8 +97,6 @@ class Trending : NilLiteralConvertible {
     
     init(){}
     
-    required init(nilLiteral: ()) {
-        
-    }
+    required init(nilLiteral: ()) {}
     
 }

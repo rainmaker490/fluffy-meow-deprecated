@@ -44,6 +44,8 @@ class GetEventsViewController: UIViewController, CLLocationManagerDelegate, Curr
             if CLLocationManager.authorizationStatus() == .NotDetermined {
                 locationManager.requestWhenInUseAuthorization()
             }
+            let notification = NSNotificationCenter.defaultCenter()
+            notification.postNotificationName(Notifications.CurrentLocationRecieved, object: self)
         }
     }
     

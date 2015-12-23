@@ -18,19 +18,11 @@ class ExploreViewController: GetEventsViewController , MKMapViewDelegate{
     @IBOutlet weak var mapView: MKMapView!
     
     override func viewDidLoad() {
-        getUserEvents()
-        
+        super.viewDidLoad()
         category.explore = Categories.Favorites
         mapView.delegate = self
-        
         pinName = "DarkBlue.png"
-    }
-    
-    override func viewWillAppear(animated: Bool) {
-        if let location = locationManager.location {
-            mapView.showsUserLocation = true
-            centerMapOnLocation(location)
-        }
+        getUserEvents()
     }
     
     func getUserEvents() {
@@ -42,7 +34,6 @@ class ExploreViewController: GetEventsViewController , MKMapViewDelegate{
                     self.userData.userEvents = favoriteEvents
                     let notification = NSNotificationCenter.defaultCenter()
                     notification.postNotificationName(Notifications.FavoritesReceived, object: self)
-
                 }
             }
         }
@@ -98,19 +89,12 @@ class ExploreViewController: GetEventsViewController , MKMapViewDelegate{
         default:
             break
         }
-        mapView.reloadInputViews()
         receivedCurrentLocationData()
     }
     
     func receivedCurrentLocationData(){
         annotations.removeAll()
-        trending.getEvents(category.explore!, miles: 10, numberOfEvents: -1)
-        // if let _ = trending.eventsFactory[trending.category!]!
-        /*for event in trending.eventsFactory[trending.category!]!{
-            let annotation = EventAnnotation(event: event)
-            annotations.append(annotation)
-        }*/
-        // trending.getAllEvents(trending.currentLocation!, miles: userData.user!["distance"] as! Double)
+        trending.getEvents(category.explore!, miles: 10)
     }
     
     func receivedTopTenTrending() {

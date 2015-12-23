@@ -17,8 +17,11 @@ class TrendViewController: GetEventsViewController, UITableViewDelegate, UITable
     var refreshControl: UIRefreshControl!
     
     override func viewDidLoad() {
+        super.viewDidLoad()
         category.trending = Categories.All
-        
+        let notifications = NSNotificationCenter.defaultCenter()
+        notifications.addObserver(self, selector: "receivedAllEvents", name: Notifications.EventFactoryReady, object: nil)
+        trending.getAllEvents(userData.user!["distance"] as! Double)
         // #TODO:
         // REMOVE AND REFACTOR !!!
         let query = userData.user!["favoriteEvents"].query()
@@ -38,7 +41,6 @@ class TrendViewController: GetEventsViewController, UITableViewDelegate, UITable
         refreshControl!.attributedTitle = NSAttributedString(string: " ↓ Refresh ↓ ")
         refreshControl.addTarget(self, action: "refresh:", forControlEvents: .ValueChanged)
         tableView.addSubview(refreshControl)
-        
     }
     
     @IBAction func segmentedControlSelected(sender: UISegmentedControl) {
@@ -64,7 +66,7 @@ class TrendViewController: GetEventsViewController, UITableViewDelegate, UITable
         default:
             break
         }
-        trending.getEvents(category.trending!, miles: userData.user!["distance"] as! Double, numberOfEvents: 10)
+        trending.getEvents(category.trending!, miles: userData.user!["distance"] as! Double)
     }
     
     func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
@@ -74,22 +76,18 @@ class TrendViewController: GetEventsViewController, UITableViewDelegate, UITable
     func tableView(tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         let cell = tableView.dequeueReusableCellWithIdentifier("EventHeader") as! TrendingTableViewHeaderCell
         cell.sectionHeader.text = category.trending!
-        // cell.sectionHeaderImage.contentMode = .ScaleAspectFit
+        cell.sectionHeaderImage.contentMode = .ScaleAspectFit
         cell.sectionHeaderImage.image = UIImage(named: category.trending!.stringByReplacingOccurrencesOfString(" ", withString: "")+".png")
         return cell
     }
     
-    func receivedCurrentLocationData(){
-        trending.getEvents(category.trending!, miles: userData.user!["distance"] as! Double, numberOfEvents: 10)
-    }
-    
-    func receivedTopTenTrending() {
+    func receivedAllEvents() {
         refreshControl.endRefreshing()
         tableView.reloadData()
     }
     
     func refresh(refreshControl: UIRefreshControl) {
-        trending.getEvents(category.trending!, miles: userData.user!["distance"] as! Double, numberOfEvents: 10)
+        trending.getAllEvents(userData.user!["distance"] as! Double)
     }
     
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
@@ -99,7 +97,8 @@ class TrendViewController: GetEventsViewController, UITableViewDelegate, UITable
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         var numberOfSections = 0
         if let _ =  trending.eventsFactory[category.trending!] {
-            numberOfSections = trending.eventsFactory[category.trending!]!.count
+            let count = trending.eventsFactory[category.trending!]!.count
+            numberOfSections = count > 10 ? 10 : count
         }
         return numberOfSections
     }
@@ -115,10 +114,6 @@ class TrendViewController: GetEventsViewController, UITableViewDelegate, UITable
             return trending.eventsFactory[category.trending!]![tableView.indexPathForSelectedRow!.row]
         }
     }
-    
-    /*func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        performSegueWithIdentifier("didSelectRowAtIndexPath", sender: indexPath)
-    }*/
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         switch segue.identifier! {
