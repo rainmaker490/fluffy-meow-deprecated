@@ -112,8 +112,7 @@ class TrendViewController: GetEventsViewController, UITableViewDelegate, UITable
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         var numberOfSections = 0
         if let _ =  trending.eventsFactory[category.trending!] {
-            let count = trending.eventsFactory[category.trending!]!.count
-            numberOfSections = count > 10 ? 10 : count
+            numberOfSections = 10
         }
         return numberOfSections
     }
