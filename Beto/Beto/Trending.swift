@@ -20,9 +20,8 @@ class Trending : NilLiteralConvertible {
     weak var dataSource : CurrentLocationDelegate?
     private var trendingFactory = [Event]()
     var eventsFactory = [String:[Event]]()
-    private var keys = [String]()
     
-    func getEvents(type : String, miles: Double){
+    func getTrendingEvents(type : String, miles: Double, numberOfEvents: Int, sendNotification: Bool){
         let query = PFQuery(className: "Event")
         if type == Categories.All {
             query.whereKey("location", nearGeoPoint: dataSource!.currentLocation, withinMiles: miles)
@@ -30,9 +29,7 @@ class Trending : NilLiteralConvertible {
             query.whereKey("location", nearGeoPoint: dataSource!.currentLocation, withinMiles: miles).whereKey("category", containsString: type)
         }
         query.orderByDescending("views")
-        /*if numberOfEvents > 0 {
-            query.limit = numberOfEvents
-        }*/
+        query.limit = numberOfEvents
         query.findObjectsInBackgroundWithBlock{ (objects, error) -> Void in
             if error == nil {
                 var allEventsList = [Event]()
@@ -41,58 +38,14 @@ class Trending : NilLiteralConvertible {
                 }
                 self.eventsFactory[type]?.removeAll()
                 self.eventsFactory[type] = allEventsList
-                let notification = NSNotificationCenter.defaultCenter()
-                notification.postNotificationName(Notifications.TopTenReady, object: self)
-            }
-        }
-    }
-    
-    func getAllEvents(miles: Double){
-        let query = PFQuery(className: "Event")
-         query.whereKey("location", nearGeoPoint: dataSource!.currentLocation, withinMiles: miles)
-        query.findObjectsInBackgroundWithBlock{ (objects, error) -> Void in
-            if error == nil {
-                var tempEventsFactory = [String:[Event]]()
-                if let events = objects as? [Event] {
-                    for event in events {
-                        let eventCategory = event.category
-                        if let _ = tempEventsFactory[eventCategory] {
-                            tempEventsFactory[eventCategory]!.append(event)
-                        } else {
-                            tempEventsFactory[eventCategory] = [event]
-                        }
+                if sendNotification {
+                    dispatch_async(dispatch_get_main_queue()) { () -> Void in
+                        let notification = NSNotificationCenter.defaultCenter()
+                        notification.postNotificationName(Notifications.TopTenReady, object: self)
                     }
                 }
-                self.eventsFactory = tempEventsFactory
-                self.keys = Array(self.eventsFactory.keys).sort()
-                
-                for key in self.keys {
-                    self.eventsFactory[key]!.sortInPlace({ $0.title < $1.title })
-                }
-                let notification = NSNotificationCenter.defaultCenter()
-                notification.postNotificationName(Notifications.EventFactoryReady, object: self)
             }
         }
-    }
-    
-    func getKey(index: Int) -> String {
-        return keys[index]
-    }
-    
-    func titleForSection(section: Int) -> String {
-        return keys[section]
-    }
-    
-    func eventNameAtIndexPath(indexPath: NSIndexPath) -> Event {
-        return (eventsFactory[(keys[indexPath.section])]!)[indexPath.row]
-    }
-    
-    var numberOfSections : Int {
-        return keys.count
-    }
-    
-    func numberOfEventsInSection(section: Int) -> Int {
-        return eventsFactory[(keys[section])]!.count
     }
     
     init(){}

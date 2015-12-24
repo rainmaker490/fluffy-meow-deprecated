@@ -62,10 +62,7 @@ class InfoViewController: UIViewController {
             relation.removeObject(dataSource!.currentEvent)
             sender.setTitle("Add to Favorites", forState: .Normal)
         }
-        let qos = QOS_CLASS_USER_INITIATED
-        dispatch_async(dispatch_get_global_queue(qos, 0)) { () -> Void in
-            self.userData.getFavorites()
-        }
+        self.userData.getFavorites()
     }
     
 }

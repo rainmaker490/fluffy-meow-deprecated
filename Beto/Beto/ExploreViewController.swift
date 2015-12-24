@@ -94,7 +94,7 @@ class ExploreViewController: GetEventsViewController , MKMapViewDelegate{
     
     func receivedCurrentLocationData(){
         annotations.removeAll()
-        trending.getEvents(category.explore!, miles: 10)
+        trending.getTrendingEvents(category.explore!, miles: 10, numberOfEvents: -1, sendNotification: true)
     }
     
     func receivedTopTenTrending() {

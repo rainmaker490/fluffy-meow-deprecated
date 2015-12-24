@@ -17,6 +17,7 @@
 		F17EB3621C1AFFCB0055FD18 /* SearchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F17EB3611C1AFFCB0055FD18 /* SearchTableViewCell.swift */; };
 		F1A673621C1D15F10017090A /* Favorite.png in Resources */ = {isa = PBXBuildFile; fileRef = F1A673611C1D15F10017090A /* Favorite.png */; };
 		F1A673641C1D16740017090A /* SignUpButton.png in Resources */ = {isa = PBXBuildFile; fileRef = F1A673631C1D16740017090A /* SignUpButton.png */; };
+		F1B957A31C2C1FD500761C28 /* AllBetoEvents.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1B957A21C2C1FD500761C28 /* AllBetoEvents.swift */; };
 		F1DB36791C19636E0029F6ED /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F1DB36781C19636E0029F6ED /* Assets.xcassets */; };
 		F1DB36871C19636E0029F6ED /* BetoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1DB36861C19636E0029F6ED /* BetoTests.swift */; };
 		F1DB36921C19636E0029F6ED /* BetoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1DB36911C19636E0029F6ED /* BetoUITests.swift */; };
@@ -104,6 +105,7 @@
 		F17EB3611C1AFFCB0055FD18 /* SearchTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchTableViewCell.swift; sourceTree = "<group>"; };
 		F1A673611C1D15F10017090A /* Favorite.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Favorite.png; sourceTree = "<group>"; };
 		F1A673631C1D16740017090A /* SignUpButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = SignUpButton.png; sourceTree = "<group>"; };
+		F1B957A21C2C1FD500761C28 /* AllBetoEvents.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AllBetoEvents.swift; sourceTree = "<group>"; };
 		F1DB366E1C19636E0029F6ED /* Beto.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Beto.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F1DB36781C19636E0029F6ED /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F1DB367D1C19636E0029F6ED /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -328,6 +330,7 @@
 				F1A673651C1D197F0017090A /* Extensions */,
 				F1DB36A51C1965540029F6ED /* Constants.swift */,
 				F1DB36A61C1965540029F6ED /* Trending.swift */,
+				F1B957A21C2C1FD500761C28 /* AllBetoEvents.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -746,6 +749,7 @@
 				F1DB36C91C1965740029F6ED /* TrendViewController.swift in Sources */,
 				F1DB36CC1C1965740029F6ED /* MoreViewController.swift in Sources */,
 				F1E23AF81C1A1CDF00763AF5 /* User.swift in Sources */,
+				F1B957A31C2C1FD500761C28 /* AllBetoEvents.swift in Sources */,
 				F1012EFE1C28C7DC0070156F /* TrendingTableViewHeaderCell.swift in Sources */,
 				F1DB36C31C1965740029F6ED /* LogInViewControllerHelper.swift in Sources */,
 				F1DB36CE1C1965740029F6ED /* ProfileViewController.swift in Sources */,

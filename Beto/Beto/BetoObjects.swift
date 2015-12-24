@@ -12,6 +12,7 @@ class SharedInstances {
     static var trendingInstance = Trending()
     static var searchInstance = Trending()
     static var categoriesInstance = Category()
+    static var allEventsInstance = AllBetoEvents()
 }
 
 struct Category : NilLiteralConvertible {
