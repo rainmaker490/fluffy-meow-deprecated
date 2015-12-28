@@ -192,8 +192,8 @@
                                 <segments>
                                     <segment title="" image="Favorite.png"/>
                                     <segment title="" image="Sports.png"/>
-                                    <segment title="" image="Meetings.png"/>
-                                    <segment title="" image="Study.png"/>
+                                    <segment title="" image="Clubs.png"/>
+                                    <segment title="" image="StudyGroups.png"/>
                                     <segment title="" image="NightLife.png"/>
                                     <segment title="" image="Concerts.png"/>
                                 </segments>
@@ -976,10 +976,8 @@
         <image name="Concerts.png" width="32" height="32"/>
         <image name="Favorite.png" width="32" height="32"/>
         <image name="Map.png" width="32" height="32"/>
-        <image name="Meetings.png" width="32" height="32"/>
         <image name="NightLife.png" width="32" height="32"/>
         <image name="Sports.png" width="32" height="32"/>
-        <image name="Study.png" width="32" height="32"/>
         <image name="StudyGroups.png" width="32" height="32"/>
         <image name="SubmitUnFilled.png" width="100" height="100"/>
         <image name="Trending.png" width="32" height="32"/>
