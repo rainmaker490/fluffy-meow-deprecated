@@ -36,10 +36,8 @@ class AllBetoEvents: NilLiteralConvertible {
                     self.eventsFactory[key]!.sortInPlace({ $0.title < $1.title })
                 }
                 if sendNotification {
-                    dispatch_async(dispatch_get_main_queue()) { () -> Void in
-                        let notification = NSNotificationCenter.defaultCenter()
-                        notification.postNotificationName(Notifications.EventFactoryReady, object: self)
-                    }
+                    let notification = NSNotificationCenter.defaultCenter()
+                    notification.postNotificationName(Notifications.EventFactoryReady, object: self)
                 }
             }
         }

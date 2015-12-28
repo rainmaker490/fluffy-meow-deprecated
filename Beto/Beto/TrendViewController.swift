@@ -13,14 +13,14 @@ import MapKit
 class TrendViewController: GetEventsViewController, UITableViewDelegate, UITableViewDataSource , EventDetails {
     
     @IBOutlet weak var tableView: UITableView!
-    
     var refreshControl: UIRefreshControl!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        notifications.addObserver(self, selector: "receivedEvents", name: Notifications.TopTenReady, object: nil)
         category.trending = Categories.All
         dispatch_async(dispatch_get_global_queue(QOS_CLASS_USER_INITIATED, 0)) { () -> Void in
-        self.trending.getTrendingEvents(Categories.All, miles: self.userData.user!["distance"] as! Double, numberOfEvents: 10, sendNotification: true)
+            self.trending.getTrendingEvents(Categories.All, miles: self.userData.user!["distance"] as! Double, numberOfEvents: 10, sendNotification: true)
         }
         // #TODO:
         // REMOVE AND REFACTOR !!!
@@ -88,12 +88,7 @@ class TrendViewController: GetEventsViewController, UITableViewDelegate, UITable
         return cell
     }
     
-    func receivedAllEvents() {
-        refreshControl.endRefreshing()
-        tableView.reloadData()
-    }
-    
-    func receivedTopTenTrending(){
+    func receivedEvents(){
         refreshControl.endRefreshing()
         tableView.reloadData()
     }
@@ -111,8 +106,8 @@ class TrendViewController: GetEventsViewController, UITableViewDelegate, UITable
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         var numberOfSections = 0
-        if let _ =  trending.eventsFactory[category.trending!] {
-            numberOfSections = 10
+        if let trendingEvents =  trending.eventsFactory[category.trending!] {
+            numberOfSections = trendingEvents.count
         }
         return numberOfSections
     }

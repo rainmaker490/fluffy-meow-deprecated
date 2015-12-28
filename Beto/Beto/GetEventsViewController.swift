@@ -13,9 +13,11 @@ class GetEventsViewController: UIViewController, CLLocationManagerDelegate, Curr
     
     let trending = SharedInstances.trendingInstance
     var category = SharedInstances.categoriesInstance
+    let allEventsInstance = SharedInstances.allEventsInstance
     let userData = User.sharedInstance
     var distance : Double?
     let locationManager = CLLocationManager()
+    let notifications = NSNotificationCenter.defaultCenter()
     
     var currentLocation : PFGeoPoint {
         get {
@@ -29,10 +31,8 @@ class GetEventsViewController: UIViewController, CLLocationManagerDelegate, Curr
     }
     
     override func viewDidLoad() {
-        let notifications = NSNotificationCenter.defaultCenter()
-        notifications.addObserver(self, selector: "receivedTopTenTrending", name: Notifications.TopTenReady, object: nil)
         trending.dataSource = self
-        
+        allEventsInstance.dataSource = self
         locationManager.delegate = self
         locationManager.desiredAccuracy = kCLLocationAccuracyBest
         locationManager.requestAlwaysAuthorization()
@@ -44,8 +44,6 @@ class GetEventsViewController: UIViewController, CLLocationManagerDelegate, Curr
             if CLLocationManager.authorizationStatus() == .NotDetermined {
                 locationManager.requestWhenInUseAuthorization()
             }
-            let notification = NSNotificationCenter.defaultCenter()
-            notification.postNotificationName(Notifications.CurrentLocationRecieved, object: self)
         }
     }
     

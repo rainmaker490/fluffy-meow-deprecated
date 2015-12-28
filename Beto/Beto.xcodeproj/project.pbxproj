@@ -229,6 +229,8 @@
 				F1DB36B61C1965740029F6ED /* TrendViewController.swift */,
 				F1DB36B71C1965740029F6ED /* ExploreViewController.swift */,
 				F1DB36B81C1965740029F6ED /* InfoViewController.swift */,
+				F1E23AFB1C1A279F00763AF5 /* SearchViewController.swift */,
+				F10B1A0C1C1D82BF00A0E59F /* FavoriteViewController.swift */,
 				F1DB37101C19673D0029F6ED /* More */,
 			);
 			name = Impl;
@@ -394,8 +396,6 @@
 		F1DB37101C19673D0029F6ED /* More */ = {
 			isa = PBXGroup;
 			children = (
-				F10B1A0C1C1D82BF00A0E59F /* FavoriteViewController.swift */,
-				F1E23AFB1C1A279F00763AF5 /* SearchViewController.swift */,
 				F1DB36B91C1965740029F6ED /* MoreViewController.swift */,
 				F1DB36BA1C1965740029F6ED /* AddEventFormViewController.swift */,
 				F1DB36BB1C1965740029F6ED /* ProfileViewController.swift */,
