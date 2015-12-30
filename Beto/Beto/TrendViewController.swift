@@ -47,9 +47,6 @@ class TrendViewController: GetEventsViewController, UITableViewDelegate, UITable
         switch sender.selectedSegmentIndex {
         case 0:
             category.trending! = Categories.All
-            dispatch_async(dispatch_get_global_queue(QOS_CLASS_USER_INITIATED, 0)) { () -> Void in
-                self.trending.getTrendingEvents(Categories.All, miles: self.userData.user!["distance"] as! Double, numberOfEvents: 10, sendNotification: true)
-            }
             break
         case 1:
             category.trending! = Categories.Sport
@@ -69,10 +66,11 @@ class TrendViewController: GetEventsViewController, UITableViewDelegate, UITable
         default:
             break
         }
-        // No need to refresh Data if the Category is All Trending
-        // This is already handled by calling getEventsMethod
-        if !(sender.selectedSegmentIndex == 0) {
-            tableView.reloadData()
+        
+        if let _ = trending.eventsFactory[category.trending!] {
+            dispatch_async(dispatch_get_global_queue(QOS_CLASS_USER_INITIATED, 0)) { () -> Void in
+                self.trending.getTrendingEvents(self.category.trending!, miles: self.userData.user!["distance"] as! Double, numberOfEvents: 10, sendNotification: true)
+            }
         }
     }
     

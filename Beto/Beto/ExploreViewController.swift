@@ -60,6 +60,8 @@ class ExploreViewController: GetEventsViewController , MKMapViewDelegate{
         }
     }
     
+    // #TODO:
+    // Refactor and change the sizes of the pins (OR change to Mapbox SDK)
     @IBAction func segmentedControl(sender: UISegmentedControl) {
         switch sender.selectedSegmentIndex {
         case 0:
