@@ -11,14 +11,14 @@ import UIKit
 class FavoriteViewController: UIViewController, UITableViewDelegate, UITableViewDataSource , EventDetails{
     
     @IBOutlet weak var tableView: UITableView!
-    let search = SharedInstances.trendingInstance
-    let userData = User.sharedInstance
     
+    let userData = User.sharedInstance
     var refreshControl: UIRefreshControl!
-    var userEvents = [Event]()
+    let notifications = NSNotificationCenter.defaultCenter()
     
     override func viewDidLoad() {
-        userEvents = User.sharedInstance.userEvents
+        notifications.addObserver(self, selector: "receivedFavorites", name: Notifications.FavoritesReceived, object: nil)
+        userData.getFavorites()
         tableView.dataSource = self
         tableView.delegate = self
         refreshControl = UIRefreshControl()
@@ -32,13 +32,12 @@ class FavoriteViewController: UIViewController, UITableViewDelegate, UITableView
         }
     }
     
-    override func viewDidAppear(animated: Bool) {
-        userEvents = User.sharedInstance.userEvents
+    func receivedFavorites(){
         tableView.reloadData()
     }
     
     func refresh(refreshControl: UIRefreshControl) {
-        userEvents = User.sharedInstance.userEvents
+        userData.getFavorites()
         refreshControl.endRefreshing()
     }
     
@@ -47,12 +46,12 @@ class FavoriteViewController: UIViewController, UITableViewDelegate, UITableView
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return userEvents.count
+        return userData.userEvents.count
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("FavoriteEvents") as! SearchTableViewCell
-        cell.allEventTitle.text = userEvents[indexPath.row].title
+        cell.allEventTitle.text = userData.userEvents[indexPath.row].title
         return cell
     }
     

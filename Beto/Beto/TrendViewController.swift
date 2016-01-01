@@ -24,15 +24,6 @@ class TrendViewController: GetEventsViewController, UITableViewDelegate, UITable
         }
         // #TODO:
         // REMOVE AND REFACTOR !!!
-        let query = userData.user!["favoriteEvents"].query()
-        query.findObjectsInBackgroundWithBlock { (events, error) -> Void in
-            if error == nil {
-                self.userData.userEvents.removeAll()
-                if let  event  = events as? [Event] {
-                    self.userData.userEvents = event
-                }
-            }
-        }
         
         tableView.dataSource = self
         tableView.delegate = self

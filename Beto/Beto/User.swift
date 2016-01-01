@@ -33,6 +33,8 @@ class User {
                 if let favorites = events as? [Event] {
                     self.userEvents = favorites
                 }
+                let notification = NSNotificationCenter.defaultCenter()
+                notification.postNotificationName(Notifications.FavoritesReceived, object: self)
             }
         }
     }

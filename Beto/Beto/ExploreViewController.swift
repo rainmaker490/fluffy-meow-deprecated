@@ -42,6 +42,7 @@ class ExploreViewController: GetEventsViewController , MKMapViewDelegate{
     func favoritesReceivedPlotOnMap(){
         makeAnnotation(userData.userEvents)
         let location = CLLocation(latitude: 37.787359, longitude: -122.408227)
+        mapView.showsUserLocation = true
         centerMapOnLocation(location)
         mapView.addAnnotations(annotations)
     }
