@@ -59,6 +59,8 @@ class TrendViewController: GetEventsViewController, UITableViewDelegate, UITable
         }
         
         if let _ = trending.eventsFactory[category.trending!] {
+            tableView.reloadData()
+        } else {
             dispatch_async(dispatch_get_global_queue(QOS_CLASS_USER_INITIATED, 0)) { () -> Void in
                 self.trending.getTrendingEvents(self.category.trending!, miles: self.userData.user!["distance"] as! Double, numberOfEvents: 10, sendNotification: true)
             }
