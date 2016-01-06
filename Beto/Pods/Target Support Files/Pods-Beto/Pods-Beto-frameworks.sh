@@ -91,6 +91,7 @@ if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_framework "Pods-Beto/FBSDKShareKit.framework"
   install_framework "Pods-Beto/Parse.framework"
   install_framework "Pods-Beto/ParseFacebookUtilsV4.framework"
+  install_framework "Pods-Beto/ionicons.framework"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
   install_framework "Pods-Beto/Bolts.framework"
@@ -100,4 +101,5 @@ if [[ "$CONFIGURATION" == "Release" ]]; then
   install_framework "Pods-Beto/FBSDKShareKit.framework"
   install_framework "Pods-Beto/Parse.framework"
   install_framework "Pods-Beto/ParseFacebookUtilsV4.framework"
+  install_framework "Pods-Beto/ionicons.framework"
 fi
