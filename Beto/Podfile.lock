@@ -20,6 +20,7 @@ PODS:
   - FBSDKShareKit (4.8.0):
     - FBSDKCoreKit
   - ionicons (2.0.3)
+  - Mapbox-iOS-SDK (3.0.1)
   - Parse (1.11.0):
     - Bolts/Tasks (~> 1.5)
   - ParseFacebookUtilsV4 (1.9.1):
@@ -34,6 +35,7 @@ DEPENDENCIES:
   - FBSDKLoginKit
   - FBSDKShareKit
   - ionicons
+  - Mapbox-iOS-SDK
   - Parse
   - ParseFacebookUtilsV4
 
@@ -44,6 +46,7 @@ SPEC CHECKSUMS:
   FBSDKLoginKit: d893fcbb98d854496925e9ff73c67b896982d3c4
   FBSDKShareKit: e7577ee3adf80fc04fb656dd133fbb522250672b
   ionicons: ec1e86e6c3316bd9942a7f024080dd75c70dd6a5
+  Mapbox-iOS-SDK: 61e79f3dd8432617bd1a66b2d7273ab5ce923ca9
   Parse: 886af46a0a677402f6374bb97ac212e795f70afe
   ParseFacebookUtilsV4: eab9b4ade12f0800b4d30f6b808bca55ce17a0e9
 
