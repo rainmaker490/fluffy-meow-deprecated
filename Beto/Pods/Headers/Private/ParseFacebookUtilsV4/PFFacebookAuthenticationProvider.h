@@ -1,1 +1,1 @@
-../../../ParseFacebookUtilsV4/ParseFacebookUtils/Internal/PFFacebookAuthenticationProvider.h
+../../../ParseFacebookUtilsV4/ParseFacebookUtils/Internal/AuthenticationProvider/PFFacebookAuthenticationProvider.h
