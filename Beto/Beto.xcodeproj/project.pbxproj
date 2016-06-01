@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		32F282AF1CFF8F2500894FC0 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32F282AE1CFF8F2500894FC0 /* CardView.swift */; };
+		32F282B01CFF8F2500894FC0 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32F282AE1CFF8F2500894FC0 /* CardView.swift */; };
+		32F282B11CFF8F2500894FC0 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32F282AE1CFF8F2500894FC0 /* CardView.swift */; };
+		32F282B31CFF91A700894FC0 /* BackgroundCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32F282B21CFF91A700894FC0 /* BackgroundCardView.swift */; };
+		32F282B41CFF91A700894FC0 /* BackgroundCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32F282B21CFF91A700894FC0 /* BackgroundCardView.swift */; };
+		32F282B51CFF91A700894FC0 /* BackgroundCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32F282B21CFF91A700894FC0 /* BackgroundCardView.swift */; };
 		DB6A0A85B986559E59BCC545 /* Pods_Beto.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B3CE67479A223604908EC3B1 /* Pods_Beto.framework */; };
 		F1012EFE1C28C7DC0070156F /* TrendingTableViewHeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1012EFD1C28C7DC0070156F /* TrendingTableViewHeaderCell.swift */; };
 		F1012F011C2959420070156F /* GetEventsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1012F001C2959420070156F /* GetEventsViewController.swift */; };
@@ -93,6 +99,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		32F282AE1CFF8F2500894FC0 /* CardView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
+		32F282B21CFF91A700894FC0 /* BackgroundCardView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BackgroundCardView.swift; sourceTree = "<group>"; wrapsLines = 0; };
 		B3CE67479A223604908EC3B1 /* Pods_Beto.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Beto.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D9F603738CC989E8C2309301 /* Pods-Beto.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Beto.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Beto/Pods-Beto.debug.xcconfig"; sourceTree = "<group>"; };
 		E1C48DEF41D689576C10628A /* Pods-Beto.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Beto.release.xcconfig"; path = "Pods/Target Support Files/Pods-Beto/Pods-Beto.release.xcconfig"; sourceTree = "<group>"; };
@@ -342,6 +350,8 @@
 			children = (
 				F1DB369F1C1965200029F6ED /* Main.storyboard */,
 				F1DB370B1C1966CA0029F6ED /* BetoTabViewController */,
+				32F282AE1CFF8F2500894FC0 /* CardView.swift */,
+				32F282B21CFF91A700894FC0 /* BackgroundCardView.swift */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -753,6 +763,7 @@
 				F1B957A31C2C1FD500761C28 /* AllBetoEvents.swift in Sources */,
 				F1012EFE1C28C7DC0070156F /* TrendingTableViewHeaderCell.swift in Sources */,
 				F1DB36C31C1965740029F6ED /* LogInViewControllerHelper.swift in Sources */,
+				32F282AF1CFF8F2500894FC0 /* CardView.swift in Sources */,
 				F1DB36CE1C1965740029F6ED /* ProfileViewController.swift in Sources */,
 				F1DB36AA1C1965540029F6ED /* Event.swift in Sources */,
 				F1DB36C21C1965740029F6ED /* TrendingTableViewCell.swift in Sources */,
@@ -763,6 +774,7 @@
 				F1DB36AD1C1965540029F6ED /* EventAnnotation.swift in Sources */,
 				F1DB36C51C1965740029F6ED /* LogInViewController.swift in Sources */,
 				F1DB36AB1C1965540029F6ED /* Constants.swift in Sources */,
+				32F282B31CFF91A700894FC0 /* BackgroundCardView.swift in Sources */,
 				F1DB36CB1C1965740029F6ED /* InfoViewController.swift in Sources */,
 				F10B1A0D1C1D82BF00A0E59F /* FavoriteViewController.swift in Sources */,
 				F1DB36C81C1965740029F6ED /* BetoTabViewController.swift in Sources */,
@@ -773,7 +785,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				32F282B01CFF8F2500894FC0 /* CardView.swift in Sources */,
 				F1DB36871C19636E0029F6ED /* BetoTests.swift in Sources */,
+				32F282B41CFF91A700894FC0 /* BackgroundCardView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -781,7 +795,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				32F282B11CFF8F2500894FC0 /* CardView.swift in Sources */,
 				F1DB36921C19636E0029F6ED /* BetoUITests.swift in Sources */,
+				32F282B51CFF91A700894FC0 /* BackgroundCardView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
