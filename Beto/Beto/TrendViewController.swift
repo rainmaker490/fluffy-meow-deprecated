@@ -17,7 +17,7 @@ class TrendViewController: GetEventsViewController, UITableViewDelegate, UITable
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        notifications.addObserver(self, selector: "receivedEvents", name: Notifications.TopTenReady, object: nil)
+        notifications.addObserver(self, selector: #selector(TrendViewController.receivedEvents), name: Notifications.TopTenReady, object: nil)
         category.trending = Categories.All
         dispatch_async(dispatch_get_global_queue(QOS_CLASS_USER_INITIATED, 0)) { () -> Void in
             self.trending.getTrendingEvents(Categories.All, miles: self.userData.user!["distance"] as! Double, numberOfEvents: 10, sendNotification: true)
@@ -30,7 +30,7 @@ class TrendViewController: GetEventsViewController, UITableViewDelegate, UITable
         
         refreshControl = UIRefreshControl()
         refreshControl!.attributedTitle = NSAttributedString(string: " ↓ Refresh ↓ ")
-        refreshControl.addTarget(self, action: "refresh:", forControlEvents: .ValueChanged)
+        refreshControl.addTarget(self, action: #selector(TrendViewController.refresh(_:)), forControlEvents: .ValueChanged)
         tableView.addSubview(refreshControl)
     }
     

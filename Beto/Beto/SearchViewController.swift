@@ -16,12 +16,12 @@ class SearchViewController: GetEventsViewController, UITableViewDelegate, UITabl
     var refreshControl: UIRefreshControl!
     
     override func viewDidLoad() {
-        notifications.addObserver(self, selector: "receivedEvents", name: Notifications.EventFactoryReady, object: nil)
+        notifications.addObserver(self, selector: #selector(SearchViewController.receivedEvents), name: Notifications.EventFactoryReady, object: nil)
         allEventsInstance.getAllEvents(userData.user!["distance"] as! Double, sendNotification: true)
         tableView.dataSource = self
         tableView.delegate = self
         refreshControl = UIRefreshControl()
-        refreshControl.addTarget(self, action: "refresh:", forControlEvents: .ValueChanged)
+        refreshControl.addTarget(self, action: #selector(SearchViewController.refresh(_:)), forControlEvents: .ValueChanged)
         tableView.addSubview(refreshControl)
     }
     

@@ -17,12 +17,12 @@ class FavoriteViewController: UIViewController, UITableViewDelegate, UITableView
     let notifications = NSNotificationCenter.defaultCenter()
     
     override func viewDidLoad() {
-        notifications.addObserver(self, selector: "receivedFavorites", name: Notifications.FavoritesReceived, object: nil)
+        notifications.addObserver(self, selector: #selector(FavoriteViewController.receivedFavorites), name: Notifications.FavoritesReceived, object: nil)
         userData.getFavorites()
         tableView.dataSource = self
         tableView.delegate = self
         refreshControl = UIRefreshControl()
-        refreshControl.addTarget(self, action: "refresh:", forControlEvents: .ValueChanged)
+        refreshControl.addTarget(self, action: #selector(FavoriteViewController.refresh(_:)), forControlEvents: .ValueChanged)
         tableView.addSubview(refreshControl)
     }
     

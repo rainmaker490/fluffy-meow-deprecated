@@ -26,9 +26,9 @@ class AddEventFormViewController: FormViewController {
         initializeForm()
         
         self.navigationItem.leftBarButtonItem?.target = self
-        self.navigationItem.leftBarButtonItem?.action = "cancelTapped:"
+        self.navigationItem.leftBarButtonItem?.action = #selector(AddEventFormViewController.cancelTapped(_:))
         self.navigationItem.rightBarButtonItem?.target = self
-        self.navigationItem.rightBarButtonItem?.action = "saveTapped:"
+        self.navigationItem.rightBarButtonItem?.action = #selector(AddEventFormViewController.saveTapped(_:))
         super.viewDidLoad()
     }
     
